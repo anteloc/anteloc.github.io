@@ -1,0 +1,11 @@
+#+TITLE: Segunda prueba con org y octopress
+#+DATE: 2014-12-23
+#+SETUPFILE: ~/octopress/setupfile.org
+#+JEKYLL_LAYOUT: post
+#+JEKYLL_CATEGORIES:
+#+JEKYLL_PUBLISHED: true
+
+* Otra prueba más
+Una prueba más usando org mode y octopress.
+
+{{{more}}}

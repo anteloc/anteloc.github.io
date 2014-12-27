@@ -1,0 +1,77 @@
+#+TITLE: Emacs desde Cero, parte I: ¿Qué es Emacs?
+#+DATE: 2014-12-27
+#+SETUPFILE: ~/octopress/setupfile.org
+#+JEKYLL_LAYOUT: post
+#+JEKYLL_CATEGORIES:
+#+JEKYLL_PUBLISHED: true
+
+* TL;DR
+  - Emacs es un editor de texto concebido para poder ampliarlo mediante el lenguaje de programación eLisp.
+  - Es muy potente, pero difiere bastante del editor de textos estándar.
+  - Permite ejecutar múltiples tipos de aplicaciones, escritas en eLisp, no sólo para edición de texto.
+
+* Introducción
+Este post es el primero de una serie donde quiero contar qué es y cómo se usa Emacs.
+Los motivos para escribir esta serie son, principalmente, aprender a usar mejor este potente editor,
+descubrir nuevas características y contar mis experiencias.
+
+* Un editor de texto no estándar
+La primera versión del software Emacs fue desarrollada en 1976 por []Richard M. Stallman y []Guy L. Steele, Jr.
+
+En aquella época, no eran frecuentes los estándares de software de usuario. Los editores de texto
+podían ser muy diferentes entre sí, tanto en la forma de usarlos como en las funcionalidades que proporcionaban.
+Muchas características de un editor que hoy damos por hechas, como copiar texto
+con Ctrl-C y pegarlo con Ctrl-V, no eran la norma general.
+
+En particular, el []vocabulario de términos Emacs difiere bastante del usado en la mayoría de editores modernos.
+Por ejemplo, "matar" (kill) es "cortar" texto, "yankear" (yank) es pegarlo, "kill ring" es el "portapapeles", etc.
+
+Actualmente, existen []múltiples derivados del primer Emacs (GNU Emacs, XEmacs, Aquamacs, etc.),
+pero casi todos heredan el vocabulario y muchas características del original. Por este motivo, a menudo,
+los nuevos usuarios de Emacs lo califican como "raro", "antiguo", "difícil", etc.
+
+* Un editor de texto programable
+Gran parte del código fuente de Emacs consiste en funciones escritas en lenguaje eLisp.
+Cada vez que el usuario presiona una tecla o combinación de teclas, Emacs ejecuta una o más funciones eLisp.
+
+Para Emacs, el texto es una materia prima que se puede transformar: formatear, indentar, colorear, etc.
+consiste en ejecutar una o varias funciones sobre el texto inicial y reemplazarlo por el texto transformado
+mediante dichas funciones.
+
+Puesto que Emacs es software libre, si un usuario necesita incorporar nuevas operaciones de tratamiento de texto,
+puede hacerlo escribiendo nuevas funciones en eLisp. De hecho, el propio editor es un excelente
+IDE que permite desarrollar y depurar eLisp.
+
+La posibilidad de ejecutar funciones eLisp es lo que convierte a Emacs en uno de los editores más potentes que existen.
+
+* ¿Solamente un editor de texto?
+Debido a su capacidad para ejecutar funciones eLisp, Emacs es mucho más que un editor de texto,
+pero resulta difícil explicar qué es exactamente.
+
+Hay un dicho que afirma: "Emacs es un estupendo sistema operativo y un pésimo editor de texto."
+Por supuesto, esta afirmación es más un chiste corto que otra cosa, pero contiene grandes dosis de verdad.
+
+Basándome en el anterior dicho, mi definición personal es: "Emacs es un software que ejecuta funciones eLisp
+y muestra los resultados al usuario mediante texto plano."
+
+Un navegador web en modo texto, un explorador de archivos, un cliente de chat IRC... existen múltiples
+aplicaciones implementadas en eLisp y que corren en Emacs. ¿Son editores o parte de un editor?
+Considero que no, ya que su fin no es editar texto, sino mostrarlo para dar información al usuario.
+
+* Ventajas e inconvenientes
+Te recomiendo aprender a usar Emacs si...
+  - te dedicas profesionalmente a la programación
+  - trabajas habitualmente con lenguajes dinámicos o que utilizan un []REPL
+  - quieres un editor que puedas adaptar a tu gusto, casi al 100%
+  - estás dispuesto a invertir tiempo en configurar tu editor
+  - no te importa adaptarte a sus peculiaridades: []combinaciones de teclas, []vocabulario, etc.
+  - quieres un editor ligero y rápido, con []muchísimos packages (plugins)
+  - si un package que te interesa no funciona, estás dispuesto a "remangarte" para arreglar fallos, incompatibilidades, etc.
+  - no necesitas un editor []WYSIWYG, con texto plano es más que suficiente
+  - prefieres las combinaciones de teclas al uso del ratón
+  - te gustan otros editores como SublimeText, TextMate, LightTable, etc.
+
+* Conclusión
+TODO Completar
+
+{{{more}}}
