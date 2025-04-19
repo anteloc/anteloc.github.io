@@ -1,0 +1,110 @@
+<!-- 
+  Copyright (c) Meta Platforms, Inc. and affiliates.
+
+  This source code is licensed under the MIT license found in the
+  LICENSE file in the root directory of this source tree.
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="manifest" href="manifest.json" />
+
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Fusion Reader</title>
+    <script>
+      function generateDefaultPdfUrl() {
+        const currentUrl = new URL(window.location.href);
+        const defaultPdfUrl = `${currentUrl.protocol}//${currentUrl.host}/assets/demo.pdf`;
+        document.getElementById("pdf-url").value = defaultPdfUrl;
+      }
+
+      // Initialize with default URL on page load
+      window.addEventListener("DOMContentLoaded", () => {
+        generateDefaultPdfUrl();
+      });
+    </script>
+  <script defer src="index.bundle.js"></script></head>
+  <body>
+    <!-- <div
+			id="scene-container"
+			style="display: block; width: 100vw; height: 100vh; position: fixed"
+		></div> -->
+
+    <div id="ui-panel-REMOVEME">
+      <h1>WIP - Fusion Reader - the Mixed Reality Document Reader</h1>
+      
+      <div id="pdf-reader-container">
+        <!-- for pdfobject library - does not work on Quest's Browser -->
+        <!-- <div id="pdf-obj"></div> -->
+
+        <div>
+          <div>
+            <h3>Load PDF from URL - Try the demo.pdf URL first!</h3>
+            
+            <input
+              type="text"
+              id="pdf-url"
+              placeholder="Enter PDF URL"
+              style="width: 300px"
+              value=""
+            />
+            <button id="load-pdf">Load file</button>
+          </div>
+        </div>
+
+        <div class="file-input-wrapper">
+          <h3>Load local PDF file</h3>
+          <input
+            type="file"
+            id="browse-pdf"
+            class="file-input"
+            accept="application/pdf"
+          />
+        </div>
+
+        <h3 id="status-msg"></h3>
+
+        <button id="mr-button" class="action-button">Enter XR</button>
+        <button id="web-launch-button" class="action-button">
+          XR not available!
+        </button>
+
+        <hr />
+
+        <!-- Debug section: poor-man's alternative to Quest Browser not providing access to Chromium DevTools -->
+        <hr />
+        <h2>Debug Section</h2>
+        <div>
+          <!-- pdf file loading -->
+          <a href="assets/demo.pdf" id="download-pdf" download>
+            <button>Download demo.pdf</button>
+          </a>
+
+          <div>
+            <h3>Canvas book preview</h3>
+            <div>
+              <canvas id="pdf-canvas" crossOrigin="anonymous"></canvas>
+            </div>
+            <div style="margin-top: 10px">
+              <button id="prev-page">Previous</button>
+              <button id="next-page">Next</button>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3>Debug messages console</h3>
+          <textarea
+            id="debug-messages"
+            style="width: 100%; height: 200px; resize: none"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
