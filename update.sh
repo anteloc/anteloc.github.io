@@ -8,4 +8,4 @@ echo "INFO: Deleting the following files: $to_delete"
 rm -rf $to_delete
 
 cp -r ../fusion-reader/dist/* .
-git add . && git commit -m "auto updated" # && git push
+git add . && git commit -m "auto updated" && git push
