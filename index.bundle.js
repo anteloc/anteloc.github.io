@@ -93085,6 +93085,170 @@ const globals = {
 
 /***/ }),
 
+/***/ "./src/pagescache.js":
+/*!***************************!*\
+  !*** ./src/pagescache.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CacheStatusComponent: () => (/* binding */ CacheStatusComponent),
+/* harmony export */   CacheUpdatePageComponent: () => (/* binding */ CacheUpdatePageComponent),
+/* harmony export */   CachedPageComponent: () => (/* binding */ CachedPageComponent),
+/* harmony export */   CachedPageRequestComponent: () => (/* binding */ CachedPageRequestComponent),
+/* harmony export */   PagesCacheProxySystem: () => (/* binding */ PagesCacheProxySystem)
+/* harmony export */ });
+/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./global */ "./src/global.js");
+/* harmony import */ var elics__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! elics */ "./node_modules/elics/lib/index.js");
+/* harmony import */ var _reader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./reader */ "./src/reader.js");
+/* harmony import */ var _pdfviewer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pdfviewer */ "./src/pdfviewer.js");
+/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
+
+
+
+
+
+
+const cachedPageRequestSchema = {
+  payload: { type: elics__WEBPACK_IMPORTED_MODULE_1__.Types.Object, default: {} },
+};
+
+const CachedPageRequestComponent = (0,elics__WEBPACK_IMPORTED_MODULE_1__.createComponent)(
+  cachedPageRequestSchema
+);
+
+const cacheUpdateSchema = {
+  payload: { type: elics__WEBPACK_IMPORTED_MODULE_1__.Types.Object, default: {} },
+};
+
+const CacheUpdatePageComponent = (0,elics__WEBPACK_IMPORTED_MODULE_1__.createComponent)(cacheUpdateSchema);
+
+const cachedPageSchema = {
+  pageNum: { type: elics__WEBPACK_IMPORTED_MODULE_1__.Types.Int16, default: 0 },
+  cachedPayload: { type: elics__WEBPACK_IMPORTED_MODULE_1__.Types.Object, default: null },
+};
+
+const CachedPageComponent = (0,elics__WEBPACK_IMPORTED_MODULE_1__.createComponent)(cachedPageSchema);
+
+const cacheStatusSchema = {
+  status: { type: elics__WEBPACK_IMPORTED_MODULE_1__.Types.Object, default: {} },
+};
+
+const CacheStatusComponent = (0,elics__WEBPACK_IMPORTED_MODULE_1__.createComponent)(cacheStatusSchema);
+
+const queries = {
+  cachedPagesRequests: { required: [CachedPageRequestComponent] },
+  updateCacheRequests: { required: [CacheUpdatePageComponent] },
+  cachedPages: { required: [CachedPageComponent] },
+};
+
+class PagesCacheProxySystem extends (0,elics__WEBPACK_IMPORTED_MODULE_1__.createSystem)(queries) {
+  init() {
+    this.statusEntity = this.world.createEntity();
+
+    this.statusEntity.addComponent(CacheStatusComponent, {
+      // TODO add required properties
+      status: {
+        bookPanel: null,
+        pageBitmap: null,
+        pageNum: 0,
+      },
+    });
+
+    this.queries.cachedPages.subscribe("qualify", (entity) => {
+    //   console.log(`PDFViewerSystem: entity ${entity.id} qualified`);
+    });
+    
+    this.queries.cachedPagesRequests.subscribe("qualify", (entity) => {
+    //   console.log(`PDFViewerSystem: entity ${entity.id} qualified`);
+    });
+
+    this.queries.updateCacheRequests.subscribe("qualify", (entity) => {
+    //   console.log(
+    //     `PagesCacheProxySystem: updateCacheRequests entity ${entity.id} qualified`
+    //   );
+    });
+  }
+
+  toReaderUpdateRequestPayload(cacheUpdatePagePayload) {
+    return updateRequest;
+  }
+
+  update(_delta) {
+    let status = this.statusEntity.getValue(CacheStatusComponent, "status");
+
+    const cachedPages = Array.from(this.queries.cachedPages.entities);
+    const cachedPagesRequests = this.queries.cachedPagesRequests.entities;
+    const updateCacheRequests = this.queries.updateCacheRequests.entities;
+
+    cachedPagesRequests.forEach((e) => {
+      const payload = e.getValue(CachedPageRequestComponent, "payload");
+
+      const cachedPage = cachedPages.find((e) => {
+        const pageNum = e.getValue(CachedPageComponent, "pageNum");
+        return pageNum === payload.pageNum;
+      });
+
+      if(cachedPage) {
+        const cachedPayload = cachedPage.getValue(CachedPageComponent, "cachedPayload");
+
+        this.world
+            .createEntity()
+            .addComponent(_reader__WEBPACK_IMPORTED_MODULE_2__.ReaderUpdatePageComponent, { payload: cachedPayload });
+        
+      } else {
+        // TODO forward the payload to the reader system for now
+        this.world
+            .createEntity()
+            .addComponent(_pdfviewer__WEBPACK_IMPORTED_MODULE_3__.PDFRequestComponent, { payload });
+      }
+
+      e.removeComponent(CachedPageRequestComponent).destroy();
+    });
+
+    updateCacheRequests.forEach((e) => {
+      const payload = e.getValue(CacheUpdatePageComponent, "payload");
+
+      // TODO forward the payload to the reader system for now
+      const pageBitmap = _global__WEBPACK_IMPORTED_MODULE_0__.globals.offscreen.transferToImageBitmap();
+      const bitmapData = three__WEBPACK_IMPORTED_MODULE_4__.ImageUtils.getDataURL(pageBitmap);
+
+      new three__WEBPACK_IMPORTED_MODULE_4__.TextureLoader().load(bitmapData, (texture) => {
+        texture.anisotropy = _global__WEBPACK_IMPORTED_MODULE_0__.globals.renderer.capabilities.getMaxAnisotropy();
+        texture.wrapS = three__WEBPACK_IMPORTED_MODULE_4__.RepeatWrapping;
+        texture.wrapT = three__WEBPACK_IMPORTED_MODULE_4__.RepeatWrapping;
+
+        pageBitmap.close();
+
+        // TODO refactor this to a method
+        const readerPayload = {
+          ...payload,
+          pageTexture: texture,
+        };
+
+        const { pageNum } = readerPayload;
+
+        this.world
+          .createEntity()
+          .addComponent(_reader__WEBPACK_IMPORTED_MODULE_2__.ReaderUpdatePageComponent, { payload: readerPayload });
+
+        this.world
+          .createEntity()
+          .addComponent(CachedPageComponent, { pageNum, cachedPayload: readerPayload });
+
+        e.removeComponent(CacheUpdatePageComponent).destroy();
+      });
+
+    });
+
+  }
+}
+
+
+/***/ }),
+
 /***/ "./src/pdfviewer.js":
 /*!**************************!*\
   !*** ./src/pdfviewer.js ***!
@@ -93094,14 +93258,16 @@ const globals = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   PDFRequestComponent: () => (/* binding */ PDFRequestComponent),
-/* harmony export */   PDFViewerSystem: () => (/* binding */ PDFViewerSystem)
+/* harmony export */   PDFLoaderSystem: () => (/* binding */ PDFLoaderSystem),
+/* harmony export */   PDFRequestComponent: () => (/* binding */ PDFRequestComponent)
 /* harmony export */ });
 /* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./global */ "./src/global.js");
 /* harmony import */ var elics__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! elics */ "./node_modules/elics/lib/index.js");
 /* harmony import */ var pdfjs_dist_build_pdf_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! pdfjs-dist/build/pdf.mjs */ "./node_modules/pdfjs-dist/build/pdf.mjs");
 /* harmony import */ var pdfjs_dist_build_pdf_worker_min_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! pdfjs-dist/build/pdf.worker.min.mjs */ "./node_modules/pdfjs-dist/build/pdf.worker.min.mjs");
 /* harmony import */ var _reader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./reader */ "./src/reader.js");
+/* harmony import */ var _pagescache__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pagescache */ "./src/pagescache.js");
+
 
 
 
@@ -93128,7 +93294,7 @@ const queries = {
 };
 
 
-class PDFViewerSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_1__.createSystem)(queries) {
+class PDFLoaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_1__.createSystem)(queries) {
   init() {
     this.pdfUrlInput = document.getElementById("pdf-url");
     this.loadPdfButton = document.getElementById("load-pdf");
@@ -93175,17 +93341,15 @@ class PDFViewerSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_1__.createSystem
     // const readerRequests = this.getEntities(this.queries.readerRequests);
 
     this.queries.readerRequests.entities.forEach(e => {
-      const payload = e.getValue(PDFRequestComponent, 'payload');
+      const {type, pageNum} = e.getValue(PDFRequestComponent, 'payload');
       
-      switch(payload.type) {
+      switch(type) {
         case "loadPdf":
           this.loadPdf(payload.pdfUrl);
           break;
-        case "nextPage":
-          this.onNextPage();
-          break;
         case "prevPage":
-          this.onPrevPage();
+        case "nextPage":
+          this.queueRenderPage(pageNum);
           break;
         default:
           _global__WEBPACK_IMPORTED_MODULE_0__.globals.debug(`Unknown request type: ${payload.type}`);
@@ -93238,6 +93402,12 @@ class PDFViewerSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_1__.createSystem
    * @param num Page number.
    */
   async renderPage(num, newPdf = false) {
+
+    if (num <=0 || num >= this.pdfDoc.numPages) {
+      return;
+    }
+    
+
     console.log(`renderPage: ${num}, ${newPdf} page requested`);
 
     this.pageRendering = true;
@@ -93305,10 +93475,12 @@ class PDFViewerSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_1__.createSystem
         newBook: newPdf,
       };
 
-      // Notify the ReaderSystem to update the page shown in the book
-      this.world.createEntity().addComponent(_reader__WEBPACK_IMPORTED_MODULE_4__.ReaderUpdatePageComponent, { payload });
+      this.pageNum = num;
 
-      console.log(`renderPage: updateBody`, payload);
+      // Notify the ReaderSystem to update the page shown in the book
+      this.world.createEntity().addComponent(_pagescache__WEBPACK_IMPORTED_MODULE_5__.CacheUpdatePageComponent, { payload });
+
+      console.log(`renderPage: CacheUpdatePageComponent`, payload);
     }
   }
 
@@ -93330,25 +93502,15 @@ class PDFViewerSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_1__.createSystem
    * Displays previous page.
    */
   onPrevPage() {
-    if (this.pageNum <= 1) {
-      return;
-    }
-    this.pageNum--;
-    this.queueRenderPage(this.pageNum);
+    this.queueRenderPage(this.pageNum - 1);
   }
 
   /**
    * Displays next page.
    */
   onNextPage() {
-    if (this.pageNum >= this.pdfDoc.numPages) {
-      return;
-    }
-    this.pageNum++;
-    this.queueRenderPage(this.pageNum);
+    this.queueRenderPage(this.pageNum + 1);
   }
-
-  
 
   async handleFileSelect(event) {
     const file = event.target.files[0];
@@ -93503,15 +93665,17 @@ class PlayerSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_2__.createSystem)()
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   BookComponent: () => (/* binding */ BookComponent),
+/* harmony export */   PagesImgsCacheComponent: () => (/* binding */ PagesImgsCacheComponent),
 /* harmony export */   ReaderSystem: () => (/* binding */ ReaderSystem),
 /* harmony export */   ReaderUpdatePageComponent: () => (/* binding */ ReaderUpdatePageComponent)
 /* harmony export */ });
-/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
+/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
 /* harmony import */ var gamepad_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gamepad-wrapper */ "./node_modules/gamepad-wrapper/lib/index.js");
 /* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./global */ "./src/global.js");
 /* harmony import */ var three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! three-mesh-ui */ "./node_modules/three-mesh-ui/build/three-mesh-ui.module.js");
 /* harmony import */ var _pdfviewer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pdfviewer */ "./src/pdfviewer.js");
 /* harmony import */ var elics__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! elics */ "./node_modules/elics/lib/index.js");
+/* harmony import */ var _pagescache__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pagescache */ "./src/pagescache.js");
 /**
  * Copyright (c) Meta Platforms, Inc. and affiliates.
  *
@@ -93527,6 +93691,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // import { Component, System } from "elics";
+
 
 
 
@@ -93554,8 +93719,16 @@ const bookSchema = {
 	book: { type: elics__WEBPACK_IMPORTED_MODULE_4__.Types.Object, default: {} },
 };
 
-const BookComponent = (0,elics__WEBPACK_IMPORTED_MODULE_4__.createComponent)(bookSchema, (_index) => {}, (index) => {
+const BookComponent = (0,elics__WEBPACK_IMPORTED_MODULE_4__.createComponent)(bookSchema, (_index) => {}, (_index) => {
   if(undefined.bookPanel) undefined.bookPanel.removeFromParent();
+});
+
+const pagesImgsSchema = {
+	cache: { type: elics__WEBPACK_IMPORTED_MODULE_4__.Types.Object, default: {} },
+};
+
+const PagesImgsCacheComponent = (0,elics__WEBPACK_IMPORTED_MODULE_4__.createComponent)(pagesImgsSchema, (_index) => {}, (_index) => {
+  // TODO implement empty cache
 });
 
 const readerUpdateSchema = {
@@ -93574,8 +93747,8 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
     // TODO these vectors are related to a creating a panel 
     // that moves following the user's head position.
     // It could be useful for creating a help or config panel
-    this._vec3 = new three__WEBPACK_IMPORTED_MODULE_5__.Vector3();
-    this._targetVec3 = new three__WEBPACK_IMPORTED_MODULE_5__.Vector3();
+    this._vec3 = new three__WEBPACK_IMPORTED_MODULE_6__.Vector3();
+    this._targetVec3 = new three__WEBPACK_IMPORTED_MODULE_6__.Vector3();
 
     this.currentBookSize = 0.5;
 
@@ -93621,11 +93794,11 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
     updateRequests.forEach(e => {
       const payload = e.getValue(ReaderUpdatePageComponent, 'payload');
       // TODO pageNum is not used, but will be used in the future
-      const { pageNum, pageWidth, pageHeight, bookInfo, newBook } = payload;
+      const { pageNum, pageWidth, pageHeight, pageTexture, bookInfo, newBook } = payload;
 
       console.log("updateRequest payload", payload);
       
-      book.pageBitmap = _global__WEBPACK_IMPORTED_MODULE_1__.globals.offscreen.transferToImageBitmap();
+      book.pageTexture = pageTexture;
       book.pageNum = pageNum;
       book.pageWidth = pageWidth;
       book.pageHeight = pageHeight;
@@ -93653,10 +93826,10 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
       book.newBook = false;
     }
 
-    if (book.pageBitmap) {
+    if (book.pageTexture) {
       const { 
         bookPanel, 
-        pageBitmap, 
+        pageTexture, 
         pageNum, 
         pageWidth, 
         pageHeight, 
@@ -93664,8 +93837,8 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
       } = book;
 
       if (bookPanel) {
-        bookPanel.updatePage(pageNum, pageBitmap, pageWidth, pageHeight, bookInfo);
-        book.pageBitmap = null;
+        bookPanel.updatePage(pageNum, pageTexture, pageWidth, pageHeight, bookInfo);
+        book.pageTexture = null;
       }
     }
 
@@ -93725,10 +93898,10 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
           // Send a request to the PDF viewer to change the page
           // via adding a request component to the world
           const payload = (direction === DIRECTIONS.Left) 
-            ? { type: 'prevPage' }
-            : { type: 'nextPage' };
+            ? { type: 'prevPage', pageNum:  book.pageNum - 1 }
+            : { type: 'nextPage', pageNum: book.pageNum + 1 };
 
-          this.world.createEntity().addComponent(_pdfviewer__WEBPACK_IMPORTED_MODULE_3__.PDFRequestComponent, { payload });
+          this.world.createEntity().addComponent(_pagescache__WEBPACK_IMPORTED_MODULE_5__.CachedPageRequestComponent, { payload });
 
           hapticActuator?.pulse(0.3, 50);
         }
@@ -93759,7 +93932,7 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
       padding: 0.025,
       fontFamily: FontJSON,
       fontTexture: FontImage,
-      fontColor: new three__WEBPACK_IMPORTED_MODULE_5__.Color(0xffffff),
+      fontColor: new three__WEBPACK_IMPORTED_MODULE_6__.Color(0xffffff),
       backgroundOpacity: 0,
     });
 
@@ -93819,7 +93992,7 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
     }).add(
       new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Text({
         content: "Book Info",
-        fontColor: new three__WEBPACK_IMPORTED_MODULE_5__.Color(0x92e66c),
+        fontColor: new three__WEBPACK_IMPORTED_MODULE_6__.Color(0x92e66c),
       }),
     );
 
@@ -93856,48 +94029,37 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
       bookPanel.scale.set(s, s, s);
     }
 
-    bookPanel.updatePage = (pNum, pBitmap, pWidth, pHeight, bInfo) => {
-      if(pBitmap) {
-        const bitmapData = three__WEBPACK_IMPORTED_MODULE_5__.ImageUtils.getDataURL(pBitmap);
+    bookPanel.updatePage = (pNum, pTexture, pWidth, pHeight, bInfo) => {
+      if(pTexture) {
+        
          // Iterate over bInfo keys and values and create a text with format: key: value,
          // separated by new lines
-        const bookInfoTxt = Object.entries(bInfo)
-          .map(([key, value]) => `${key}: ${value}`)
-          .join("\n");
-  
-        new three__WEBPACK_IMPORTED_MODULE_5__.TextureLoader().load(bitmapData, (texture) => {
-          texture.anisotropy = _global__WEBPACK_IMPORTED_MODULE_1__.globals.renderer.capabilities.getMaxAnisotropy();
-          // necessary for backgroundSize: 'contain'
-		      texture.wrapS = three__WEBPACK_IMPORTED_MODULE_5__.RepeatWrapping;
-		      texture.wrapT = three__WEBPACK_IMPORTED_MODULE_5__.RepeatWrapping;
+         const bookInfoTxt = bInfo 
+         ? Object.entries(bInfo)
+             .map(([key, value]) => `${key}: ${value}`)
+             .join("\n")
+         : "N/A";
 
-          const pixelsPerMeter = 1500.0;
-
-          const width = pWidth / pixelsPerMeter;
-          const height = pHeight / pixelsPerMeter;
-
-          // pWidth and pHeight are in CSS pixels: convert to meters, 
+        // pWidth and pHeight are in CSS pixels: convert to meters, 
           // the unit used in three.js
-          pageSubBlock.set({
-            width: width,
-            height: height,
-            backgroundSize: "contain",
-            backgroundTexture: texture,
-          });
+        const pixelsPerMeter = 1500.0;
 
-          pageNumFooter.set({
-            content: `Page ${pNum}`,
-          });
+        const width = pWidth / pixelsPerMeter;
+        const height = pHeight / pixelsPerMeter;
 
-          // pageNumFooter.sync();
+        pageSubBlock.set({
+          width: width,
+          height: height,
+          backgroundSize: "contain",
+          backgroundTexture: pTexture,
+        });
 
-          bookInfoSubBlock.set({
-            content: bookInfoTxt,
-          });
+        pageNumFooter.set({
+          content: `Page ${pNum}`,
+        });
 
-          // bookInfoSubBlock.sync();
-          
-          pBitmap.close();
+        bookInfoSubBlock.set({
+          content: bookInfoTxt,
         });
       }
     };
@@ -94170,7 +94332,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/index.css */ "./src/styles/index.css");
 /* harmony import */ var _pdfviewer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pdfviewer */ "./src/pdfviewer.js");
 /* harmony import */ var ratk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ratk */ "./node_modules/ratk/lib/index.js");
-/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
+/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
 /* harmony import */ var _player__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./player */ "./src/player.js");
 /* harmony import */ var elics__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! elics */ "./node_modules/elics/lib/index.js");
 /* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./global */ "./src/global.js");
@@ -94179,6 +94341,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var three_mesh_ui__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! three-mesh-ui */ "./node_modules/three-mesh-ui/build/three-mesh-ui.module.js");
 /* harmony import */ var pdfobject__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! pdfobject */ "./node_modules/pdfobject/pdfobject.js");
 /* harmony import */ var pdfobject__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(pdfobject__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _pagescache__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pagescache */ "./src/pagescache.js");
 /**
  * Copyright (c) Meta Platforms, Inc. and affiliates.
  *
@@ -94200,6 +94363,7 @@ __webpack_require__.r(__webpack_exports__);
 // import { PurgeSystem } from './purge';
 // import { SettingsSystem } from './settings';
 // import { TapeSystem } from './tape';
+
 
 
 
@@ -94236,11 +94400,16 @@ _global__WEBPACK_IMPORTED_MODULE_5__.globals.scene.add(ratk.root);
 
 world
 	// .registerComponent(MeasurementComponent)
-	.registerComponent(_reader__WEBPACK_IMPORTED_MODULE_7__.BookComponent)
 	.registerComponent(_pdfviewer__WEBPACK_IMPORTED_MODULE_1__.PDFRequestComponent)
+	.registerComponent(_pagescache__WEBPACK_IMPORTED_MODULE_10__.CachedPageRequestComponent)
+	.registerComponent(_pagescache__WEBPACK_IMPORTED_MODULE_10__.CacheUpdatePageComponent)
+	.registerComponent(_pagescache__WEBPACK_IMPORTED_MODULE_10__.CachedPageComponent)
+	.registerComponent(_pagescache__WEBPACK_IMPORTED_MODULE_10__.CacheStatusComponent)
+	.registerComponent(_reader__WEBPACK_IMPORTED_MODULE_7__.BookComponent)
 	.registerComponent(_reader__WEBPACK_IMPORTED_MODULE_7__.ReaderUpdatePageComponent)
 	.registerSystem(_player__WEBPACK_IMPORTED_MODULE_3__.PlayerSystem)
-	.registerSystem(_pdfviewer__WEBPACK_IMPORTED_MODULE_1__.PDFViewerSystem)
+	.registerSystem(_pdfviewer__WEBPACK_IMPORTED_MODULE_1__.PDFLoaderSystem)
+	.registerSystem(_pagescache__WEBPACK_IMPORTED_MODULE_10__.PagesCacheProxySystem)
 	.registerSystem(_reader__WEBPACK_IMPORTED_MODULE_7__.ReaderSystem)
 	// .registerSystem(SettingsSystem)
 	// .registerSystem(PointerSystem)
@@ -94288,7 +94457,7 @@ webLaunchButton.onclick = () => {
 };
 
 _global__WEBPACK_IMPORTED_MODULE_5__.globals.status('Waiting for the user to load a PDF file');
-const clock = new three__WEBPACK_IMPORTED_MODULE_10__.Clock();
+const clock = new three__WEBPACK_IMPORTED_MODULE_11__.Clock();
 _global__WEBPACK_IMPORTED_MODULE_5__.globals.renderer.setAnimationLoop(function () {
 	three_mesh_ui__WEBPACK_IMPORTED_MODULE_8__["default"].update();
 	ratk.update();
