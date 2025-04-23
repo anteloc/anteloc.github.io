@@ -93094,7 +93094,9 @@ const globals = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CacheLoadBookRequestComponent: () => (/* binding */ CacheLoadBookRequestComponent),
 /* harmony export */   CacheStatusComponent: () => (/* binding */ CacheStatusComponent),
+/* harmony export */   CacheUpdateBookComponent: () => (/* binding */ CacheUpdateBookComponent),
 /* harmony export */   CacheUpdatePageComponent: () => (/* binding */ CacheUpdatePageComponent),
 /* harmony export */   CachedPageComponent: () => (/* binding */ CachedPageComponent),
 /* harmony export */   CachedPageRequestComponent: () => (/* binding */ CachedPageRequestComponent),
@@ -93113,10 +93115,20 @@ __webpack_require__.r(__webpack_exports__);
 
 const cachedPageRequestSchema = {
   payload: { type: elics__WEBPACK_IMPORTED_MODULE_1__.Types.Object, default: {} },
+  status: { type: elics__WEBPACK_IMPORTED_MODULE_1__.Types.String, default: "pending" },
 };
 
 const CachedPageRequestComponent = (0,elics__WEBPACK_IMPORTED_MODULE_1__.createComponent)(
   cachedPageRequestSchema
+);
+
+const loadBookRequestSchema = {
+  payload: { type: elics__WEBPACK_IMPORTED_MODULE_1__.Types.Object, default: {} },
+  status: { type: elics__WEBPACK_IMPORTED_MODULE_1__.Types.String, default: "pending" },
+};
+
+const CacheLoadBookRequestComponent = (0,elics__WEBPACK_IMPORTED_MODULE_1__.createComponent)(
+  loadBookRequestSchema
 );
 
 const cacheUpdateSchema = {
@@ -93124,6 +93136,12 @@ const cacheUpdateSchema = {
 };
 
 const CacheUpdatePageComponent = (0,elics__WEBPACK_IMPORTED_MODULE_1__.createComponent)(cacheUpdateSchema);
+
+const cacheUpdateBookSchema = {
+  payload: { type: elics__WEBPACK_IMPORTED_MODULE_1__.Types.Object, default: {} },
+};
+
+const CacheUpdateBookComponent = (0,elics__WEBPACK_IMPORTED_MODULE_1__.createComponent)(cacheUpdateBookSchema);
 
 const cachedPageSchema = {
   pageNum: { type: elics__WEBPACK_IMPORTED_MODULE_1__.Types.Int16, default: 0 },
@@ -93134,116 +93152,275 @@ const CachedPageComponent = (0,elics__WEBPACK_IMPORTED_MODULE_1__.createComponen
 
 const cacheStatusSchema = {
   status: { type: elics__WEBPACK_IMPORTED_MODULE_1__.Types.Object, default: {} },
+  requestedPages: {type: elics__WEBPACK_IMPORTED_MODULE_1__.Types.Object, default: new Set()},
 };
 
 const CacheStatusComponent = (0,elics__WEBPACK_IMPORTED_MODULE_1__.createComponent)(cacheStatusSchema);
 
 const queries = {
   cachedPagesRequests: { required: [CachedPageRequestComponent] },
+  loadBookRequests: { required: [CacheLoadBookRequestComponent] },
   updateCacheRequests: { required: [CacheUpdatePageComponent] },
+  updateCacheBookRequests: { required: [CacheUpdateBookComponent] },
   cachedPages: { required: [CachedPageComponent] },
 };
 
+const CACHE_SIZE = 10; // Number of invisible pages to cache, always an even number!
+
 class PagesCacheProxySystem extends (0,elics__WEBPACK_IMPORTED_MODULE_1__.createSystem)(queries) {
   init() {
+    this.bookInfo = null;
+
     this.statusEntity = this.world.createEntity();
 
     this.statusEntity.addComponent(CacheStatusComponent, {
-      // TODO add required properties
       status: {
-        bookPanel: null,
-        pageBitmap: null,
-        pageNum: 0,
+        visiblePageNum: 0,
       },
+      requestedPages: new Set(),
     });
 
-    this.queries.cachedPages.subscribe("qualify", (entity) => {
+    this.queries.cachedPages.subscribe("qualify", (_entity) => {
     //   console.log(`PDFViewerSystem: entity ${entity.id} qualified`);
     });
     
-    this.queries.cachedPagesRequests.subscribe("qualify", (entity) => {
+    this.queries.cachedPagesRequests.subscribe("qualify", (_entity) => {
     //   console.log(`PDFViewerSystem: entity ${entity.id} qualified`);
     });
 
-    this.queries.updateCacheRequests.subscribe("qualify", (entity) => {
+    this.queries.loadBookRequests.subscribe("qualify", (_entity) => {
+      //   console.log(`PDFViewerSystem: entity ${entity.id} qualified`);
+    });
+
+    this.queries.updateCacheRequests.subscribe("qualify", (_entity) => {
     //   console.log(
     //     `PagesCacheProxySystem: updateCacheRequests entity ${entity.id} qualified`
     //   );
     });
-  }
 
-  toReaderUpdateRequestPayload(cacheUpdatePagePayload) {
-    return updateRequest;
+    this.queries.updateCacheBookRequests.subscribe("qualify", (_entity) => {
+      //   console.log(
+      //     `PagesCacheProxySystem: updateCacheRequests entity ${entity.id} qualified`
+      //   );
+      });
   }
 
   update(_delta) {
     let status = this.statusEntity.getValue(CacheStatusComponent, "status");
 
+    // Cached pages are stored as entities in the world, safer than using an array
+    // that could cause memory leaks or be affected by EliCS lifecycle
+    // TODO add cachedPages to a sparse array to avoid searching for them
     const cachedPages = Array.from(this.queries.cachedPages.entities);
-    const cachedPagesRequests = this.queries.cachedPagesRequests.entities;
-    const updateCacheRequests = this.queries.updateCacheRequests.entities;
+    const cachedPagesRequests = Array.from(this.queries.cachedPagesRequests.entities);
+    const loadBookRequests = Array.from(this.queries.loadBookRequests.entities);
+    const updateCacheRequests = Array.from(this.queries.updateCacheRequests.entities);
+    const updateCacheBookRequests = Array.from(this.queries.updateCacheBookRequests.entities);
 
-    cachedPagesRequests.forEach((e) => {
-      const payload = e.getValue(CachedPageRequestComponent, "payload");
+    // Adjust cache to put invisible pages in front and behind the visible page
+    if(status.visiblePageNum > 0) {
+      this.cacheAdjust(cachedPages, status.visiblePageNum);
+    }
 
-      const cachedPage = cachedPages.find((e) => {
-        const pageNum = e.getValue(CachedPageComponent, "pageNum");
+    loadBookRequests.forEach((requestEntity) => {
+      const payload = requestEntity.getValue(CacheLoadBookRequestComponent, "payload");
+
+      this.world
+        .createEntity()
+        .addComponent(_pdfviewer__WEBPACK_IMPORTED_MODULE_3__.LoadPDFRequestComponent, { payload });
+
+      requestEntity.removeComponent(CacheLoadBookRequestComponent).destroy();
+    });
+
+
+    updateCacheBookRequests.forEach((updateEntity) => {
+      const payload = updateEntity.getValue(CacheUpdateBookComponent, "payload");
+
+      // new book loaded will not be cached, it's not a page or image!
+      // forward it directly to the reader
+      this.bookInfo = payload.bookInfo;
+
+      this.world
+        .createEntity()
+        .addComponent(_reader__WEBPACK_IMPORTED_MODULE_2__.ReaderUpdateBookComponent, { payload });
+
+      updateEntity.removeComponent(CacheUpdateBookComponent).destroy();
+    });
+
+    cachedPagesRequests.forEach((requestEntity) => {
+      const payload = requestEntity.getValue(CachedPageRequestComponent, "payload");
+
+      
+      const cachedPage = cachedPages.find((cachedEntity) => {
+        const pageNum = cachedEntity.getValue(CachedPageComponent, "pageNum");
         return pageNum === payload.pageNum;
       });
 
       if(cachedPage) {
+        //- console.log("Page already cached, returning it to the reader, request payload:", payload);
+        // Return the cached page
         const cachedPayload = cachedPage.getValue(CachedPageComponent, "cachedPayload");
+        const cachedPageNum = cachedPage.getValue(CachedPageComponent, "pageNum");
 
+        // This will be considered now the visible page, given that 
+        // this is the only one returned to the reader
         this.world
             .createEntity()
             .addComponent(_reader__WEBPACK_IMPORTED_MODULE_2__.ReaderUpdatePageComponent, { payload: cachedPayload });
-        
-      } else {
-        // TODO forward the payload to the reader system for now
-        this.world
-            .createEntity()
-            .addComponent(_pdfviewer__WEBPACK_IMPORTED_MODULE_3__.PDFRequestComponent, { payload });
-      }
 
-      e.removeComponent(CachedPageRequestComponent).destroy();
+        status.visiblePageNum = cachedPageNum;
+        this.statusEntity.setValue(CacheStatusComponent, "status", status);
+
+        requestEntity.removeComponent(CachedPageRequestComponent).destroy();
+      } else {
+        // This will be executed also for the loadPdf request, that is *not* a page request!
+        // console.log("Page not found in cache, request payload:", payload);
+        const pdfPageRequestStatus = requestEntity.getValue(CachedPageRequestComponent, "status");
+        
+        if (pdfPageRequestStatus === "requested") {
+          // console.log("Page already requested for caching, request payload:", payload);
+          return;
+        }
+        
+        //- console.log("Page not requested for caching, forwarding to pdf loader, request payload:", payload);
+
+        // Request a new page to be cached and return it to the reader afterwards
+        this.maybeRequestPDFPage(payload);
+
+        requestEntity.setValue(CachedPageRequestComponent, "status", "requested");
+      }
     });
 
-    updateCacheRequests.forEach((e) => {
-      const payload = e.getValue(CacheUpdatePageComponent, "payload");
+    // Update the cache with new incoming page bitmaps from the PDFLoaderSystem
+    updateCacheRequests.forEach((updateEntity) => {
+      const payload = updateEntity.getValue(CacheUpdatePageComponent, "payload");
 
-      // TODO forward the payload to the reader system for now
-      const pageBitmap = _global__WEBPACK_IMPORTED_MODULE_0__.globals.offscreen.transferToImageBitmap();
-      const bitmapData = three__WEBPACK_IMPORTED_MODULE_4__.ImageUtils.getDataURL(pageBitmap);
-
-      new three__WEBPACK_IMPORTED_MODULE_4__.TextureLoader().load(bitmapData, (texture) => {
-        texture.anisotropy = _global__WEBPACK_IMPORTED_MODULE_0__.globals.renderer.capabilities.getMaxAnisotropy();
-        texture.wrapS = three__WEBPACK_IMPORTED_MODULE_4__.RepeatWrapping;
-        texture.wrapT = three__WEBPACK_IMPORTED_MODULE_4__.RepeatWrapping;
-
-        pageBitmap.close();
-
-        // TODO refactor this to a method
-        const readerPayload = {
-          ...payload,
-          pageTexture: texture,
-        };
-
-        const { pageNum } = readerPayload;
-
-        this.world
-          .createEntity()
-          .addComponent(_reader__WEBPACK_IMPORTED_MODULE_2__.ReaderUpdatePageComponent, { payload: readerPayload });
-
-        this.world
-          .createEntity()
-          .addComponent(CachedPageComponent, { pageNum, cachedPayload: readerPayload });
-
-        e.removeComponent(CacheUpdatePageComponent).destroy();
-      });
-
+      this.cacheAdd(updateEntity, payload);
     });
 
   }
+
+  cacheAdjust(cachedPages, visiblePageNum) {
+    // The desired cache structure should be, e.g.:
+    // hcs = 1/2 CACHE_SIZE (half cache size)
+    //  Pj, ...     Pn(visiblePage)  ...     Pk
+    // |--- hcs ---|               |--- hcs ---|
+    const hcs = CACHE_SIZE / 2;
+
+    // First, add the pages to a sparse array mapping the book pages, 
+    // in order to detect the gaps between the pages
+    const sparseArray = new Array(this.bookInfo.numPages).fill(null);
+
+    // Now, add to the sparse array by pageNum, that will sort the cached pages by pageNum
+    cachedPages.forEach(cached => {
+      const cachedPageNum = cached.getValue(CachedPageComponent, "pageNum");
+      sparseArray[cachedPageNum] = cached;
+    });
+
+    // Now, calculate the indexes j and k, keeping in mind the list bounds for the whole book
+    const j = Math.max(1, visiblePageNum - hcs);
+    const k = Math.min(this.bookInfo.numPages, visiblePageNum + hcs);
+
+    console.log("CacheAdjust (min, max): ", j, k);
+    
+    // Now, remove the pages outside the range [j, k]
+    sparseArray.forEach((cachedEntity, index) => {
+      const remove = cachedEntity && (index < j || index > k);
+
+      if (remove) {
+        this.cacheRemove(cachedEntity);
+        sparseArray[index] = null;
+      }
+    });
+
+    const requestedPages = this.statusEntity.getValue(CacheStatusComponent, "requestedPages");
+    // Now, request the missing pages in the range [j, k] to the PDFLoaderSystem
+    sparseArray.forEach((cachedEntity, index) => {
+
+      const add = cachedEntity === null 
+        && (index >= j && index <= k) 
+        && !requestedPages.has(index);
+
+      if (add) {
+        const payload =  { type: "loadPage", pageNum:  index }
+        
+        this.maybeRequestPDFPage(payload);
+      }
+    });
+
+    // this.logCacheInfo();
+  }
+
+  async logCacheInfo() {
+    const cachedPages = Array.from(this.queries.cachedPages.entities);
+    const cachedPageNums = cachedPages.map((cachedEntity) => {
+      return cachedEntity.getValue(CachedPageComponent, "pageNum");
+    });
+
+    const requestedPages = this.statusEntity.getValue(CacheStatusComponent, "requestedPages");
+
+    console.log("Cached pages: ", cachedPageNums);
+    console.log("Requested pages: ", Array.from(requestedPages));
+  }
+
+  cacheAdd(updateEntity, payload) {
+    const pageNum = payload.pageNum;
+    const pageBitmap = _global__WEBPACK_IMPORTED_MODULE_0__.globals.offscreen.transferToImageBitmap();
+    const bitmapData = three__WEBPACK_IMPORTED_MODULE_4__.ImageUtils.getDataURL(pageBitmap);
+
+    new three__WEBPACK_IMPORTED_MODULE_4__.TextureLoader().load(bitmapData, (texture) => {
+      texture.anisotropy = _global__WEBPACK_IMPORTED_MODULE_0__.globals.renderer.capabilities.getMaxAnisotropy();
+      texture.wrapS = three__WEBPACK_IMPORTED_MODULE_4__.RepeatWrapping;
+      texture.wrapT = three__WEBPACK_IMPORTED_MODULE_4__.RepeatWrapping;
+
+      pageBitmap.close();
+
+      const cachedPayload = {
+        ...payload,
+        pageTexture: texture,
+      };
+      
+      this.world
+        .createEntity()
+        .addComponent(CachedPageComponent, { pageNum, cachedPayload });
+
+      updateEntity.removeComponent(CacheUpdatePageComponent).destroy();
+
+      const requestedPages = this.statusEntity.getValue(CacheStatusComponent, "requestedPages");
+
+      requestedPages.delete(pageNum);
+
+      this.statusEntity.setValue(CacheStatusComponent, "requestedPages", requestedPages);
+    });
+  }
+
+  cacheRemove(cachedEntity) {
+    // Remove the cached page from the cache
+    const cachedPayload = cachedEntity.getValue(CachedPageComponent, "cachedPayload");
+    const pageTexture = cachedPayload.pageTexture;
+
+    // Free memory and resources
+    if (pageTexture) {
+      pageTexture.dispose();
+    }
+
+    cachedEntity.removeComponent(CachedPageComponent).destroy();
+  }
+
+  maybeRequestPDFPage(payload) {
+    const requestedPages = this.statusEntity.getValue(CacheStatusComponent, "requestedPages");
+
+    if (requestedPages.has(payload.pageNum)) return;
+
+    this.world
+      .createEntity()
+      .addComponent(_pdfviewer__WEBPACK_IMPORTED_MODULE_3__.PDFRequestComponent, { payload });
+
+    requestedPages.add(payload.pageNum);
+
+    this.statusEntity.setValue(CacheStatusComponent, "requestedPages", requestedPages);
+  }
+
 }
 
 
@@ -93258,6 +93435,7 @@ class PagesCacheProxySystem extends (0,elics__WEBPACK_IMPORTED_MODULE_1__.create
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   LoadPDFRequestComponent: () => (/* binding */ LoadPDFRequestComponent),
 /* harmony export */   PDFLoaderSystem: () => (/* binding */ PDFLoaderSystem),
 /* harmony export */   PDFRequestComponent: () => (/* binding */ PDFRequestComponent)
 /* harmony export */ });
@@ -93283,43 +93461,68 @@ pdfjs_dist_build_pdf_mjs__WEBPACK_IMPORTED_MODULE_2__.GlobalWorkerOptions.worker
 // };
 const pdfRequestSchema = {
 	payload: { type: elics__WEBPACK_IMPORTED_MODULE_1__.Types.Object, default: {} },
+  status: { type: elics__WEBPACK_IMPORTED_MODULE_1__.Types.String, default: "pending" },
 };
 
 const PDFRequestComponent = (0,elics__WEBPACK_IMPORTED_MODULE_1__.createComponent)(pdfRequestSchema);
+
+const loadPDFRequestSchema = {
+	payload: { type: elics__WEBPACK_IMPORTED_MODULE_1__.Types.Object, default: {} },
+  status: { type: elics__WEBPACK_IMPORTED_MODULE_1__.Types.String, default: "pending" },
+};
+
+const LoadPDFRequestComponent = (0,elics__WEBPACK_IMPORTED_MODULE_1__.createComponent)(loadPDFRequestSchema);
   
 const DESIRED_DPI = 150; // Target print-quality resolution
 
 const queries = {
-	readerRequests: { required: [PDFRequestComponent] },
+	pageRequests: { required: [PDFRequestComponent] },
+	loadPDFRequests: { required: [LoadPDFRequestComponent] },
 };
 
 
 class PDFLoaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_1__.createSystem)(queries) {
   init() {
-    this.pdfUrlInput = document.getElementById("pdf-url");
-    this.loadPdfButton = document.getElementById("load-pdf");
-    this.loadPdfButton.addEventListener("click", () => this.loadPdf(this.pdfUrlInput.value));
 
-    this.mrButton = document.getElementById('mr-button');
+    // this.pdfUrlInput = document.getElementById("pdf-url");
+    // this.loadPdfButton = document.getElementById("load-pdf");
+    // // this.loadPdfButton.addEventListener("click", () => this.loadPdf(this.pdfUrlInput.value));
+    // this.loadPdfButton.addEventListener("click", () => { 
+    //   const payload = {
+    //     type: "loadPdf",
+    //     pdfUrl: this.pdfUrlInput.value,
+    //   }
+      
+    //   this.world
+    //       .createEntity()
+    //       .addComponent(PDFRequestComponent, { payload });
+    //   // this.loadPdf(this.pdfUrlInput.value) 
+    // });
 
-    this.fileInput = document.getElementById("browse-pdf");
-    this.fileInput.addEventListener("change", this.handleFileSelect.bind(this));
+    // this.mrButton = document.getElementById('mr-button');
+
+    // this.fileInput = document.getElementById("browse-pdf");
+    // this.fileInput.addEventListener("change", this.handleFileSelect.bind(this));
 
     this.initStatusProperties();
 
     // FIXME currently not used, after rendering the page is copied to
     // the offscreen canvas and then to XR book panel,
     // not to the webpage canvas
-    this.canvas = document.getElementById("pdf-canvas");
-    this.ctx = this.canvas.getContext("2d");
+    // this.canvas = document.getElementById("pdf-canvas");
+    // this.ctx = this.canvas.getContext("2d");
 
-    this.nextPageButton = document.getElementById("next-page");
-    this.prevPageButton = document.getElementById("prev-page");
-    this.nextPageButton.addEventListener("click", this.onNextPage.bind(this));
-    this.prevPageButton.addEventListener("click", this.onPrevPage.bind(this));
+    // this.nextPageButton = document.getElementById("next-page");
+    // this.prevPageButton = document.getElementById("prev-page");
+    // this.nextPageButton.addEventListener("click", this.onNextPage.bind(this));
+    // this.prevPageButton.addEventListener("click", this.onPrevPage.bind(this));
 
-    this.queries.readerRequests.subscribe('qualify', (entity) => {
-      console.log(`PDFViewerSystem: entity ${entity.id} qualified`);
+    this.queries.pageRequests.subscribe('qualify', (entity) => {
+      //- console.log(`PDFViewerSystem: entity ${entity.id} qualified`);
+    });
+
+    this.queries.loadPDFRequests.subscribe('qualify', (entity) => {
+      //- console.log(`PDFViewerSystem: entity ${entity.id} qualified`);
     });
   }
 
@@ -93330,38 +93533,70 @@ class PDFLoaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_1__.createSystem
 
     this.pdfDoc = null;
     this.pdfDocMetadata = null;
-    this.pageNum = 1;
-    this.pageRendering = false; // Check conflict
-    this.pageNumPending = null; // Cache waiting page number
+    this.pageNum = 0;
+    this.bookInfo = null;
+    // this.pageRendering = false; // Check conflict
+    // this.pageNumPending = null; // Cache waiting page number
     // Calculate the ideal scale for high resolution
     this.outputScale = DESIRED_DPI / 72; // PDFs use 72 DPI as standard
   }
 
   update(_delta) {
     // const readerRequests = this.getEntities(this.queries.readerRequests);
+    const loadBookRequests = Array.from(this.queries.loadPDFRequests.entities);
+    const pageRequests = Array.from(this.queries.pageRequests.entities);
 
-    this.queries.readerRequests.entities.forEach(e => {
-      const {type, pageNum} = e.getValue(PDFRequestComponent, 'payload');
-      
-      switch(type) {
-        case "loadPdf":
-          this.loadPdf(payload.pdfUrl);
-          break;
-        case "prevPage":
-        case "nextPage":
-          this.queueRenderPage(pageNum);
-          break;
-        default:
-          _global__WEBPACK_IMPORTED_MODULE_0__.globals.debug(`Unknown request type: ${payload.type}`);
-          break;
-      }
-
-      e.removeComponent(PDFRequestComponent)
-        .destroy();
+    const renderingInProgress = pageRequests.some(requestEntity => {
+      const status = requestEntity.getValue(PDFRequestComponent, 'status');
+      return status === "rendering";
     });
+
+    const loadingInProgress = loadBookRequests.some(requestEntity => {
+      const status = requestEntity.getValue(LoadPDFRequestComponent, 'status');
+      return status === "loading";
+    });
+
+    if(renderingInProgress || loadingInProgress) {
+      return;
+    }
+
+    this.processLoadPDFRequests(loadBookRequests);
+    this.processPageRequests(pageRequests);
   }
 
-  async loadPdf(url) {
+  processLoadPDFRequests(pdfRequests) {
+    if (pdfRequests.length === 0) return;
+
+    const requestEntity = pdfRequests[0];
+    const payload = requestEntity.getValue(LoadPDFRequestComponent, 'payload');
+    
+    switch(payload.type) {
+      case "loadPdf":
+        this.loadPdf(payload.pdfUrl, requestEntity);
+        break;
+      default:
+        _global__WEBPACK_IMPORTED_MODULE_0__.globals.debug(`Unknown request type: ${payload.type}`);
+        break;
+    }
+  }
+
+  processPageRequests(pageRequests) {
+    if (pageRequests.length === 0) return;
+    
+    const requestEntity = pageRequests[0];
+    const payload = requestEntity.getValue(PDFRequestComponent, 'payload');
+
+    switch(payload.type) {
+      case "loadPage":
+        this.renderPage(payload.pageNum, requestEntity);
+        break;
+      default:
+        _global__WEBPACK_IMPORTED_MODULE_0__.globals.debug(`Unknown request type: ${payload.type}`);
+        break;
+    }
+  }
+
+  async loadPdf(url, requestEntity) {
     try {
       if (!url) {
         // FIXME won't work in XR
@@ -93369,6 +93604,8 @@ class PDFLoaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_1__.createSystem
         _global__WEBPACK_IMPORTED_MODULE_0__.globals.status("Please enter a valid PDF URL.");
         return;
       }
+
+      requestEntity.setValue(LoadPDFRequestComponent, 'status', "loading");
 
       this.initStatusProperties();
 
@@ -93387,36 +93624,66 @@ class PDFLoaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_1__.createSystem
       this.pdfDocMetadata = await this.pdfDoc.getMetadata();
       this.pageNum = 1;
 
-      await this.renderPage(this.pageNum, true);
+      this.bookInfo = {
+        numPages: this.pdfDoc.numPages,
+        ...this.pdfDocMetadata.info,
+        ...this.pdfDocMetadata.metadata,
+      }
 
-      this.mrButton.disabled = false;
-		  this.mrButton.style.display = 'block';
-      _global__WEBPACK_IMPORTED_MODULE_0__.globals.status("\n1. Click on the (big) 'Enter XR' button \n2. Only the *left* controller is enabled \n3. Use the left controller's *thumbstick* to navigate & zoom the book \n4. Use the *Meta 'infinite' button* to exit XR");
+      const payload = {
+        bookInfo: this.bookInfo,
+        newBook: true,
+      };
+
+      // Notify the cache system to update the page shown in the book
+      this.world.createEntity().addComponent(_pagescache__WEBPACK_IMPORTED_MODULE_5__.CacheUpdateBookComponent, { payload });
+
+      requestEntity.removeComponent(LoadPDFRequestComponent).destroy();
     } catch(error) {
       _global__WEBPACK_IMPORTED_MODULE_0__.globals.status("ERROR loading PDF, check debug console for details");
       _global__WEBPACK_IMPORTED_MODULE_0__.globals.debug(`Error loading PDF: ${error}`);
+      console.error("Error loading PDF:", error);
     }
+  }
+
+  destroyRequest(requestEntity) {
+    if(!requestEntity) return;
+
+    requestEntity.removeComponent(PDFRequestComponent).destroy();
+  }
+
+  updateRequestStatus(requestEntity, status) {
+    if(!requestEntity) return;
+
+    requestEntity.setValue(PDFRequestComponent, 'status', status);
   }
 
   /**
    * @param num Page number.
    */
-  async renderPage(num, newPdf = false) {
+  async renderPage(num, requestEntity) {
 
-    if (num <=0 || num >= this.pdfDoc.numPages) {
+    console.log(`renderPage: ${num} page requested`);
+
+    if (num <=0 || num > this.pdfDoc.numPages) {
+      // The request makes no sense, ignore it and destroy 
+      // the request to avoid processing it again and again
+      this.destroyRequest(requestEntity);
+      
       return;
     }
-    
 
-    console.log(`renderPage: ${num}, ${newPdf} page requested`);
+    this.updateRequestStatus(requestEntity, 'rendering');
 
-    this.pageRendering = true;
+    //- console.log(`renderPage: ${num}, ${newPdf} page requested`);
+
+    // this.pageRendering = true;
 
     const page = await this.pdfDoc.getPage(num);
 
     _global__WEBPACK_IMPORTED_MODULE_0__.globals.debug(`renderPage: ${num} page loaded`);
 
-    this.pageRendering = false;
+    // this.pageRendering = false;
 
     /////////////////////////////////////////////////////////////////////////////////
     // WARNING: for some (unknown) reason, some of the rendering params given here //
@@ -93434,7 +93701,7 @@ class PDFLoaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_1__.createSystem
     _global__WEBPACK_IMPORTED_MODULE_0__.globals.offscreen.width = viewport.width;
     _global__WEBPACK_IMPORTED_MODULE_0__.globals.offscreen.height = viewport.height;
 
-    // Render PDF page into canvas context
+    // Render PDF page into offscreen canvas context
     const renderContext = {
       canvasContext: _global__WEBPACK_IMPORTED_MODULE_0__.globals.gl,
       viewport: viewport,
@@ -93451,28 +93718,24 @@ class PDFLoaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_1__.createSystem
 
     _global__WEBPACK_IMPORTED_MODULE_0__.globals.debug(`renderPage: ${num} page rendered`);
 
-    this.pageRendering = false;
+    // this.pageRendering = false;
 
     page.cleanup();
 
-    if (this.pageNumPending !== null) {
-      this.renderPage(this.pageNumPending);
-      this.pageNumPending = null;
-    } else {
+    // if (this.pageNumPending !== null) {
+    //   this.renderPage(this.pageNumPending);
+    //   this.pageNumPending = null;
+    // } else {
       _global__WEBPACK_IMPORTED_MODULE_0__.globals.debug(`renderPage: ${num} rendering completed`);
 
-      const bookInfo = {
-        numPages: this.pdfDoc.numPages,
-        ...this.pdfDocMetadata.info,
-        ...this.pdfDocMetadata.metadata,
-      }
+      
       
       const payload = {
         pageNum: num,
         pageWidth: _global__WEBPACK_IMPORTED_MODULE_0__.globals.offscreen.width,
         pageHeight: _global__WEBPACK_IMPORTED_MODULE_0__.globals.offscreen.height,
-        bookInfo: bookInfo,
-        newBook: newPdf,
+        bookInfo: this.bookInfo,
+        newBook: false,
       };
 
       this.pageNum = num;
@@ -93480,83 +93743,41 @@ class PDFLoaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_1__.createSystem
       // Notify the ReaderSystem to update the page shown in the book
       this.world.createEntity().addComponent(_pagescache__WEBPACK_IMPORTED_MODULE_5__.CacheUpdatePageComponent, { payload });
 
-      console.log(`renderPage: CacheUpdatePageComponent`, payload);
-    }
+      this.destroyRequest(requestEntity);
+
+      //- console.log(`renderPage: CacheUpdatePageComponent`, payload);
+    // }
   }
 
   /**
    * If another page rendering in progress, waits until the rendering is
    * finised. Otherwise, executes rendering immediately.
    */
-  queueRenderPage(num) {
-    if (this.pageRendering) {
-      _global__WEBPACK_IMPORTED_MODULE_0__.globals.debug(`queueRenderPage: ${this.pageNum} is rendering`);
-      this.pageNumPending = num;
-    } else {
-      _global__WEBPACK_IMPORTED_MODULE_0__.globals.debug(`queueRenderPage: ${this.pageNum} is not rendering`);
-      this.renderPage(num);
-    }
-  }
+  // queueRenderPage(num) {
+  //   if (this.pageRendering) {
+  //     globals.debug(`queueRenderPage: ${this.pageNum} is rendering`);
+  //     this.pageNumPending = num;
+  //   } else {
+  //     globals.debug(`queueRenderPage: ${this.pageNum} is not rendering`);
+  //     this.renderPage(num);
+  //   }
+  // }
 
   /**
    * Displays previous page.
    */
-  onPrevPage() {
-    this.queueRenderPage(this.pageNum - 1);
-  }
+  // onPrevPage() {
+  //   this.queueRenderPage(this.pageNum - 1);
+  // }
 
   /**
    * Displays next page.
    */
-  onNextPage() {
-    this.queueRenderPage(this.pageNum + 1);
-  }
+  // onNextPage() {
+  //   this.queueRenderPage(this.pageNum + 1);
+  // }
 
-  async handleFileSelect(event) {
-    const file = event.target.files[0];
-
-    if(!file) {
-      return;
-    }
-
-    if (file.type !== 'application/pdf') {
-      alert('Please select a PDF file');
-      return;
-    }
   
-    const fileUrl = await this.readFile(file);
-
-    await this.loadPdf(fileUrl);
-  }
-
-  async readFile(file) {
-    // Helper function to promisify FileReader
-    const readAsArrayBuffer = (file) => {
-      return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = () => resolve(reader.result);
-        reader.onerror = () => reject(new Error('File reading failed'));
-        reader.readAsArrayBuffer(file);
-      });
-    };
-  
-    try {
-      // Read file contents
-      const arrayBuffer = await readAsArrayBuffer(file);
-      
-      // Create Blob from the contents
-      const pdfBlob = new Blob([arrayBuffer], { type: 'application/pdf' });
-      
-      // Create Object URL
-      const objectUrl = URL.createObjectURL(pdfBlob);
-      
-      return objectUrl;
-      
-    } catch (error) {
-      console.error('Error reading file:', error);
-      throw error; // Re-throw for caller to handle
-    }
-  }
 
 
 }
@@ -93667,6 +93888,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   BookComponent: () => (/* binding */ BookComponent),
 /* harmony export */   PagesImgsCacheComponent: () => (/* binding */ PagesImgsCacheComponent),
 /* harmony export */   ReaderSystem: () => (/* binding */ ReaderSystem),
+/* harmony export */   ReaderUpdateBookComponent: () => (/* binding */ ReaderUpdateBookComponent),
 /* harmony export */   ReaderUpdatePageComponent: () => (/* binding */ ReaderUpdatePageComponent)
 /* harmony export */ });
 /* harmony import */ var three__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
@@ -93737,8 +93959,15 @@ const readerUpdateSchema = {
 
 const ReaderUpdatePageComponent = (0,elics__WEBPACK_IMPORTED_MODULE_4__.createComponent)(readerUpdateSchema);
 
+const readerUpdateBookSchema = {
+	payload: { type: elics__WEBPACK_IMPORTED_MODULE_4__.Types.Object, default: {} },
+};
+
+const ReaderUpdateBookComponent = (0,elics__WEBPACK_IMPORTED_MODULE_4__.createComponent)(readerUpdateBookSchema);
+
 const queries = {
 	updateRequests: { required: [ReaderUpdatePageComponent] },
+	updateBookRequests: { required: [ReaderUpdateBookComponent] },
 };
 
 class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(queries) {
@@ -93758,14 +93987,23 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
       {
         book: {
           bookPanel: null,
-          pageBitmap: null,
+          pageTexture: null,
           pageNum: 0,
         }
       });
 
     this.queries.updateRequests.subscribe('qualify', (entity) => {
-      console.log(`ReaderSystem: updateRequests entity ${entity.id} qualified`);
+      //- console.log(`ReaderSystem: updateRequests entity ${entity.id} qualified`);
     });
+
+    this.queries.updateBookRequests.subscribe('qualify', (entity) => {
+      //- console.log(`ReaderSystem: updateRequests entity ${entity.id} qualified`);
+    });
+
+    // Bind to webpage elements and events
+    
+
+    this.bindToWebpageElements();
 
     // TODO kept here as reference for the future, 
     // to create config params
@@ -93774,73 +94012,105 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
     });
   }
 
+  bindToWebpageElements() {
+    this.pdfUrlInput = document.getElementById("pdf-url");
+    this.loadPdfButton = document.getElementById("load-pdf");
+    // this.loadPdfButton.addEventListener("click", () => this.loadPdf(this.pdfUrlInput.value));
+    this.loadPdfButton.addEventListener("click", () => { 
+      this.requestBook(this.pdfUrlInput.value);
+      // this.loadPdf(this.pdfUrlInput.value) 
+    });
+    this.mrButton = document.getElementById('mr-button');
+
+    this.fileInput = document.getElementById("browse-pdf");
+    this.fileInput.addEventListener("change", this.handleFileSelect.bind(this));
+  }
+
+  requestBook(pdfUrl) {
+    const payload = {
+      type: "loadPdf",
+      pdfUrl,
+    }
+    
+    this.world.createEntity().addComponent(_pagescache__WEBPACK_IMPORTED_MODULE_5__.CacheLoadBookRequestComponent, { payload });
+  }
+
+  requestPage(pageNum) {
+    // Send a request to the PDF viewer to change the page
+    // via adding a request component to the world
+    const type = "loadPage";
+    const payload = { type, pageNum };
+
+    this.world.createEntity().addComponent(_pagescache__WEBPACK_IMPORTED_MODULE_5__.CachedPageRequestComponent, { payload });
+  }
+
   update(_delta) {
+    const updateRequests = this.queries.updateRequests.entities;
+    const updateBookRequests = this.queries.updateBookRequests.entities;
+
+    let book = this.bookEntity.getValue(BookComponent, 'book');
+
+    updateBookRequests.forEach(e => {
+      const payload = e.getValue(ReaderUpdateBookComponent, 'payload');
+
+      this.mrButton.disabled = false;
+      this.mrButton.style.display = 'block';
+        
+      _global__WEBPACK_IMPORTED_MODULE_1__.globals.status("\n1. Click on the (big) 'Enter XR' button \n2. Only the *left* controller is enabled \n3. Use the left controller's *thumbstick* to navigate & zoom the book \n4. Use the *Meta 'infinite' button* to exit XR");
+        
+      // TODO if pageBitmap is null, it should use a default image
+      if(book.bookPanel) {
+        book.bookPanel.removeFromParent();
+        book.bookPanel = null;
+      }
+
+      book.pageTexture = null;
+      book.pageNum = 0;
+      book.bookInfo = payload.bookInfo;
+
+      // Update status of the book
+      this.bookEntity.setValue(BookComponent, 'book', book);
+
+      e.removeComponent(ReaderUpdateBookComponent)
+        .destroy();
+    });
+  
 	  const controller = _global__WEBPACK_IMPORTED_MODULE_1__.globals.controllers['left'];
 
     if (!controller) return;
 
-    let book = this.bookEntity.getValue(BookComponent, 'book');
-
-    if(!book.bookPanel) {
-      // TODO it should show a default image
+    if (!book.bookPanel) {
       book.bookPanel = this.makeBookPanel();
-      controller.raySpace.add(book.bookPanel);
       book.bookPanel.position.set(0, 0.5, -0.5);
+      controller.raySpace.add(book.bookPanel);
+   
+      this.requestPage(1);
     }
-
-    // Process update requests from the PDF viewer
-    const updateRequests = this.queries.updateRequests.entities;
-
+   
+    // Process update requests from the cache system
     updateRequests.forEach(e => {
       const payload = e.getValue(ReaderUpdatePageComponent, 'payload');
       // TODO pageNum is not used, but will be used in the future
-      const { pageNum, pageWidth, pageHeight, pageTexture, bookInfo, newBook } = payload;
+      const { pageNum, pageWidth, pageHeight, pageTexture, bookInfo } = payload;
 
-      console.log("updateRequest payload", payload);
+      //- console.log("updateRequest payload", payload);
       
       book.pageTexture = pageTexture;
       book.pageNum = pageNum;
       book.pageWidth = pageWidth;
       book.pageHeight = pageHeight;
       book.bookInfo = bookInfo;
-      book.newBook = newBook;
+
+      book.bookPanel.updatePage(pageNum, pageTexture, pageWidth, pageHeight, bookInfo);
 
       // FIXME: this is broken!, it doesn't actually remove the request, which causes
       // the system to keep processing the same request over and over again until a new one is created!
       e.removeComponent(ReaderUpdatePageComponent)
         .destroy();
+
+      // Update status of the book
+      this.bookEntity.setValue(BookComponent, 'book', book);
     });
-
-    if(book.newBook) {
-      // TODO if pageBitmap is null, it should use a default image
-      if(book.bookPanel) {
-        controller.raySpace.remove(book.bookPanel);
-        book.bookPanel.removeFromParent();
-        book.bookPanel = null;
-      }
-
-      book.bookPanel = this.makeBookPanel();
-      controller.raySpace.add(book.bookPanel);
-      book.bookPanel.position.set(0, 0.5, -0.5);
-
-      book.newBook = false;
-    }
-
-    if (book.pageTexture) {
-      const { 
-        bookPanel, 
-        pageTexture, 
-        pageNum, 
-        pageWidth, 
-        pageHeight, 
-        bookInfo 
-      } = book;
-
-      if (bookPanel) {
-        bookPanel.updatePage(pageNum, pageTexture, pageWidth, pageHeight, bookInfo);
-        book.pageTexture = null;
-      }
-    }
 
     _global__WEBPACK_IMPORTED_MODULE_1__.globals.renderer.xr.addEventListener("sessionstart", () => {
       this._syncTransform();
@@ -93897,11 +94167,14 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
 
           // Send a request to the PDF viewer to change the page
           // via adding a request component to the world
-          const payload = (direction === DIRECTIONS.Left) 
-            ? { type: 'prevPage', pageNum:  book.pageNum - 1 }
-            : { type: 'nextPage', pageNum: book.pageNum + 1 };
+          // const type = "loadPage";
+          const pageNum = (direction === DIRECTIONS.Left) 
+            ? book.pageNum - 1 
+            : book.pageNum + 1;
 
-          this.world.createEntity().addComponent(_pagescache__WEBPACK_IMPORTED_MODULE_5__.CachedPageRequestComponent, { payload });
+            this.requestPage(pageNum);
+
+          // this.world.createEntity().addComponent(CachedPageRequestComponent, { payload });
 
           hapticActuator?.pulse(0.3, 50);
         }
@@ -93923,6 +94196,59 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
 
     // Update status of the book
     this.bookEntity.setValue(BookComponent, 'book', book);
+  }
+
+  async handleFileSelect(event) {
+    const file = event.target.files[0];
+
+    if(!file) {
+      return;
+    }
+
+    if (file.type !== 'application/pdf') {
+      alert('Please select a PDF file');
+      return;
+    }
+  
+    const fileUrl = await this.readFile(file);
+
+    this.requestBook(fileUrl);
+
+    // const payload = {
+    //   type: "loadPdf",
+    //   pdfUrl: fileUrl,
+    // }
+    
+    // this.world.createEntity().addComponent(CachedPageRequestComponent, { payload });
+  }
+
+  async readFile(file) {
+    // Helper function to promisify FileReader
+    const readAsArrayBuffer = (file) => {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = () => reject(new Error('File reading failed'));
+        reader.readAsArrayBuffer(file);
+      });
+    };
+  
+    try {
+      // Read file contents
+      const arrayBuffer = await readAsArrayBuffer(file);
+      
+      // Create Blob from the contents
+      const pdfBlob = new Blob([arrayBuffer], { type: 'application/pdf' });
+      
+      // Create Object URL
+      const objectUrl = URL.createObjectURL(pdfBlob);
+      
+      return objectUrl;
+      
+    } catch (error) {
+      console.error('Error reading file:', error);
+      throw error; // Re-throw for caller to handle
+    }
   }
 
   makeBookPanel() {
@@ -94401,12 +94727,16 @@ _global__WEBPACK_IMPORTED_MODULE_5__.globals.scene.add(ratk.root);
 world
 	// .registerComponent(MeasurementComponent)
 	.registerComponent(_pdfviewer__WEBPACK_IMPORTED_MODULE_1__.PDFRequestComponent)
+	.registerComponent(_pdfviewer__WEBPACK_IMPORTED_MODULE_1__.LoadPDFRequestComponent)
+	.registerComponent(_pagescache__WEBPACK_IMPORTED_MODULE_10__.CacheLoadBookRequestComponent)
+	.registerComponent(_pagescache__WEBPACK_IMPORTED_MODULE_10__.CacheUpdateBookComponent)
 	.registerComponent(_pagescache__WEBPACK_IMPORTED_MODULE_10__.CachedPageRequestComponent)
 	.registerComponent(_pagescache__WEBPACK_IMPORTED_MODULE_10__.CacheUpdatePageComponent)
 	.registerComponent(_pagescache__WEBPACK_IMPORTED_MODULE_10__.CachedPageComponent)
 	.registerComponent(_pagescache__WEBPACK_IMPORTED_MODULE_10__.CacheStatusComponent)
 	.registerComponent(_reader__WEBPACK_IMPORTED_MODULE_7__.BookComponent)
 	.registerComponent(_reader__WEBPACK_IMPORTED_MODULE_7__.ReaderUpdatePageComponent)
+	.registerComponent(_reader__WEBPACK_IMPORTED_MODULE_7__.ReaderUpdateBookComponent)
 	.registerSystem(_player__WEBPACK_IMPORTED_MODULE_3__.PlayerSystem)
 	.registerSystem(_pdfviewer__WEBPACK_IMPORTED_MODULE_1__.PDFLoaderSystem)
 	.registerSystem(_pagescache__WEBPACK_IMPORTED_MODULE_10__.PagesCacheProxySystem)
