@@ -93112,6 +93112,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// import ThreeMeshUI from "three-mesh-ui";
 
 const cachedPageRequestSchema = {
   payload: { type: elics__WEBPACK_IMPORTED_MODULE_1__.Types.Object, default: {} },
@@ -93273,7 +93274,6 @@ class PagesCacheProxySystem extends (0,elics__WEBPACK_IMPORTED_MODULE_1__.create
 
         requestEntity.removeComponent(CachedPageRequestComponent).destroy();
       } else {
-        // This will be executed also for the loadPdf request, that is *not* a page request!
         // console.log("Page not found in cache, request payload:", payload);
         const pdfPageRequestStatus = requestEntity.getValue(CachedPageRequestComponent, "status");
         
@@ -93321,7 +93321,7 @@ class PagesCacheProxySystem extends (0,elics__WEBPACK_IMPORTED_MODULE_1__.create
     const j = Math.max(1, visiblePageNum - hcs);
     const k = Math.min(this.bookInfo.numPages, visiblePageNum + hcs);
 
-    console.log("CacheAdjust (min, max): ", j, k);
+    // console.log("CacheAdjust (min, max): ", j, k);
     
     // Now, remove the pages outside the range [j, k]
     sparseArray.forEach((cachedEntity, index) => {
@@ -93365,33 +93365,32 @@ class PagesCacheProxySystem extends (0,elics__WEBPACK_IMPORTED_MODULE_1__.create
 
   cacheAdd(updateEntity, payload) {
     const pageNum = payload.pageNum;
-    const pageBitmap = _global__WEBPACK_IMPORTED_MODULE_0__.globals.offscreen.transferToImageBitmap();
-    const bitmapData = three__WEBPACK_IMPORTED_MODULE_4__.ImageUtils.getDataURL(pageBitmap);
+    const texture = new three__WEBPACK_IMPORTED_MODULE_4__.CanvasTexture(_global__WEBPACK_IMPORTED_MODULE_0__.globals.offscreen);
 
-    new three__WEBPACK_IMPORTED_MODULE_4__.TextureLoader().load(bitmapData, (texture) => {
-      texture.anisotropy = _global__WEBPACK_IMPORTED_MODULE_0__.globals.renderer.capabilities.getMaxAnisotropy();
-      texture.wrapS = three__WEBPACK_IMPORTED_MODULE_4__.RepeatWrapping;
-      texture.wrapT = three__WEBPACK_IMPORTED_MODULE_4__.RepeatWrapping;
+    texture.anisotropy = _global__WEBPACK_IMPORTED_MODULE_0__.globals.renderer.capabilities.getMaxAnisotropy();
+    texture.repeat = new three__WEBPACK_IMPORTED_MODULE_4__.Vector2(1, 1);
+    texture.wrapS = three__WEBPACK_IMPORTED_MODULE_4__.RepeatWrapping;
+    texture.wrapT = three__WEBPACK_IMPORTED_MODULE_4__.RepeatWrapping;
 
-      pageBitmap.close();
+    // preload the texture, even if not visible, to have it ready before its first use
+    _global__WEBPACK_IMPORTED_MODULE_0__.globals.renderer.initTexture(texture);
 
-      const cachedPayload = {
-        ...payload,
-        pageTexture: texture,
-      };
-      
-      this.world
-        .createEntity()
-        .addComponent(CachedPageComponent, { pageNum, cachedPayload });
+    const cachedPayload = {
+      ...payload,
+      pageTexture: texture,
+    };
+    
+    this.world
+      .createEntity()
+      .addComponent(CachedPageComponent, { pageNum, cachedPayload });
 
-      updateEntity.removeComponent(CacheUpdatePageComponent).destroy();
+    updateEntity.removeComponent(CacheUpdatePageComponent).destroy();
 
-      const requestedPages = this.statusEntity.getValue(CacheStatusComponent, "requestedPages");
+    const requestedPages = this.statusEntity.getValue(CacheStatusComponent, "requestedPages");
 
-      requestedPages.delete(pageNum);
+    requestedPages.delete(pageNum);
 
-      this.statusEntity.setValue(CacheStatusComponent, "requestedPages", requestedPages);
-    });
+    this.statusEntity.setValue(CacheStatusComponent, "requestedPages", requestedPages);
   }
 
   cacheRemove(cachedEntity) {
@@ -93401,6 +93400,7 @@ class PagesCacheProxySystem extends (0,elics__WEBPACK_IMPORTED_MODULE_1__.create
 
     // Free memory and resources
     if (pageTexture) {
+      // TODO if this will finally be a page panel, verify that dispoing() it will dispose the texture too
       pageTexture.dispose();
     }
 
@@ -93455,10 +93455,6 @@ __webpack_require__.r(__webpack_exports__);
 // webpack is configured to import PDFJSWorker as a resource url, not a module
 pdfjs_dist_build_pdf_mjs__WEBPACK_IMPORTED_MODULE_2__.GlobalWorkerOptions.workerSrc = pdfjs_dist_build_pdf_worker_min_mjs__WEBPACK_IMPORTED_MODULE_3__;
 
-// const pdfRequestSchema = {
-// 	type: { type: Types.String, default: null },
-//   pdfUrl: { type: Types.String, default: null },
-// };
 const pdfRequestSchema = {
 	payload: { type: elics__WEBPACK_IMPORTED_MODULE_1__.Types.Object, default: {} },
   status: { type: elics__WEBPACK_IMPORTED_MODULE_1__.Types.String, default: "pending" },
@@ -93473,7 +93469,7 @@ const loadPDFRequestSchema = {
 
 const LoadPDFRequestComponent = (0,elics__WEBPACK_IMPORTED_MODULE_1__.createComponent)(loadPDFRequestSchema);
   
-const DESIRED_DPI = 150; // Target print-quality resolution
+const DESIRED_DPI = 300; // Target print-quality resolution
 
 const queries = {
 	pageRequests: { required: [PDFRequestComponent] },
@@ -93483,39 +93479,7 @@ const queries = {
 
 class PDFLoaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_1__.createSystem)(queries) {
   init() {
-
-    // this.pdfUrlInput = document.getElementById("pdf-url");
-    // this.loadPdfButton = document.getElementById("load-pdf");
-    // // this.loadPdfButton.addEventListener("click", () => this.loadPdf(this.pdfUrlInput.value));
-    // this.loadPdfButton.addEventListener("click", () => { 
-    //   const payload = {
-    //     type: "loadPdf",
-    //     pdfUrl: this.pdfUrlInput.value,
-    //   }
-      
-    //   this.world
-    //       .createEntity()
-    //       .addComponent(PDFRequestComponent, { payload });
-    //   // this.loadPdf(this.pdfUrlInput.value) 
-    // });
-
-    // this.mrButton = document.getElementById('mr-button');
-
-    // this.fileInput = document.getElementById("browse-pdf");
-    // this.fileInput.addEventListener("change", this.handleFileSelect.bind(this));
-
     this.initStatusProperties();
-
-    // FIXME currently not used, after rendering the page is copied to
-    // the offscreen canvas and then to XR book panel,
-    // not to the webpage canvas
-    // this.canvas = document.getElementById("pdf-canvas");
-    // this.ctx = this.canvas.getContext("2d");
-
-    // this.nextPageButton = document.getElementById("next-page");
-    // this.prevPageButton = document.getElementById("prev-page");
-    // this.nextPageButton.addEventListener("click", this.onNextPage.bind(this));
-    // this.prevPageButton.addEventListener("click", this.onPrevPage.bind(this));
 
     this.queries.pageRequests.subscribe('qualify', (entity) => {
       //- console.log(`PDFViewerSystem: entity ${entity.id} qualified`);
@@ -93535,8 +93499,6 @@ class PDFLoaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_1__.createSystem
     this.pdfDocMetadata = null;
     this.pageNum = 0;
     this.bookInfo = null;
-    // this.pageRendering = false; // Check conflict
-    // this.pageNumPending = null; // Cache waiting page number
     // Calculate the ideal scale for high resolution
     this.outputScale = DESIRED_DPI / 72; // PDFs use 72 DPI as standard
   }
@@ -93727,8 +93689,6 @@ class PDFLoaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_1__.createSystem
     //   this.pageNumPending = null;
     // } else {
       _global__WEBPACK_IMPORTED_MODULE_0__.globals.debug(`renderPage: ${num} rendering completed`);
-
-      
       
       const payload = {
         pageNum: num,
@@ -93748,37 +93708,6 @@ class PDFLoaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_1__.createSystem
       //- console.log(`renderPage: CacheUpdatePageComponent`, payload);
     // }
   }
-
-  /**
-   * If another page rendering in progress, waits until the rendering is
-   * finised. Otherwise, executes rendering immediately.
-   */
-  // queueRenderPage(num) {
-  //   if (this.pageRendering) {
-  //     globals.debug(`queueRenderPage: ${this.pageNum} is rendering`);
-  //     this.pageNumPending = num;
-  //   } else {
-  //     globals.debug(`queueRenderPage: ${this.pageNum} is not rendering`);
-  //     this.renderPage(num);
-  //   }
-  // }
-
-  /**
-   * Displays previous page.
-   */
-  // onPrevPage() {
-  //   this.queueRenderPage(this.pageNum - 1);
-  // }
-
-  /**
-   * Displays next page.
-   */
-  // onNextPage() {
-  //   this.queueRenderPage(this.pageNum + 1);
-  // }
-
-  
-
 
 }
 
@@ -93979,7 +93908,7 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
     this._vec3 = new three__WEBPACK_IMPORTED_MODULE_6__.Vector3();
     this._targetVec3 = new three__WEBPACK_IMPORTED_MODULE_6__.Vector3();
 
-    this.currentBookSize = 0.5;
+    this.currentBookSize = 0.75;
 
     this.bookEntity = this.world.createEntity();
 
@@ -94015,15 +93944,15 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
   bindToWebpageElements() {
     this.pdfUrlInput = document.getElementById("pdf-url");
     this.loadPdfButton = document.getElementById("load-pdf");
-    // this.loadPdfButton.addEventListener("click", () => this.loadPdf(this.pdfUrlInput.value));
+    
     this.loadPdfButton.addEventListener("click", () => { 
       this.requestBook(this.pdfUrlInput.value);
-      // this.loadPdf(this.pdfUrlInput.value) 
     });
     this.mrButton = document.getElementById('mr-button');
 
     this.fileInput = document.getElementById("browse-pdf");
     this.fileInput.addEventListener("change", this.handleFileSelect.bind(this));
+
   }
 
   requestBook(pdfUrl) {
@@ -94057,6 +93986,9 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
       this.mrButton.style.display = 'block';
         
       _global__WEBPACK_IMPORTED_MODULE_1__.globals.status("\n1. Click on the (big) 'Enter XR' button \n2. Only the *left* controller is enabled \n3. Use the left controller's *thumbstick* to navigate & zoom the book \n4. Use the *Meta 'infinite' button* to exit XR");
+
+      // TODO here for debugging, it will enter XR mode automatically just after loading the book
+      this.mrButton.click();
         
       // TODO if pageBitmap is null, it should use a default image
       if(book.bookPanel) {
@@ -94172,9 +94104,7 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
             ? book.pageNum - 1 
             : book.pageNum + 1;
 
-            this.requestPage(pageNum);
-
-          // this.world.createEntity().addComponent(CachedPageRequestComponent, { payload });
+          this.requestPage(pageNum);
 
           hapticActuator?.pulse(0.3, 50);
         }
@@ -94213,13 +94143,6 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
     const fileUrl = await this.readFile(file);
 
     this.requestBook(fileUrl);
-
-    // const payload = {
-    //   type: "loadPdf",
-    //   pdfUrl: fileUrl,
-    // }
-    
-    // this.world.createEntity().addComponent(CachedPageRequestComponent, { payload });
   }
 
   async readFile(file) {
@@ -94262,7 +94185,7 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
       backgroundOpacity: 0,
     });
 
-    const title = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Block({
+    const bookTitle = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Block({
       height: 0.2,
       width: 1.5,
       margin: 0.025,
@@ -94270,15 +94193,12 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
       fontSize: 0.09,
     });
 
-    title.add(
-      new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Text({
-        content: "Book Title",
-      })
-    );
-
-    bookPanel.add(title);
-
-    const pageSubBlock = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Block({
+    const bookTitleTxt = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Text({
+      content: "Book Title",
+    });
+   
+    const pagePanel = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Block({
+      name: "pageSubBlock",
       height: 1.0,
       width: 1.0,
       margin: 0.0,
@@ -94287,27 +94207,28 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
       justifyContent: "end",
     });
 
-    const caption = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Block({
+    const pageNum = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Block({
       height: 0.07,
       width: 0.17,
       textAlign: "center",
       justifyContent: "center",
     });
 
-    const pageNumFooter = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Text({
+    const pageNumTxt = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Text({
       content: "Page 0",
       fontSize: 0.02,
     });
 
-    caption.add(pageNumFooter);
-
-    pageSubBlock.add(caption);
-
-    const rightSubBlock = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Block({
+    const bookInfo = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Block({
       margin: 0.025,
     });
 
-    const subSubBlock1 = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Block({
+    const bookInfoTitleTxt = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Text({
+      content: "Book Info",
+      fontColor: new three__WEBPACK_IMPORTED_MODULE_6__.Color(0x92e66c),
+    })
+
+    const bookInfoTitle = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Block({
       height: 0.35,
       width: 0.5,
       margin: 0.025,
@@ -94315,18 +94236,15 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
       fontSize: 0.04,
       justifyContent: "center",
       backgroundOpacity: 0,
-    }).add(
-      new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Text({
-        content: "Book Info",
-        fontColor: new three__WEBPACK_IMPORTED_MODULE_6__.Color(0x92e66c),
-      }),
-    );
+    });
 
-    const bookInfoSubBlock = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Text({
+    
+
+    const bookInfoTxt = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Text({
       content: "No book info available.",
     });
 
-    const subSubBlock2 = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Block({
+    const bookInfoContents = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Block({
       height: 0.53,
       width: 0.5,
       margin: 0.01,
@@ -94335,9 +94253,7 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
       alignItems: "start",
       textAlign: "justify",
       backgroundOpacity: 0,
-    }).add(bookInfoSubBlock);
-
-    rightSubBlock.add(subSubBlock1, subSubBlock2);
+    });
 
     const contentContainer = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Block({
       contentDirection: "row",
@@ -94346,7 +94262,14 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
       backgroundOpacity: 0,
     });
 
-    contentContainer.add(pageSubBlock, rightSubBlock);
+    bookTitle.add(bookTitleTxt);
+    bookPanel.add(bookTitle);
+    pageNum.add(pageNumTxt);
+    pagePanel.add(pageNum);
+    bookInfoTitle.add(bookInfoTitleTxt);
+    bookInfoContents.add(bookInfoTxt);
+    bookInfo.add(bookInfoTitle, bookInfoContents);
+    contentContainer.add(pagePanel, bookInfo);
     bookPanel.add(contentContainer);
 
     // TODO this is a naive approach to set the size of the book panel,
@@ -94360,11 +94283,11 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
         
          // Iterate over bInfo keys and values and create a text with format: key: value,
          // separated by new lines
-         const bookInfoTxt = bInfo 
-         ? Object.entries(bInfo)
-             .map(([key, value]) => `${key}: ${value}`)
-             .join("\n")
-         : "N/A";
+         const bookInfoStr = bInfo 
+          ? Object.entries(bInfo)
+              .map(([key, value]) => `${key}: ${value}`)
+              .join("\n")
+          : "N/A";
 
         // pWidth and pHeight are in CSS pixels: convert to meters, 
           // the unit used in three.js
@@ -94373,26 +94296,27 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
         const width = pWidth / pixelsPerMeter;
         const height = pHeight / pixelsPerMeter;
 
-        pageSubBlock.set({
+        // contentContainer.getObjectByName("pageSubBlock").removeFromParent();
+        // contentContainer.add(pTexture);
+
+        pagePanel.set({
           width: width,
           height: height,
-          backgroundSize: "contain",
+          backgroundSize: "stretch",
           backgroundTexture: pTexture,
         });
 
-        pageNumFooter.set({
+        pageNumTxt.set({
           content: `Page ${pNum}`,
         });
 
-        bookInfoSubBlock.set({
-          content: bookInfoTxt,
+        bookInfoTxt.set({
+          content: bookInfoStr,
         });
       }
     };
     
     bookPanel.setSize(this.currentBookSize);
-
-    // bookPanel.updatePage(pageNum, pageBitmap);
 
     return bookPanel;
   }
