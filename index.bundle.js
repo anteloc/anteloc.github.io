@@ -94226,11 +94226,16 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
     const bookTitleTxt = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Text({
       content: "Book Title",
     });
-   
+    
     const oddPagePanel = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Block({
       name: "pageSubBlock",
       height: 1.0,
       width: 1.0,
+      borderWidth: 0.01,
+      // [topLeftRadius, topRightRadius, bottomRightRadius, bottomLeftRadius]
+      borderRadius: [ 0.01, 0.05, 0.05, 0.01 ],
+      borderColor: new three__WEBPACK_IMPORTED_MODULE_6__.Color(0xf5f5f5),
+      borderOpacity: 1,
       margin: 0.0,
       padding: 0.0,
       textAlign: "left",
@@ -94241,6 +94246,11 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
       name: "pageSubBlock",
       height: 1.0,
       width: 1.0,
+      borderWidth: 0.01,
+      // [topLeftRadius, topRightRadius, bottomRightRadius, bottomLeftRadius]
+      borderRadius: [ 0.05, 0.01, 0.01, 0.05 ],
+      borderColor: new three__WEBPACK_IMPORTED_MODULE_6__.Color(0xf5f5f5),
+      borderOpacity: 1,
       margin: 0.0,
       padding: 0.0,
       textAlign: "left",
@@ -94250,6 +94260,8 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
     const oddPageNum = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Block({
       height: 0.07,
       width: 0.17,
+      borderWidth: 0,
+      borderRadius: [ 0, 0, 0, 0 ],
       textAlign: "center",
       justifyContent: "center",
     });
@@ -94262,6 +94274,8 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
     const evenPageNum = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Block({
       height: 0.07,
       width: 0.17,
+      borderWidth: 0,
+      borderRadius: [ 0, 0, 0, 0 ],
       textAlign: "center",
       justifyContent: "center",
     });
