@@ -93997,7 +93997,8 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
       }
 
       book.pageTexture = null;
-      book.pageNum = 0;
+      book.oddPageNum = 0;
+      book.evenPageNum = 0;
       book.bookInfo = payload.bookInfo;
 
       // Update status of the book
@@ -94017,6 +94018,10 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
       controller.raySpace.add(book.bookPanel);
    
       this.requestPage(1);
+
+      if(book.bookInfo.numPages > 1) {
+        this.requestPage(2);
+      }
     }
    
     // Process update requests from the cache system
@@ -94028,10 +94033,15 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
       //- console.log("updateRequest payload", payload);
       
       book.pageTexture = pageTexture;
-      book.pageNum = pageNum;
       book.pageWidth = pageWidth;
       book.pageHeight = pageHeight;
       book.bookInfo = bookInfo;
+
+      if(pageNum % 2 === 0) {
+        book.evenPageNum = pageNum;
+      } else {
+        book.oddPageNum = pageNum;
+      }
 
       book.bookPanel.updatePage(pageNum, pageTexture, pageWidth, pageHeight, bookInfo);
 
@@ -94100,11 +94110,31 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
           // Send a request to the PDF viewer to change the page
           // via adding a request component to the world
           // const type = "loadPage";
-          const pageNum = (direction === DIRECTIONS.Left) 
-            ? book.pageNum - 1 
-            : book.pageNum + 1;
+          const oddPageNum = (direction === DIRECTIONS.Left) 
+            ? book.oddPageNum - 2 
+            : book.oddPageNum + 2;
 
-          this.requestPage(pageNum);
+          const evenPageNum = oddPageNum + 1;
+
+          const inRange = (pageNum) => {
+            return pageNum >= 1 && pageNum <= book.bookInfo.numPages;
+          };
+
+          if(!inRange(oddPageNum) && !inRange(evenPageNum)) {
+            // we are either at the first page or the last page of the book,
+            // so we don't need to do anything
+            return;
+          }
+
+          [oddPageNum, evenPageNum].forEach((pageNum) => {
+            if (inRange(pageNum)) {
+              this.requestPage(pageNum);
+            } else {
+              // TODO maybe consider a default image for an "empty" page?
+              // for now, texture=null means "hidden"
+              book.bookPanel.updatePage(pageNum, null, 0, 0);
+            }
+          });
 
           hapticActuator?.pulse(0.3, 50);
         }
@@ -94197,7 +94227,7 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
       content: "Book Title",
     });
    
-    const pagePanel = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Block({
+    const oddPagePanel = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Block({
       name: "pageSubBlock",
       height: 1.0,
       width: 1.0,
@@ -94207,18 +94237,41 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
       justifyContent: "end",
     });
 
-    const pageNum = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Block({
+    const evenPagePanel = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Block({
+      name: "pageSubBlock",
+      height: 1.0,
+      width: 1.0,
+      margin: 0.0,
+      padding: 0.0,
+      textAlign: "left",
+      justifyContent: "end",
+    });
+
+    const oddPageNum = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Block({
       height: 0.07,
       width: 0.17,
       textAlign: "center",
       justifyContent: "center",
     });
 
-    const pageNumTxt = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Text({
+    const oddPageNumTxt = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Text({
       content: "Page 0",
       fontSize: 0.02,
     });
 
+    const evenPageNum = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Block({
+      height: 0.07,
+      width: 0.17,
+      textAlign: "center",
+      justifyContent: "center",
+    });
+
+    const evenPageNumTxt = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Text({
+      content: "Page 0",
+      fontSize: 0.02,
+    });
+
+    // TODO book info not used yet, just for debugging purposes
     const bookInfo = new three_mesh_ui__WEBPACK_IMPORTED_MODULE_2__["default"].Block({
       margin: 0.025,
     });
@@ -94261,16 +94314,62 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
       margin: 0.025,
       backgroundOpacity: 0,
     });
+    
+    bookPanel
+      .add(
+        bookTitle.add(bookTitleTxt)
+    );
 
-    bookTitle.add(bookTitleTxt);
-    bookPanel.add(bookTitle);
-    pageNum.add(pageNumTxt);
-    pagePanel.add(pageNum);
-    bookInfoTitle.add(bookInfoTitleTxt);
-    bookInfoContents.add(bookInfoTxt);
-    bookInfo.add(bookInfoTitle, bookInfoContents);
-    contentContainer.add(pagePanel, bookInfo);
-    bookPanel.add(contentContainer);
+    bookPanel
+      .add(
+        contentContainer
+          .add(
+            oddPagePanel
+              .add(
+                  oddPageNum.add(oddPageNumTxt)), 
+            evenPagePanel
+              .add(
+                  evenPageNum.add(evenPageNumTxt)), 
+            // bookInfo
+            //   .add(
+            //       bookInfoTitle.add(bookInfoTitleTxt), 
+            //       bookInfoContents.add(bookInfoTxt)
+            //   )
+          )
+      );
+
+    /*
+    bookPanel
+      .add(
+        bookTitle.add(bookTitleTxt)
+    );
+
+    bookPanel
+      .add(
+        contentContainer
+          .add(
+            pagePanel
+              .add(
+                pageNum.add(pageNumTxt)), 
+            bookInfo
+              .add(
+                  bookInfoTitle.add(bookInfoTitleTxt), 
+                  bookInfoContents.add(bookInfoTxt)
+              )
+          )
+      );
+
+    */
+
+    // bookTitle.add(bookTitleTxt);
+    // bookPanel.add(bookTitle);
+    // pageNum.add(pageNumTxt);
+    // pagePanel.add(pageNum);
+    // bookInfoTitle.add(bookInfoTitleTxt);
+    // bookInfoContents.add(bookInfoTxt);
+    // bookInfo.add(bookInfoTitle, bookInfoContents);
+    // contentContainer.add(pagePanel, bookInfo);
+    // bookPanel.add(contentContainer);
 
     // TODO this is a naive approach to set the size of the book panel,
     // it should be done taking into account the relative sizes, font sizes, etc.
@@ -94279,26 +94378,18 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
     }
 
     bookPanel.updatePage = (pNum, pTexture, pWidth, pHeight, bInfo) => {
+      const even = pNum % 2 === 0;
+      const pagePanel = even ? evenPagePanel : oddPagePanel;
+      const pageNum = even ? evenPageNum : oddPageNum;
+      const pageNumTxt = even ? evenPageNumTxt : oddPageNumTxt;
+      
+      // pWidth and pHeight are in CSS pixels: convert to meters, 
+      // the unit used in three.js
+      const pixelsPerMeter = 1500.0;
+      const width = pWidth / pixelsPerMeter;
+      const height = pHeight / pixelsPerMeter;
+      
       if(pTexture) {
-        
-         // Iterate over bInfo keys and values and create a text with format: key: value,
-         // separated by new lines
-         const bookInfoStr = bInfo 
-          ? Object.entries(bInfo)
-              .map(([key, value]) => `${key}: ${value}`)
-              .join("\n")
-          : "N/A";
-
-        // pWidth and pHeight are in CSS pixels: convert to meters, 
-          // the unit used in three.js
-        const pixelsPerMeter = 1500.0;
-
-        const width = pWidth / pixelsPerMeter;
-        const height = pHeight / pixelsPerMeter;
-
-        // contentContainer.getObjectByName("pageSubBlock").removeFromParent();
-        // contentContainer.add(pTexture);
-
         pagePanel.set({
           width: width,
           height: height,
@@ -94310,9 +94401,37 @@ class ReaderSystem extends (0,elics__WEBPACK_IMPORTED_MODULE_4__.createSystem)(q
           content: `Page ${pNum}`,
         });
 
+        pagePanel.visible = true;
+        pageNum.visible = true;
+        pageNumTxt.visible = true;
+
+        // TODO not used yet, just for debugging purposes
+        // Iterate over bInfo keys and values and create a text with format: key: value,
+        // separated by new lines
+        const bookInfoStr = bInfo 
+          ? Object.entries(bInfo)
+              .map(([key, value]) => `${key}: ${value}`)
+              .join("\n")
+          : "N/A";
+
         bookInfoTxt.set({
           content: bookInfoStr,
         });
+      } else {
+        pagePanel.set({
+          width: width,
+          height: height,
+          backgroundSize: "stretch",
+          backgroundTexture: null,
+        });
+
+        pageNumTxt.set({
+          content: `Page 0`,
+        });
+
+        pagePanel.visible = false;
+        pageNum.visible = false;
+        pageNumTxt.visible = false;
       }
     };
     
