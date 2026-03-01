@@ -616,8 +616,8 @@ const BROWSER_BG = new THREE.Color(0x0e0e10);
 const container = document.getElementById('canvas-container');
 
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-// renderer.setPixelRatio(window.devicePixelRatio);
+// renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setPixelRatio(window.devicePixelRatio);
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFShadowMap;    // PCFSoft is overkill; PCF is a good balance
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
