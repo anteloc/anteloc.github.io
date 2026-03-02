@@ -614,7 +614,7 @@ const BROWSER_BG = new THREE.Color(0x0e0e10);
 // Edges act like dark grout between tiles; without them surfaces read ~25% brighter,
 // so we compensate by dimming lights when edges are hidden.
 const LIGHTS_EDGES_ON  = { ambient: 0.6, dir: 1.5, envIntensity: 1.0 };
-const LIGHTS_EDGES_OFF = { ambient: 0.45, dir: 1.1, envIntensity: 0.0 };
+const LIGHTS_EDGES_OFF = { ambient: 0.45, dir: 1.1, envIntensity: 0.1 };
 
 
 // MR boosts ambient to compensate for bright passthrough background.
