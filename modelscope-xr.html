@@ -616,7 +616,7 @@ const BROWSER_BG = new THREE.Color(0x0e0e10);
 const container = document.getElementById('canvas-container');
 
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
-// renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+// renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // TODO review this, performance seems better but cause some blurriness on the models when in XR
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFShadowMap;    // PCFSoft is overkill; PCF is a good balance
@@ -2750,6 +2750,8 @@ function onXRSessionStart(mode) {
   // Check whether dom-overlay is actually active in this session.
   // renderer.xr.getSession() is valid from this point onward.
   const session = renderer.xr.getSession();
+  renderer.xr.setFoveation(1.0);
+
   _xrDomOverlayActive = !!(session?.enabledFeatures?.includes('dom-overlay'));
 
   // ── Flush OrbitControls damping before handing camera to XR ──────────────
@@ -2874,7 +2876,12 @@ function makeXRSessionOpts() {
   const overlayRoot = document.getElementById('model-gallery');
   return {
     requiredFeatures: ['local-floor'],
-    optionalFeatures: ['bounded-floor', 'hand-tracking', 'dom-overlay'],
+    optionalFeatures: [
+      'bounded-floor', 
+      'hand-tracking', 
+      'dom-overlay',
+      'foveation-level' // request foveated rendering, free on Quest hardware
+    ],
     domOverlay: { root: overlayRoot },
   };
 }
