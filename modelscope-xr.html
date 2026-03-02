@@ -613,13 +613,14 @@ const BROWSER_BG = new THREE.Color(0x0e0e10);
 // Light intensities — two sets so toggling edges feels perceptually neutral.
 // Edges act like dark grout between tiles; without them surfaces read ~25% brighter,
 // so we compensate by dimming lights when edges are hidden.
-const LIGHTS_EDGES_ON  = { ambient: 0.6,  dir: 1.5 };
-const LIGHTS_EDGES_OFF = { ambient: 0.45, dir: 1.1 };
+const LIGHTS_EDGES_ON  = { ambient: 0.6, dir: 1.5, envIntensity: 1.0 };
+const LIGHTS_EDGES_OFF = { ambient: 0.45, dir: 1.1, envIntensity: 0.0 };
+
 
 // MR boosts ambient to compensate for bright passthrough background.
 // Keep the same ratio between edges-on and edges-off.
-const LIGHTS_MR_EDGES_ON  = { ambient: 1.2,  dir: 1.5 };
-const LIGHTS_MR_EDGES_OFF = { ambient: 0.9,  dir: 1.1 };
+const LIGHTS_MR_EDGES_ON  = { ambient: 1.2, dir: 1.5, envIntensity: 1.0 };
+const LIGHTS_MR_EDGES_OFF = { ambient: 0.9, dir: 1.1, envIntensity: 0.0 };
 
 function applyLightIntensities() {
   const mr     = (currentMode === 'mr');
@@ -629,6 +630,7 @@ function applyLightIntensities() {
     : (on ? LIGHTS_EDGES_ON     : LIGHTS_EDGES_OFF);
   ambientLight.intensity = preset.ambient;
   dirLight.intensity     = preset.dir;
+  scene.environmentIntensity = preset.envIntensity;
 }
 
 // ─── §2  Renderer + Scene ─────────────────────────────────────────────────────
