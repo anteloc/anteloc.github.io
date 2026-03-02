@@ -620,7 +620,7 @@ const LIGHTS_EDGES_OFF = { ambient: 0.45, dir: 1.1, envIntensity: 0.0 };
 // MR boosts ambient to compensate for bright passthrough background.
 // Keep the same ratio between edges-on and edges-off.
 const LIGHTS_MR_EDGES_ON  = { ambient: 1.2, dir: 1.5, envIntensity: 1.0 };
-const LIGHTS_MR_EDGES_OFF = { ambient: 0.9, dir: 1.1, envIntensity: 0.0 };
+const LIGHTS_MR_EDGES_OFF = { ambient: 0.9, dir: 1.1, envIntensity: 0.1 };
 
 function applyLightIntensities() {
   const mr     = (currentMode === 'mr');
