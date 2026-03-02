@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LDraw Model Viewer v5</title>
+<title>ModelScope XR v0.9</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap');
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -614,7 +614,7 @@ const BROWSER_BG = new THREE.Color(0x0e0e10);
 // Edges act like dark grout between tiles; without them surfaces read ~25% brighter,
 // so we compensate by dimming lights when edges are hidden.
 const LIGHTS_EDGES_ON  = { ambient: 0.6,  dir: 1.5 };
-const LIGHTS_EDGES_OFF = { ambient: 0.45, dir: 1.1 };
+const LIGHTS_EDGES_OFF = { ambient: 0.30, dir: 0.9 };
 
 // MR boosts ambient to compensate for bright passthrough background.
 // Keep the same ratio between edges-on and edges-off.
