@@ -441,7 +441,7 @@
     <button class="btn" id="btn-browse">Browse Models</button>
     <button class="btn" id="btn-reset-view">Reset View</button>
     <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="anteloc" data-color="#FFDD00" data-emoji="☕" data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
-    <input type="file" id="file-input" accept=".ldr,.mpd,.dat">
+    <input type="file" id="file-input" accept=".ldr,.mpd,.dat,.glb">
     <!-- VR and MR buttons are injected here by JS after checking support -->
   </div>
 </header>
@@ -452,7 +452,7 @@
       <div class="drop-icon"><div class="drop-zone-brick"></div></div>
       <div class="drop-text">
         <h2>Drop LDraw File</h2>
-        <p>.ldr &nbsp;·&nbsp; .mpd &nbsp;·&nbsp; .dat</p>
+        <p>.ldr &nbsp;·&nbsp; .mpd &nbsp;·&nbsp; .dat &nbsp;·&nbsp; .glb</p>
         <p style="margin-top:10px;font-size:10px;opacity:.6">Packed .mpd files work best<br>sub-parts are self-contained</p>
       </div>
     </div>
@@ -488,7 +488,7 @@
     </div>
     <div class="sidebar-section">
       <div class="sidebar-title">Load</div>
-      <input type="text" class="url-input" id="url-input" placeholder="https://…/model.mpd">
+      <input type="text" class="url-input" id="url-input" placeholder="https://…/model.mpd or .glb">
       <button class="btn" id="btn-load-url" style="width:100%;margin-top:2px">Load from URL</button>
       <div style="border-top:1px solid var(--border);margin:10px 0"></div>
       <button class="btn primary" id="btn-open-file" style="width:100%">Open File…</button>
@@ -523,7 +523,8 @@
       <div class="sidebar-title">File Format Tips</div>
       <div class="hint">
         Packed .mpd files load<br>fully self-contained.<br><br>
-        Plain .ldr files need<br>sub-parts fetched from<br>the LDraw CDN — requires<br>internet access.
+        Plain .ldr files need<br>sub-parts fetched from<br>the LDraw CDN — requires<br>internet access.<br><br>
+        .glb files load as-is.<br>Meshopt-compressed GLB<br>is supported.
       </div>
     </div>
   </div>
@@ -551,6 +552,8 @@ import { LDrawLoader }              from 'three/addons/loaders/LDrawLoader.js';
 import { LDrawUtils }               from 'three/addons/utils/LDrawUtils.js';
 import { RoomEnvironment }          from 'three/addons/environments/RoomEnvironment.js';
 import { XRControllerModelFactory } from 'three/addons/webxr/XRControllerModelFactory.js';
+import { GLTFLoader }               from 'three/addons/loaders/GLTFLoader.js';
+import { MeshoptDecoder }           from 'three/addons/libs/meshopt_decoder.module.js';
 import { computeBoundsTree, disposeBoundsTree, acceleratedRaycast } from 'three-mesh-bvh';
 import { Text as TroikaText, preloadFont } from 'troika-three-text';
 import { unzipSync }                from 'fflate';
@@ -567,15 +570,17 @@ THREE.Mesh.prototype.raycast                      = acceleratedRaycast;
 const BASE_REPO   = 'anteloc/ldraw-lib';
 const REPO_BRANCH = 'master';
 const PARTS_CDN    = `https://raw.githubusercontent.com/${BASE_REPO}/${REPO_BRANCH}/ldraw/`;
-const DEMO_MODEL   = `https://raw.githubusercontent.com/${BASE_REPO}/${REPO_BRANCH}/models-packed/42040-1.mpd.zip`;
+const DEMO_MODEL   = `https://raw.githubusercontent.com/${BASE_REPO}/${REPO_BRANCH}/models-glb/f1-car.glb`;
+// https://raw.githubusercontent.com/anteloc/ldraw-lib/master/models-glb/f1-car.glb
+// const DEMO_MODEL   = `https://raw.githubusercontent.com/${BASE_REPO}/${REPO_BRANCH}/models-packed/42040-1.mpd.zip`;
 const MODELS_INDEX = `https://raw.githubusercontent.com/${BASE_REPO}/${REPO_BRANCH}/models-index.jsonl`;
 const RAW_BASE     = `https://raw.githubusercontent.com/${BASE_REPO}/${REPO_BRANCH}/models-packed/`;
 const DEMO_VIDEO   = 'https://youtu.be/IhGm3KRSl7s';
 // const DEMO_VIDEO   = 'https://anteloc.github.io/assets/demo.mp4';
 
 // XR scene hierarchy constants
-// LDU → metres: 1 LDU = 0.4 mm = 0.0004 m, ×2.5 = hand-held / table-top scale
-const LDU_TO_METERS = 0.0004 * 2.5;
+// LDU → metres: 1 LDU = 0.4 mm = 0.0004 m
+const LDU_TO_METERS = 0.0004;
 const MAX_MODELS    = 5;
 const MODEL_SPACING = 0.35;   // metres between model pivots in XR
 const MODEL_PIVOT_Y = 0.9;    // metres above floor
@@ -595,9 +600,9 @@ const ROTATE_SPEED          = 1.5;    // radians/sec at full thumbstick deflecti
 // Active gestures always raycast every frame for precision.
 const RAYCAST_IDLE_INTERVAL = 3;
 
-// Browser interaction constants
-const NUDGE_STEP = 100;   // LDU — about 4 cm at 1:1 scale
-const GRID_HALF  = 2000;  // LDU — half the grid width; models are clamped to ±this
+// Browser interaction constants — world space is metres in browser mode
+const NUDGE_STEP = 0.04;  // metres (4 cm)
+const GRID_HALF  = 2.0;   // metres — half the grid width; models are clamped to ±this
 
 // XR menu navigation timing (milliseconds)
 const MENU_NAV_DELAY  = 600;  // initial hold before repeat starts
@@ -633,6 +638,137 @@ function applyLightIntensities() {
   scene.environmentIntensity = preset.envIntensity;
 }
 
+// ─── §1b  Format detection ────────────────────────────────────────────────────
+
+function isGLB(name) { return /\.glb$/i.test(name); }
+
+// Convert shared-geometry meshes into InstancedMesh to slash draw calls.
+// The GLB converter's dedup() step ensures many mesh nodes share the same
+// BufferGeometry + Material.  InstancedMesh renders all instances in ONE
+// draw call without modifying geometry data (no winding / normal issues).
+function instanceGLBScene(gltfScene) {
+  gltfScene.updateMatrixWorld(true);
+
+  const rootInv = new THREE.Matrix4().copy(gltfScene.matrixWorld).invert();
+  const groups = new Map(); // "geoId|matId" → { geometry, material, pos[], neg[] }
+  const passthrough = []; // meshes we cannot safely instance
+  const lineGroups = new Map(); // materialId → { material, segs: [{geometry, matrix}] }
+
+  gltfScene.traverse((o) => {
+    if (o.isLineSegments) {
+      // Collect edge lines — merged later into one draw call per material.
+      const rel = new THREE.Matrix4().multiplyMatrices(rootInv, o.matrixWorld);
+      if (!lineGroups.has(o.material.id))
+        lineGroups.set(o.material.id, { material: o.material, segs: [] });
+      lineGroups.get(o.material.id).segs.push({ geometry: o.geometry, matrix: rel });
+      return;
+    }
+    if (!o.isMesh) return;
+    const rel = new THREE.Matrix4().multiplyMatrices(rootInv, o.matrixWorld);
+
+    // Skinned/morph/multi-material meshes are not safe to batch this way.
+    if (
+      o.isSkinnedMesh ||
+      o.morphTargetInfluences ||
+      Array.isArray(o.material)
+    ) {
+      passthrough.push({
+        geometry: o.geometry,
+        material: o.material,
+        matrix: rel,
+      });
+      return;
+    }
+
+    const key = o.geometry.id + "|" + o.material.id;
+    if (!groups.has(key)) {
+      groups.set(key, {
+        geometry: o.geometry,
+        material: o.material,
+        pos: [],
+        neg: [],
+      });
+    }
+    // Negative determinant means mirrored transform. Mixing mirrored and
+    // non-mirrored transforms in one material causes front-face winding issues.
+    if (rel.determinant() < 0) groups.get(key).neg.push(rel);
+    else groups.get(key).pos.push(rel);
+  });
+
+  // Replace the deep hierarchy with flat instanced meshes
+  while (gltfScene.children.length) gltfScene.remove(gltfScene.children[0]);
+
+  for (const { geometry, material, pos, neg } of groups.values()) {
+    const matrices = pos;
+    if (matrices.length === 1) {
+      const mesh = new THREE.Mesh(geometry, material);
+      mesh.matrixAutoUpdate = false;
+      mesh.matrix.copy(matrices[0]);
+      mesh.matrixWorldNeedsUpdate = true;
+      gltfScene.add(mesh);
+    } else {
+      const im = new THREE.InstancedMesh(geometry, material, matrices.length);
+      for (let i = 0; i < matrices.length; i++) im.setMatrixAt(i, matrices[i]);
+      im.instanceMatrix.needsUpdate = true;
+      im.computeBoundingSphere();
+      gltfScene.add(im);
+    }
+
+    if (neg.length > 0) {
+      // Negative-determinant (mirrored) transforms cannot be safely rendered
+      // with InstancedMesh + FrontSide because front-face winding is fixed per draw.
+      // Keep them as individual meshes so Three.js can set frontFace per object.
+      for (const matrix of neg) {
+        const mesh = new THREE.Mesh(geometry, material);
+        mesh.matrixAutoUpdate = false;
+        mesh.matrix.copy(matrix);
+        mesh.matrixWorldNeedsUpdate = true;
+        gltfScene.add(mesh);
+      }
+    }
+  }
+
+  for (const { geometry, material, matrix } of passthrough) {
+    const mesh = new THREE.Mesh(geometry, material);
+    mesh.matrixAutoUpdate = false;
+    mesh.matrix.copy(matrix);
+    mesh.matrixWorldNeedsUpdate = true;
+    gltfScene.add(mesh);
+  }
+
+  // Merge all edge LineSegments per material into one object each.
+  // Baking transforms into vertex positions means: one draw call per edge colour
+  // (almost always just one), correct bounding box, and no raycasting interference.
+  const _ev = new THREE.Vector3();
+  for (const { material, segs } of lineGroups.values()) {
+    let totalVerts = 0;
+    for (const { geometry } of segs) totalVerts += geometry.attributes.position.count;
+
+    const positions = new Float32Array(totalVerts * 3);
+    let off = 0;
+    for (const { geometry, matrix } of segs) {
+      const pos = geometry.attributes.position;
+      for (let i = 0; i < pos.count; i++) {
+        _ev.fromBufferAttribute(pos, i).applyMatrix4(matrix);
+        positions[off++] = _ev.x;
+        positions[off++] = _ev.y;
+        positions[off++] = _ev.z;
+      }
+    }
+
+    const merged = new THREE.BufferGeometry();
+    merged.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+    const ls = new THREE.LineSegments(merged, material);
+    ls.raycast = () => {}; // visual only — never raycasted
+    gltfScene.add(ls);
+  }
+
+  return gltfScene;
+}
+
+
+
 // ─── §2  Renderer + Scene ─────────────────────────────────────────────────────
 
 const container = document.getElementById('canvas-container');
@@ -663,18 +799,18 @@ const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
 scene.add(ambientLight);
 
 const dirLight = new THREE.DirectionalLight(0xffffff, 1.5);
-dirLight.position.set(500, 1000, 500);
+dirLight.position.set(0.5, 1, 0.5);   // metre-scale scene
 dirLight.castShadow = true;
 dirLight.shadow.mapSize.set(1024, 1024);
-Object.assign(dirLight.shadow.camera, { near: 1, far: 10000, left: -2000, right: 2000, top: 2000, bottom: -2000 });
+Object.assign(dirLight.shadow.camera, { near: 0.001, far: 10, left: -2, right: 2, top: 2, bottom: -2 });
 scene.add(dirLight);
 
 // Grid & shadow ground — browser / VR only, hidden in MR
-const gridHelper = new THREE.GridHelper(4000, 50, 0x333344, 0x222230);
+const gridHelper = new THREE.GridHelper(4, 50, 0x333344, 0x222230);  // 4 m, 8 cm cells
 scene.add(gridHelper);
 
 const ground = new THREE.Mesh(
-  new THREE.PlaneGeometry(10000, 10000),
+  new THREE.PlaneGeometry(20, 20),   // 20 m shadow catcher
   new THREE.ShadowMaterial({ opacity: 0.2 })
 );
 ground.rotation.x = -Math.PI / 2;
@@ -694,17 +830,19 @@ scene.add(mrShadowDisc);
 
 // ─── §4  Camera + OrbitControls ───────────────────────────────────────────────
 
-const camera = new THREE.PerspectiveCamera(45, 1, 1, 50000);
-// Near-plane values differ between browser (LDU units) and XR (metres).
-// Switching on session start/end keeps depth precision optimal in both spaces.
-const CAMERA_NEAR_BROWSER = 1;      // 1 LDU ≈ 0.4 mm — tight for browser depth precision
-const CAMERA_NEAR_XR      = 0.01;   // 1 cm  — keeps controllers/menu visible at arm's reach
-camera.position.set(0, 400, 1200);
+const camera = new THREE.PerspectiveCamera(45, 1, 0.001, 100);
+// Near-plane values — browser and XR are both in metres now.
+// Browser near is tighter (1 mm) so close-up inspection stays crisp.
+const CAMERA_NEAR_BROWSER = 0.001;  // 1 mm — tight for metre-scale browser depth precision
+const CAMERA_NEAR_XR      = 0.01;   // 1 cm — keeps controllers/menu visible at arm's reach
+camera.position.set(0, 0.5, 1.5);  // reasonable starting point; fitCamera() overrides on load
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.06;
 controls.addEventListener('change', invalidate);
+controls.addEventListener('start', () => { _orbitActive = true;  _hoverPending = false; container.classList.remove('drag-ready'); });
+controls.addEventListener('end',   () => { _orbitActive = false; });
 
 function resize() {
   const w = container.clientWidth, h = container.clientHeight;
@@ -736,6 +874,14 @@ const _meshList = []; // cached models.map(e => e.mesh) — updated on load/remo
 let edgesVisible  = true;
 let orbVisible    = false;  // whether the trackball orb shows during grab
 let selectedEntry = null;   // model currently selected for keyboard nudge
+
+// Shadows are expensive: each frame with dirLight.castShadow=true adds a FULL
+// recursive traversal of the entire scene graph (WebGLShadowMap.renderObject).
+// Only enable when at least one LDraw model needs shadows.
+function updateShadows() {
+  if (renderer.xr.isPresenting) return;   // XR manages shadows separately
+  dirLight.castShadow = models.some(e => e.isLDraw);
+}
 
 // ── Trackball orb ─────────────────────────────────────────────────────────────
 //
@@ -845,7 +991,7 @@ function _drawScaleLabel(entry, pct) {
 }
 
 function showScaleLabel(entry, newScale) {
-  const pct = Math.round(newScale / LDU_TO_METERS * 100);
+  const pct = Math.round(newScale / entry.xrScale * 100);
   _drawScaleLabel(entry, pct);
   entry.scaleLabel.sprite.visible = true;
 
@@ -857,7 +1003,7 @@ function showScaleLabel(entry, newScale) {
   }, SCALE_LABEL_HIDE_MS);
 }
 
-function createEntry(mesh, name) {
+function createEntry(mesh, name, xrScale = LDU_TO_METERS) {
   // Place new XR pivot to the right of all existing ones
   const pivotX = models.reduce((maxX, e) => Math.max(maxX, e.pivot.position.x), 0)
     + (models.length > 0 ? MODEL_SPACING : 0);
@@ -867,12 +1013,12 @@ function createEntry(mesh, name) {
   scene.add(pivot);
 
   const root = new THREE.Group();
-  root.scale.setScalar(LDU_TO_METERS);
+  root.scale.setScalar(xrScale);
   pivot.add(root);
 
   // Orb is parented to root — rigidly attached to the model, rotates with it.
   // Sized in onXRSessionStart once the mesh is re-centred into root-local space.
-  const entry = { mesh, pivot, root, name, orb: null, orbSphere: null, scaleLabel: null };
+  const entry = { mesh, pivot, root, name, xrScale, orb: null, orbSphere: null, scaleLabel: null };
   const { orb, sphere } = makeOrb(entry);
   entry.orb        = orb;
   entry.orbSphere  = sphere;
@@ -889,7 +1035,7 @@ function createEntry(mesh, name) {
 
 function fitCamera() {
   if (models.length === 0) {
-    camera.position.set(0, 400, 1200);
+    camera.position.set(0, 0.5, 1.5);
     controls.target.set(0, 0, 0);
     controls.update();
     return;
@@ -952,6 +1098,7 @@ function removeEntry(entry) {
 
   models.splice(models.indexOf(entry), 1);
   _meshList.splice(_meshList.indexOf(entry.mesh), 1);
+  updateShadows();
   renderModelList();
 
   if (models.length === 0) {
@@ -985,13 +1132,25 @@ function _buildCategoryCounts(items) {
     .sort((a, b) => a[0].localeCompare(b[0]))
     .map(([name, count]) => ({ name, count }));
 }
+
+function loadModelFromURL(url) {
+  if (!url) return;
+  const name = url.split('/').pop();
+  showLoading('Fetching…', url);
+  if (isGLB(url)) {
+    loadGLBFromURL(url, name);
+  } else {
+    loadMPDFromURL(url, name, 'Could not load URL — CORS may be blocking it.\nTry downloading and opening locally.');
+  }
+}
+
 //
 // makeLDrawLoader — constructs and primes a loader in one await.
 //   preloadMaterials failure is swallowed; the loader still resolves
 //   colours correctly for packed .mpd files without it.
 //
-// loadModelFromURL  — resolves with the model group (throws on error).
-// loadModelFromText — synchronous: parse() returns the group directly.
+// loadMPDFromURL  — resolves with the model group (throws on error).
+// loadMPDModelFromText — synchronous: parse() returns the group directly.
 //
 // Both call onModelLoaded on success; errors are surfaced via showError.
 
@@ -1006,7 +1165,7 @@ async function makeLDrawLoader() {
   return loader;
 }
 
-async function loadModelFromURL(url, name, errorMsg) {
+async function loadMPDFromURL(url, name, errorMsg) {
   try {
     if (url.endsWith('.zip')) {
       // ── Zipped model: fetch as binary, decompress in-memory, parse as text ──
@@ -1045,7 +1204,7 @@ async function _parseWithLoader(text) {
   }
 }
 
-async function loadModelFromText(text, name) {
+async function loadMPDModelFromText(text, name) {
   try {
     onModelLoaded(await _parseWithLoader(text), name);
   } catch (err) {
@@ -1055,35 +1214,52 @@ async function loadModelFromText(text, name) {
   }
 }
 
-function onModelLoaded(model, filename) {
+// isLDraw=true  → apply mergeObject, Y-flip, disable edge raycasts, LDU_TO_METERS XR scale
+// isLDraw=false → GLB path: skip those steps, use scale 1.0 (GLB is already Y-up, in metres)
+function onModelLoaded(model, filename, { isLDraw = true } = {}) {
   if (models.length >= MAX_MODELS) {
     showError(`Maximum ${MAX_MODELS} models in scene. Remove one first.`);
     return;
   }
 
-  model = LDrawUtils.mergeObject(model); // flatten the hierarchy to one level of meshes for raycasting
+  if (isLDraw) {
+    model = LDrawUtils.mergeObject(model); // flatten hierarchy for raycasting
+    model.rotation.x = Math.PI;           // LDraw Y-down → Three.js Y-up
+  } else {
+    model = instanceGLBScene(model);       // reduce draw calls via InstancedMesh
+  }
 
   errorBanner.classList.remove('visible');
-  model.rotation.x = Math.PI; // LDraw Y-down → Y-up
   model.traverse(o => {
-    if (o.isMesh) {
-      o.castShadow = true;
-      o.receiveShadow = true;
-      o.geometry.computeBoundsTree();   // BVH — O(log n) raycasts
+    if (o.isMesh || o.isInstancedMesh) {
+      if (isLDraw) {
+        o.castShadow = true;
+        o.receiveShadow = true;
+      }
+      if (o.isMesh) o.geometry.computeBoundsTree();   // BVH — O(log n) raycasts
     } else if (o.isLineSegments) {
       o.raycast = () => {};             // edges are visual only — never raycasted
     }
   });
 
-
+  const xrScale = isLDraw ? LDU_TO_METERS : 1.0;
 
   scene.add(model);
-  const entry = createEntry(model, filename);
+  const entry = createEntry(model, filename, xrScale);
+  entry.isLDraw = isLDraw;
   models.push(entry);
+  updateShadows();
   _meshList.push(model);
 
+  // Scale the mesh to metres for browser display.
+  // XR uses root.scale (entry.xrScale) instead, so this is reset in _setupEntryForXR
+  // and restored in onXRSessionEnd.
+  if (!renderer.xr.isPresenting) {
+    model.scale.setScalar(entry.xrScale);
+  }
+
   // In browser mode, separate models along X so they don't stack on top of each other.
-  // Compute the right edge of all existing models and place the new one just past it.
+  // Bounding boxes are now in metres (mesh already scaled above).
   if (models.length > 1) {
     const existingBox = new THREE.Box3();
     for (const e of models.slice(0, -1)) existingBox.expandByObject(e.mesh);
@@ -1114,11 +1290,16 @@ function onModelLoaded(model, filename) {
 
 function loadFile(file) {
   if (!file) return;
+  if (isGLB(file.name)) {
+    showLoading('Reading GLB…', file.name);
+    loadGLBFromFile(file);
+    return;
+  }
   showLoading('Reading file…', file.name);
   const reader = new FileReader();
   reader.onload = e => {
     showLoading('Parsing model…', 'Sub-parts resolved from LDraw CDN — needs internet');
-    loadModelFromText(e.target.result, file.name);
+    loadMPDModelFromText(e.target.result, file.name);
   };
   reader.onerror = () => showError('Could not read file.');
   reader.readAsText(file);
@@ -1126,9 +1307,41 @@ function loadFile(file) {
 
 function loadFromURL() {
   const url = document.getElementById('url-input').value.trim();
-  if (!url) return;
-  showLoading('Fetching…', url);
-  loadModelFromURL(url, url.split('/').pop(), 'Could not load URL — CORS may be blocking it.\nTry downloading and opening locally.');
+  loadModelFromURL(url);
+}
+
+// ── GLB loading ───────────────────────────────────────────────────────────────
+//
+// GLB is already Y-up and in metres — no Y-flip, no LDU scaling, no edge suppression.
+// Both functions converge on onModelLoaded with { isLDraw: false }.
+
+function makeGLTFLoader() {
+  return new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
+}
+
+async function loadGLBFromURL(url, name) {
+  try {
+    const gltf = await makeGLTFLoader().loadAsync(url, onProgress);
+    onModelLoaded(gltf.scene, name, { isLDraw: false });
+  } catch (err) {
+    showError('Could not load GLB — CORS may be blocking it.\nTry downloading and opening locally.\n\n' + err);
+  }
+}
+
+async function loadGLBFromFile(file) {
+  try {
+    const buffer = await file.arrayBuffer();
+    const blob   = new Blob([buffer], { type: 'model/gltf-binary' });
+    const url    = URL.createObjectURL(blob);
+    try {
+      const gltf = await makeGLTFLoader().loadAsync(url, onProgress);
+      onModelLoaded(gltf.scene, file.name, { isLDraw: false });
+    } finally {
+      URL.revokeObjectURL(url);
+    }
+  } catch (err) {
+    showError('Parse error: ' + (err?.message || String(err)));
+  }
 }
 
 
@@ -1141,6 +1354,7 @@ function loadFromURL() {
 
 // Reusable temporaries — never allocated per event
 const _browserRay = new THREE.Raycaster();
+_browserRay.firstHitOnly = true;   // BVH short-circuits after first hit
 const _dragPlane  = new THREE.Plane();
 const _dragOffset = new THREE.Vector3();
 const _planeHit   = new THREE.Vector3();
@@ -1148,6 +1362,10 @@ const _ndcVec     = new THREE.Vector2();
 
 let _dragEntry      = null;   // entry currently being dragged
 let _dragActive     = false;
+let _orbitActive    = false;  // true while OrbitControls is rotating/panning/zooming
+let _hoverPending   = false;  // a pointermove arrived; process hover in next frame
+let _hoverClientX   = 0;
+let _hoverClientY   = 0;
 let _holdTimer      = null;   // for Quest-style click-and-hold
 let _pointerDownPos = null;   // { x, y } at pointerdown
 
@@ -1226,7 +1444,7 @@ function resetView() {
   if (renderer.xr.isPresenting) {
     let x = 0;
     for (const entry of models) {
-      entry.root.scale.setScalar(LDU_TO_METERS);
+      entry.root.scale.setScalar(entry.xrScale);
       entry.root.rotation.set(0, 0, 0);
       entry.pivot.position.set(x, MODEL_PIVOT_Y, MODEL_PIVOT_Z);
       x += MODEL_SPACING;
@@ -1584,7 +1802,7 @@ function updateXRControls() {
           const entry    = slot.grab.entry;
           const newScale = THREE.MathUtils.clamp(
             entry.root.scale.x * (1 + thumbX * SCALE_SPEED),
-            LDU_TO_METERS * 0.05, LDU_TO_METERS * 30
+            entry.xrScale * 0.05, entry.xrScale * 30
           );
           entry.root.scale.setScalar(newScale);
           mrShadowDisc.scale.setScalar(newScale / LDU_TO_METERS);
@@ -2728,6 +2946,9 @@ function setMode(mode) {
 // for models loaded while XR is already presenting.
 function _setupEntryForXR(entry) {
   const { mesh, root } = entry;
+  // Reset the browser-mode scale so geometry is in native units (LDU / metres as authored).
+  // root.scale (entry.xrScale) takes over from here.
+  mesh.scale.setScalar(1);
   // Move mesh from scene root into the entry's root group (inside pivot)
   if (mesh.parent !== root) {
     if (mesh.parent) mesh.parent.remove(mesh);
@@ -2871,7 +3092,7 @@ function onXRSessionEnd() {
   applyLightIntensities();
   gridHelper.visible = document.getElementById('toggle-grid').classList.contains('on');
   ground.visible = true;
-  dirLight.castShadow = true;
+  updateShadows();   // re-enable shadows only if LDraw models are in the scene
   mrShadowDisc.visible = false;
 
   // Return all models to scene root
@@ -2879,9 +3100,10 @@ function onXRSessionEnd() {
     const { mesh, pivot, root } = entry;
     root.remove(mesh);
     mesh.position.set(0, 0, 0);
+    mesh.scale.setScalar(entry.xrScale);  // restore browser-mode metre scale
     scene.add(mesh);
     // Reset XR transforms for next session
-    root.scale.setScalar(LDU_TO_METERS);
+    root.scale.setScalar(entry.xrScale);
     root.rotation.set(0, 0, 0);
   }
   if (models.length > 0) fitCamera();
@@ -3012,21 +3234,57 @@ function _updateScaleLabels() {
   }
 }
 
+// ── Performance diagnostics (remove after debugging) ──────────────────────────
+let _diagFrames = 0, _diagStart = performance.now(), _diagRenderMs = 0;
+function _logDiag() {
+  
+  return; // disable logging for now — re-enable when needed
+
+  const elapsed = performance.now() - _diagStart;
+  if (elapsed < 2000) return;
+  const fps = (_diagFrames / elapsed * 1000).toFixed(1);
+  const avg = _diagFrames > 0 ? (_diagRenderMs / _diagFrames).toFixed(2) : '—';
+  const info = renderer.info.render;
+  let meshCount = 0, triCount = 0;
+  scene.traverse(o => { if (o.isMesh) meshCount++; });
+  console.log(
+    `[PERF] ${fps} fps | ${avg} ms/render | ` +
+    `calls=${info.calls} tris=${info.triangles} | ` +
+    `meshes=${meshCount} | shadow=${dirLight.castShadow} | ` +
+    `programs=${renderer.info.programs?.length ?? '?'}`
+  );
+  _diagFrames = 0; _diagRenderMs = 0; _diagStart = performance.now();
+}
+// ──────────────────────────────────────────────────────────────────────────────
+
 renderer.setAnimationLoop((timestamp, frame) => {
   if (renderer.xr.isPresenting && frame) {
     // XR runtime requires a render call every frame regardless of scene changes.
     updateXRControls();
     _updateScaleLabels();
+    const t0 = performance.now();
     renderer.render(scene, camera);
+    _diagRenderMs += performance.now() - t0;
+    _diagFrames++;
+    _logDiag();
   } else {
     // controls.update() applies damping momentum and fires 'change' if the
     // camera actually moved — which sets _needsRender via the listener above.
     controls.update();
+    // D: process at most one hover raycast per frame (deferred from pointermove)
+    if (_hoverPending) {
+      _hoverPending = false;
+      container.classList.toggle('drag-ready', !!browserRaycast(_hoverClientX, _hoverClientY));
+    }
     if (_needsRender) {
       _updateScaleLabels();
+      const t0 = performance.now();
       renderer.render(scene, camera);
+      _diagRenderMs += performance.now() - t0;
+      _diagFrames++;
       _needsRender = false;
     }
+    _logDiag();
   }
 });
 
@@ -3104,7 +3362,7 @@ fetchModelList();
 function loadFromBrowser(url, name) {
   closeGallery();
   showLoading('Loading model…', name);
-  loadModelFromURL(url, name, 'Could not load model.');
+  loadMPDFromURL(url, name, 'Could not load model.');
 }
 
 function escHtml(s) {
@@ -3461,9 +3719,10 @@ renderer.domElement.addEventListener('pointerdown', e => {
 renderer.domElement.addEventListener('pointermove', e => {
   if (renderer.xr.isPresenting) return;
   if (_dragActive) { moveDrag(e.clientX, e.clientY); return; }
-  if (models.length > 0) {
-    container.classList.toggle('drag-ready', !!browserRaycast(e.clientX, e.clientY));
-  }
+  if (_orbitActive || models.length === 0) return;   // B: skip during orbit; D: defer to frame
+  _hoverPending = true;
+  _hoverClientX = e.clientX;
+  _hoverClientY = e.clientY;
 });
 
 renderer.domElement.addEventListener('pointerup', e => {
@@ -3511,7 +3770,7 @@ document.addEventListener('keydown', e => {
 // ─── Auto-load demo on page load ─────────────────────────────────────────────
 // Fires immediately so the model is rendering behind the welcome modal.
 showLoading('Loading demo…', 'Fetching packed .mpd from GitHub');
-loadModelFromURL(DEMO_MODEL, 'Fire Truck (demo)', 'Could not load demo — check your internet connection.');
+loadModelFromURL(DEMO_MODEL);
 
 // ─── Welcome modal ────────────────────────────────────────────────────────────
 (function () {
