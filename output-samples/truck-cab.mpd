@@ -1,0 +1,62 @@
+0 FILE truck-cab-00-10183---3---cabin.ldr
+0 Truck cab with windows, windscreen, glazed glass, and sloped roof
+0 Name: truck-cab-00-10183---3---cabin.ldr
+0 Author: Bert Van Raemdonck [BEAVeR]
+0 !LDRAW_ORG Model
+0 !LICENSE Redistributable under CCAL version 2.0 : see CAreadme.txt
+0 // Plate  1 x  4 (red)
+1 4 0 0 -50 1 0 0 0 1 0 0 0 1 3710.dat
+0 // Plate  1 x  4 (red)
+1 4 0 0 50 1 0 0 0 1 0 0 0 1 3710.dat
+0 // Brick  1 x  2 (red)
+1 4 -20 -24 -50 1 0 0 0 1 0 0 0 1 3004.dat
+0 // Brick  1 x  2 (red)
+1 4 -20 -24 50 1 0 0 0 1 0 0 0 1 3004.dat
+0 // Brick  1 x  1 (red)
+1 4 30 -24 -50 1 0 0 0 1 0 0 0 1 3005.dat
+0 // Brick  1 x  1 (red)
+1 4 30 -24 50 1 0 0 0 1 0 0 0 1 3005.dat
+0 // Brick  1 x  1 with Handle (red)
+1 4 10 -24 -50 1 0 0 0 1 0 0 0 1 2921.dat
+0 // Brick  1 x  1 with Handle (red)
+1 4 10 -24 50 -1 0 0 0 1 0 0 0 -1 2921.dat
+0 STEP
+0 // Window  1 x  2 x  2 Plane with Single Hole Top and Bottom for Glass (red)
+1 4 -20 -72 -50 1 0 0 0 1 0 0 0 1 60032.dat
+0 // Brick  1 x  2 (red)
+1 4 20 -72 -50 1 0 0 0 1 0 0 0 1 3004.dat
+0 // Brick  1 x  2 (red)
+1 4 20 -48 -50 1 0 0 0 1 0 0 0 1 3004.dat
+0 // Brick  1 x  2 (red)
+1 4 20 -48 50 1 0 0 0 1 0 0 0 1 3004.dat
+0 // Glass for Window  1 x  2 x  2 Plane (trans_clear)
+1 47 -20 -72 -50 1 0 0 0 1 0 0 0 1 4862.dat
+0 STEP
+0 // Glass for Window  1 x  2 x  2 Plane (trans_clear)
+1 47 -20 -72 50 -1 0 0 0 1 0 0 0 -1 4862.dat
+0 // Window  1 x  2 x  2 Plane with Single Hole Top and Bottom for Glass (red)
+1 4 -20 -72 50 -1 0 0 0 1 0 0 0 -1 60032.dat
+0 // Brick  1 x  2 (red)
+1 4 20 -72 50 1 0 0 0 1 0 0 0 1 3004.dat
+0 // Plate  1 x  6 (red)
+1 4 30 -80 0 0 0 1 0 1 0 -1 0 0 3666.dat
+0 // Slope Brick 45  4 x  6 x  0.667 Double Curved (dark_bluish_grey)
+1 72 10 -88 0 0 0 1 0 1 0 -1 0 0 52031.dat
+0 STEP
+0 // Plate  1 x  4 (black)
+1 0 30 -88 0 0 0 1 0 1 0 -1 0 0 3710.dat
+0 // Slope Brick 31  1 x  1 x  0.667 (dark_bluish_grey)
+1 72 30 -80 -50 1 0 0 0 1 0 0 0 1 54200.dat
+0 // Slope Brick 31  1 x  1 x  0.667 (dark_bluish_grey)
+1 72 30 -80 50 -1 0 0 0 1 0 0 0 -1 54200.dat
+0 STEP
+0 // Tile  1 x  2 Grille with Groove (black)
+1 0 30 -96 -20 0 0 -1 0 1 0 1 0 0 2412b.dat
+0 // Tile  1 x  2 Grille with Groove (black)
+1 0 30 -96 20 0 0 -1 0 1 0 1 0 0 2412b.dat
+0 // Windscreen  2 x  6 x  2 (trans_clear)
+1 47 -50 -72 0 0 0 1 0 1 0 -1 0 0 4176.dat
+
+
+
+0 NOFILE

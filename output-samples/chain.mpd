@@ -1,0 +1,10 @@
+0 FILE chain.ldr
+0 Engine chain test
+0 Name: chain.ldr
+0 Author: Aurora Lance research
+0 !LDRAW_ORG Model
+1 15 0 0 0 1 0 0 0 1 0 0 0 1 43121.dat
+1 15 0 0 80 1 0 0 0 1 0 0 0 1 43121.dat
+1 72 0 34 -20 1 0 0 0 1 0 0 0 1 46667.dat
+1 72 0 34 60 1 0 0 0 1 0 0 0 1 46667.dat
+0 NOFILE

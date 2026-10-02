@@ -1,0 +1,45 @@
+0 FILE small-boat-00-2882---boat.ldr
+0 A small watercraft built with a windscreen, steering wheel, hull-forming sloped wings, and accent plates in red, black, and yellow.
+0 Name: small-boat-00-2882---boat.ldr
+0 Author: TotalyWicked [TotalyWicked]
+0 !LDRAW_ORG Model
+0 !LICENSE Redistributable under CCAL version 2.0 : see CAreadme.txt
+0 !HISTORY 2020-03-18 [bercik] OMR version by Robert Paciorek [bercik] with perrmision of TotalyWicked
+
+0 // Windscreen  3 x  4 x  1.333 (trans_medium_blue)
+1 41 20 -72 0.005 0 0 -1 0 1 0 1 0 0 2437.DAT
+0 // Car Steering Stand and Wheel (Complete) (yellow)
+1 14 20 -24 -0.005 0 0 -1 0 1 0 1 0 0 3829C01.DAT
+0 // Wing  3 x  4 with  1 x  2 Cutout without Stud Notches (black)
+1 0 90 -40 0.005 0 0 -1 0 1 0 1 0 0 4859.DAT
+0 // Plate  1 x  6 (black)
+1 0 -30 -40 -29.995 1 0 0 0 1 0 0 0 1 3666.DAT
+0 // Plate  1 x  6 (black)
+1 0 -30 -40 30.005 1 0 0 0 1 0 0 0 1 3666.DAT
+0 // Plate  1 x  4 (black)
+1 0 40 -40 0.005 0 0 -1 0 1 0 1 0 0 3710.DAT
+0 // Brick  1 x  2 (red)
+1 4 60 -40 0.005 0 0 -1 0 1 0 1 0 0 3004.DAT
+0 // Plate  1 x  1 (red)
+1 4 -80 -32 29.995 1 0 0 0 1 0 0 0 1 3024.DAT
+0 // Plate  1 x  1 (red)
+1 4 -80 -32 -30.005 1 0 0 0 1 0 0 0 1 3024.DAT
+0 // Slope Brick 45  2 x  2 (yellow)
+1 14 -80 -32 -0.005 0 0 1 0 1 0 -1 0 0 3039.DAT
+0 // Wing  3 x  4 with  1 x  2 Cutout without Stud Notches (red)
+1 4 90 -32 0.005 0 0 -1 0 1 0 1 0 0 4859.DAT
+0 // Plate  1 x  6 (red)
+1 4 -10 -32 -29.995 1 0 0 0 1 0 0 0 1 3666.DAT
+0 // Plate  1 x  6 (red)
+1 4 -10 -32 30.005 1 0 0 0 1 0 0 0 1 3666.DAT
+0 // Slope Brick 45  4 x  4 Double Inverted with Open Centre (black)
+1 0 -50 -24 0.005 1 0 0 0 1 0 0 0 1 4854.DAT
+0 // Slope Brick 45  4 x  2 Double Inverted with Open Centre (black)
+1 0 10 -24 0.005 1 0 0 0 1 0 0 0 1 4871.DAT
+0 // Plate  2 x  2 (red)
+1 4 30 -16 0.005 0 0 -1 0 1 0 1 0 0 3022.DAT
+0 // Wedge  4 x  4 Triple Inverted without Ribs between Studs (black)
+1 0 40 -24 0.005 0 0 -1 0 1 0 1 0 0 4855.DAT
+
+
+0 NOFILE

@@ -1,0 +1,119 @@
+0 FILE floodlight-tower.ldr
+0 Girder mast topped with a cross-arm of floodlight heads
+0 Name: floodlight-tower.ldr
+0 Author: ldraw-nova stadium generator
+0 !LDRAW_ORG Model
+0 // mast-0: 30646.dat
+1 72 0 -192 0 1 0 0 0 1 0 0 0 1 30646.dat
+0 // mast-1: 30646.dat
+1 72 0 -400 0 1 0 0 0 1 0 0 0 1 30646.dat
+0 // mast-2: 30646.dat
+1 72 0 -608 0 1 0 0 0 1 0 0 0 1 30646.dat
+0 // mast-3: 30646.dat
+1 72 0 -816 0 1 0 0 0 1 0 0 0 1 30646.dat
+0 STEP
+0 // cross-arm: 3034.dat
+1 72 0 -832 0 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // lamp--60: 6141.dat
+1 46 -60 -840 0 1 0 0 0 1 0 0 0 1 6141.dat
+0 // lamp--20: 6141.dat
+1 46 -20 -840 0 1 0 0 0 1 0 0 0 1 6141.dat
+0 // lamp-20: 6141.dat
+1 46 20 -840 0 1 0 0 0 1 0 0 0 1 6141.dat
+0 // lamp-60: 6141.dat
+1 46 60 -840 0 1 0 0 0 1 0 0 0 1 6141.dat
+0 NOFILE
+0 FILE entrance-tunnel.ldr
+0 Arched tunnel mouth cut into the stand front, dark interior for shadow
+0 Name: entrance-tunnel.ldr
+0 Author: ldraw-nova stadium generator
+0 !LDRAW_ORG Model
+0 // arch: 30528.dat
+1 72 0 -144 0 1 0 0 0 1 0 0 0 1 30528.dat
+0 STEP
+0 // interior-0: 3024.dat
+1 0 -30 -40 -6 1 0 0 0 1 0 0 0 1 3024.dat
+0 // interior-1: 3024.dat
+1 0 -30 -70 -6 1 0 0 0 1 0 0 0 1 3024.dat
+0 // interior-2: 3024.dat
+1 0 -30 -100 -6 1 0 0 0 1 0 0 0 1 3024.dat
+0 // interior-3: 3024.dat
+1 0 0 -40 -6 1 0 0 0 1 0 0 0 1 3024.dat
+0 // interior-4: 3024.dat
+1 0 0 -70 -6 1 0 0 0 1 0 0 0 1 3024.dat
+0 // interior-5: 3024.dat
+1 0 0 -100 -6 1 0 0 0 1 0 0 0 1 3024.dat
+0 // interior-6: 3024.dat
+1 0 30 -40 -6 1 0 0 0 1 0 0 0 1 3024.dat
+0 // interior-7: 3024.dat
+1 0 30 -70 -6 1 0 0 0 1 0 0 0 1 3024.dat
+0 // interior-8: 3024.dat
+1 0 30 -100 -6 1 0 0 0 1 0 0 0 1 3024.dat
+0 NOFILE
+0 FILE goal.ldr
+0 Goal frame with post, crossbar and netting backdrop
+0 Name: goal.ldr
+0 Author: ldraw-nova stadium generator
+0 !LDRAW_ORG Model
+0 // post-left-0: 3005.dat
+1 15 -80 0 0 1 0 0 0 1 0 0 0 1 3005.dat
+0 // post-left-1: 3005.dat
+1 15 -80 -24 0 1 0 0 0 1 0 0 0 1 3005.dat
+0 // post-left-2: 3005.dat
+1 15 -80 -48 0 1 0 0 0 1 0 0 0 1 3005.dat
+0 // post-left-3: 3005.dat
+1 15 -80 -72 0 1 0 0 0 1 0 0 0 1 3005.dat
+0 // post-left-4: 3005.dat
+1 15 -80 -96 0 1 0 0 0 1 0 0 0 1 3005.dat
+0 // post-right-0: 3005.dat
+1 15 80 0 0 1 0 0 0 1 0 0 0 1 3005.dat
+0 // post-right-1: 3005.dat
+1 15 80 -24 0 1 0 0 0 1 0 0 0 1 3005.dat
+0 // post-right-2: 3005.dat
+1 15 80 -48 0 1 0 0 0 1 0 0 0 1 3005.dat
+0 // post-right-3: 3005.dat
+1 15 80 -72 0 1 0 0 0 1 0 0 0 1 3005.dat
+0 // post-right-4: 3005.dat
+1 15 80 -96 0 1 0 0 0 1 0 0 0 1 3005.dat
+0 STEP
+0 // crossbar: 4477.dat
+1 15 0 -120 0 1 0 0 0 1 0 0 0 1 4477.dat
+0 STEP
+0 // net: 30077.dat
+1 15 -60 -96 20 1 0 0 0 1 0 0 0 1 30077.dat
+0 NOFILE
+0 FILE corner-flag.ldr
+0 Thin post with a small angled flag
+0 Name: corner-flag.ldr
+0 Author: ldraw-nova stadium generator
+0 !LDRAW_ORG Model
+0 // post-0: 3062b.dat
+1 4 0 0 0 1 0 0 0 1 0 0 0 1 3062b.dat
+0 // post-1: 3062b.dat
+1 4 0 -24 0 1 0 0 0 1 0 0 0 1 3062b.dat
+0 // post-2: 3062b.dat
+1 4 0 -48 0 1 0 0 0 1 0 0 0 1 3062b.dat
+0 STEP
+0 // flag: 3040b.dat
+1 4 0 -72 0 0.707106781187 0 0.707106781187 0 1 0 -0.707106781187 0 0.707106781187 3040b.dat
+0 NOFILE
+0 FILE scoreboard.ldr
+0 Freestanding scoreboard: two girder posts carrying a panel with a bright screen
+0 Name: scoreboard.ldr
+0 Author: ldraw-nova stadium generator
+0 !LDRAW_ORG Model
+0 // post-l-0: 30646.dat
+1 72 -70 -192 0 1 0 0 0 1 0 0 0 1 30646.dat
+0 // post-l-1: 30646.dat
+1 72 -70 -400 0 1 0 0 0 1 0 0 0 1 30646.dat
+0 // post-r-0: 30646.dat
+1 72 70 -192 0 1 0 0 0 1 0 0 0 1 30646.dat
+0 // post-r-1: 30646.dat
+1 72 70 -400 0 1 0 0 0 1 0 0 0 1 30646.dat
+0 STEP
+0 // frame: 7567.dat
+1 0 0 -536 0 1 0 0 0 1 0 0 0 1 7567.dat
+0 STEP
+0 // screen: 4215a.dat
+1 43 0 -514 11 1 0 0 0 1 0 0 0 1 4215a.dat
+0 NOFILE

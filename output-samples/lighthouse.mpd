@@ -1,0 +1,81 @@
+0 FILE lighthouse-main.ldr
+0 Harbour lighthouse with keeper's hut on a rocky island base
+0 Name: lighthouse-main.ldr
+0 Author: Carlos Antelo
+0 !LDRAW_ORG Model
+0 // base: 6 x 8 island base plate; every other element clutches onto it
+1 2 0 0 0 1 0 0 0 1 0 0 0 1 3036.dat
+0 STEP
+0 // rock-nw: dark grey outcrop on the north-west shore
+1 72 -60 -24 -40 1 0 0 0 1 0 0 0 1 lighthouse-rock.ldr
+0 // rock-sw: light grey outcrop on the south-west shore
+1 71 -60 -24 40 1 0 0 0 1 0 0 0 1 lighthouse-rock.ldr
+0 // rock-s: dark grey outcrop south of the tower
+1 72 -20 -24 40 1 0 0 0 1 0 0 0 1 lighthouse-rock.ldr
+0 STEP
+0 // tower: banded tower shaft, gallery, lamp room and cap
+1 15 -40 -24 0 1 0 0 0 1 0 0 0 1 lighthouse-tower.ldr
+0 STEP
+0 // hut: keeper's hut with doorway and chimney
+1 15 40 -24 0 1 0 0 0 1 0 0 0 1 lighthouse-hut.ldr
+0 NOFILE
+0 FILE lighthouse-tower.ldr
+0 Red and white banded shaft carrying the gallery, lamp room and cap
+0 Name: lighthouse-tower.ldr
+0 Author: Carlos Antelo
+0 !LDRAW_ORG Model
+0 // t1: light grey stone base course on the island plate
+1 71 0 0 0 1 0 0 0 1 0 0 0 1 3003.dat
+0 // t2: red band
+1 4 0 -24 0 1 0 0 0 1 0 0 0 1 3003.dat
+0 // t3: white band
+1 15 0 -48 0 1 0 0 0 1 0 0 0 1 3003.dat
+0 // t4: red band
+1 4 0 -72 0 1 0 0 0 1 0 0 0 1 3003.dat
+0 STEP
+0 // t5: white band
+1 15 0 -96 0 1 0 0 0 1 0 0 0 1 3003.dat
+0 // t6: red band
+1 4 0 -120 0 1 0 0 0 1 0 0 0 1 3003.dat
+0 // t7: top white course under the gallery
+1 15 0 -144 0 1 0 0 0 1 0 0 0 1 3003.dat
+0 STEP
+0 // gallery: 4 x 4 gallery walkway cantilevered one stud around the shaft
+1 72 0 -152 0 1 0 0 0 1 0 0 0 1 3031.dat
+0 // lamp: trans-yellow lamp room
+1 46 0 -176 0 1 0 0 0 1 0 0 0 1 3003.dat
+0 // cap: red roof cap over the lamp room
+1 4 0 -184 0 1 0 0 0 1 0 0 0 1 3022.dat
+0 NOFILE
+0 FILE lighthouse-hut.ldr
+0 Keeper's hut: four walls with a doorway opening, plate roof and chimney
+0 Name: lighthouse-hut.ldr
+0 Author: Carlos Antelo
+0 !LDRAW_ORG Model
+0 // wall-back: rear wall, 4 studs wide
+1 15 0 0 -30 1 0 0 0 1 0 0 0 1 3010.dat
+0 // wall-left: left side wall between the corners
+1 15 -30 0 0 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // wall-right: right side wall between the corners
+1 15 30 0 0 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // wall-front: front wall half, leaving a two-stud doorway
+1 15 -20 0 30 1 0 0 0 1 0 0 0 1 3004.dat
+0 STEP
+0 // roof: 4 x 4 roof plate tying all four wall pieces together
+1 4 0 -8 0 1 0 0 0 1 0 0 0 1 3031.dat
+0 STEP
+0 // chimney: 1 x 2 chimney stack on the rear of the roof
+1 72 -20 -32 -30 1 0 0 0 1 0 0 0 1 3004.dat
+0 // chimney-cap: chimney crown
+1 72 -20 -40 -30 1 0 0 0 1 0 0 0 1 3023b.dat
+0 NOFILE
+0 FILE lighthouse-rock.ldr
+0 Colourable shoreline outcrop inheriting its colour from the parent
+0 Name: lighthouse-rock.ldr
+0 Author: Carlos Antelo
+0 !LDRAW_ORG Model
+0 // boulder: 2 x 2 boulder body
+1 16 0 0 0 1 0 0 0 1 0 0 0 1 3003.dat
+0 // ledge: 1 x 2 ledge on the seaward stud row
+1 16 0 -8 10 1 0 0 0 1 0 0 0 1 3023b.dat
+0 NOFILE

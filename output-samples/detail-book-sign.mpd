@@ -1,0 +1,18 @@
+0 FILE detail-book-sign.ldr
+0 Stud-mounted upright open-book emblem, built from side-stud bricks and tiles. Bottom Y=0, front -Z. Use above a door or as the centre of a roof pediment.
+0 Name: detail-book-sign.ldr
+0 Author: ldraw-nova detail recipes
+0 !LDRAW_ORG Model
+0 // base: 3020.dat
+1 15 0 -8 0 1 0 0 0 1 0 0 0 1 3020.dat
+0 // mount-left: @bricks.Brick1X2WithTwoStudsOnOneSide
+1 288 -20 -32 -10 1 0 0 0 1 0 0 0 1 11211.dat
+0 // mount-right: @bricks.Brick1X2WithTwoStudsOnOneSide
+1 288 20 -32 -10 1 0 0 0 1 0 0 0 1 11211.dat
+0 // page-left: 3069b.dat
+1 15 -20 -22 -28 1 0 0 0 0 -1 0 1 0 3069b.dat
+0 // page-right: 3069b.dat
+1 15 20 -22 -28 1 0 0 0 0 -1 0 1 0 3069b.dat
+0 // binding: 3020.dat
+1 297 0 -40 0 1 0 0 0 1 0 0 0 1 3020.dat
+0 NOFILE

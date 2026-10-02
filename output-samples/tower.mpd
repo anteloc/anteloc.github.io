@@ -1,0 +1,17 @@
+0 FILE tower-main.ldr
+0 Alternating colour brick tower
+0 Name: tower-main.ldr
+0 Author: LDraw Nova example
+0 !LDRAW_ORG Model
+0 // brick-0: 3003.dat
+1 1 0 0 0 1 0 0 0 1 0 0 0 1 3003.dat
+0 STEP
+0 // brick-1: 3003.dat
+1 4 0 -24 0 1 0 0 0 1 0 0 0 1 3003.dat
+0 STEP
+0 // brick-2: 3003.dat
+1 1 0 -48 0 1 0 0 0 1 0 0 0 1 3003.dat
+0 STEP
+0 // brick-3: 3003.dat
+1 4 0 -72 0 1 0 0 0 1 0 0 0 1 3003.dat
+0 NOFILE

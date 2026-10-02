@@ -1,0 +1,39 @@
+0 FILE flatiron-window-00-21023---1---4---1.ldr
+0 Window-detail subassembly using trans-brown plates and curved slopes to form a small glazed bay with an arched top.
+0 Name: flatiron-window-00-21023---1---4---1.ldr
+0 Author: Damien Roux [Darats]
+0 !LDRAW_ORG Model
+0 !LICENSE Redistributable under CCAL version 2.0 : see CAreadme.txt
+
+0 !THEME Architecture
+
+0 // Plate  1 x  3 (tan)
+1 19 0 0 0 0 0 -1 0 1 0 1 0 0 3623.dat
+0 // Plate  1 x  2 (dark_tan)
+1 28 -20 0 10 0 0 -1 0 1 0 1 0 0 3023.dat
+0 // Plate  1 x  8 (light_bluish_grey)
+1 71 50 -8 0 -1 0 0 0 1 0 0 0 -1 3460.dat
+0 // Plate  1 x  2 (trans_brown)
+1 40 20 0 10 0 0 -1 0 1 0 1 0 0 3023.dat
+0 // Plate  1 x  3 (tan)
+1 19 40 0 0 0 0 -1 0 1 0 1 0 0 3623.dat
+0 // Plate  1 x  2 (trans_brown)
+1 40 60 0 10 0 0 -1 0 1 0 1 0 0 3023.dat
+0 // Plate  1 x  3 (tan)
+1 19 80 0 0 0 0 -1 0 1 0 1 0 0 3623.dat
+0 // Plate  1 x  2 (trans_brown)
+1 40 100 0 10 0 0 -1 0 1 0 1 0 0 3023.dat
+0 // Plate  1 x  2 (dark_tan)
+1 28 120 0 10 0 0 -1 0 1 0 1 0 0 3023.dat
+0 // Slope Brick Curved  2 x  2 x  0.667 (tan)
+1 19 10 0 10 -1 0 0 0 1 0 0 0 -1 15068.dat
+0 // Slope Brick Curved  2 x  2 x  0.667 (tan)
+1 19 50 0 10 -1 0 0 0 1 0 0 0 -1 15068.dat
+0 // Slope Brick Curved  2 x  2 x  0.667 (tan)
+1 19 90 0 10 -1 0 0 0 1 0 0 0 -1 15068.dat
+0 // Plate  1 x  1 (dark_tan)
+1 28 120 -8 20 -1 0 0 0 1 0 0 0 -1 3024.dat
+0 // Plate  1 x  1 (dark_tan)
+1 28 -20 -8 20 -1 0 0 0 1 0 0 0 -1 3024.dat
+
+0 NOFILE

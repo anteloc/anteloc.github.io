@@ -1,0 +1,25 @@
+0 FILE detail-striped-awning.ldr
+0 Eight-stud canopy with alternating fabric stripes and scalloped slope profile. Place on an exposed stud row at Z=0, Y=0; front projects to Z=-50.
+0 Name: detail-striped-awning.ldr
+0 Author: ldraw-nova detail recipes
+0 !LDRAW_ORG Model
+0 // beam: 3460.dat
+1 15 0 -8 0 1 0 0 0 1 0 0 0 1 3460.dat
+0 STEP
+0 // stripe-0: @slopes.SlopeBrick333X1
+1 288 -70 -32 0 1 0 0 0 1 0 0 0 1 4286.dat
+0 // stripe-1: @slopes.SlopeBrick333X1
+1 15 -50 -32 0 1 0 0 0 1 0 0 0 1 4286.dat
+0 // stripe-2: @slopes.SlopeBrick333X1
+1 288 -30 -32 0 1 0 0 0 1 0 0 0 1 4286.dat
+0 // stripe-3: @slopes.SlopeBrick333X1
+1 15 -10 -32 0 1 0 0 0 1 0 0 0 1 4286.dat
+0 // stripe-4: @slopes.SlopeBrick333X1
+1 288 10 -32 0 1 0 0 0 1 0 0 0 1 4286.dat
+0 // stripe-5: @slopes.SlopeBrick333X1
+1 15 30 -32 0 1 0 0 0 1 0 0 0 1 4286.dat
+0 // stripe-6: @slopes.SlopeBrick333X1
+1 288 50 -32 0 1 0 0 0 1 0 0 0 1 4286.dat
+0 // stripe-7: @slopes.SlopeBrick333X1
+1 15 70 -32 0 1 0 0 0 1 0 0 0 1 4286.dat
+0 NOFILE

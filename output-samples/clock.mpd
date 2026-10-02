@@ -1,0 +1,65 @@
+0 FILE ref-clock-00-10270---Pendulum_Clock.ldr
+0 Wall-hung pendulum clock - reddish-brown case with a windowed face carrying a clock-face patterned tile, pearl-gold pendulum bob and ornamental slope trim.
+0 Name: ref-clock-00-10270---Pendulum_Clock.ldr
+0 Author: Ulrich Röder [UR]
+0 !LDRAW_ORG Model
+0 !LICENSE Redistributable under CCAL version 2.0 : see CAreadme.txt
+
+0 // Brick  2 x  2 (reddish_brown)
+1 70 0 0 0 1 0 0 0 1 0 0 0 1 3003.dat
+0 // Technic Brick  1 x  2 with Hole (reddish_brown)
+1 70 0 -32 10 1 0 0 0 1 0 0 0 1 3700.dat
+0 // Plate  1 x  2 (reddish_brown)
+1 70 0 -8 10 1 0 0 0 1 0 0 0 1 3023.dat
+0 // Plate  1 x  2 (reddish_brown)
+1 70 0 -40 10 1 0 0 0 1 0 0 0 1 3023.dat
+0 // Plate  1 x  2 (reddish_brown)
+1 70 0 -48 10 1 0 0 0 1 0 0 0 1 3023.dat
+0 // Plate  1 x  1 Round (pearl_gold)
+1 297 0 -22 0 1 0 0 0 0 1 0 -1 0 6141.dat
+0 // Window  1 x  2 x  2 without Sill (reddish_brown)
+1 70 0 -48 -10 1 0 0 0 1 0 0 0 1 60592.dat
+0 // Glass for Window  1 x  2 x  2 without Sill (trans_clear)
+1 47 0 -48 -10 1 0 0 0 1 0 0 0 1 60601.dat
+0 // Plate  1 x  2 with Clip Horizontal on Side (Thick C-Clip) (dark_orange)
+1 484 10 -56 0 0 0 -1 0 1 0 1 0 0 11476.dat
+0 // Plate  1 x  2 with Clip Horizontal on Side (Thick C-Clip) (dark_orange)
+1 484 -10 -56 0 0 0 1 0 1 0 -1 0 0 11476.dat
+0 // Slope Brick 31  1 x  1 x  0.667 (reddish_brown)
+1 70 10 -56 -10 0 0 1 0 1 0 -1 0 0 54200.dat
+0 // Slope Brick 31  1 x  1 x  0.667 (reddish_brown)
+1 70 -10 -56 -10 0 0 -1 0 1 0 1 0 0 54200.dat
+0 // Plate  1 x  2 with Handle on End (reddish_brown)
+1 70 28 -84 0 0 1 0 1 0 0 0 0 -1 60478.dat
+0 // Plate  1 x  2 with Handle on End (reddish_brown)
+1 70 -28 -84 0 0 -1 0 1 0 0 0 0 1 60478.dat
+0 // Tile  1 x  2 with Groove (pearl_gold)
+1 297 -20 -84 0 0 -1 0 1 0 0 0 0 1 3069b.dat
+0 // Tile  1 x  2 with Groove (pearl_gold)
+1 297 20 -84 0 0 1 0 -1 0 0 0 0 1 3069b.dat
+0 // Brick  1 x  2 (medium_nougat)
+1 84 0 -8 30 1 0 0 0 1 0 0 0 1 3004.dat
+0 // Brick  1 x  2 (medium_nougat)
+1 84 0 -32 30 1 0 0 0 1 0 0 0 1 3004.dat
+0 // Brick  1 x  2 (medium_nougat)
+1 84 0 -56 30 1 0 0 0 1 0 0 0 1 3004.dat
+0 // Brick  1 x  2 with Two Studs on One Side (black)
+1 0 0 -104 10 1 0 0 0 1 0 0 0 1 11211.dat
+0 // Brick  2 x  2 (medium_nougat)
+1 84 0 -80 20 1 0 0 0 1 0 0 0 1 3003.dat
+0 // Plate  2 x  2 Round with Axlehole (reddish_brown)
+1 70 0 -84 -8 1 0 0 0 0 -1 0 1 0 4032a.dat
+0 // Tile  2 x  2 Round with Round Underside Stud with Clock and Roman Numerals Pattern (reddish_brown)
+1 70 0 -84 -16 1 0 0 0 0 -1 0 1 0 14769p0a.dat
+0 // Plate  2 x  2 (reddish_brown)
+1 70 0 -112 0 1 0 0 0 1 0 0 0 1 3022.dat
+0 // Slope Brick 31  1 x  1 x  0.667 (reddish_brown)
+1 70 -10 -112 -10 0 0 1 0 1 0 -1 0 0 54200.dat
+0 // Slope Brick 31  1 x  1 x  0.667 (reddish_brown)
+1 70 10 -112 -10 0 0 -1 0 1 0 1 0 0 54200.dat
+0 // Brick  1 x  2 (medium_nougat)
+1 84 0 -104 30 1 0 0 0 1 0 0 0 1 3004.dat
+
+
+
+0 NOFILE

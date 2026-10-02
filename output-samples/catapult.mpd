@@ -1,0 +1,84 @@
+0 FILE catapult-main.ldr
+0 LEGO Education Simple & Powered Machines catapult (C3), recreated from build-manual pages
+0 Name: catapult-main.ldr
+0 Author: LDraw Nova agent
+0 !LDRAW_ORG Model
+0 // base: stand, motor block and hand wheels
+1 16 0 0 0 1 0 0 0 1 0 0 0 1 catapult-base.ldr
+0 STEP
+0 // arm: throwing arm, aligned so its local pivot hole meets the base pivot axle
+1 16 10 -122 138 0 0 -1 0 1 0 1 0 0 catapult-arm.ldr
+0 STEP
+0 // pivot-axle: shared pivot axle through both posts and the arm
+1 71 0 -110 -12 1 0 0 0 1 0 0 0 1 60485.dat
+0 // tensioner: static stand-in for the manual's elastic return band (non-functional, decorative)
+1 0 0 -110 -12 1 0 0 0 1 0 0 0 1 85543.dat
+0 NOFILE
+0 FILE catapult-base.ldr
+0 Twin-post stand with motor-block accent and two side hand wheels
+0 Name: catapult-base.ldr
+0 Author: LDraw Nova agent
+0 !LDRAW_ORG Model
+0 // floor: chassis floor beam, 10 studs
+1 4 0 0 0 1 0 0 0 1 0 0 0 1 2730.dat
+0 STEP
+0 // post-left: left upright post
+1 4 -80 -60 0 0 0 1 -1 0 0 0 -1 0 3894.dat
+0 // post-right: right upright post
+1 4 80 -60 0 0 0 1 -1 0 0 0 -1 0 3894.dat
+0 STEP
+0 // motor: Electric Technic Motor 9V -- closest available substitute for the manual's molded motor block
+1 0 0 -56 10 1 0 0 0 1 0 0 0 1 2838c01.dat
+0 STEP
+0 // wheel-axle-left: stub axle for the left hand wheel
+1 71 -80 -30 -12 1 0 0 0 1 0 0 0 1 3706.dat
+0 // wheel-bush-left: retaining bush against the left post
+1 71 -70 -30 -12 1 0 0 0 1 0 0 0 1 3713.dat
+0 // wheel-left: left hand wheel, rotated so its hub bore faces the axle
+1 14 -20 -30 -12 0 -1 0 1 0 0 0 0 1 2819.dat
+0 STEP
+0 // wheel-axle-right: stub axle for the right hand wheel
+1 71 80 -30 -12 1 0 0 0 1 0 0 0 1 3706.dat
+0 // wheel-bush-right: retaining bush against the right post
+1 71 70 -30 -12 1 0 0 0 1 0 0 0 1 3713.dat
+0 // wheel-right: right hand wheel, rotated so its hub bore faces the axle
+1 14 20 -30 -12 0 -1 0 1 0 0 0 0 1 2819.dat
+0 NOFILE
+0 FILE catapult-arm.ldr
+0 Doubled throwing-arm beam with a cup fork; local pivot hole at x=-150
+0 Name: catapult-arm.ldr
+0 Author: LDraw Nova agent
+0 !LDRAW_ORG Model
+0 // arm-beam-1: arm beam, layer 1
+1 4 0 0 0 1 0 0 0 1 0 0 0 1 3703.dat
+0 // arm-beam-2: arm beam, layer 2
+1 4 0 0 20 1 0 0 0 1 0 0 0 1 3703.dat
+0 STEP
+0 // arm-pin-0: doubling pin
+1 0 -110 12 10 0 0 -1 0 1 0 1 0 0 2780.dat
+0 // arm-pin-1: doubling pin
+1 0 -70 12 10 0 0 -1 0 1 0 1 0 0 2780.dat
+0 // arm-pin-2: doubling pin
+1 0 -30 12 10 0 0 -1 0 1 0 1 0 0 2780.dat
+0 // arm-pin-3: doubling pin
+1 0 10 12 10 0 0 -1 0 1 0 1 0 0 2780.dat
+0 // arm-pin-4: doubling pin
+1 0 50 12 10 0 0 -1 0 1 0 1 0 0 2780.dat
+0 // arm-pin-5: doubling pin
+1 0 90 12 10 0 0 -1 0 1 0 1 0 0 2780.dat
+0 // arm-pin-6: doubling pin
+1 0 130 12 10 0 0 -1 0 1 0 1 0 0 2780.dat
+0 STEP
+0 // fork-a: fork crossbar, layer 1
+1 4 150 -24 10 0 0 1 0 1 0 -1 0 0 3894.dat
+0 // fork-b: fork crossbar, layer 2
+1 4 150 -48 10 0 0 1 0 1 0 -1 0 0 3894.dat
+0 STEP
+0 // cup-green: cup base plate
+1 2 150 -56 10 0 0 1 0 1 0 -1 0 0 3020.dat
+0 // cup-white: cup trim plate
+1 15 150 -64 10 0 0 1 0 1 0 -1 0 0 3710.dat
+0 STEP
+0 // arm-accent: decorative slope near the pivot
+1 14 -140 -24 10 0 0 1 0 1 0 -1 0 0 3040b.dat
+0 NOFILE

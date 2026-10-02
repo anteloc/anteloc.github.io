@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LDraw Nova Outputs</title>
+<meta name="description" content="Gallery of renders and LDraw models produced by LDraw Nova agents.">
+<style>
+  :root {
+    --bg: #f6f6f4;
+    --surface: #ffffff;
+    --text: #1d1d1f;
+    --muted: #5f6368;
+    --border: #e2e2de;
+    --accent: #c4281c;
+    --accent-hover: #a11f15;
+    --shadow: 0 1px 2px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.05);
+    --overlay: rgba(10,10,12,.92);
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141416;
+      --surface: #1e1e21;
+      --text: #ececee;
+      --muted: #a0a0a8;
+      --border: #2e2e33;
+      --accent: #ff6b5e;
+      --accent-hover: #ff8f85;
+      --shadow: 0 1px 2px rgba(0,0,0,.4);
+    }
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  a { color: var(--accent); }
+  a:hover { color: var(--accent-hover); }
+
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 0 16px; }
+
+  header { padding: 48px 0 8px; }
+  h1 { margin: 0; font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -.02em; }
+  h2 { margin: 0 0 8px; font-size: 1.15rem; }
+
+  .about { max-width: 72ch; margin: 24px 0 40px; color: var(--muted); }
+  .about h2 { color: var(--text); }
+  .about p { margin: 0 0 12px; }
+  .about ul { margin: 0 0 12px; padding-left: 1.2em; }
+
+  .gallery-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px; }
+  .count { color: var(--muted); font-size: .9rem; }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 0;
+    margin: 0 0 64px;
+    list-style: none;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .card .thumb {
+    display: block;
+    aspect-ratio: 16 / 9;
+    background: #fff; /* renders have a white background in both themes */
+    cursor: zoom-in;
+  }
+  .card .thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform .2s ease;
+  }
+  .card .thumb:hover img { transform: scale(1.04); }
+  .card .meta {
+    padding: 10px 12px 12px;
+    border-top: 1px solid var(--border);
+    font-size: .85rem;
+  }
+
+  .dl {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 6px;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+  }
+  .dl:hover { text-decoration: underline; }
+  .dl svg { flex: none; width: 1em; height: 1em; margin-top: .2em; }
+
+  /* Lightbox */
+  dialog.lightbox {
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #ececee;
+  }
+  dialog.lightbox::backdrop { background: var(--overlay); }
+  .lb-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 56px 16px 16px;
+  }
+  .lb-inner img {
+    max-width: 100%;
+    max-height: calc(100vh - 140px);
+    background: #fff;
+    border-radius: 4px;
+  }
+  .lb-caption { text-align: center; font-size: .9rem; max-width: 90ch; }
+  .lb-caption .dl { color: #ff8f85; }
+  .lb-btn {
+    position: fixed;
+    border: 0;
+    background: rgba(255,255,255,.12);
+    color: #fff;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 22px;
+    line-height: 44px;
+    cursor: pointer;
+  }
+  .lb-btn:hover { background: rgba(255,255,255,.24); }
+  .lb-close { top: 12px; right: 12px; }
+  .lb-prev { left: 12px; top: 50%; transform: translateY(-50%); }
+  .lb-next { right: 12px; top: 50%; transform: translateY(-50%); }
+  @media (max-width: 600px) {
+    .lb-prev, .lb-next { top: auto; bottom: 12px; transform: none; }
+  }
+
+  footer { padding: 0 0 40px; color: var(--muted); font-size: .85rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>LDraw Nova Outputs</h1>
+  </header>
+
+  <section class="about" aria-labelledby="about-title">
+    <h2 id="about-title">About</h2>
+    <p>
+      The images and LDraw models in this gallery are by-products of agents generating LDraw models.
+      They are not a curated showcase of finished work. They include, for example:
+    </p>
+    <ul>
+      <li>full official models, selected as examples from the <a href="https://library.ldraw.org/omr" target="_blank" rel="noopener">LDraw Official Model Repository</a></li>
+      <li>submodels extracted from official models</li>
+      <li>attempts at modifying and/or repairing assemblies</li>
+      <li>trial-and-error iterations, tests and other work in progress</li>
+    </ul>
+    <p>Click an image to view it full size, or use the link below it to download the corresponding <code>.mpd</code> model.</p>
+  </section>
+
+  <section aria-labelledby="gallery-title">
+    <div class="gallery-head">
+      <h2 id="gallery-title">Gallery</h2>
+      <span class="count" id="count"></span>
+    </div>
+    <ul class="gallery" id="gallery"></ul>
+  </section>
+
+  <footer>LDraw Nova</footer>
+</div>
+
+<dialog class="lightbox" id="lightbox" aria-label="Full size image">
+  <div class="lb-inner" id="lb-inner">
+    <img id="lb-img" alt="">
+    <div class="lb-caption" id="lb-caption"></div>
+  </div>
+  <button class="lb-btn lb-close" id="lb-close" aria-label="Close" autofocus>&times;</button>
+  <button class="lb-btn lb-prev" id="lb-prev" aria-label="Previous image">&#8249;</button>
+  <button class="lb-btn lb-next" id="lb-next" aria-label="Next image">&#8250;</button>
+</dialog>
+
+<script>
+  // Models in output-samples/. Each entry "X.mpd" expects a render at "X.mpd.png" next to it.
+  const MODELS = [
+    "10246-1.mpd::10246 - Lamppost.ldr.repaired.mpd",
+    "10251-1.mpd::10251 - Roof.ldr.repaired.mpd",
+    "10295-1_911-Turbo.mpd::10295 - Front Landing Gear.ldr.repaired.mpd",
+    "10315-1.mpd::10315 - cherry-tree-1.ldr.repaired.mpd",
+    "1210-2.mpd::1210-2 - u8024.dat.repaired.mpd",
+    "1210-2_ALternate-model.mpd::s_1210-2 - 925s02.dat.repaired.mpd",
+    "1212-2.mpd::1212-2 - u8012.dat.repaired.mpd",
+    "1213-2.mpd::s_1213-2 - 925s02.dat.repaired.mpd",
+    "42057-1.mpd::42057 - land1.ldr.repaired.mpd",
+    "42057-1.mpd::42057 - land2.ldr.repaired.mpd",
+    "42123-1.mpd::42123 - front1.ldr.repaired.mpd",
+    "6285-1.mpd::6285 - bowfront.ldr.repaired.mpd",
+    "70816-1.mpd::70816 - 70816-C-01.ldr.repaired.mpd",
+    "75050-1.mpd",
+    "an225-mriya.mpd",
+    "atc-exhaust.mpd",
+    "atc-hook.mpd",
+    "atc-i6.mpd",
+    "atc-seat.mpd",
+    "atc-steer.mpd",
+    "atc-steps.mpd",
+    "atc-tank.mpd",
+    "atc-v8.mpd",
+    "atlas-crane.mpd",
+    "aurora-lance.mpd",
+    "axle-in-cross-hole-roll-45.mpd",
+    "axle-in-cross-hole.mpd",
+    "axle-in-round-hole.mpd",
+    "axle-pin-round-end-in-hole.mpd",
+    "b-wing.mpd",
+    "bookshop-reference.mpd",
+    "bridge-test.mpd",
+    "bridge.mpd",
+    "canopy-cockpit.mpd",
+    "cargo-chest.mpd",
+    "catapult.mpd",
+    "cathedral.mpd",
+    "chain.mpd",
+    "cli.mpd",
+    "clock-display.mpd",
+    "clock.mpd",
+    "colosseum-arch.mpd",
+    "control.mpd",
+    "copper-bean.mpd",
+    "copper-lane-beauty.mpd",
+    "copper-lane.mpd",
+    "courier-jet.mpd",
+    "delivery-van.mpd",
+    "detail-arched-window.mpd",
+    "detail-book-sign.mpd",
+    "detail-flower-planter.mpd",
+    "detail-striped-awning.mpd",
+    "differential.mpd",
+    "driven-turntable.mpd",
+    "driver-cockpit.mpd",
+    "exported-sign.mpd",
+    "falcon-greebles.mpd",
+    "figure-test.mpd",
+    "fire-escape-repaired.mpd",
+    "fire-escape.mpd",
+    "first-model.mpd",
+    "flatiron-window.mpd",
+    "garage-part-test.mpd",
+    "gear-reduction.mpd",
+    "grand-tourer.mpd",
+    "harbour-launch.mpd",
+    "hinge-test-0.mpd",
+    "hinge-test-60.mpd",
+    "jaguar-e-type.mpd",
+    "jet-engine-pod.mpd",
+    "lighthouse.mpd",
+    "manual-angle.mpd",
+    "navigation-lights.mpd",
+    "pagoda.mpd",
+    "part.mpd",
+    "patrol-boat-repaired.mpd",
+    "patrol-boat.mpd",
+    "pickup.mpd",
+    "pilot-cockpit.mpd",
+    "pin-collar-inside-hole.mpd",
+    "pin-fully-separated.mpd",
+    "pin-in-cross-hole.mpd",
+    "pin-tip-touch-only.mpd",
+    "piston-crank.mpd",
+    "preview.mpd",
+    "rose-fit.mpd",
+    "sakura-garden.mpd",
+    "shadow-snap-applied.mpd",
+    "shadow-snap.mpd",
+    "small-boat.mpd",
+    "source.mpd",
+    "stadium-details.mpd",
+    "stadium-modules.mpd",
+    "stadium.mpd",
+    "steering-rack.mpd",
+    "suburban-house.mpd",
+    "system-technic-brace-two-plates.mpd",
+    "system-technic-brace-unspaced.mpd",
+    "technic-gear-repaired.mpd",
+    "technic-gear.mpd",
+    "test.mpd",
+    "test2.mpd",
+    "tipper-truck.mpd",
+    "touring-motorcycle.mpd",
+    "tower.mpd",
+    "train-bogie-black.mpd",
+    "train-bogie.mpd",
+    "truck-cab.mpd",
+    "turntable-frame.mpd",
+    "two-beams-one-2780.mpd",
+    "two-beams-one-3673.mpd",
+    "two-beams-two-pins.mpd",
+    "window-fit.mpd",
+    "wing-mirror.mpd",
+    "worm-drive.mpd",
+    "x-wing-nacelle.mpd",
+    "x-wing-wing.mpd",
+    "y-wing-armour.mpd"
+  ];
+
+  const DIR = "output-samples/";
+  const href = (name) => DIR + encodeURIComponent(name);
+  const DL_ICON = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M2.5 13.5h11"/></svg>';
+
+  function downloadLink(name) {
+    const a = document.createElement("a");
+    a.className = "dl";
+    a.href = href(name);
+    a.download = name;
+    a.innerHTML = DL_ICON;
+    a.append(name);
+    return a;
+  }
+
+  const gallery = document.getElementById("gallery");
+  MODELS.forEach((name, i) => {
+    const li = document.createElement("li");
+    li.className = "card";
+
+    const thumb = document.createElement("a");
+    thumb.className = "thumb";
+    thumb.href = href(name + ".png");
+    thumb.addEventListener("click", (e) => { e.preventDefault(); openAt(i); });
+
+    const img = document.createElement("img");
+    img.src = href(name + ".png");
+    img.alt = "Render of " + name;
+    img.loading = "lazy";
+    img.decoding = "async";
+    img.width = 1280;
+    img.height = 720;
+    thumb.append(img);
+
+    const meta = document.createElement("div");
+    meta.className = "meta";
+    meta.append(downloadLink(name));
+
+    li.append(thumb, meta);
+    gallery.append(li);
+  });
+  document.getElementById("count").textContent = MODELS.length + " models";
+
+  // Lightbox
+  const lb = document.getElementById("lightbox");
+  const lbImg = document.getElementById("lb-img");
+  const lbCaption = document.getElementById("lb-caption");
+  let current = 0;
+
+  function show(i) {
+    current = (i + MODELS.length) % MODELS.length;
+    const name = MODELS[current];
+    lbImg.src = href(name + ".png");
+    lbImg.alt = "Render of " + name;
+    lbCaption.replaceChildren(downloadLink(name));
+  }
+  function openAt(i) {
+    show(i);
+    if (!lb.open) lb.showModal();
+  }
+
+  document.getElementById("lb-close").addEventListener("click", () => lb.close());
+  document.getElementById("lb-prev").addEventListener("click", () => show(current - 1));
+  document.getElementById("lb-next").addEventListener("click", () => show(current + 1));
+  // Click on the dark area around the image closes the lightbox
+  document.getElementById("lb-inner").addEventListener("click", (e) => {
+    if (e.target.id === "lb-inner") lb.close();
+  });
+  lb.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") show(current - 1);
+    if (e.key === "ArrowRight") show(current + 1);
+  });
+  lb.addEventListener("close", () => { lbImg.removeAttribute("src"); });
+</script>
+</body>
+</html>

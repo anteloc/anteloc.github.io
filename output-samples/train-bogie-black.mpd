@@ -1,0 +1,33 @@
+0 FILE nova-selection-root.ldr
+0 Section preview
+0 Name: nova-selection-root.ldr
+0 Author: LDraw tooling (preview wrapper)
+0 !LDRAW_ORG Model
+1 0 0 0 0 1 0 0 0 1 0 0 0 1 train-bogie-00-4547---train-car---wheels.ldr
+0 FILE train-bogie-00-4547---train-car---wheels.ldr
+0 A train bogie undercarriage assembly with wheels, coupling, buffer beam, and magnet for connecting train cars.
+0 Name: train-bogie-00-4547---train-car---wheels.ldr
+0 Author: TotalyWicked [TotalyWicked]
+0 !LDRAW_ORG Model
+0 !LICENSE Redistributable under CCAL version 2.0 : see CAreadme.txt
+0 !HISTORY 2020-03-18 [bercik] OMR version by Robert Paciorek [bercik] with perrmision of TotalyWicked
+
+0 // Train Bogie Plate with Long Pin (main_colour)
+1 16 0 0 0.01 -1 0 0 0 1 0 0 0 -1 4092A.DAT
+0 // Train Wheel Bogie Single Axle with Wheelset with Open Centre Wheels (main_colour)
+1 16 30 8 0.01 0 0 -1 0 1 0 1 0 0 2878C01.DAT
+0 // Train Wheel Bogie Single Axle with Wheelset with Open Centre Wheels (main_colour)
+1 16 -30 8 0.01 0 0 -1 0 1 0 1 0 0 2878C01.DAT
+0 // Plate  2 x  6 (main_colour)
+1 16 0 16 0 1 0 0 0 1 0 0 0 1 3795.DAT
+0 // Train Buffer Beam (main_colour)
+1 16 40 8 0 0 0 -1 0 1 0 1 0 0 4022.DAT
+0 // Plate  1 x  2 (main_colour)
+1 16 -50 8 0 0 0 1 0 1 0 -1 0 0 3023.DAT
+0 // Train Coupling Type 2 (main_colour)
+1 16 70 24 0.01 0 0 -1 0 1 0 1 0 0 2920.DAT
+0 // ~_Magnet Cylindrical in Casing Black (Obsolete) (main_colour)
+1 16 104.5 28.5 0.01 0 0 -1 0 1 0 1 0 0 73092.DAT
+
+
+0 NOFILE

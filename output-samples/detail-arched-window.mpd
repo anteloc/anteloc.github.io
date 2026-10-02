@@ -1,0 +1,34 @@
+0 FILE detail-arched-window.ldr
+0 Six-stud window bay: projecting sill, contrasting piers, arch and flower accents. Support plane Y=0; highest body plane Y=-128; front is -Z.
+0 Name: detail-arched-window.ldr
+0 Author: ldraw-nova detail recipes
+0 !LDRAW_ORG Model
+0 // sill: @plates.Plate2X6
+1 15 0 -8 -10 1 0 0 0 1 0 0 0 1 3795.dat
+0 // frame: @windows.Window1X4X3WithoutShutterTabs
+1 288 0 -80 0 1 0 0 0 1 0 0 0 1 60594.dat
+0 // left-pane: @windows.Window1X2X3PaneWithThickCornerTabs
+1 47 -32 -76 4 0 0 -1 0 1 0 1 0 0 60608.dat
+0 // right-pane: @windows.Window1X2X3PaneWithThickCornerTabs
+1 47 32 -76 4 0 0 1 0 1 0 -1 0 0 60608.dat
+0 // left-pier-0: 3005.dat
+1 15 -50 -32 0 1 0 0 0 1 0 0 0 1 3005.dat
+0 // left-pier-1: 3005.dat
+1 15 -50 -56 0 1 0 0 0 1 0 0 0 1 3005.dat
+0 // left-pier-2: 3005.dat
+1 15 -50 -80 0 1 0 0 0 1 0 0 0 1 3005.dat
+0 // right-pier-0: 3005.dat
+1 15 50 -32 0 1 0 0 0 1 0 0 0 1 3005.dat
+0 // right-pier-1: 3005.dat
+1 15 50 -56 0 1 0 0 0 1 0 0 0 1 3005.dat
+0 // right-pier-2: 3005.dat
+1 15 50 -80 0 1 0 0 0 1 0 0 0 1 3005.dat
+0 // arch: @arches.Arch1X6X2WithThickTopAndReinforcedUnderside
+1 15 0 -128 0 1 0 0 0 1 0 0 0 1 3307.dat
+0 // flower--30: @plates.Plate1X1With5Petals
+1 5 -30 -16 -20 1 0 0 0 1 0 0 0 1 24866.dat
+0 // flower-10: @plates.Plate1X1With5Petals
+1 5 10 -16 -20 1 0 0 0 1 0 0 0 1 24866.dat
+0 // flower-30: @plates.Plate1X1With5Petals
+1 5 30 -16 -20 1 0 0 0 1 0 0 0 1 24866.dat
+0 NOFILE

@@ -1,0 +1,2432 @@
+0 FILE stadium.ldr
+0 Meridian Park: four-stand terrace ground with corner pylons
+0 Name: stadium.ldr
+0 Author: ldraw-nova stadium example generator
+0 !LDRAW_ORG Model
+0 // pitch: elevated pitch, world origin
+1 16 0 0 0 1 0 0 0 1 0 0 0 1 pitch.ldr
+0 STEP
+0 // stand-main: 8-row main stand, north touchline
+1 16 0 0 260 1 0 0 0 1 0 0 0 1 stand-main.ldr
+0 // stand-long: 6-row stand, south touchline
+1 16 0 0 -260 -1 0 0 0 1 0 0 0 -1 stand-long.ldr
+0 STEP
+0 // stand-end-e: 5-row east end stand
+1 16 200 0 0 0 0 1 0 1 0 -1 0 0 stand-end.ldr
+0 // stand-end-w: 5-row west end stand
+1 16 -200 0 0 0 0 -1 0 1 0 1 0 0 stand-end.ldr
+0 STEP
+0 // goal-n: north goal on the goal line
+1 15 0 -40 240 -1 0 0 0 1 0 0 0 -1 goal.ldr
+0 // goal-s: south goal on the goal line
+1 15 0 -40 -240 1 0 0 0 1 0 0 0 1 goal.ldr
+0 STEP
+0 // pylon-ne: corner pylon
+1 16 310 0 330 1 0 0 0 1 0 0 0 1 floodlight.ldr
+0 // pylon-nw: floodlight.ldr
+1 16 -310 0 330 1 0 0 0 1 0 0 0 1 floodlight.ldr
+0 // pylon-se: floodlight.ldr
+1 16 310 0 -330 1 0 0 0 1 0 0 0 1 floodlight.ldr
+0 // pylon-sw: floodlight.ldr
+1 16 -310 0 -330 1 0 0 0 1 0 0 0 1 floodlight.ldr
+0 NOFILE
+0 FILE pitch.ldr
+0 Elevated pitch plinth with turf, markings, corner flags and ball
+0 Name: pitch.ldr
+0 Author: ldraw-nova stadium example generator
+0 !LDRAW_ORG Model
+0 // plinth--180-0: plinth base, rotated 2x8 column band
+1 72 -180 -24 -180 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth--180-1: plinth base, rotated 2x8 column band
+1 72 -140 -24 -180 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth--180-2: plinth base, rotated 2x8 column band
+1 72 -100 -24 -180 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth--180-3: plinth base, rotated 2x8 column band
+1 72 -60 -24 -180 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth--180-4: plinth base, rotated 2x8 column band
+1 72 -20 -24 -180 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth--180-5: plinth base, rotated 2x8 column band
+1 72 20 -24 -180 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth--180-6: plinth base, rotated 2x8 column band
+1 72 60 -24 -180 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth--180-7: plinth base, rotated 2x8 column band
+1 72 100 -24 -180 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth--180-8: plinth base, rotated 2x8 column band
+1 72 140 -24 -180 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth--180-9: plinth base, rotated 2x8 column band
+1 72 180 -24 -180 0 0 1 0 1 0 -1 0 0 3007.dat
+0 STEP
+0 // plinth--20-0: plinth base, rotated 2x8 column band
+1 72 -180 -24 -20 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth--20-1: plinth base, rotated 2x8 column band
+1 72 -140 -24 -20 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth--20-2: plinth base, rotated 2x8 column band
+1 72 -100 -24 -20 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth--20-3: plinth base, rotated 2x8 column band
+1 72 -60 -24 -20 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth--20-4: plinth base, rotated 2x8 column band
+1 72 -20 -24 -20 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth--20-5: plinth base, rotated 2x8 column band
+1 72 20 -24 -20 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth--20-6: plinth base, rotated 2x8 column band
+1 72 60 -24 -20 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth--20-7: plinth base, rotated 2x8 column band
+1 72 100 -24 -20 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth--20-8: plinth base, rotated 2x8 column band
+1 72 140 -24 -20 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth--20-9: plinth base, rotated 2x8 column band
+1 72 180 -24 -20 0 0 1 0 1 0 -1 0 0 3007.dat
+0 STEP
+0 // plinth-140-0: plinth base, rotated 2x8 column band
+1 72 -180 -24 140 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth-140-1: plinth base, rotated 2x8 column band
+1 72 -140 -24 140 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth-140-2: plinth base, rotated 2x8 column band
+1 72 -100 -24 140 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth-140-3: plinth base, rotated 2x8 column band
+1 72 -60 -24 140 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth-140-4: plinth base, rotated 2x8 column band
+1 72 -20 -24 140 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth-140-5: plinth base, rotated 2x8 column band
+1 72 20 -24 140 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth-140-6: plinth base, rotated 2x8 column band
+1 72 60 -24 140 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth-140-7: plinth base, rotated 2x8 column band
+1 72 100 -24 140 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth-140-8: plinth base, rotated 2x8 column band
+1 72 140 -24 140 0 0 1 0 1 0 -1 0 0 3007.dat
+0 // plinth-140-9: plinth base, rotated 2x8 column band
+1 72 180 -24 140 0 0 1 0 1 0 -1 0 0 3007.dat
+0 STEP
+0 // plinth-cap-n-0: plinth north edge, 2x2 bricks
+1 72 -180 -24 240 1 0 0 0 1 0 0 0 1 3003.dat
+0 // plinth-cap-n-1: plinth north edge, 2x2 bricks
+1 72 -140 -24 240 1 0 0 0 1 0 0 0 1 3003.dat
+0 // plinth-cap-n-2: plinth north edge, 2x2 bricks
+1 72 -100 -24 240 1 0 0 0 1 0 0 0 1 3003.dat
+0 // plinth-cap-n-3: plinth north edge, 2x2 bricks
+1 72 -60 -24 240 1 0 0 0 1 0 0 0 1 3003.dat
+0 // plinth-cap-n-4: plinth north edge, 2x2 bricks
+1 72 -20 -24 240 1 0 0 0 1 0 0 0 1 3003.dat
+0 // plinth-cap-n-5: plinth north edge, 2x2 bricks
+1 72 20 -24 240 1 0 0 0 1 0 0 0 1 3003.dat
+0 // plinth-cap-n-6: plinth north edge, 2x2 bricks
+1 72 60 -24 240 1 0 0 0 1 0 0 0 1 3003.dat
+0 // plinth-cap-n-7: plinth north edge, 2x2 bricks
+1 72 100 -24 240 1 0 0 0 1 0 0 0 1 3003.dat
+0 // plinth-cap-n-8: plinth north edge, 2x2 bricks
+1 72 140 -24 240 1 0 0 0 1 0 0 0 1 3003.dat
+0 // plinth-cap-n-9: plinth north edge, 2x2 bricks
+1 72 180 -24 240 1 0 0 0 1 0 0 0 1 3003.dat
+0 STEP
+0 // deck--180-0: staggered bonding deck
+1 72 -160 -32 -180 0 0 1 0 1 0 -1 0 0 3035.dat
+0 // deck--180-1: staggered bonding deck
+1 72 -80 -32 -180 0 0 1 0 1 0 -1 0 0 3035.dat
+0 // deck--180-2: staggered bonding deck
+1 72 0 -32 -180 0 0 1 0 1 0 -1 0 0 3035.dat
+0 // deck--180-3: staggered bonding deck
+1 72 80 -32 -180 0 0 1 0 1 0 -1 0 0 3035.dat
+0 // deck--180-4: staggered bonding deck
+1 72 160 -32 -180 0 0 1 0 1 0 -1 0 0 3035.dat
+0 // deck--20-0: staggered bonding deck
+1 72 -160 -32 -20 0 0 1 0 1 0 -1 0 0 3035.dat
+0 // deck--20-1: staggered bonding deck
+1 72 -80 -32 -20 0 0 1 0 1 0 -1 0 0 3035.dat
+0 // deck--20-2: staggered bonding deck
+1 72 0 -32 -20 0 0 1 0 1 0 -1 0 0 3035.dat
+0 // deck--20-3: staggered bonding deck
+1 72 80 -32 -20 0 0 1 0 1 0 -1 0 0 3035.dat
+0 // deck--20-4: staggered bonding deck
+1 72 160 -32 -20 0 0 1 0 1 0 -1 0 0 3035.dat
+0 // deck-140-0: staggered bonding deck
+1 72 -160 -32 140 0 0 1 0 1 0 -1 0 0 3035.dat
+0 // deck-140-1: staggered bonding deck
+1 72 -80 -32 140 0 0 1 0 1 0 -1 0 0 3035.dat
+0 // deck-140-2: staggered bonding deck
+1 72 0 -32 140 0 0 1 0 1 0 -1 0 0 3035.dat
+0 // deck-140-3: staggered bonding deck
+1 72 80 -32 140 0 0 1 0 1 0 -1 0 0 3035.dat
+0 // deck-140-4: staggered bonding deck
+1 72 160 -32 140 0 0 1 0 1 0 -1 0 0 3035.dat
+0 // deck-fill-n-0: 3022.dat
+1 72 -180 -32 240 1 0 0 0 1 0 0 0 1 3022.dat
+0 // deck-fill-n-1: 3022.dat
+1 72 -140 -32 240 1 0 0 0 1 0 0 0 1 3022.dat
+0 // deck-fill-n-2: 3022.dat
+1 72 -100 -32 240 1 0 0 0 1 0 0 0 1 3022.dat
+0 // deck-fill-n-3: 3022.dat
+1 72 -60 -32 240 1 0 0 0 1 0 0 0 1 3022.dat
+0 // deck-fill-n-4: 3022.dat
+1 72 -20 -32 240 1 0 0 0 1 0 0 0 1 3022.dat
+0 // deck-fill-n-5: 3022.dat
+1 72 20 -32 240 1 0 0 0 1 0 0 0 1 3022.dat
+0 // deck-fill-n-6: 3022.dat
+1 72 60 -32 240 1 0 0 0 1 0 0 0 1 3022.dat
+0 // deck-fill-n-7: 3022.dat
+1 72 100 -32 240 1 0 0 0 1 0 0 0 1 3022.dat
+0 // deck-fill-n-8: 3022.dat
+1 72 140 -32 240 1 0 0 0 1 0 0 0 1 3022.dat
+0 // deck-fill-n-9: 3022.dat
+1 72 180 -32 240 1 0 0 0 1 0 0 0 1 3022.dat
+0 STEP
+0 // apron-side-w-0: side apron 2x2 tiles
+1 72 -180 -40 -220 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // apron-side-w-1: side apron 2x2 tiles
+1 72 -180 -40 -180 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // apron-side-w-2: side apron 2x2 tiles
+1 72 -180 -40 -140 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // apron-side-w-3: side apron 2x2 tiles
+1 72 -180 -40 -100 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // apron-side-w-4: side apron 2x2 tiles
+1 72 -180 -40 -60 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // apron-side-w-5: side apron 2x2 tiles
+1 72 -180 -40 -20 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // apron-side-w-6: side apron 2x2 tiles
+1 72 -180 -40 20 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // apron-side-w-7: side apron 2x2 tiles
+1 72 -180 -40 60 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // apron-side-w-8: side apron 2x2 tiles
+1 72 -180 -40 100 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // apron-side-w-9: side apron 2x2 tiles
+1 72 -180 -40 140 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // apron-side-w-10: side apron 2x2 tiles
+1 72 -180 -40 180 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // apron-side-w-11: side apron 2x2 tiles
+1 72 -180 -40 220 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // apron-side-e-0: side apron 2x2 tiles
+1 72 180 -40 -220 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // apron-side-e-1: side apron 2x2 tiles
+1 72 180 -40 -180 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // apron-side-e-2: side apron 2x2 tiles
+1 72 180 -40 -140 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // apron-side-e-3: side apron 2x2 tiles
+1 72 180 -40 -100 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // apron-side-e-4: side apron 2x2 tiles
+1 72 180 -40 -60 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // apron-side-e-5: side apron 2x2 tiles
+1 72 180 -40 -20 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // apron-side-e-6: side apron 2x2 tiles
+1 72 180 -40 20 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // apron-side-e-7: side apron 2x2 tiles
+1 72 180 -40 60 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // apron-side-e-8: side apron 2x2 tiles
+1 72 180 -40 100 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // apron-side-e-9: side apron 2x2 tiles
+1 72 180 -40 140 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // apron-side-e-10: side apron 2x2 tiles
+1 72 180 -40 180 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // apron-side-e-11: side apron 2x2 tiles
+1 72 180 -40 220 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // apron-end-n-0: end apron 1x2 tiles
+1 72 -140 -40 250 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // apron-end-n-1: end apron 1x2 tiles
+1 72 -100 -40 250 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // apron-end-n-2: end apron 1x2 tiles
+1 72 -60 -40 250 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // apron-end-n-3: end apron 1x2 tiles
+1 72 -20 -40 250 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // apron-end-n-4: end apron 1x2 tiles
+1 72 20 -40 250 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // apron-end-n-5: end apron 1x2 tiles
+1 72 60 -40 250 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // apron-end-n-6: end apron 1x2 tiles
+1 72 100 -40 250 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // apron-end-n-7: end apron 1x2 tiles
+1 72 140 -40 250 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // apron-end-s-0: end apron 1x2 tiles
+1 72 -140 -40 -250 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // apron-end-s-1: end apron 1x2 tiles
+1 72 -100 -40 -250 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // apron-end-s-2: end apron 1x2 tiles
+1 72 -60 -40 -250 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // apron-end-s-3: end apron 1x2 tiles
+1 72 -20 -40 -250 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // apron-end-s-4: end apron 1x2 tiles
+1 72 20 -40 -250 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // apron-end-s-5: end apron 1x2 tiles
+1 72 60 -40 -250 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // apron-end-s-6: end apron 1x2 tiles
+1 72 100 -40 -250 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // apron-end-s-7: end apron 1x2 tiles
+1 72 140 -40 -250 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // apron-corner-11: 3069b.dat
+1 72 180 -40 250 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // apron-corner--11: 3069b.dat
+1 72 180 -40 -250 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // apron-corner-1-1: 3069b.dat
+1 72 -180 -40 250 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // apron-corner--1-1: 3069b.dat
+1 72 -180 -40 -250 1 0 0 0 1 0 0 0 1 3069b.dat
+0 STEP
+0 // turf--100-0: mown turf row
+1 2 -120 -40 -100 1 0 0 0 1 0 0 0 1 87079.dat
+0 // turf--100-1: mown turf row
+1 2 -40 -40 -100 1 0 0 0 1 0 0 0 1 87079.dat
+0 // turf--100-2: mown turf row
+1 2 40 -40 -100 1 0 0 0 1 0 0 0 1 87079.dat
+0 // turf--100-3: mown turf row
+1 2 120 -40 -100 1 0 0 0 1 0 0 0 1 87079.dat
+0 // turf--60-0: mown turf row
+1 2 -120 -40 -60 1 0 0 0 1 0 0 0 1 87079.dat
+0 // turf--60-1: mown turf row
+1 2 -40 -40 -60 1 0 0 0 1 0 0 0 1 87079.dat
+0 // turf--60-2: mown turf row
+1 2 40 -40 -60 1 0 0 0 1 0 0 0 1 87079.dat
+0 // turf--60-3: mown turf row
+1 2 120 -40 -60 1 0 0 0 1 0 0 0 1 87079.dat
+0 // turf-60-0: mown turf row
+1 2 -120 -40 60 1 0 0 0 1 0 0 0 1 87079.dat
+0 // turf-60-1: mown turf row
+1 2 -40 -40 60 1 0 0 0 1 0 0 0 1 87079.dat
+0 // turf-60-2: mown turf row
+1 2 40 -40 60 1 0 0 0 1 0 0 0 1 87079.dat
+0 // turf-60-3: mown turf row
+1 2 120 -40 60 1 0 0 0 1 0 0 0 1 87079.dat
+0 // turf-100-0: mown turf row
+1 2 -120 -40 100 1 0 0 0 1 0 0 0 1 87079.dat
+0 // turf-100-1: mown turf row
+1 2 -40 -40 100 1 0 0 0 1 0 0 0 1 87079.dat
+0 // turf-100-2: mown turf row
+1 2 40 -40 100 1 0 0 0 1 0 0 0 1 87079.dat
+0 // turf-100-3: mown turf row
+1 2 120 -40 100 1 0 0 0 1 0 0 0 1 87079.dat
+0 STEP
+0 // stripe-n-0: 87079.dat
+1 15 -120 -40 20 1 0 0 0 1 0 0 0 1 87079.dat
+0 // stripe-n-1: 87079.dat
+1 15 -40 -40 20 1 0 0 0 1 0 0 0 1 87079.dat
+0 // stripe-n-2: 87079.dat
+1 15 40 -40 20 1 0 0 0 1 0 0 0 1 87079.dat
+0 // stripe-n-3: 87079.dat
+1 15 120 -40 20 1 0 0 0 1 0 0 0 1 87079.dat
+0 // stripe-s-0: 87079.dat
+1 15 -120 -40 -20 1 0 0 0 1 0 0 0 1 87079.dat
+0 // stripe-s-1: 87079.dat
+1 15 -40 -40 -20 1 0 0 0 1 0 0 0 1 87079.dat
+0 // stripe-s-2: 87079.dat
+1 15 40 -40 -20 1 0 0 0 1 0 0 0 1 87079.dat
+0 // stripe-s-3: 87079.dat
+1 15 120 -40 -20 1 0 0 0 1 0 0 0 1 87079.dat
+0 STEP
+0 // zone-n--140-140: 3068b.dat
+1 2 -140 -40 140 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // zone-n--100-140: 3068b.dat
+1 2 -100 -40 140 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // zone-n-100-140: 3068b.dat
+1 2 100 -40 140 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // zone-n-140-140: 3068b.dat
+1 2 140 -40 140 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // zone-n--140-180: 3068b.dat
+1 2 -140 -40 180 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // zone-n--100-180: 3068b.dat
+1 2 -100 -40 180 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // zone-n-100-180: 3068b.dat
+1 2 100 -40 180 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // zone-n-140-180: 3068b.dat
+1 2 140 -40 180 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // pen-side-n--60-140: penalty box side
+1 15 -60 -40 140 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // pen-side-n--60-180: penalty box side
+1 15 -60 -40 180 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // pen-side-n-60-140: penalty box side
+1 15 60 -40 140 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // pen-side-n-60-180: penalty box side
+1 15 60 -40 180 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // pen-front-n--20: penalty box front
+1 15 -20 -40 140 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // pen-front-n-20: penalty box front
+1 15 20 -40 140 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // goal-clamp-1--60-210: goal post footing
+1 15 -60 -40 210 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // goal-clamp-1--60-230: goal post footing
+1 15 -60 -40 230 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // goal-clamp-1-60-210: goal post footing
+1 15 60 -40 210 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // goal-clamp-1-60-230: goal post footing
+1 15 60 -40 230 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // goal-line-n--20: 3068b.dat
+1 2 -20 -40 220 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // goal-line-n-20: 3068b.dat
+1 2 20 -40 220 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // zone-s--140--140: 3068b.dat
+1 2 -140 -40 -140 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // zone-s--100--140: 3068b.dat
+1 2 -100 -40 -140 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // zone-s-100--140: 3068b.dat
+1 2 100 -40 -140 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // zone-s-140--140: 3068b.dat
+1 2 140 -40 -140 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // zone-s--140--180: 3068b.dat
+1 2 -140 -40 -180 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // zone-s--100--180: 3068b.dat
+1 2 -100 -40 -180 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // zone-s-100--180: 3068b.dat
+1 2 100 -40 -180 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // zone-s-140--180: 3068b.dat
+1 2 140 -40 -180 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // pen-side-s--60--140: penalty box side
+1 15 -60 -40 -140 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // pen-side-s--60--180: penalty box side
+1 15 -60 -40 -180 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // pen-side-s-60--140: penalty box side
+1 15 60 -40 -140 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // pen-side-s-60--180: penalty box side
+1 15 60 -40 -180 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // pen-front-s--20: penalty box front
+1 15 -20 -40 -140 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // pen-front-s-20: penalty box front
+1 15 20 -40 -140 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // goal-clamp--1--60--210: goal post footing
+1 15 -60 -40 -210 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // goal-clamp--1--60--230: goal post footing
+1 15 -60 -40 -230 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // goal-clamp--1-60--210: goal post footing
+1 15 60 -40 -210 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // goal-clamp--1-60--230: goal post footing
+1 15 60 -40 -230 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // goal-line-s--20: 3068b.dat
+1 2 -20 -40 -220 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // goal-line-s-20: 3068b.dat
+1 2 20 -40 -220 1 0 0 0 1 0 0 0 1 3068b.dat
+0 STEP
+0 // flag-base-ne-a: 3023b.dat
+1 2 140 -40 210 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // flag-base-ne-b: 3023b.dat
+1 2 140 -40 230 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // flag-pole-ne-0: corner flag pole
+1 15 140 -64 230 1 0 0 0 1 0 0 0 1 3062b.dat
+0 // flag-pole-ne-1: corner flag pole
+1 15 140 -88 230 1 0 0 0 1 0 0 0 1 3062b.dat
+0 // flag-cap-ne: 6141.dat
+1 4 140 -96 230 1 0 0 0 1 0 0 0 1 6141.dat
+0 // flag-base-se-a: 3023b.dat
+1 2 140 -40 -230 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // flag-base-se-b: 3023b.dat
+1 2 140 -40 -210 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // flag-pole-se-0: corner flag pole
+1 15 140 -64 -210 1 0 0 0 1 0 0 0 1 3062b.dat
+0 // flag-pole-se-1: corner flag pole
+1 15 140 -88 -210 1 0 0 0 1 0 0 0 1 3062b.dat
+0 // flag-cap-se: 6141.dat
+1 4 140 -96 -210 1 0 0 0 1 0 0 0 1 6141.dat
+0 // flag-base-nw-a: 3023b.dat
+1 2 -140 -40 210 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // flag-base-nw-b: 3023b.dat
+1 2 -140 -40 230 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // flag-pole-nw-0: corner flag pole
+1 15 -140 -64 230 1 0 0 0 1 0 0 0 1 3062b.dat
+0 // flag-pole-nw-1: corner flag pole
+1 15 -140 -88 230 1 0 0 0 1 0 0 0 1 3062b.dat
+0 // flag-cap-nw: 6141.dat
+1 4 -140 -96 230 1 0 0 0 1 0 0 0 1 6141.dat
+0 // flag-base-sw-a: 3023b.dat
+1 2 -140 -40 -230 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // flag-base-sw-b: 3023b.dat
+1 2 -140 -40 -210 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // flag-pole-sw-0: corner flag pole
+1 15 -140 -64 -210 1 0 0 0 1 0 0 0 1 3062b.dat
+0 // flag-pole-sw-1: corner flag pole
+1 15 -140 -88 -210 1 0 0 0 1 0 0 0 1 3062b.dat
+0 // flag-cap-sw: 6141.dat
+1 4 -140 -96 -210 1 0 0 0 1 0 0 0 1 6141.dat
+0 STEP
+0 // ball: printed football at the edge of the box
+1 15 20 -58 150 1 0 0 0 1 0 0 0 1 72824p01.dat
+0 NOFILE
+0 FILE goal.ldr
+0 Open-frame goal with back stanchions
+0 Name: goal.ldr
+0 Author: ldraw-nova stadium example generator
+0 !LDRAW_ORG Model
+0 // post-f--60-0: front post
+1 15 -60 -24 0 1 0 0 0 1 0 0 0 1 3004.dat
+0 // post-f--60-1: front post
+1 15 -60 -48 0 1 0 0 0 1 0 0 0 1 3004.dat
+0 // post-f--60-2: front post
+1 15 -60 -72 0 1 0 0 0 1 0 0 0 1 3004.dat
+0 // post-b--60-0: back stanchion
+1 15 -60 -24 20 1 0 0 0 1 0 0 0 1 3004.dat
+0 // post-b--60-1: back stanchion
+1 15 -60 -48 20 1 0 0 0 1 0 0 0 1 3004.dat
+0 // post-b--60-2: back stanchion
+1 15 -60 -72 20 1 0 0 0 1 0 0 0 1 3004.dat
+0 // post-f-60-0: front post
+1 15 60 -24 0 1 0 0 0 1 0 0 0 1 3004.dat
+0 // post-f-60-1: front post
+1 15 60 -48 0 1 0 0 0 1 0 0 0 1 3004.dat
+0 // post-f-60-2: front post
+1 15 60 -72 0 1 0 0 0 1 0 0 0 1 3004.dat
+0 // post-b-60-0: back stanchion
+1 15 60 -24 20 1 0 0 0 1 0 0 0 1 3004.dat
+0 // post-b-60-1: back stanchion
+1 15 60 -48 20 1 0 0 0 1 0 0 0 1 3004.dat
+0 // post-b-60-2: back stanchion
+1 15 60 -72 20 1 0 0 0 1 0 0 0 1 3004.dat
+0 STEP
+0 // bar-f: crossbar
+1 15 0 -80 0 1 0 0 0 1 0 0 0 1 3666.dat
+0 // bar-b: back rail
+1 15 0 -80 20 1 0 0 0 1 0 0 0 1 3666.dat
+0 // rail-w: side rail
+1 15 -60 -88 10 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // rail-e: 3023b.dat
+1 15 60 -88 10 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 NOFILE
+0 FILE stand-main.ldr
+0 Main terrace stand: 8 grille rows, cantilever roof
+0 Name: stand-main.ldr
+0 Author: ldraw-nova stadium example generator
+0 !LDRAW_ORG Model
+0 // fw--24-0: 3007.dat
+1 72 -180 -24 20 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fw--24-1: 3007.dat
+1 72 -20 -24 20 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fw--24-2: 3007.dat
+1 72 140 -24 20 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fw-f--24-240: 3003.dat
+1 72 240 -24 20 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fw--48-0: 3007.dat
+1 72 -180 -48 20 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fw--48-1: 3007.dat
+1 72 -20 -48 20 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fw--48-2: 3007.dat
+1 72 140 -48 20 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fw-f--48-240: 3003.dat
+1 72 240 -48 20 1 0 0 0 1 0 0 0 1 3003.dat
+0 // walkway-0: front walkway
+1 15 -160 -56 20 1 0 0 0 1 0 0 0 1 3020.dat
+0 // walkway-1: front walkway
+1 15 -80 -56 20 1 0 0 0 1 0 0 0 1 3020.dat
+0 // walkway-2: front walkway
+1 15 0 -56 20 1 0 0 0 1 0 0 0 1 3020.dat
+0 // walkway-3: front walkway
+1 15 80 -56 20 1 0 0 0 1 0 0 0 1 3020.dat
+0 // walkway-4: front walkway
+1 15 160 -56 20 1 0 0 0 1 0 0 0 1 3020.dat
+0 // walkway-f--240: 3022.dat
+1 15 -240 -56 20 1 0 0 0 1 0 0 0 1 3022.dat
+0 // walkway-f-240: 3022.dat
+1 15 240 -56 20 1 0 0 0 1 0 0 0 1 3022.dat
+0 STEP
+0 // seat-r0-0: seat row 1
+1 4 -240 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-1: seat row 1
+1 4 -200 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-2: seat row 1
+1 4 -160 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-3: seat row 1
+1 4 -120 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-4: seat row 1
+1 4 -80 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-5: seat row 1
+1 4 -40 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-6: seat row 1
+1 4 0 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-7: seat row 1
+1 4 40 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-8: seat row 1
+1 4 80 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-9: seat row 1
+1 4 120 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-10: seat row 1
+1 4 160 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-11: seat row 1
+1 4 200 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-12: seat row 1
+1 4 240 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-0: seat row 2
+1 4 -240 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-1: seat row 2
+1 4 -200 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-2: seat row 2
+1 4 -160 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-3: seat row 2
+1 4 -120 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-4: seat row 2
+1 4 -80 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-5: seat row 2
+1 4 -40 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-6: seat row 2
+1 4 0 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-7: seat row 2
+1 4 40 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-8: seat row 2
+1 4 80 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-9: seat row 2
+1 4 120 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-10: seat row 2
+1 4 160 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-11: seat row 2
+1 4 200 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-12: seat row 2
+1 4 240 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // band-r1-0: tier walkway band
+1 15 -240 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-1: tier walkway band
+1 15 -200 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-2: tier walkway band
+1 15 -160 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-3: tier walkway band
+1 15 -120 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-4: tier walkway band
+1 15 -80 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-5: tier walkway band
+1 15 -40 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-6: tier walkway band
+1 15 0 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-7: tier walkway band
+1 15 40 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-8: tier walkway band
+1 15 80 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-9: tier walkway band
+1 15 120 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-10: tier walkway band
+1 15 160 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-11: tier walkway band
+1 15 200 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-12: tier walkway band
+1 15 240 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // seat-r2-0: seat row 3
+1 4 -240 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-1: seat row 3
+1 4 -200 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-2: seat row 3
+1 4 -160 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-3: seat row 3
+1 4 -120 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-4: seat row 3
+1 4 -80 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-5: seat row 3
+1 4 -40 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-6: seat row 3
+1 4 0 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-7: seat row 3
+1 4 40 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-8: seat row 3
+1 4 80 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-9: seat row 3
+1 4 120 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-10: seat row 3
+1 4 160 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-11: seat row 3
+1 4 200 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-12: seat row 3
+1 4 240 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-0: seat row 4
+1 4 -240 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-1: seat row 4
+1 4 -200 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-2: seat row 4
+1 4 -160 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-3: seat row 4
+1 4 -120 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-4: seat row 4
+1 4 -80 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-5: seat row 4
+1 4 -40 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-6: seat row 4
+1 4 0 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-7: seat row 4
+1 4 40 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-8: seat row 4
+1 4 80 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-9: seat row 4
+1 4 120 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-10: seat row 4
+1 4 160 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-11: seat row 4
+1 4 200 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-12: seat row 4
+1 4 240 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // band-r3-0: tier walkway band
+1 15 -240 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-1: tier walkway band
+1 15 -200 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-2: tier walkway band
+1 15 -160 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-3: tier walkway band
+1 15 -120 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-4: tier walkway band
+1 15 -80 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-5: tier walkway band
+1 15 -40 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-6: tier walkway band
+1 15 0 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-7: tier walkway band
+1 15 40 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-8: tier walkway band
+1 15 80 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-9: tier walkway band
+1 15 120 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-10: tier walkway band
+1 15 160 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-11: tier walkway band
+1 15 200 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-12: tier walkway band
+1 15 240 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // seat-r4-0: seat row 5
+1 4 -240 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-1: seat row 5
+1 4 -200 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-2: seat row 5
+1 4 -160 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-3: seat row 5
+1 4 -120 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-4: seat row 5
+1 4 -80 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-5: seat row 5
+1 4 -40 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-6: seat row 5
+1 4 0 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-7: seat row 5
+1 4 40 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-8: seat row 5
+1 4 80 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-9: seat row 5
+1 4 120 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-10: seat row 5
+1 4 160 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-11: seat row 5
+1 4 200 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-12: seat row 5
+1 4 240 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-0: seat row 6
+1 4 -240 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-1: seat row 6
+1 4 -200 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-2: seat row 6
+1 4 -160 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-3: seat row 6
+1 4 -120 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-4: seat row 6
+1 4 -80 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-5: seat row 6
+1 4 -40 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-6: seat row 6
+1 4 0 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-7: seat row 6
+1 4 40 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-8: seat row 6
+1 4 80 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-9: seat row 6
+1 4 120 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-10: seat row 6
+1 4 160 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-11: seat row 6
+1 4 200 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-12: seat row 6
+1 4 240 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // band-r5-0: tier walkway band
+1 15 -240 -208 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r5-1: tier walkway band
+1 15 -200 -208 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r5-2: tier walkway band
+1 15 -160 -208 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r5-3: tier walkway band
+1 15 -120 -208 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r5-4: tier walkway band
+1 15 -80 -208 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r5-5: tier walkway band
+1 15 -40 -208 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r5-6: tier walkway band
+1 15 0 -208 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r5-7: tier walkway band
+1 15 40 -208 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r5-8: tier walkway band
+1 15 80 -208 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r5-9: tier walkway band
+1 15 120 -208 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r5-10: tier walkway band
+1 15 160 -208 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r5-11: tier walkway band
+1 15 200 -208 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r5-12: tier walkway band
+1 15 240 -208 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // seat-r6-0: seat row 7
+1 4 -240 -224 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r6-1: seat row 7
+1 4 -200 -224 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r6-2: seat row 7
+1 4 -160 -224 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r6-3: seat row 7
+1 4 -120 -224 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r6-4: seat row 7
+1 4 -80 -224 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r6-5: seat row 7
+1 4 -40 -224 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r6-6: seat row 7
+1 4 0 -224 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r6-7: seat row 7
+1 4 40 -224 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r6-8: seat row 7
+1 4 80 -224 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r6-9: seat row 7
+1 4 120 -224 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r6-10: seat row 7
+1 4 160 -224 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r6-11: seat row 7
+1 4 200 -224 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r6-12: seat row 7
+1 4 240 -224 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r7-0: seat row 8
+1 4 -240 -248 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r7-1: seat row 8
+1 4 -200 -248 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r7-2: seat row 8
+1 4 -160 -248 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r7-3: seat row 8
+1 4 -120 -248 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r7-4: seat row 8
+1 4 -80 -248 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r7-5: seat row 8
+1 4 -40 -248 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r7-6: seat row 8
+1 4 0 -248 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r7-7: seat row 8
+1 4 40 -248 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r7-8: seat row 8
+1 4 80 -248 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r7-9: seat row 8
+1 4 120 -248 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r7-10: seat row 8
+1 4 160 -248 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r7-11: seat row 8
+1 4 200 -248 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r7-12: seat row 8
+1 4 240 -248 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // band-top-0: top walkway
+1 15 -240 -256 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-1: top walkway
+1 15 -200 -256 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-2: top walkway
+1 15 -160 -256 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-3: top walkway
+1 15 -120 -256 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-4: top walkway
+1 15 -80 -256 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-5: top walkway
+1 15 -40 -256 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-6: top walkway
+1 15 0 -256 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-7: top walkway
+1 15 40 -256 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-8: top walkway
+1 15 80 -256 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-9: top walkway
+1 15 120 -256 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-10: top walkway
+1 15 160 -256 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-11: top walkway
+1 15 200 -256 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-12: top walkway
+1 15 240 -256 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 STEP
+0 // side-a-e-20-0: 3004.dat
+1 72 270 -24 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-20-1: 3004.dat
+1 72 270 -48 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-20-2: 3004.dat
+1 72 270 -72 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-20-3: 3004.dat
+1 72 270 -96 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-20-4: 3004.dat
+1 72 270 -120 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-20-5: 3004.dat
+1 72 270 -144 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-20-6: 3004.dat
+1 72 270 -168 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-20-7: 3004.dat
+1 72 270 -192 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-20-8: 3004.dat
+1 72 270 -216 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-20-9: 3004.dat
+1 72 270 -240 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-60-0: 3004.dat
+1 72 270 -24 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-60-1: 3004.dat
+1 72 270 -48 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-60-2: 3004.dat
+1 72 270 -72 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-60-3: 3004.dat
+1 72 270 -96 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-60-4: 3004.dat
+1 72 270 -120 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-60-5: 3004.dat
+1 72 270 -144 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-60-6: 3004.dat
+1 72 270 -168 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-60-7: 3004.dat
+1 72 270 -192 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-60-8: 3004.dat
+1 72 270 -216 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-60-9: 3004.dat
+1 72 270 -240 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-cap-e--248-20: 3023b.dat
+1 15 270 -248 20 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-a-cap-e--248-60: 3023b.dat
+1 15 270 -248 60 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-a-cap-e--256-20: 3023b.dat
+1 15 270 -256 20 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-a-cap-e--256-60: 3023b.dat
+1 15 270 -256 60 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-b-e-100-0: 3004.dat
+1 72 270 -24 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-1: 3004.dat
+1 72 270 -48 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-2: 3004.dat
+1 72 270 -72 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-3: 3004.dat
+1 72 270 -96 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-4: 3004.dat
+1 72 270 -120 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-5: 3004.dat
+1 72 270 -144 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-6: 3004.dat
+1 72 270 -168 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-7: 3004.dat
+1 72 270 -192 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-8: 3004.dat
+1 72 270 -216 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-9: 3004.dat
+1 72 270 -240 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-10: 3004.dat
+1 72 270 -264 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-0: 3004.dat
+1 72 270 -24 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-1: 3004.dat
+1 72 270 -48 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-2: 3004.dat
+1 72 270 -72 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-3: 3004.dat
+1 72 270 -96 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-4: 3004.dat
+1 72 270 -120 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-5: 3004.dat
+1 72 270 -144 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-6: 3004.dat
+1 72 270 -168 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-7: 3004.dat
+1 72 270 -192 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-8: 3004.dat
+1 72 270 -216 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-9: 3004.dat
+1 72 270 -240 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-10: 3004.dat
+1 72 270 -264 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-col-e-0: 3005.dat
+1 72 270 -24 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-1: 3005.dat
+1 72 270 -48 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-2: 3005.dat
+1 72 270 -72 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-3: 3005.dat
+1 72 270 -96 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-4: 3005.dat
+1 72 270 -120 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-5: 3005.dat
+1 72 270 -144 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-6: 3005.dat
+1 72 270 -168 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-7: 3005.dat
+1 72 270 -192 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-8: 3005.dat
+1 72 270 -216 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-9: 3005.dat
+1 72 270 -240 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-10: 3005.dat
+1 72 270 -264 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-cap-e-0: roof trim band
+1 15 270 -272 100 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-b-cap-e-1: roof trim band
+1 15 270 -272 140 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-b-cap-e-2: roof trim band
+1 15 270 -272 180 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-a-w-20-0: 3004.dat
+1 72 -270 -24 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-20-1: 3004.dat
+1 72 -270 -48 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-20-2: 3004.dat
+1 72 -270 -72 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-20-3: 3004.dat
+1 72 -270 -96 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-20-4: 3004.dat
+1 72 -270 -120 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-20-5: 3004.dat
+1 72 -270 -144 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-20-6: 3004.dat
+1 72 -270 -168 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-20-7: 3004.dat
+1 72 -270 -192 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-20-8: 3004.dat
+1 72 -270 -216 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-20-9: 3004.dat
+1 72 -270 -240 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-60-0: 3004.dat
+1 72 -270 -24 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-60-1: 3004.dat
+1 72 -270 -48 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-60-2: 3004.dat
+1 72 -270 -72 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-60-3: 3004.dat
+1 72 -270 -96 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-60-4: 3004.dat
+1 72 -270 -120 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-60-5: 3004.dat
+1 72 -270 -144 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-60-6: 3004.dat
+1 72 -270 -168 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-60-7: 3004.dat
+1 72 -270 -192 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-60-8: 3004.dat
+1 72 -270 -216 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-60-9: 3004.dat
+1 72 -270 -240 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-cap-w--248-20: 3023b.dat
+1 15 -270 -248 20 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-a-cap-w--248-60: 3023b.dat
+1 15 -270 -248 60 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-a-cap-w--256-20: 3023b.dat
+1 15 -270 -256 20 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-a-cap-w--256-60: 3023b.dat
+1 15 -270 -256 60 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-b-w-100-0: 3004.dat
+1 72 -270 -24 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-1: 3004.dat
+1 72 -270 -48 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-2: 3004.dat
+1 72 -270 -72 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-3: 3004.dat
+1 72 -270 -96 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-4: 3004.dat
+1 72 -270 -120 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-5: 3004.dat
+1 72 -270 -144 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-6: 3004.dat
+1 72 -270 -168 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-7: 3004.dat
+1 72 -270 -192 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-8: 3004.dat
+1 72 -270 -216 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-9: 3004.dat
+1 72 -270 -240 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-10: 3004.dat
+1 72 -270 -264 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-0: 3004.dat
+1 72 -270 -24 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-1: 3004.dat
+1 72 -270 -48 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-2: 3004.dat
+1 72 -270 -72 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-3: 3004.dat
+1 72 -270 -96 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-4: 3004.dat
+1 72 -270 -120 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-5: 3004.dat
+1 72 -270 -144 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-6: 3004.dat
+1 72 -270 -168 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-7: 3004.dat
+1 72 -270 -192 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-8: 3004.dat
+1 72 -270 -216 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-9: 3004.dat
+1 72 -270 -240 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-10: 3004.dat
+1 72 -270 -264 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-col-w-0: 3005.dat
+1 72 -270 -24 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-1: 3005.dat
+1 72 -270 -48 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-2: 3005.dat
+1 72 -270 -72 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-3: 3005.dat
+1 72 -270 -96 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-4: 3005.dat
+1 72 -270 -120 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-5: 3005.dat
+1 72 -270 -144 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-6: 3005.dat
+1 72 -270 -168 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-7: 3005.dat
+1 72 -270 -192 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-8: 3005.dat
+1 72 -270 -216 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-9: 3005.dat
+1 72 -270 -240 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-10: 3005.dat
+1 72 -270 -264 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-cap-w-0: roof trim band
+1 15 -270 -272 100 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-b-cap-w-1: roof trim band
+1 15 -270 -272 140 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-b-cap-w-2: roof trim band
+1 15 -270 -272 180 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 STEP
+0 // fac-1-0: 3007.dat
+1 72 -180 -24 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-1-1: 3007.dat
+1 72 -20 -24 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-1-2: 3007.dat
+1 72 140 -24 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-1-240: 3003.dat
+1 72 240 -24 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-2-0: 3007.dat
+1 72 -180 -48 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-2-1: 3007.dat
+1 72 -20 -48 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-2-2: 3007.dat
+1 72 140 -48 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-2-240: 3003.dat
+1 72 240 -48 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-3-0: 3007.dat
+1 15 -180 -72 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-3-1: 3007.dat
+1 15 -20 -72 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-3-2: 3007.dat
+1 15 140 -72 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-3-240: 3003.dat
+1 15 240 -72 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-4-0: 3007.dat
+1 15 -180 -96 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-4-1: 3007.dat
+1 15 -20 -96 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-4-2: 3007.dat
+1 15 140 -96 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-4-240: 3003.dat
+1 15 240 -96 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-5-0: 3007.dat
+1 15 -180 -120 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-5-1: 3007.dat
+1 15 -20 -120 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-5-2: 3007.dat
+1 15 140 -120 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-5-240: 3003.dat
+1 15 240 -120 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-6-0: 3007.dat
+1 15 -180 -144 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-6-1: 3007.dat
+1 15 -20 -144 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-6-2: 3007.dat
+1 15 140 -144 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-6-240: 3003.dat
+1 15 240 -144 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-7-0: 3007.dat
+1 15 -180 -168 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-7-1: 3007.dat
+1 15 -20 -168 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-7-2: 3007.dat
+1 15 140 -168 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-7-240: 3003.dat
+1 15 240 -168 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-8-0: 3007.dat
+1 15 -180 -192 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-8-1: 3007.dat
+1 15 -20 -192 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-8-2: 3007.dat
+1 15 140 -192 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-8-240: 3003.dat
+1 15 240 -192 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-9-0: 3007.dat
+1 15 -180 -216 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-9-1: 3007.dat
+1 15 -20 -216 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-9-2: 3007.dat
+1 15 140 -216 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-9-240: 3003.dat
+1 15 240 -216 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-10-0: 3007.dat
+1 15 -180 -240 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-10-1: 3007.dat
+1 15 -20 -240 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-10-2: 3007.dat
+1 15 140 -240 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-10-240: 3003.dat
+1 15 240 -240 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-11-0: 3007.dat
+1 15 -180 -264 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-11-1: 3007.dat
+1 15 -20 -264 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-11-2: 3007.dat
+1 15 140 -264 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-11-240: 3003.dat
+1 15 240 -264 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-band-0: roof seating band
+1 15 -160 -272 200 1 0 0 0 1 0 0 0 1 3020.dat
+0 // fac-band-1: roof seating band
+1 15 -80 -272 200 1 0 0 0 1 0 0 0 1 3020.dat
+0 // fac-band-2: roof seating band
+1 15 0 -272 200 1 0 0 0 1 0 0 0 1 3020.dat
+0 // fac-band-3: roof seating band
+1 15 80 -272 200 1 0 0 0 1 0 0 0 1 3020.dat
+0 // fac-band-4: roof seating band
+1 15 160 -272 200 1 0 0 0 1 0 0 0 1 3020.dat
+0 // fac-band-f--240: 3022.dat
+1 15 -240 -272 200 1 0 0 0 1 0 0 0 1 3022.dat
+0 // fac-band-f-240: 3022.dat
+1 15 240 -272 200 1 0 0 0 1 0 0 0 1 3022.dat
+0 STEP
+0 // roof-plate-0: 4-deep canopy plate
+1 15 -180 -280 160 1 0 0 0 1 0 0 0 1 3035.dat
+0 // roof-plate-1: 4-deep canopy plate
+1 15 -20 -280 160 1 0 0 0 1 0 0 0 1 3035.dat
+0 // roof-plate-2: 4-deep canopy plate
+1 15 140 -280 160 1 0 0 0 1 0 0 0 1 3035.dat
+0 // roof-plate-f-240: 3022.dat
+1 15 240 -280 160 1 0 0 0 1 0 0 0 1 3022.dat
+0 // roof-tile-140-0: canopy roof tiles
+1 15 -160 -288 140 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-140-1: canopy roof tiles
+1 15 -80 -288 140 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-140-2: canopy roof tiles
+1 15 0 -288 140 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-140-3: canopy roof tiles
+1 15 80 -288 140 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-140-4: canopy roof tiles
+1 15 160 -288 140 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-180-0: canopy roof tiles
+1 15 -160 -288 180 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-180-1: canopy roof tiles
+1 15 -80 -288 180 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-180-2: canopy roof tiles
+1 15 0 -288 180 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-180-3: canopy roof tiles
+1 15 80 -288 180 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-180-4: canopy roof tiles
+1 15 160 -288 180 1 0 0 0 1 0 0 0 1 87079.dat
+0 STEP
+0 // fascia-0: trans-light-blue windscreen fascia
+1 43 -160 -272 120 1 0 0 0 1 0 0 0 1 4215b.dat
+0 // fascia-1: trans-light-blue windscreen fascia
+1 43 -80 -272 120 1 0 0 0 1 0 0 0 1 4215b.dat
+0 // fascia-2: trans-light-blue windscreen fascia
+1 43 0 -272 120 1 0 0 0 1 0 0 0 1 4215b.dat
+0 // fascia-3: trans-light-blue windscreen fascia
+1 43 80 -272 120 1 0 0 0 1 0 0 0 1 4215b.dat
+0 // fascia-4: trans-light-blue windscreen fascia
+1 43 160 -272 120 1 0 0 0 1 0 0 0 1 4215b.dat
+0 STEP
+0 // sbox--312-0: scoreboard housing
+1 0 -60 -312 190 1 0 0 0 1 0 0 0 1 3004.dat
+0 // sbox--312-1: scoreboard housing
+1 0 -20 -312 190 1 0 0 0 1 0 0 0 1 3004.dat
+0 // sbox--312-2: scoreboard housing
+1 0 20 -312 190 1 0 0 0 1 0 0 0 1 3004.dat
+0 // sbox--312-3: scoreboard housing
+1 0 60 -312 190 1 0 0 0 1 0 0 0 1 3004.dat
+0 // sbox--336-0: scoreboard housing
+1 0 -60 -336 190 1 0 0 0 1 0 0 0 1 3004.dat
+0 // sbox--336-1: scoreboard housing
+1 0 -20 -336 190 1 0 0 0 1 0 0 0 1 3004.dat
+0 // sbox--336-2: scoreboard housing
+1 0 20 -336 190 1 0 0 0 1 0 0 0 1 3004.dat
+0 // sbox--336-3: scoreboard housing
+1 0 60 -336 190 1 0 0 0 1 0 0 0 1 3004.dat
+0 // sbox-cap-0: 3023b.dat
+1 15 -60 -344 190 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // sbox-cap-1: 3023b.dat
+1 15 -20 -344 190 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // sbox-cap-2: 3023b.dat
+1 15 20 -344 190 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // sbox-cap-3: 3023b.dat
+1 15 60 -344 190 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // sscreen-0: glazed screen
+1 43 -40 -360 170 1 0 0 0 1 0 0 0 1 4215b.dat
+0 // sscreen-1: glazed screen
+1 43 0 -360 170 1 0 0 0 1 0 0 0 1 4215b.dat
+0 // sscreen-2: glazed screen
+1 43 40 -360 170 1 0 0 0 1 0 0 0 1 4215b.dat
+0 // sscreen-cap-0: 3023b.dat
+1 15 -60 -368 170 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // sscreen-cap-1: 3023b.dat
+1 15 -20 -368 170 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // sscreen-cap-2: 3023b.dat
+1 15 20 -368 170 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // sscreen-cap-3: 3023b.dat
+1 15 60 -368 170 1 0 0 0 1 0 0 0 1 3023b.dat
+0 NOFILE
+0 FILE stand-long.ldr
+0 Side terrace stand: 6 grille rows, cantilever roof
+0 Name: stand-long.ldr
+0 Author: ldraw-nova stadium example generator
+0 !LDRAW_ORG Model
+0 // fw--24-0: 3007.dat
+1 72 -180 -24 20 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fw--24-1: 3007.dat
+1 72 -20 -24 20 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fw--24-2: 3007.dat
+1 72 140 -24 20 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fw-f--24-240: 3003.dat
+1 72 240 -24 20 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fw--48-0: 3007.dat
+1 72 -180 -48 20 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fw--48-1: 3007.dat
+1 72 -20 -48 20 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fw--48-2: 3007.dat
+1 72 140 -48 20 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fw-f--48-240: 3003.dat
+1 72 240 -48 20 1 0 0 0 1 0 0 0 1 3003.dat
+0 // walkway-0: front walkway
+1 15 -160 -56 20 1 0 0 0 1 0 0 0 1 3020.dat
+0 // walkway-1: front walkway
+1 15 -80 -56 20 1 0 0 0 1 0 0 0 1 3020.dat
+0 // walkway-2: front walkway
+1 15 0 -56 20 1 0 0 0 1 0 0 0 1 3020.dat
+0 // walkway-3: front walkway
+1 15 80 -56 20 1 0 0 0 1 0 0 0 1 3020.dat
+0 // walkway-4: front walkway
+1 15 160 -56 20 1 0 0 0 1 0 0 0 1 3020.dat
+0 // walkway-f--240: 3022.dat
+1 15 -240 -56 20 1 0 0 0 1 0 0 0 1 3022.dat
+0 // walkway-f-240: 3022.dat
+1 15 240 -56 20 1 0 0 0 1 0 0 0 1 3022.dat
+0 STEP
+0 // seat-r0-0: seat row 1
+1 4 -240 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-1: seat row 1
+1 4 -200 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-2: seat row 1
+1 4 -160 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-3: seat row 1
+1 4 -120 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-4: seat row 1
+1 4 -80 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-5: seat row 1
+1 4 -40 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-6: seat row 1
+1 4 0 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-7: seat row 1
+1 4 40 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-8: seat row 1
+1 4 80 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-9: seat row 1
+1 4 120 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-10: seat row 1
+1 4 160 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-11: seat row 1
+1 4 200 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-12: seat row 1
+1 4 240 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-0: seat row 2
+1 4 -240 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-1: seat row 2
+1 4 -200 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-2: seat row 2
+1 4 -160 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-3: seat row 2
+1 4 -120 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-4: seat row 2
+1 4 -80 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-5: seat row 2
+1 4 -40 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-6: seat row 2
+1 4 0 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-7: seat row 2
+1 4 40 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-8: seat row 2
+1 4 80 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-9: seat row 2
+1 4 120 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-10: seat row 2
+1 4 160 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-11: seat row 2
+1 4 200 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-12: seat row 2
+1 4 240 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // band-r1-0: tier walkway band
+1 15 -240 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-1: tier walkway band
+1 15 -200 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-2: tier walkway band
+1 15 -160 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-3: tier walkway band
+1 15 -120 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-4: tier walkway band
+1 15 -80 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-5: tier walkway band
+1 15 -40 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-6: tier walkway band
+1 15 0 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-7: tier walkway band
+1 15 40 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-8: tier walkway band
+1 15 80 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-9: tier walkway band
+1 15 120 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-10: tier walkway band
+1 15 160 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-11: tier walkway band
+1 15 200 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-12: tier walkway band
+1 15 240 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // seat-r2-0: seat row 3
+1 4 -240 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-1: seat row 3
+1 4 -200 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-2: seat row 3
+1 4 -160 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-3: seat row 3
+1 4 -120 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-4: seat row 3
+1 4 -80 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-5: seat row 3
+1 4 -40 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-6: seat row 3
+1 4 0 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-7: seat row 3
+1 4 40 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-8: seat row 3
+1 4 80 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-9: seat row 3
+1 4 120 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-10: seat row 3
+1 4 160 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-11: seat row 3
+1 4 200 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-12: seat row 3
+1 4 240 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-0: seat row 4
+1 4 -240 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-1: seat row 4
+1 4 -200 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-2: seat row 4
+1 4 -160 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-3: seat row 4
+1 4 -120 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-4: seat row 4
+1 4 -80 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-5: seat row 4
+1 4 -40 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-6: seat row 4
+1 4 0 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-7: seat row 4
+1 4 40 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-8: seat row 4
+1 4 80 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-9: seat row 4
+1 4 120 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-10: seat row 4
+1 4 160 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-11: seat row 4
+1 4 200 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-12: seat row 4
+1 4 240 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // band-r3-0: tier walkway band
+1 15 -240 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-1: tier walkway band
+1 15 -200 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-2: tier walkway band
+1 15 -160 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-3: tier walkway band
+1 15 -120 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-4: tier walkway band
+1 15 -80 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-5: tier walkway band
+1 15 -40 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-6: tier walkway band
+1 15 0 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-7: tier walkway band
+1 15 40 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-8: tier walkway band
+1 15 80 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-9: tier walkway band
+1 15 120 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-10: tier walkway band
+1 15 160 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-11: tier walkway band
+1 15 200 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-12: tier walkway band
+1 15 240 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // seat-r4-0: seat row 5
+1 4 -240 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-1: seat row 5
+1 4 -200 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-2: seat row 5
+1 4 -160 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-3: seat row 5
+1 4 -120 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-4: seat row 5
+1 4 -80 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-5: seat row 5
+1 4 -40 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-6: seat row 5
+1 4 0 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-7: seat row 5
+1 4 40 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-8: seat row 5
+1 4 80 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-9: seat row 5
+1 4 120 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-10: seat row 5
+1 4 160 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-11: seat row 5
+1 4 200 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-12: seat row 5
+1 4 240 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-0: seat row 6
+1 4 -240 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-1: seat row 6
+1 4 -200 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-2: seat row 6
+1 4 -160 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-3: seat row 6
+1 4 -120 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-4: seat row 6
+1 4 -80 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-5: seat row 6
+1 4 -40 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-6: seat row 6
+1 4 0 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-7: seat row 6
+1 4 40 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-8: seat row 6
+1 4 80 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-9: seat row 6
+1 4 120 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-10: seat row 6
+1 4 160 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-11: seat row 6
+1 4 200 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r5-12: seat row 6
+1 4 240 -200 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // band-top-0: top walkway
+1 15 -240 -208 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-1: top walkway
+1 15 -200 -208 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-2: top walkway
+1 15 -160 -208 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-3: top walkway
+1 15 -120 -208 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-4: top walkway
+1 15 -80 -208 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-5: top walkway
+1 15 -40 -208 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-6: top walkway
+1 15 0 -208 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-7: top walkway
+1 15 40 -208 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-8: top walkway
+1 15 80 -208 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-9: top walkway
+1 15 120 -208 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-10: top walkway
+1 15 160 -208 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-11: top walkway
+1 15 200 -208 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-12: top walkway
+1 15 240 -208 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 STEP
+0 // side-a-e-20-0: 3004.dat
+1 72 270 -24 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-20-1: 3004.dat
+1 72 270 -48 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-20-2: 3004.dat
+1 72 270 -72 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-20-3: 3004.dat
+1 72 270 -96 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-20-4: 3004.dat
+1 72 270 -120 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-20-5: 3004.dat
+1 72 270 -144 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-20-6: 3004.dat
+1 72 270 -168 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-20-7: 3004.dat
+1 72 270 -192 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-60-0: 3004.dat
+1 72 270 -24 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-60-1: 3004.dat
+1 72 270 -48 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-60-2: 3004.dat
+1 72 270 -72 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-60-3: 3004.dat
+1 72 270 -96 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-60-4: 3004.dat
+1 72 270 -120 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-60-5: 3004.dat
+1 72 270 -144 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-60-6: 3004.dat
+1 72 270 -168 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-60-7: 3004.dat
+1 72 270 -192 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-cap-e--200-20: 3023b.dat
+1 15 270 -200 20 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-a-cap-e--200-60: 3023b.dat
+1 15 270 -200 60 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-a-cap-e--208-20: 3023b.dat
+1 15 270 -208 20 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-a-cap-e--208-60: 3023b.dat
+1 15 270 -208 60 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-b-e-100-0: 3004.dat
+1 72 270 -24 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-1: 3004.dat
+1 72 270 -48 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-2: 3004.dat
+1 72 270 -72 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-3: 3004.dat
+1 72 270 -96 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-4: 3004.dat
+1 72 270 -120 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-5: 3004.dat
+1 72 270 -144 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-6: 3004.dat
+1 72 270 -168 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-7: 3004.dat
+1 72 270 -192 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-8: 3004.dat
+1 72 270 -216 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-9: 3004.dat
+1 72 270 -240 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-10: 3004.dat
+1 72 270 -264 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-0: 3004.dat
+1 72 270 -24 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-1: 3004.dat
+1 72 270 -48 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-2: 3004.dat
+1 72 270 -72 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-3: 3004.dat
+1 72 270 -96 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-4: 3004.dat
+1 72 270 -120 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-5: 3004.dat
+1 72 270 -144 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-6: 3004.dat
+1 72 270 -168 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-7: 3004.dat
+1 72 270 -192 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-8: 3004.dat
+1 72 270 -216 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-9: 3004.dat
+1 72 270 -240 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-10: 3004.dat
+1 72 270 -264 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-col-e-0: 3005.dat
+1 72 270 -24 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-1: 3005.dat
+1 72 270 -48 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-2: 3005.dat
+1 72 270 -72 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-3: 3005.dat
+1 72 270 -96 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-4: 3005.dat
+1 72 270 -120 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-5: 3005.dat
+1 72 270 -144 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-6: 3005.dat
+1 72 270 -168 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-7: 3005.dat
+1 72 270 -192 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-8: 3005.dat
+1 72 270 -216 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-9: 3005.dat
+1 72 270 -240 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-10: 3005.dat
+1 72 270 -264 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-cap-e-0: roof trim band
+1 15 270 -272 100 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-b-cap-e-1: roof trim band
+1 15 270 -272 140 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-b-cap-e-2: roof trim band
+1 15 270 -272 180 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-a-w-20-0: 3004.dat
+1 72 -270 -24 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-20-1: 3004.dat
+1 72 -270 -48 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-20-2: 3004.dat
+1 72 -270 -72 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-20-3: 3004.dat
+1 72 -270 -96 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-20-4: 3004.dat
+1 72 -270 -120 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-20-5: 3004.dat
+1 72 -270 -144 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-20-6: 3004.dat
+1 72 -270 -168 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-20-7: 3004.dat
+1 72 -270 -192 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-60-0: 3004.dat
+1 72 -270 -24 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-60-1: 3004.dat
+1 72 -270 -48 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-60-2: 3004.dat
+1 72 -270 -72 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-60-3: 3004.dat
+1 72 -270 -96 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-60-4: 3004.dat
+1 72 -270 -120 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-60-5: 3004.dat
+1 72 -270 -144 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-60-6: 3004.dat
+1 72 -270 -168 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-60-7: 3004.dat
+1 72 -270 -192 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-cap-w--200-20: 3023b.dat
+1 15 -270 -200 20 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-a-cap-w--200-60: 3023b.dat
+1 15 -270 -200 60 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-a-cap-w--208-20: 3023b.dat
+1 15 -270 -208 20 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-a-cap-w--208-60: 3023b.dat
+1 15 -270 -208 60 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-b-w-100-0: 3004.dat
+1 72 -270 -24 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-1: 3004.dat
+1 72 -270 -48 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-2: 3004.dat
+1 72 -270 -72 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-3: 3004.dat
+1 72 -270 -96 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-4: 3004.dat
+1 72 -270 -120 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-5: 3004.dat
+1 72 -270 -144 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-6: 3004.dat
+1 72 -270 -168 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-7: 3004.dat
+1 72 -270 -192 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-8: 3004.dat
+1 72 -270 -216 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-9: 3004.dat
+1 72 -270 -240 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-10: 3004.dat
+1 72 -270 -264 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-0: 3004.dat
+1 72 -270 -24 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-1: 3004.dat
+1 72 -270 -48 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-2: 3004.dat
+1 72 -270 -72 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-3: 3004.dat
+1 72 -270 -96 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-4: 3004.dat
+1 72 -270 -120 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-5: 3004.dat
+1 72 -270 -144 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-6: 3004.dat
+1 72 -270 -168 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-7: 3004.dat
+1 72 -270 -192 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-8: 3004.dat
+1 72 -270 -216 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-9: 3004.dat
+1 72 -270 -240 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-10: 3004.dat
+1 72 -270 -264 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-col-w-0: 3005.dat
+1 72 -270 -24 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-1: 3005.dat
+1 72 -270 -48 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-2: 3005.dat
+1 72 -270 -72 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-3: 3005.dat
+1 72 -270 -96 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-4: 3005.dat
+1 72 -270 -120 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-5: 3005.dat
+1 72 -270 -144 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-6: 3005.dat
+1 72 -270 -168 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-7: 3005.dat
+1 72 -270 -192 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-8: 3005.dat
+1 72 -270 -216 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-9: 3005.dat
+1 72 -270 -240 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-10: 3005.dat
+1 72 -270 -264 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-cap-w-0: roof trim band
+1 15 -270 -272 100 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-b-cap-w-1: roof trim band
+1 15 -270 -272 140 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-b-cap-w-2: roof trim band
+1 15 -270 -272 180 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 STEP
+0 // fac-1-0: 3007.dat
+1 72 -180 -24 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-1-1: 3007.dat
+1 72 -20 -24 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-1-2: 3007.dat
+1 72 140 -24 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-1-240: 3003.dat
+1 72 240 -24 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-2-0: 3007.dat
+1 72 -180 -48 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-2-1: 3007.dat
+1 72 -20 -48 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-2-2: 3007.dat
+1 72 140 -48 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-2-240: 3003.dat
+1 72 240 -48 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-3-0: 3007.dat
+1 15 -180 -72 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-3-1: 3007.dat
+1 15 -20 -72 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-3-2: 3007.dat
+1 15 140 -72 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-3-240: 3003.dat
+1 15 240 -72 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-4-0: 3007.dat
+1 15 -180 -96 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-4-1: 3007.dat
+1 15 -20 -96 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-4-2: 3007.dat
+1 15 140 -96 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-4-240: 3003.dat
+1 15 240 -96 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-5-0: 3007.dat
+1 15 -180 -120 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-5-1: 3007.dat
+1 15 -20 -120 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-5-2: 3007.dat
+1 15 140 -120 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-5-240: 3003.dat
+1 15 240 -120 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-6-0: 3007.dat
+1 15 -180 -144 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-6-1: 3007.dat
+1 15 -20 -144 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-6-2: 3007.dat
+1 15 140 -144 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-6-240: 3003.dat
+1 15 240 -144 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-7-0: 3007.dat
+1 15 -180 -168 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-7-1: 3007.dat
+1 15 -20 -168 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-7-2: 3007.dat
+1 15 140 -168 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-7-240: 3003.dat
+1 15 240 -168 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-8-0: 3007.dat
+1 15 -180 -192 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-8-1: 3007.dat
+1 15 -20 -192 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-8-2: 3007.dat
+1 15 140 -192 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-8-240: 3003.dat
+1 15 240 -192 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-9-0: 3007.dat
+1 15 -180 -216 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-9-1: 3007.dat
+1 15 -20 -216 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-9-2: 3007.dat
+1 15 140 -216 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-9-240: 3003.dat
+1 15 240 -216 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-10-0: 3007.dat
+1 15 -180 -240 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-10-1: 3007.dat
+1 15 -20 -240 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-10-2: 3007.dat
+1 15 140 -240 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-10-240: 3003.dat
+1 15 240 -240 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-11-0: 3007.dat
+1 15 -180 -264 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-11-1: 3007.dat
+1 15 -20 -264 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-11-2: 3007.dat
+1 15 140 -264 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-11-240: 3003.dat
+1 15 240 -264 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-band-0: roof seating band
+1 15 -160 -272 200 1 0 0 0 1 0 0 0 1 3020.dat
+0 // fac-band-1: roof seating band
+1 15 -80 -272 200 1 0 0 0 1 0 0 0 1 3020.dat
+0 // fac-band-2: roof seating band
+1 15 0 -272 200 1 0 0 0 1 0 0 0 1 3020.dat
+0 // fac-band-3: roof seating band
+1 15 80 -272 200 1 0 0 0 1 0 0 0 1 3020.dat
+0 // fac-band-4: roof seating band
+1 15 160 -272 200 1 0 0 0 1 0 0 0 1 3020.dat
+0 // fac-band-f--240: 3022.dat
+1 15 -240 -272 200 1 0 0 0 1 0 0 0 1 3022.dat
+0 // fac-band-f-240: 3022.dat
+1 15 240 -272 200 1 0 0 0 1 0 0 0 1 3022.dat
+0 STEP
+0 // roof-plate-0: 4-deep canopy plate
+1 15 -180 -280 160 1 0 0 0 1 0 0 0 1 3035.dat
+0 // roof-plate-1: 4-deep canopy plate
+1 15 -20 -280 160 1 0 0 0 1 0 0 0 1 3035.dat
+0 // roof-plate-2: 4-deep canopy plate
+1 15 140 -280 160 1 0 0 0 1 0 0 0 1 3035.dat
+0 // roof-plate-f-240: 3022.dat
+1 15 240 -280 160 1 0 0 0 1 0 0 0 1 3022.dat
+0 // roof-tile-140-0: canopy roof tiles
+1 15 -160 -288 140 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-140-1: canopy roof tiles
+1 15 -80 -288 140 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-140-2: canopy roof tiles
+1 15 0 -288 140 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-140-3: canopy roof tiles
+1 15 80 -288 140 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-140-4: canopy roof tiles
+1 15 160 -288 140 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-180-0: canopy roof tiles
+1 15 -160 -288 180 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-180-1: canopy roof tiles
+1 15 -80 -288 180 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-180-2: canopy roof tiles
+1 15 0 -288 180 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-180-3: canopy roof tiles
+1 15 80 -288 180 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-180-4: canopy roof tiles
+1 15 160 -288 180 1 0 0 0 1 0 0 0 1 87079.dat
+0 STEP
+0 // fascia-0: trans-light-blue windscreen fascia
+1 43 -160 -272 120 1 0 0 0 1 0 0 0 1 4215b.dat
+0 // fascia-1: trans-light-blue windscreen fascia
+1 43 -80 -272 120 1 0 0 0 1 0 0 0 1 4215b.dat
+0 // fascia-2: trans-light-blue windscreen fascia
+1 43 0 -272 120 1 0 0 0 1 0 0 0 1 4215b.dat
+0 // fascia-3: trans-light-blue windscreen fascia
+1 43 80 -272 120 1 0 0 0 1 0 0 0 1 4215b.dat
+0 // fascia-4: trans-light-blue windscreen fascia
+1 43 160 -272 120 1 0 0 0 1 0 0 0 1 4215b.dat
+0 NOFILE
+0 FILE stand-end.ldr
+0 End terrace stand: 5 grille rows, cantilever roof
+0 Name: stand-end.ldr
+0 Author: ldraw-nova stadium example generator
+0 !LDRAW_ORG Model
+0 // fw--24-0: 3007.dat
+1 72 -80 -24 20 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fw--24-1: 3007.dat
+1 72 80 -24 20 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fw-f--24--180: 3003.dat
+1 72 -180 -24 20 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fw-f--24-180: 3003.dat
+1 72 180 -24 20 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fw--48-0: 3007.dat
+1 72 -80 -48 20 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fw--48-1: 3007.dat
+1 72 80 -48 20 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fw-f--48--180: 3003.dat
+1 72 -180 -48 20 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fw-f--48-180: 3003.dat
+1 72 180 -48 20 1 0 0 0 1 0 0 0 1 3003.dat
+0 // walkway-0: front walkway
+1 15 -160 -56 20 1 0 0 0 1 0 0 0 1 3020.dat
+0 // walkway-1: front walkway
+1 15 -80 -56 20 1 0 0 0 1 0 0 0 1 3020.dat
+0 // walkway-2: front walkway
+1 15 0 -56 20 1 0 0 0 1 0 0 0 1 3020.dat
+0 // walkway-3: front walkway
+1 15 80 -56 20 1 0 0 0 1 0 0 0 1 3020.dat
+0 // walkway-4: front walkway
+1 15 160 -56 20 1 0 0 0 1 0 0 0 1 3020.dat
+0 STEP
+0 // seat-r0-0: seat row 1
+1 4 -180 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-1: seat row 1
+1 4 -140 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-2: seat row 1
+1 4 -100 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-3: seat row 1
+1 4 -60 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-4: seat row 1
+1 4 -20 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-5: seat row 1
+1 4 20 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-6: seat row 1
+1 4 60 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-7: seat row 1
+1 4 100 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-8: seat row 1
+1 4 140 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r0-9: seat row 1
+1 4 180 -80 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-0: seat row 2
+1 4 -180 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-1: seat row 2
+1 4 -140 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-2: seat row 2
+1 4 -100 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-3: seat row 2
+1 4 -60 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-4: seat row 2
+1 4 -20 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-5: seat row 2
+1 4 20 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-6: seat row 2
+1 4 60 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-7: seat row 2
+1 4 100 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-8: seat row 2
+1 4 140 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r1-9: seat row 2
+1 4 180 -104 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // band-r1-0: tier walkway band
+1 15 -180 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-1: tier walkway band
+1 15 -140 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-2: tier walkway band
+1 15 -100 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-3: tier walkway band
+1 15 -60 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-4: tier walkway band
+1 15 -20 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-5: tier walkway band
+1 15 20 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-6: tier walkway band
+1 15 60 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-7: tier walkway band
+1 15 100 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-8: tier walkway band
+1 15 140 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r1-9: tier walkway band
+1 15 180 -112 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // seat-r2-0: seat row 3
+1 4 -180 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-1: seat row 3
+1 4 -140 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-2: seat row 3
+1 4 -100 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-3: seat row 3
+1 4 -60 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-4: seat row 3
+1 4 -20 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-5: seat row 3
+1 4 20 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-6: seat row 3
+1 4 60 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-7: seat row 3
+1 4 100 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-8: seat row 3
+1 4 140 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r2-9: seat row 3
+1 4 180 -128 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-0: seat row 4
+1 4 -180 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-1: seat row 4
+1 4 -140 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-2: seat row 4
+1 4 -100 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-3: seat row 4
+1 4 -60 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-4: seat row 4
+1 4 -20 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-5: seat row 4
+1 4 20 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-6: seat row 4
+1 4 60 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-7: seat row 4
+1 4 100 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-8: seat row 4
+1 4 140 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r3-9: seat row 4
+1 4 180 -152 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // band-r3-0: tier walkway band
+1 15 -180 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-1: tier walkway band
+1 15 -140 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-2: tier walkway band
+1 15 -100 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-3: tier walkway band
+1 15 -60 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-4: tier walkway band
+1 15 -20 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-5: tier walkway band
+1 15 20 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-6: tier walkway band
+1 15 60 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-7: tier walkway band
+1 15 100 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-8: tier walkway band
+1 15 140 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // band-r3-9: tier walkway band
+1 15 180 -160 50 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // seat-r4-0: seat row 5
+1 4 -180 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-1: seat row 5
+1 4 -140 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-2: seat row 5
+1 4 -100 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-3: seat row 5
+1 4 -60 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-4: seat row 5
+1 4 -20 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-5: seat row 5
+1 4 20 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-6: seat row 5
+1 4 60 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-7: seat row 5
+1 4 100 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-8: seat row 5
+1 4 140 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // seat-r4-9: seat row 5
+1 4 180 -176 50 1 0 0 0 1 0 0 0 1 2877.dat
+0 // band-top-0: top walkway
+1 15 -180 -184 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-1: top walkway
+1 15 -140 -184 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-2: top walkway
+1 15 -100 -184 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-3: top walkway
+1 15 -60 -184 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-4: top walkway
+1 15 -20 -184 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-5: top walkway
+1 15 20 -184 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-6: top walkway
+1 15 60 -184 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-7: top walkway
+1 15 100 -184 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-8: top walkway
+1 15 140 -184 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 // band-top-9: top walkway
+1 15 180 -184 60 1 0 0 0 1 0 0 0 1 3022.dat
+0 STEP
+0 // side-a-e-20-0: 3004.dat
+1 72 210 -24 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-20-1: 3004.dat
+1 72 210 -48 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-20-2: 3004.dat
+1 72 210 -72 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-20-3: 3004.dat
+1 72 210 -96 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-20-4: 3004.dat
+1 72 210 -120 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-20-5: 3004.dat
+1 72 210 -144 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-20-6: 3004.dat
+1 72 210 -168 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-60-0: 3004.dat
+1 72 210 -24 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-60-1: 3004.dat
+1 72 210 -48 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-60-2: 3004.dat
+1 72 210 -72 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-60-3: 3004.dat
+1 72 210 -96 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-60-4: 3004.dat
+1 72 210 -120 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-60-5: 3004.dat
+1 72 210 -144 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-e-60-6: 3004.dat
+1 72 210 -168 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-cap-e--176-20: 3023b.dat
+1 15 210 -176 20 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-a-cap-e--176-60: 3023b.dat
+1 15 210 -176 60 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-a-cap-e--184-20: 3023b.dat
+1 15 210 -184 20 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-a-cap-e--184-60: 3023b.dat
+1 15 210 -184 60 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-b-e-100-0: 3004.dat
+1 72 210 -24 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-1: 3004.dat
+1 72 210 -48 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-2: 3004.dat
+1 72 210 -72 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-3: 3004.dat
+1 72 210 -96 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-4: 3004.dat
+1 72 210 -120 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-5: 3004.dat
+1 72 210 -144 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-6: 3004.dat
+1 72 210 -168 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-100-7: 3004.dat
+1 72 210 -192 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-0: 3004.dat
+1 72 210 -24 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-1: 3004.dat
+1 72 210 -48 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-2: 3004.dat
+1 72 210 -72 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-3: 3004.dat
+1 72 210 -96 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-4: 3004.dat
+1 72 210 -120 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-5: 3004.dat
+1 72 210 -144 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-6: 3004.dat
+1 72 210 -168 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-e-140-7: 3004.dat
+1 72 210 -192 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-col-e-0: 3005.dat
+1 72 210 -24 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-1: 3005.dat
+1 72 210 -48 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-2: 3005.dat
+1 72 210 -72 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-3: 3005.dat
+1 72 210 -96 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-4: 3005.dat
+1 72 210 -120 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-5: 3005.dat
+1 72 210 -144 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-6: 3005.dat
+1 72 210 -168 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-e-7: 3005.dat
+1 72 210 -192 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-cap-e-0: roof trim band
+1 15 210 -200 100 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-b-cap-e-1: roof trim band
+1 15 210 -200 140 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-b-cap-e-2: roof trim band
+1 15 210 -200 180 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-a-w-20-0: 3004.dat
+1 72 -210 -24 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-20-1: 3004.dat
+1 72 -210 -48 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-20-2: 3004.dat
+1 72 -210 -72 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-20-3: 3004.dat
+1 72 -210 -96 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-20-4: 3004.dat
+1 72 -210 -120 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-20-5: 3004.dat
+1 72 -210 -144 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-20-6: 3004.dat
+1 72 -210 -168 20 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-60-0: 3004.dat
+1 72 -210 -24 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-60-1: 3004.dat
+1 72 -210 -48 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-60-2: 3004.dat
+1 72 -210 -72 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-60-3: 3004.dat
+1 72 -210 -96 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-60-4: 3004.dat
+1 72 -210 -120 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-60-5: 3004.dat
+1 72 -210 -144 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-w-60-6: 3004.dat
+1 72 -210 -168 60 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-a-cap-w--176-20: 3023b.dat
+1 15 -210 -176 20 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-a-cap-w--176-60: 3023b.dat
+1 15 -210 -176 60 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-a-cap-w--184-20: 3023b.dat
+1 15 -210 -184 20 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-a-cap-w--184-60: 3023b.dat
+1 15 -210 -184 60 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-b-w-100-0: 3004.dat
+1 72 -210 -24 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-1: 3004.dat
+1 72 -210 -48 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-2: 3004.dat
+1 72 -210 -72 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-3: 3004.dat
+1 72 -210 -96 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-4: 3004.dat
+1 72 -210 -120 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-5: 3004.dat
+1 72 -210 -144 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-6: 3004.dat
+1 72 -210 -168 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-100-7: 3004.dat
+1 72 -210 -192 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-0: 3004.dat
+1 72 -210 -24 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-1: 3004.dat
+1 72 -210 -48 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-2: 3004.dat
+1 72 -210 -72 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-3: 3004.dat
+1 72 -210 -96 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-4: 3004.dat
+1 72 -210 -120 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-5: 3004.dat
+1 72 -210 -144 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-6: 3004.dat
+1 72 -210 -168 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-w-140-7: 3004.dat
+1 72 -210 -192 140 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // side-b-col-w-0: 3005.dat
+1 72 -210 -24 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-1: 3005.dat
+1 72 -210 -48 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-2: 3005.dat
+1 72 -210 -72 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-3: 3005.dat
+1 72 -210 -96 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-4: 3005.dat
+1 72 -210 -120 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-5: 3005.dat
+1 72 -210 -144 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-6: 3005.dat
+1 72 -210 -168 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-col-w-7: 3005.dat
+1 72 -210 -192 170 1 0 0 0 1 0 0 0 1 3005.dat
+0 // side-b-cap-w-0: roof trim band
+1 15 -210 -200 100 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-b-cap-w-1: roof trim band
+1 15 -210 -200 140 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // side-b-cap-w-2: roof trim band
+1 15 -210 -200 180 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 STEP
+0 // fac-1-0: 3007.dat
+1 72 -80 -24 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-1-1: 3007.dat
+1 72 80 -24 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-1--180: 3003.dat
+1 72 -180 -24 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-f-1-180: 3003.dat
+1 72 180 -24 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-2-0: 3007.dat
+1 72 -80 -48 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-2-1: 3007.dat
+1 72 80 -48 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-2--180: 3003.dat
+1 72 -180 -48 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-f-2-180: 3003.dat
+1 72 180 -48 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-3-0: 3007.dat
+1 15 -80 -72 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-3-1: 3007.dat
+1 15 80 -72 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-3--180: 3003.dat
+1 15 -180 -72 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-f-3-180: 3003.dat
+1 15 180 -72 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-4-0: 3007.dat
+1 15 -80 -96 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-4-1: 3007.dat
+1 15 80 -96 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-4--180: 3003.dat
+1 15 -180 -96 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-f-4-180: 3003.dat
+1 15 180 -96 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-5-0: 3007.dat
+1 15 -80 -120 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-5-1: 3007.dat
+1 15 80 -120 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-5--180: 3003.dat
+1 15 -180 -120 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-f-5-180: 3003.dat
+1 15 180 -120 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-6-0: 3007.dat
+1 15 -80 -144 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-6-1: 3007.dat
+1 15 80 -144 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-6--180: 3003.dat
+1 15 -180 -144 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-f-6-180: 3003.dat
+1 15 180 -144 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-7-0: 3007.dat
+1 15 -80 -168 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-7-1: 3007.dat
+1 15 80 -168 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-7--180: 3003.dat
+1 15 -180 -168 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-f-7-180: 3003.dat
+1 15 180 -168 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-8-0: 3007.dat
+1 15 -80 -192 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-8-1: 3007.dat
+1 15 80 -192 200 1 0 0 0 1 0 0 0 1 3007.dat
+0 // fac-f-8--180: 3003.dat
+1 15 -180 -192 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-f-8-180: 3003.dat
+1 15 180 -192 200 1 0 0 0 1 0 0 0 1 3003.dat
+0 // fac-band-0: roof seating band
+1 15 -160 -200 200 1 0 0 0 1 0 0 0 1 3020.dat
+0 // fac-band-1: roof seating band
+1 15 -80 -200 200 1 0 0 0 1 0 0 0 1 3020.dat
+0 // fac-band-2: roof seating band
+1 15 0 -200 200 1 0 0 0 1 0 0 0 1 3020.dat
+0 // fac-band-3: roof seating band
+1 15 80 -200 200 1 0 0 0 1 0 0 0 1 3020.dat
+0 // fac-band-4: roof seating band
+1 15 160 -200 200 1 0 0 0 1 0 0 0 1 3020.dat
+0 STEP
+0 // roof-plate-0: 4-deep canopy plate
+1 15 -80 -208 160 1 0 0 0 1 0 0 0 1 3035.dat
+0 // roof-plate-1: 4-deep canopy plate
+1 15 80 -208 160 1 0 0 0 1 0 0 0 1 3035.dat
+0 // roof-plate-f--180: 3022.dat
+1 15 -180 -208 160 1 0 0 0 1 0 0 0 1 3022.dat
+0 // roof-plate-f-180: 3022.dat
+1 15 180 -208 160 1 0 0 0 1 0 0 0 1 3022.dat
+0 // roof-tile-140-0: canopy roof tiles
+1 15 -160 -216 140 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-140-1: canopy roof tiles
+1 15 -80 -216 140 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-140-2: canopy roof tiles
+1 15 0 -216 140 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-140-3: canopy roof tiles
+1 15 80 -216 140 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-140-4: canopy roof tiles
+1 15 160 -216 140 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-180-0: canopy roof tiles
+1 15 -160 -216 180 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-180-1: canopy roof tiles
+1 15 -80 -216 180 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-180-2: canopy roof tiles
+1 15 0 -216 180 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-180-3: canopy roof tiles
+1 15 80 -216 180 1 0 0 0 1 0 0 0 1 87079.dat
+0 // roof-tile-180-4: canopy roof tiles
+1 15 160 -216 180 1 0 0 0 1 0 0 0 1 87079.dat
+0 STEP
+0 // fascia-0: trans-light-blue windscreen fascia
+1 43 -160 -200 120 1 0 0 0 1 0 0 0 1 4215b.dat
+0 // fascia-1: trans-light-blue windscreen fascia
+1 43 -80 -200 120 1 0 0 0 1 0 0 0 1 4215b.dat
+0 // fascia-2: trans-light-blue windscreen fascia
+1 43 0 -200 120 1 0 0 0 1 0 0 0 1 4215b.dat
+0 // fascia-3: trans-light-blue windscreen fascia
+1 43 80 -200 120 1 0 0 0 1 0 0 0 1 4215b.dat
+0 // fascia-4: trans-light-blue windscreen fascia
+1 43 160 -200 120 1 0 0 0 1 0 0 0 1 4215b.dat
+0 NOFILE
+0 FILE floodlight.ldr
+0 Corner floodlight pylon with 8 clear lamps
+0 Name: floodlight.ldr
+0 Author: ldraw-nova stadium example generator
+0 !LDRAW_ORG Model
+0 // pylon-base: pylon footing
+1 72 0 -8 0 1 0 0 0 1 0 0 0 1 3022.dat
+0 STEP
+0 // pylon-mast-0: round-brick mast
+1 15 0 -32 0 1 0 0 0 1 0 0 0 1 3941.dat
+0 // pylon-mast-1: round-brick mast
+1 15 0 -56 0 1 0 0 0 1 0 0 0 1 3941.dat
+0 // pylon-mast-2: round-brick mast
+1 15 0 -80 0 1 0 0 0 1 0 0 0 1 3941.dat
+0 // pylon-mast-3: round-brick mast
+1 15 0 -104 0 1 0 0 0 1 0 0 0 1 3941.dat
+0 // pylon-mast-4: round-brick mast
+1 15 0 -128 0 1 0 0 0 1 0 0 0 1 3941.dat
+0 // pylon-mast-5: round-brick mast
+1 15 0 -152 0 1 0 0 0 1 0 0 0 1 3941.dat
+0 // pylon-mast-6: round-brick mast
+1 15 0 -176 0 1 0 0 0 1 0 0 0 1 3941.dat
+0 // pylon-mast-7: round-brick mast
+1 15 0 -200 0 1 0 0 0 1 0 0 0 1 3941.dat
+0 // pylon-mast-8: round-brick mast
+1 15 0 -224 0 1 0 0 0 1 0 0 0 1 3941.dat
+0 // pylon-mast-9: round-brick mast
+1 15 0 -248 0 1 0 0 0 1 0 0 0 1 3941.dat
+0 // pylon-mast-10: round-brick mast
+1 15 0 -272 0 1 0 0 0 1 0 0 0 1 3941.dat
+0 // pylon-mast-11: round-brick mast
+1 15 0 -296 0 1 0 0 0 1 0 0 0 1 3941.dat
+0 // pylon-mast-12: round-brick mast
+1 15 0 -320 0 1 0 0 0 1 0 0 0 1 3941.dat
+0 // pylon-mast-13: round-brick mast
+1 15 0 -344 0 1 0 0 0 1 0 0 0 1 3941.dat
+0 STEP
+0 // pylon-rig: lamp rig plate
+1 15 0 -352 0 1 0 0 0 1 0 0 0 1 3020.dat
+0 STEP
+0 // lamps-a-0: lamp row
+1 47 -30 -376 -10 1 0 0 0 1 0 0 0 1 3062b.dat
+0 // lamps-a-1: lamp row
+1 47 -10 -376 -10 1 0 0 0 1 0 0 0 1 3062b.dat
+0 // lamps-a-2: lamp row
+1 47 10 -376 -10 1 0 0 0 1 0 0 0 1 3062b.dat
+0 // lamps-a-3: lamp row
+1 47 30 -376 -10 1 0 0 0 1 0 0 0 1 3062b.dat
+0 // lamps-b-0: lamp row
+1 47 -30 -376 10 1 0 0 0 1 0 0 0 1 3062b.dat
+0 // lamps-b-1: lamp row
+1 47 -10 -376 10 1 0 0 0 1 0 0 0 1 3062b.dat
+0 // lamps-b-2: lamp row
+1 47 10 -376 10 1 0 0 0 1 0 0 0 1 3062b.dat
+0 // lamps-b-3: lamp row
+1 47 30 -376 10 1 0 0 0 1 0 0 0 1 3062b.dat
+0 NOFILE

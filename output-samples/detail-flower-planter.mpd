@@ -1,0 +1,18 @@
+0 FILE detail-flower-planter.ldr
+0 Four-stud stone planter with a real oval tree and small flowers. Bottom plane Y=0. Reserve its foliage envelope, not just the base footprint.
+0 Name: detail-flower-planter.ldr
+0 Author: ldraw-nova detail recipes
+0 !LDRAW_ORG Model
+0 // base: 3031.dat
+1 15 0 -8 0 1 0 0 0 1 0 0 0 1 3031.dat
+0 // soil: 3022.dat
+1 70 0 -16 0 1 0 0 0 1 0 0 0 1 3022.dat
+0 // tree: @plants.PlantTreeOval4X4X6
+1 288 0 -24 0 1 0 0 0 1 0 0 0 1 3470.dat
+0 // flower--30: @plates.Plate1X1With5Petals
+1 5 -30 -16 -30 1 0 0 0 1 0 0 0 1 24866.dat
+0 // flower-10: @plates.Plate1X1With5Petals
+1 5 10 -16 -30 1 0 0 0 1 0 0 0 1 24866.dat
+0 // flower-30: @plates.Plate1X1With5Petals
+1 5 30 -16 -30 1 0 0 0 1 0 0 0 1 24866.dat
+0 NOFILE

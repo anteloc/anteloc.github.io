@@ -1,0 +1,750 @@
+0 FILE etype-main.ldr
+0 Jaguar E-Type Cabrio v2, dark green — reconstructed from williweb instructions
+0 Name: etype-main.ldr
+0 Author: williweb (2026), design; Codex, PDF-to-LDraw reconstruction
+0 !LDRAW_ORG Model
+0 // module-0: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 288 0 0 0 1 0 0 0 1 0 0 0 1 etype-chassis.ldr
+0 STEP
+0 // module-1: Inverted wheel-arch grille, central bar and lower chin; PDF steps 9-20
+1 288 0 0 0 1 0 0 0 1 0 0 0 1 etype-grille.ldr
+0 STEP
+0 // module-2: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 0 0 0 1 0 0 0 1 0 0 0 1 etype-bonnet.ldr
+0 STEP
+0 // module-3: Opening tan-lined door; PDF steps 67-74
+1 288 0 0 0 1 0 0 0 1 0 0 0 1 etype-door-left.ldr
+0 STEP
+0 // module-4: Opening tan-lined door; PDF steps 67-74
+1 288 0 0 0 1 0 0 0 1 0 0 0 1 etype-door-right.ldr
+0 STEP
+0 // module-5: Clear swept windscreen; PDF step 75
+1 288 0 0 0 1 0 0 0 1 0 0 0 1 etype-windscreen.ldr
+0 STEP
+0 // module-6: Hinged twin rounded tan seat backs; PDF steps 76-84
+1 288 0 0 0 1 0 0 0 1 0 0 0 1 etype-seats.ldr
+0 STEP
+0 // module-7: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 0 0 0 1 0 0 0 1 0 0 0 1 etype-rear.ldr
+0 STEP
+0 // module-8: Black folded soft-top cover behind seats; PDF steps 112-116
+1 288 0 0 0 1 0 0 0 1 0 0 0 1 etype-folded-hood.ldr
+0 STEP
+0 // module-9: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 288 0 0 0 1 0 0 0 1 0 0 0 1 etype-running-gear.ldr
+0 STEP
+0 // module-10: Removable black roof with clear rear window; PDF steps 134-141
+1 288 0 0 0 1 0 0 0 1 0 0 0 1 etype-hardtop.ldr
+0 NOFILE
+0 FILE etype-chassis.ldr
+0 Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+0 Name: etype-chassis.ldr
+0 Author: williweb (2026), design; Codex, PDF-to-LDraw reconstruction
+0 !LDRAW_ORG Model
+0 // s1-p1: PDF step 1: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 0 0 0 0 1 0 0 0 1 0 0 0 1 65634.dat
+0 // s1-p2: PDF step 1: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 0 -50 -8 0 0 0 1 0 1 0 -1 0 0 3666.dat
+0 // s1-p3: PDF step 1: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 0 50 -8 0 0 0 1 0 1 0 -1 0 0 3666.dat
+0 // s1-p4: PDF step 1: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 19 -30 8 20 -1 0 0 0 1 0 0 0 -1 33909.dat
+0 // s1-p5: PDF step 1: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 19 30 8 20 -1 0 0 0 1 0 0 0 -1 33909.dat
+0 // s1-p6: PDF step 1: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 0 0 8 20 0 0 1 0 1 0 -1 0 0 35480.dat
+0 STEP
+0 // s2-p7: PDF step 2: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 19 0 0 10 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // s2-p8: PDF step 2: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 19 0 0 30 1 0 0 0 1 0 0 0 1 3024.dat
+0 // s2-p9: PDF step 2: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 0 0 0 -100 1 0 0 0 1 0 0 0 1 3031.dat
+0 // s2-p10: PDF step 2: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 0 0 0 100 1 0 0 0 1 0 0 0 1 3031.dat
+0 // s2-p11: PDF step 2: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 72 -50 -16 -60 0 0 1 0 1 0 -1 0 0 99781.dat
+0 // s2-p12: PDF step 2: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 72 50 -16 -60 0 0 -1 0 1 0 1 0 0 99781.dat
+0 // s2-p13: PDF step 2: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 0 0 -16 -20 1 0 0 0 1 0 0 0 1 3795.dat
+0 STEP
+0 // s3-p14: PDF step 3: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 72 0 8 -160 1 0 0 0 1 0 0 0 1 3022.dat
+0 // s3-p15: PDF step 3: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 288 -30 8 -160 0 0 1 0 1 0 -1 0 0 3710.dat
+0 // s3-p16: PDF step 3: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 288 30 8 -160 0 0 1 0 1 0 -1 0 0 3710.dat
+0 STEP
+0 // s4-p17: PDF step 4: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 0 -30 0 -150 1 0 0 0 1 0 0 0 1 3024.dat
+0 // s4-p18: PDF step 4: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 288 -30 0 -190 0 0 -1 0 1 0 1 0 0 2420.dat
+0 // s4-p19: PDF step 4: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 0 30 0 -150 1 0 0 0 1 0 0 0 1 3024.dat
+0 // s4-p20: PDF step 4: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 288 30 0 -190 1 0 0 0 1 0 0 0 1 2420.dat
+0 STEP
+0 // s5-p21: PDF step 5: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 71 -30 -8 -160 0 0 1 0 1 0 -1 0 0 3710.dat
+0 // s5-p22: PDF step 5: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 71 30 -8 -160 0 0 1 0 1 0 -1 0 0 3710.dat
+0 // s5-p23: PDF step 5: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 71 -50 -24 -40 0 0 1 0 1 0 -1 0 0 3710.dat
+0 // s5-p24: PDF step 5: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 71 50 -24 -40 0 0 1 0 1 0 -1 0 0 3710.dat
+0 // s5-p25: PDF step 5: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 71 0 -24 -10 1 0 0 0 1 0 0 0 1 3710.dat
+0 // s5-p26: PDF step 5: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 0 0 -8 -80 1 0 0 0 1 0 0 0 1 3031.dat
+0 // s5-p27: PDF step 5: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 0 0 -8 -130 1 0 0 0 1 0 0 0 1 35480.dat
+0 // s5-p28: PDF step 5: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 0 0 -8 100 1 0 0 0 1 0 0 0 1 3020.dat
+0 // s5-p29: PDF step 5: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 0 0 -8 70 1 0 0 0 1 0 0 0 1 3666.dat
+0 // s5-p30: PDF step 5: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 0 -50 -24 50 1 0 0 0 1 0 0 0 1 86996.dat
+0 // s5-p31: PDF step 5: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 0 50 -24 50 1 0 0 0 1 0 0 0 1 86996.dat
+0 // s5-p32: PDF step 5: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 19 -40 -16 30 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // s5-p33: PDF step 5: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 19 40 -16 30 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // s5-p34: PDF step 5: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 19 0 -16 30 1 0 0 0 1 0 0 0 1 15573.dat
+0 STEP
+0 // s6-p35: PDF step 6: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 19 0 -24 30 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // s6-p36: PDF step 6: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 19 0 0 10 1 0 0 0 1 0 0 0 1 54200.dat
+0 // s6-p37: PDF step 6: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 288 -50 0 -190 0 0 1 0 1 0 -1 0 0 24201.dat
+0 // s6-p38: PDF step 6: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 288 50 0 -190 0 0 -1 0 1 0 1 0 0 24201.dat
+0 STEP
+0 // s7-p39: PDF step 7: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 288 -64 -6 -60 0 1 0 0 0 -1 -1 0 0 85984.dat
+0 // s7-p40: PDF step 7: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 288 -64 10 -20 0 1 0 0 0 -1 -1 0 0 85984.dat
+0 // s7-p41: PDF step 7: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 288 -64 10 20 0 1 0 0 0 -1 -1 0 0 85984.dat
+0 // s7-p42: PDF step 7: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 288 64 -6 -60 0 -1 0 0 0 -1 1 0 0 85984.dat
+0 // s7-p43: PDF step 7: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 288 64 10 -20 0 -1 0 0 0 -1 1 0 0 85984.dat
+0 // s7-p44: PDF step 7: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 288 64 10 20 0 -1 0 0 0 -1 1 0 0 85984.dat
+0 STEP
+0 // s8-p45: PDF step 8: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 288 -64 10 -50 0 1 0 0 0 -1 -1 0 0 54200.dat
+0 // s8-p46: PDF step 8: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 288 -64 10 50 0 1 0 0 0 -1 -1 0 0 54200.dat
+0 // s8-p47: PDF step 8: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 288 64 10 -50 0 -1 0 0 0 -1 1 0 0 54200.dat
+0 // s8-p48: PDF step 8: Chassis, cockpit floor and lower sill panels; PDF steps 1-8
+1 288 64 10 50 0 -1 0 0 0 -1 1 0 0 54200.dat
+0 NOFILE
+0 FILE etype-grille.ldr
+0 Inverted wheel-arch grille, central bar and lower chin; PDF steps 9-20
+0 Name: etype-grille.ldr
+0 Author: williweb (2026), design; Codex, PDF-to-LDraw reconstruction
+0 !LDRAW_ORG Model
+0 // s9-p1: PDF step 9: Inverted wheel-arch grille, central bar and lower chin; PDF steps 9-20
+1 288 0 4 -170 1 0 0 0 1 0 0 0 1 15068.dat
+0 STEP
+0 // s10-p2: PDF step 10: Inverted wheel-arch grille, central bar and lower chin; PDF steps 9-20
+1 0 0 -4 -160 -1 0 0 0 -1 0 0 0 1 35480.dat
+0 STEP
+0 // s11-p3: PDF step 11: Inverted wheel-arch grille, central bar and lower chin; PDF steps 9-20
+1 71 0 -12 -170 -1 0 0 0 -1 0 0 0 1 28326.dat
+0 STEP
+0 // s12-p4: PDF step 12: Inverted wheel-arch grille, central bar and lower chin; PDF steps 9-20
+1 0 -10 -20 -160 0 0 1 0 -1 0 1 0 0 32828.dat
+0 // s12-p5: PDF step 12: Inverted wheel-arch grille, central bar and lower chin; PDF steps 9-20
+1 0 10 -20 -160 0 0 1 0 -1 0 1 0 0 32828.dat
+0 STEP
+0 // s13-p6: PDF step 13: Inverted wheel-arch grille, central bar and lower chin; PDF steps 9-20
+1 0 0 -28 -160 -1 0 0 0 -1 0 0 0 1 86876.dat
+0 STEP
+0 // s14-p7: PDF step 14: Inverted wheel-arch grille, central bar and lower chin; PDF steps 9-20
+1 71 0 -38 -178 1 0 0 0 0 -1 0 1 0 85861.dat
+0 STEP
+0 // s15-p8: PDF step 15: Inverted wheel-arch grille, central bar and lower chin; PDF steps 9-20
+1 71 0 -32 -198 1 0 0 0 1 0 0 0 1 15573.dat
+0 STEP
+0 // s16-p9: PDF step 16: Inverted wheel-arch grille, central bar and lower chin; PDF steps 9-20
+1 71 0 -40 -198 0 0 -1 0 1 0 1 0 0 32828.dat
+0 STEP
+0 // s18-p10: PDF step 18: Inverted wheel-arch grille, central bar and lower chin; PDF steps 9-20
+1 288 0 -38 -178 1 0 0 0 0 -1 0 1 0 85984.dat
+0 STEP
+0 // s19-p11: PDF step 19: Inverted wheel-arch grille, central bar and lower chin; PDF steps 9-20
+1 72 -10 -32 -130 1 0 0 0 1 0 0 0 1 4070.dat
+0 // s19-p12: PDF step 19: Inverted wheel-arch grille, central bar and lower chin; PDF steps 9-20
+1 72 10 -32 -130 1 0 0 0 1 0 0 0 1 4070.dat
+0 NOFILE
+0 FILE etype-bonnet.ldr
+0 Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+0 Name: etype-bonnet.ldr
+0 Author: williweb (2026), design; Codex, PDF-to-LDraw reconstruction
+0 !LDRAW_ORG Model
+0 // s21-p1: PDF step 21: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 57 -50 0 -190 1 0 0 0 1 0 0 0 1 6141.dat
+0 // s21-p2: PDF step 21: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 57 50 0 -190 1 0 0 0 1 0 0 0 1 6141.dat
+0 STEP
+0 // s22-p3: PDF step 22: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 -60 -8 -180 0 0 1 0 1 0 -1 0 0 26601.dat
+0 // s22-p4: PDF step 22: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 60 -8 -180 1 0 0 0 1 0 0 0 1 26601.dat
+0 STEP
+0 // s27-p5: PDF step 27: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 71 -50 -16 -170 -1 0 0 0 1 0 0 0 -1 79491.dat
+0 // s27-p6: PDF step 27: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 71 50 -16 -170 0 0 1 0 1 0 -1 0 0 79491.dat
+0 // s27-p7: PDF step 27: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 0 -24 -80 0 0 1 0 1 0 -1 0 0 3795.dat
+0 // s27-p8: PDF inventory third 3022: centre bonnet support between the two black plates
+1 72 0 -16 -90 1 0 0 0 1 0 0 0 1 3022.dat
+0 STEP
+0 // s28-p9: PDF step 28: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 -30 -24 -10 -1 0 0 0 1 0 0 0 -1 3829c01.dat
+0 STEP
+0 // s29-p10: PDF step 29: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 10 -32 -10 1 0 0 0 1 0 0 0 1 86996.dat
+0 // s29-p11: PDF step 29: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 10 -24 10 1 0 0 0 1 0 0 0 1 4592.dat
+0 // s29-p12: PDF step 29: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 71 10 -28 10 1 0 0 0 0.965925826289 0.258819045103 0 -0.258819045103 0.965925826289 4593.dat
+0 STEP
+0 // s30-p13: PDF step 30: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 -50 -24 -10 0 0 1 0 1 0 -1 0 0 36840.dat
+0 // s30-p14: PDF step 30: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 -72 -26 -10 0 1 0 0 0 -1 -1 0 0 15712.dat
+0 // s30-p15: PDF step 30: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 50 -24 -10 0 0 -1 0 1 0 1 0 0 36840.dat
+0 // s30-p16: PDF step 30: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 72 -26 -10 0 -1 0 0 0 -1 1 0 0 15712.dat
+0 STEP
+0 // s33-p17: PDF step 33: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 -50 -32 -40 0 0 1 0 1 0 -1 0 0 3710.dat
+0 // s33-p18: PDF step 33: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 50 -32 -40 0 0 1 0 1 0 -1 0 0 3710.dat
+0 STEP
+0 // s34-p19: PDF step 34: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 0 -32 -30 1 0 0 0 1 0 0 0 1 3023b.dat
+0 STEP
+0 // s35-p20: PDF step 35: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 0 -40 -30 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // s35-p21: PDF step 35: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 -50 -32 -10 1 0 0 0 1 0 0 0 1 54200.dat
+0 // s35-p22: PDF step 35: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 30 -32 -10 1 0 0 0 1 0 0 0 1 85984.dat
+0 STEP
+0 // s36-p23: PDF step 36: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 -30 -48 -100 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // s36-p24: PDF step 36: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 30 -48 -100 0 0 1 0 1 0 -1 0 0 3008.dat
+0 STEP
+0 // s37-p25: PDF step 37: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 -50 -40 -50 0 0 1 0 1 0 -1 0 0 3623.dat
+0 // s37-p26: PDF step 37: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 50 -40 -50 0 0 1 0 1 0 -1 0 0 3623.dat
+0 STEP
+0 // s38-p27: PDF step 38: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 -50 -40 -10 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // s38-p28: PDF step 38: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 50 -40 -10 1 0 0 0 1 0 0 0 1 3070b.dat
+0 STEP
+0 // s39-p29: PDF step 39: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 -70 -40 -40 0 0 1 0 1 0 -1 0 0 3010.dat
+0 // s39-p30: PDF step 39: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 70 -40 -40 0 0 1 0 1 0 -1 0 0 3010.dat
+0 STEP
+0 // s40-p31: PDF step 40: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 -70 -48 -70 1 0 0 0 1 0 0 0 1 2420.dat
+0 // s40-p32: PDF step 40: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 -70 -48 -10 0 0 1 0 1 0 -1 0 0 2420.dat
+0 // s40-p33: PDF step 40: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 70 -48 -70 0 0 -1 0 1 0 1 0 0 2420.dat
+0 // s40-p34: PDF step 40: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 70 -48 -10 -1 0 0 0 1 0 0 0 -1 2420.dat
+0 STEP
+0 // s42-p35: PDF step 42: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 -30 -24 -190 1 0 0 0 1 0 0 0 1 86996.dat
+0 // s42-p36: PDF step 42: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 30 -24 -190 1 0 0 0 1 0 0 0 1 86996.dat
+0 STEP
+0 // s43-p37: PDF step 43: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 -50 -32 -170 0 0 1 0 1 0 -1 0 0 87087.dat
+0 // s43-p38: PDF step 43: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 -60 -22 -170 0 1 0 0 0 -1 -1 0 0 85984.dat
+0 // s43-p39: PDF step 43: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 -50 -48 -70 0 0 1 0 1 0 -1 0 0 87087.dat
+0 // s43-p40: PDF step 43: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 -60 -38 -70 0 1 0 0 0 -1 -1 0 0 85984.dat
+0 // s43-p41: PDF step 43: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 50 -32 -170 0 0 -1 0 1 0 1 0 0 87087.dat
+0 // s43-p42: PDF step 43: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 60 -22 -170 0 -1 0 0 0 -1 1 0 0 85984.dat
+0 // s43-p43: PDF step 43: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 50 -48 -70 0 0 -1 0 1 0 1 0 0 87087.dat
+0 // s43-p44: PDF step 43: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 60 -38 -70 0 -1 0 0 0 -1 1 0 0 85984.dat
+0 STEP
+0 // s49-p45: PDF step 49: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 57 -70 -24 -170 1 0 0 0 1 0 0 0 1 3024.dat
+0 // s49-p46: PDF step 49: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 71 -50 -24 -190 1 0 0 0 1 0 0 0 1 5091.dat
+0 // s49-p47: PDF step 49: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 57 70 -24 -170 1 0 0 0 1 0 0 0 1 3024.dat
+0 // s49-p48: PDF step 49: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 71 50 -24 -190 -1 0 0 0 1 0 0 0 -1 5092.dat
+0 STEP
+0 // s50-p49: PDF step 50: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 -30 -56 -90 0 0 -1 0 1 0 1 0 0 2420.dat
+0 // s50-p50: PDF step 50: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 -30 -56 -30 1 0 0 0 1 0 0 0 1 2420.dat
+0 // s50-p51: PDF step 50: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 30 -56 -90 1 0 0 0 1 0 0 0 1 2420.dat
+0 // s50-p52: PDF step 50: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 30 -56 -30 0 0 -1 0 1 0 1 0 0 2420.dat
+0 STEP
+0 // s51-p53: PDF step 51: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 -30 -56 -150 0 0 -1 0 1 0 1 0 0 2420.dat
+0 // s51-p54: PDF step 51: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 -40 -56 -110 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // s51-p55: PDF step 51: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 30 -56 -150 1 0 0 0 1 0 0 0 1 2420.dat
+0 // s51-p56: PDF step 51: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 40 -56 -110 1 0 0 0 1 0 0 0 1 3023b.dat
+0 STEP
+0 // s52-p57: PDF step 52: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 72 -10 -48 -130 1 0 0 0 1 0 0 0 1 4070.dat
+0 // s52-p58: PDF step 52: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 72 -10 -48 -90 1 0 0 0 1 0 0 0 1 4070.dat
+0 // s52-p59: PDF step 52: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 72 -10 -48 -50 1 0 0 0 1 0 0 0 1 4070.dat
+0 // s52-p60: PDF step 52: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 72 -10 -38 -120 -1 0 0 0 0 1 0 1 0 4070.dat
+0 // s52-p61: PDF step 52: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 72 -10 -38 -80 -1 0 0 0 0 1 0 1 0 4070.dat
+0 // s52-p62: PDF step 52: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 72 10 -48 -130 1 0 0 0 1 0 0 0 1 4070.dat
+0 // s52-p63: PDF step 52: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 72 10 -48 -90 1 0 0 0 1 0 0 0 1 4070.dat
+0 // s52-p64: PDF step 52: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 72 10 -48 -50 1 0 0 0 1 0 0 0 1 4070.dat
+0 // s52-p65: PDF step 52: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 72 10 -38 -120 -1 0 0 0 0 1 0 1 0 4070.dat
+0 // s52-p66: PDF step 52: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 72 10 -38 -80 -1 0 0 0 0 1 0 1 0 4070.dat
+0 STEP
+0 // s56-p67: PDF step 56: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 71 0 -56 -130 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // s56-p68: PDF step 56: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 -30 -64 -70 1 0 0 0 1 0 0 0 1 2420.dat
+0 // s56-p69: PDF step 56: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 0 30 -64 -70 0 0 -1 0 1 0 1 0 0 2420.dat
+0 STEP
+0 // s57-p70: PDF step 57: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 72 0 -64 -150 1 0 0 0 1 0 0 0 1 3022.dat
+0 STEP
+0 // s58-p71: PDF step 58: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 0 -56 -170 1 0 0 0 1 0 0 0 1 15068.dat
+0 STEP
+0 // s59-p72: PDF step 59: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 0 -72 -90 0 0 1 0 1 0 -1 0 0 69729.dat
+0 STEP
+0 // s61-p73: PDF step 61: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 -30 -72 -60 0 0 1 0 1 0 -1 0 0 3069b.dat
+0 // s61-p74: PDF step 61: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 30 -72 -60 0 0 1 0 1 0 -1 0 0 3069b.dat
+0 STEP
+0 // s62-p75: PDF step 62: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 -30 -64 -30 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // s62-p76: PDF step 62: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 -30 -64 -110 0 0 1 0 1 0 -1 0 0 63864.dat
+0 // s62-p77: PDF step 62: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 30 -64 -30 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // s62-p78: PDF step 62: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 30 -64 -110 0 0 1 0 1 0 -1 0 0 63864.dat
+0 STEP
+0 // s63-p79: PDF step 63: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 -30 -72 -170 1 0 0 0 1 0 0 0 1 50950.dat
+0 // s63-p80: PDF step 63: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 30 -72 -170 1 0 0 0 1 0 0 0 1 50950.dat
+0 STEP
+0 // s64-p81: PDF step 64: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 -70 -48 -10 -1 0 0 0 1 0 0 0 -1 54200.dat
+0 // s64-p82: PDF step 64: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 -50 -48 -20 -1 0 0 0 1 0 0 0 -1 11477.dat
+0 // s64-p83: PDF step 64: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 70 -48 -10 -1 0 0 0 1 0 0 0 -1 54200.dat
+0 // s64-p84: PDF step 64: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 50 -48 -20 -1 0 0 0 1 0 0 0 -1 11477.dat
+0 STEP
+0 // s65-p85: PDF step 65: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 -60 -48 -140 0 0 1 0 1 0 -1 0 0 15068.dat
+0 // s65-p86: PDF step 65: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 -60 -48 -100 0 0 1 0 1 0 -1 0 0 15068.dat
+0 // s65-p87: PDF step 65: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 -60 -48 -60 0 0 1 0 1 0 -1 0 0 15068.dat
+0 // s65-p88: PDF step 65: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 60 -48 -140 0 0 -1 0 1 0 1 0 0 15068.dat
+0 // s65-p89: PDF step 65: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 60 -48 -100 0 0 -1 0 1 0 1 0 0 15068.dat
+0 // s65-p90: PDF step 65: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 60 -48 -60 0 0 -1 0 1 0 1 0 0 15068.dat
+0 STEP
+0 // s66-p91: PDF step 66: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 -60 -32 -180 1 0 0 0 1 0 0 0 1 5095.dat
+0 // s66-p92: PDF step 66: Long sculpted bonnet, front wings, dashboard and nose corners; PDF steps 21-66
+1 288 60 -32 -180 1 0 0 0 1 0 0 0 1 5093.dat
+0 NOFILE
+0 FILE etype-door-left.ldr
+0 Opening tan-lined door; PDF steps 67-74
+0 Name: etype-door-left.ldr
+0 Author: williweb (2026), design; Codex, PDF-to-LDraw reconstruction
+0 !LDRAW_ORG Model
+0 // s67-p1: PDF step 67: Opening tan-lined door; PDF steps 67-74
+1 19 -72 -28 26 0 1 0 0 0 -1 -1 0 0 3021.dat
+0 // s67-p2: PDF step 67: Opening tan-lined door; PDF steps 67-74
+1 288 -80 -38 16 0 1 0 0 0 -1 -1 0 0 2431.dat
+0 STEP
+0 // s68-p3: PDF step 68: Opening tan-lined door; PDF steps 67-74
+1 288 -80 -18 16 0 1 0 0 0 -1 -1 0 0 60478.dat
+0 // s68-p4: PDF step 68: Opening tan-lined door; PDF steps 67-74
+1 288 -80 -18 46 0 1 0 0 0 -1 -1 0 0 3070b.dat
+0 // s68-p5: PDF step 68: Opening tan-lined door; PDF steps 67-74
+1 71 -80 -38 -14 0 1 0 0 0 -1 -1 0 0 36840.dat
+0 STEP
+0 // s69-p6: PDF step 69: Opening tan-lined door; PDF steps 67-74
+1 71 -82 -32 -14 0 0 1 0 1 0 -1 0 0 61252.dat
+0 // s69-p7: PDF step 69: Opening tan-lined door; PDF steps 67-74
+1 71 -100 -30 -14 0 1 0 -1 0 0 0 0 1 20482.dat
+0 NOFILE
+0 FILE etype-door-right.ldr
+0 Opening tan-lined door; PDF steps 67-74
+0 Name: etype-door-right.ldr
+0 Author: williweb (2026), design; Codex, PDF-to-LDraw reconstruction
+0 !LDRAW_ORG Model
+0 // s67-p1: PDF step 67: Opening tan-lined door; PDF steps 67-74
+1 19 72 -28 26 0 -1 0 0 0 1 -1 0 0 3021.dat
+0 // s67-p2: PDF step 67: Opening tan-lined door; PDF steps 67-74
+1 288 80 -38 16 0 -1 0 0 0 1 -1 0 0 2431.dat
+0 STEP
+0 // s68-p3: PDF step 68: Opening tan-lined door; PDF steps 67-74
+1 288 80 -18 16 0 -1 0 0 0 1 -1 0 0 60478.dat
+0 // s68-p4: PDF step 68: Opening tan-lined door; PDF steps 67-74
+1 288 80 -18 46 0 -1 0 0 0 1 -1 0 0 3070b.dat
+0 STEP
+0 // s73-p5: PDF step 73: Opening tan-lined door; PDF steps 67-74
+1 19 72 -38 -14 0 -1 0 0 0 1 -1 0 0 3024.dat
+0 NOFILE
+0 FILE etype-windscreen.ldr
+0 Clear swept windscreen; PDF step 75
+0 Name: etype-windscreen.ldr
+0 Author: williweb (2026), design; Codex, PDF-to-LDraw reconstruction
+0 !LDRAW_ORG Model
+0 // s75-p1: PDF step 75: Clear swept windscreen; PDF step 75
+1 47 0 -88 -10 1 0 0 0 1 0 0 0 1 92583.dat
+0 NOFILE
+0 FILE etype-seats.ldr
+0 Hinged twin rounded tan seat backs; PDF steps 76-84
+0 Name: etype-seats.ldr
+0 Author: williweb (2026), design; Codex, PDF-to-LDraw reconstruction
+0 !LDRAW_ORG Model
+0 // s76-p1: PDF step 76: Hinged twin rounded tan seat backs; PDF steps 76-84
+1 0 0 -24 70 1 0 0 0 1 0 0 0 1 3937.dat
+0 STEP
+0 // s77-p2: PDF step 77: Hinged twin rounded tan seat backs; PDF steps 76-84
+1 0 0 -20.156362579868 53.085532825852 1 0 0 0 0.342020143326 -0.939692620786 0 0.939692620786 0.342020143326 3021.dat
+0 STEP
+0 // s78-p3: PDF step 78: Hinged twin rounded tan seat backs; PDF steps 76-84
+1 0 0 -17.42020143326 60.60307379214 1 0 0 0 0.342020143326 -0.939692620786 0 0.939692620786 0.342020143326 3938.dat
+0 STEP
+0 // s79-p4: PDF step 79: Hinged twin rounded tan seat backs; PDF steps 76-84
+1 0 0 -22.892523726476 45.567991859564 0 0 1 0.939692620786 0.342020143326 0 -0.342020143326 0.939692620786 0 3069b.dat
+0 // s79-p5: PDF step 79: Hinged twin rounded tan seat backs; PDF steps 76-84
+1 0 -20 -22.892523726476 45.567991859564 0 0 1 0.939692620786 0.342020143326 0 -0.342020143326 0.939692620786 0 35480.dat
+0 // s79-p6: PDF step 79: Hinged twin rounded tan seat backs; PDF steps 76-84
+1 0 20 -22.892523726476 45.567991859564 0 0 1 0.939692620786 0.342020143326 0 -0.342020143326 0.939692620786 0 35480.dat
+0 STEP
+0 // s80-p7: PDF step 80: Hinged twin rounded tan seat backs; PDF steps 76-84
+1 19 -30 -25.628684873084 38.050450893276 1 0 0 0 0.342020143326 -0.939692620786 0 0.939692620786 0.342020143326 4032a.dat
+0 // s80-p8: PDF step 80: Hinged twin rounded tan seat backs; PDF steps 76-84
+1 19 -30 -18.967919811832 27.112708493728 1 0 0 0 0.342020143326 -0.939692620786 0 0.939692620786 0.342020143326 3069b.dat
+0 // s80-p9: PDF step 80: Hinged twin rounded tan seat backs; PDF steps 76-84
+1 19 -40 -37.761772227552 33.953111360248 -1 0 0 0 0.342020143326 0.939692620786 0 0.939692620786 -0.342020143326 25269.dat
+0 // s80-p10: PDF step 80: Hinged twin rounded tan seat backs; PDF steps 76-84
+1 19 -20 -37.761772227552 33.953111360248 0 0 -1 -0.939692620786 0.342020143326 0 0.342020143326 0.939692620786 0 25269.dat
+0 // s80-p11: PDF step 80: Hinged twin rounded tan seat backs; PDF steps 76-84
+1 19 30 -25.628684873084 38.050450893276 1 0 0 0 0.342020143326 -0.939692620786 0 0.939692620786 0.342020143326 4032a.dat
+0 // s80-p12: PDF step 80: Hinged twin rounded tan seat backs; PDF steps 76-84
+1 19 30 -18.967919811832 27.112708493728 1 0 0 0 0.342020143326 -0.939692620786 0 0.939692620786 0.342020143326 3069b.dat
+0 // s80-p13: PDF step 80: Hinged twin rounded tan seat backs; PDF steps 76-84
+1 19 20 -37.761772227552 33.953111360248 -1 0 0 0 0.342020143326 0.939692620786 0 0.939692620786 -0.342020143326 25269.dat
+0 // s80-p14: PDF step 80: Hinged twin rounded tan seat backs; PDF steps 76-84
+1 19 40 -37.761772227552 33.953111360248 0 0 -1 -0.939692620786 0.342020143326 0 0.342020143326 0.939692620786 0 25269.dat
+0 NOFILE
+0 FILE etype-rear.ldr
+0 Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+0 Name: etype-rear.ldr
+0 Author: williweb (2026), design; Codex, PDF-to-LDraw reconstruction
+0 !LDRAW_ORG Model
+0 // s85-p1: PDF step 85: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 71 0 -32 120 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // s85-p2: PDF step 85: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 -30 -32 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // s85-p3: PDF step 85: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 30 -32 100 0 0 1 0 1 0 -1 0 0 3004.dat
+0 STEP
+0 // s86-p4: PDF step 86: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 -60 -24 100 0 0 1 0 1 0 -1 0 0 35789.dat
+0 // s86-p5: PDF step 86: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 60 -24 100 0 0 -1 0 1 0 1 0 0 35789.dat
+0 STEP
+0 // s87-p6: PDF step 87: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 0 -50 -16 130 1 0 0 0 1 0 0 0 1 86996.dat
+0 // s87-p7: PDF step 87: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 -50 0 70 1 0 0 0 1 0 0 0 1 54200.dat
+0 // s87-p8: PDF step 87: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 -50 -24 70 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // s87-p9: PDF step 87: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 0 50 -16 130 1 0 0 0 1 0 0 0 1 86996.dat
+0 // s87-p10: PDF step 87: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 50 0 70 1 0 0 0 1 0 0 0 1 54200.dat
+0 // s87-p11: PDF step 87: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 50 -24 70 1 0 0 0 1 0 0 0 1 3070b.dat
+0 STEP
+0 // s94-p12: PDF step 94: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 0 -40 120 1 0 0 0 1 0 0 0 1 3020.dat
+0 // s94-p13: PDF step 94: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 0 -40 90 1 0 0 0 1 0 0 0 1 2431.dat
+0 STEP
+0 // s95-p14: PDF step 95: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 71 -50 -24 120 0 0 1 0 1 0 -1 0 0 3710.dat
+0 // s95-p15: PDF step 95: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 71 50 -24 120 0 0 1 0 1 0 -1 0 0 3710.dat
+0 // s95-p16: PDF step 95: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 0 -40 150 1 0 0 0 1 0 0 0 1 3710.dat
+0 STEP
+0 // s96-p17: PDF step 96: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 71 -30 -16 130 0 0 -1 0 1 0 1 0 0 30357.dat
+0 // s96-p18: PDF step 96: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 -30 -8 150 0 0 1 0 1 0 -1 0 0 3623.dat
+0 // s96-p19: PDF step 96: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 -60 -8 130 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // s96-p20: PDF step 96: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 -70 -8 160 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // s96-p21: PDF step 96: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 -50 0 140 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // s96-p22: PDF step 96: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 -40 0 170 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // s96-p23: PDF step 96: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 -70 0 130 1 0 0 0 1 0 0 0 1 24201.dat
+0 // s96-p24: PDF step 96: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 -40 8 130 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // s96-p25: PDF step 96: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 -40 8 150 1 0 0 0 1 0 0 0 1 32803.dat
+0 STEP
+0 // s100-p26: PDF step 100: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 36 -50 -24 170 0 0 -1 0 1 0 1 0 0 25269.dat
+0 // s100-p27: PDF step 100: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 71 -30 -16 170 1 0 0 0 1 0 0 0 1 22388.dat
+0 // s100-p28: PDF step 100: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 71 30 -16 130 1 0 0 0 1 0 0 0 1 30357.dat
+0 // s100-p29: PDF step 100: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 30 -8 150 0 0 1 0 1 0 -1 0 0 3623.dat
+0 // s100-p30: PDF step 100: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 60 -8 130 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // s100-p31: PDF step 100: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 70 -8 160 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // s100-p32: PDF step 100: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 50 0 140 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // s100-p33: PDF step 100: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 40 0 170 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // s100-p34: PDF step 100: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 70 0 130 1 0 0 0 1 0 0 0 1 24201.dat
+0 // s100-p35: PDF step 100: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 40 8 130 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // s100-p36: PDF step 100: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 40 8 150 1 0 0 0 1 0 0 0 1 32803.dat
+0 STEP
+0 // s100-p37: PDF step 100: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 36 50 -24 170 1 0 0 0 1 0 0 0 1 25269.dat
+0 // s100-p38: PDF step 100: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 71 30 -16 170 1 0 0 0 1 0 0 0 1 22388.dat
+0 STEP
+0 // s108-p39: PDF step 108: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 -70 -24 70 1 0 0 0 1 0 0 0 1 3024.dat
+0 // s108-p40: PDF step 108: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 -70 -24 130 1 0 0 0 1 0 0 0 1 3024.dat
+0 // s108-p41: PDF step 108: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 70 -24 70 1 0 0 0 1 0 0 0 1 3024.dat
+0 // s108-p42: PDF step 108: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 70 -24 130 1 0 0 0 1 0 0 0 1 3024.dat
+0 STEP
+0 // s109-p43: PDF step 109: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 -70 -32 80 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // s109-p44: PDF step 109: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 70 -32 80 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // s109-p45: PDF step 109: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 0 -48 120 1 0 0 0 1 0 0 0 1 3795.dat
+0 STEP
+0 // s110-p46: PDF step 110: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 -40 -40 140 -1 0 0 0 1 0 0 0 -1 15068.dat
+0 // s110-p47: PDF step 110: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 0 -40 140 -1 0 0 0 1 0 0 0 -1 15068.dat
+0 // s110-p48: PDF step 110: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 40 -40 140 -1 0 0 0 1 0 0 0 -1 15068.dat
+0 // s110-p49: PDF step 110: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 0 -56 110 1 0 0 0 1 0 0 0 1 6636.dat
+0 STEP
+0 // s111-p50: PDF step 111: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 -70 -32 130 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // s111-p51: PDF step 111: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 -70 -48 120 -1 0 0 0 1 0 0 0 -1 50950.dat
+0 // s111-p52: PDF step 111: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 -70 -32 80 1 0 0 0 1 0 0 0 1 11477.dat
+0 // s111-p53: PDF step 111: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 70 -32 130 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // s111-p54: PDF step 111: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 70 -48 120 -1 0 0 0 1 0 0 0 -1 50950.dat
+0 // s111-p55: PDF step 111: Rear wheel arches, rounded bumper pods and sculpted deck; PDF steps 85-111
+1 288 70 -32 80 1 0 0 0 1 0 0 0 1 11477.dat
+0 NOFILE
+0 FILE etype-folded-hood.ldr
+0 Black folded soft-top cover behind seats; PDF steps 112-116
+0 Name: etype-folded-hood.ldr
+0 Author: williweb (2026), design; Codex, PDF-to-LDraw reconstruction
+0 !LDRAW_ORG Model
+0 // s112-p1: PDF step 112: Black folded soft-top cover behind seats; PDF steps 112-116
+1 0 0 -48 90 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // s112-p2: PDF step 112: Black folded soft-top cover behind seats; PDF steps 112-116
+1 0 -50 -48 90 1 0 0 0 1 0 0 0 1 2420.dat
+0 // s112-p3: PDF step 112: Black folded soft-top cover behind seats; PDF steps 112-116
+1 0 50 -48 90 0 0 -1 0 1 0 1 0 0 2420.dat
+0 STEP
+0 // s113-p4: PDF step 113: Black folded soft-top cover behind seats; PDF steps 112-116
+1 288 0 -56 90 1 0 0 0 1 0 0 0 1 3666.dat
+0 STEP
+0 // s114-p5: PDF step 114: Black folded soft-top cover behind seats; PDF steps 112-116
+1 0 -20 -48 80 1 0 0 0 1 0 0 0 1 15068.dat
+0 // s114-p6: PDF step 114: Black folded soft-top cover behind seats; PDF steps 112-116
+1 0 20 -48 80 1 0 0 0 1 0 0 0 1 15068.dat
+0 STEP
+0 // s115-p7: PDF step 115: Black folded soft-top cover behind seats; PDF steps 112-116
+1 0 -50 -64 90 -1 0 0 0 1 0 0 0 -1 25269.dat
+0 // s115-p8: PDF step 115: Black folded soft-top cover behind seats; PDF steps 112-116
+1 0 -50 -48 70 1 0 0 0 1 0 0 0 1 54200.dat
+0 // s115-p9: PDF step 115: Black folded soft-top cover behind seats; PDF steps 112-116
+1 0 50 -64 90 0 0 1 0 1 0 -1 0 0 25269.dat
+0 // s115-p10: PDF step 115: Black folded soft-top cover behind seats; PDF steps 112-116
+1 0 50 -48 70 1 0 0 0 1 0 0 0 1 54200.dat
+0 NOFILE
+0 FILE etype-running-gear.ldr
+0 Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+0 Name: etype-running-gear.ldr
+0 Author: williweb (2026), design; Codex, PDF-to-LDraw reconstruction
+0 !LDRAW_ORG Model
+0 // s117-p1: PDF step 117: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 72 0 16 120 -1 0 0 0 1 0 0 0 -1 2540.dat
+0 STEP
+0 // s118-p2: PDF step 118: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 71 -10 20 140 1 0 0 0 0 -1 0 1 0 11090.dat
+0 // s118-p3: PDF step 118: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 71 10 20 140 1 0 0 0 0 -1 0 1 0 11090.dat
+0 STEP
+0 // s120-p4: PDF step 120: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 72 0 40 -120 1 0 0 0 1 0 0 0 1 3795.dat
+0 // s120-p5: PDF step 120: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 72 -50 16 -120 0 0 1 0 1 0 -1 0 0 3700.dat
+0 // s120-p6: PDF step 120: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 72 50 16 -120 0 0 1 0 1 0 -1 0 0 3700.dat
+0 // s120-p7: PDF step 120: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 72 0 40 100 1 0 0 0 1 0 0 0 1 3795.dat
+0 // s120-p8: PDF step 120: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 72 -50 16 100 0 0 1 0 1 0 -1 0 0 3700.dat
+0 // s120-p9: PDF step 120: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 72 50 16 100 0 0 1 0 1 0 -1 0 0 3700.dat
+0 STEP
+0 // s125-p10: PDF step 125: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 288 -50 -8 -120 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // s125-p11: PDF step 125: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 288 50 -8 -120 0 0 1 0 1 0 -1 0 0 3004.dat
+0 STEP
+0 // s127-p12: PDF step 127: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 71 -60 26 -120 -1 0 0 0 1 0 0 0 -1 4274.dat
+0 // s127-p13: PDF step 127: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 0 -68 26 -120 0 1 0 -1 0 0 0 0 1 18674.dat
+0 // s127-p14: PDF step 127: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 0 -72 26 -120 0 0 1 0 1 0 -1 0 0 3483.dat
+0 // s127-p15: PDF step 127: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 80 -78 26 -120 0 0 1 0 1 0 -1 0 0 1872.dat
+0 // s127-p16: PDF step 127: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 71 -60 26 100 -1 0 0 0 1 0 0 0 -1 4274.dat
+0 // s127-p17: PDF step 127: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 0 -68 26 100 0 1 0 -1 0 0 0 0 1 18674.dat
+0 // s127-p18: PDF step 127: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 0 -72 26 100 0 0 1 0 1 0 -1 0 0 3483.dat
+0 // s127-p19: PDF step 127: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 80 -78 26 100 0 0 1 0 1 0 -1 0 0 1872.dat
+0 // s127-p20: PDF step 127: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 71 60 26 -120 1 0 0 0 1 0 0 0 1 4274.dat
+0 // s127-p21: PDF step 127: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 0 68 26 -120 0 -1 0 1 0 0 0 0 1 18674.dat
+0 // s127-p22: PDF step 127: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 0 72 26 -120 0 0 1 0 1 0 -1 0 0 3483.dat
+0 // s127-p23: PDF step 127: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 80 78 26 -120 0 0 -1 0 1 0 1 0 0 1872.dat
+0 // s127-p24: PDF step 127: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 71 60 26 100 1 0 0 0 1 0 0 0 1 4274.dat
+0 // s127-p25: PDF step 127: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 0 68 26 100 0 -1 0 1 0 0 0 0 1 18674.dat
+0 // s127-p26: PDF step 127: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 0 72 26 100 0 0 1 0 1 0 -1 0 0 3483.dat
+0 // s127-p27: PDF step 127: Twin exhausts, underside axle beams and wire-style wheels; PDF steps 117-133
+1 80 78 26 100 0 0 -1 0 1 0 1 0 0 1872.dat
+0 NOFILE
+0 FILE etype-hardtop.ldr
+0 Removable black roof with clear rear window; PDF steps 134-141
+0 Name: etype-hardtop.ldr
+0 Author: williweb (2026), design; Codex, PDF-to-LDraw reconstruction
+0 !LDRAW_ORG Model
+0 // s134-p1: PDF step 134: Removable black roof with clear rear window; PDF steps 134-141
+1 0 -50 -80 90 -1 0 0 0 1 0 0 0 -1 3040b.dat
+0 // s134-p2: PDF step 134: Removable black roof with clear rear window; PDF steps 134-141
+1 0 50 -80 90 -1 0 0 0 1 0 0 0 -1 3040b.dat
+0 // s134-p3: PDF step 134: Removable black roof with clear rear window; PDF steps 134-141
+1 47 -20 -80 90 -1 0 0 0 1 0 0 0 -1 3039.dat
+0 // s134-p4: PDF step 134: Removable black roof with clear rear window; PDF steps 134-141
+1 47 20 -80 90 -1 0 0 0 1 0 0 0 -1 3039.dat
+0 STEP
+0 // s135-p5: PDF step 135: Removable black roof with clear rear window; PDF steps 134-141
+1 0 -40 -80 80 1 0 0 0 1 0 0 0 1 15068.dat
+0 // s135-p6: PDF step 135: Removable black roof with clear rear window; PDF steps 134-141
+1 0 0 -80 80 1 0 0 0 1 0 0 0 1 15068.dat
+0 // s135-p7: PDF step 135: Removable black roof with clear rear window; PDF steps 134-141
+1 0 40 -80 80 1 0 0 0 1 0 0 0 1 15068.dat
+0 STEP
+0 // s136-p8: PDF step 136: Removable black roof with clear rear window; PDF steps 134-141
+1 0 -50 -80 60 1 0 0 0 0 -1 0 1 0 36840.dat
+0 // s136-p9: PDF step 136: Removable black roof with clear rear window; PDF steps 134-141
+1 0 -50 -70 74 1 0 0 0 0 -1 0 1 0 3070b.dat
+0 // s136-p10: PDF step 136: Removable black roof with clear rear window; PDF steps 134-141
+1 0 -50 -88 40 0 0 1 0 1 0 -1 0 0 3623.dat
+0 // s136-p11: PDF step 136: Removable black roof with clear rear window; PDF steps 134-141
+1 0 50 -80 60 1 0 0 0 0 -1 0 1 0 36840.dat
+0 // s136-p12: PDF step 136: Removable black roof with clear rear window; PDF steps 134-141
+1 0 50 -70 74 1 0 0 0 0 -1 0 1 0 3070b.dat
+0 // s136-p13: PDF step 136: Removable black roof with clear rear window; PDF steps 134-141
+1 0 50 -88 40 0 0 1 0 1 0 -1 0 0 3623.dat
+0 STEP
+0 // s140-p14: PDF step 140: Removable black roof with clear rear window; PDF steps 134-141
+1 0 0 -96 60 1 0 0 0 1 0 0 0 1 6636.dat
+0 // s140-p15: PDF step 140: Removable black roof with clear rear window; PDF steps 134-141
+1 0 0 -96 30 1 0 0 0 1 0 0 0 1 69729.dat
+0 NOFILE

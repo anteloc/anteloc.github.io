@@ -1,0 +1,22 @@
+0 FILE shadow-snap.ldr
+0 A cap submodel snapped onto a brick using shadow connectors
+0 Name: shadow-snap.ldr
+0 Author: LDraw tooling example
+0 !LDRAW_ORG Model
+0 // base: 3001.dat
+1 4 0 0 0 1 0 0 0 1 0 0 0 1 3001.dat
+0 STEP
+0 // cap: cap.ldr
+1 1 0 -8 0 1 0 0 0 1 0 0 0 1 cap.ldr
+0 NOFILE
+0 FILE cap.ldr
+0 A plate and brick assembled by connector snapping
+0 Name: cap.ldr
+0 Author: LDraw tooling example
+0 !LDRAW_ORG Model
+0 // plate: 3022.dat
+1 16 0 0 0 1 0 0 0 1 0 0 0 1 3022.dat
+0 STEP
+0 // brick: 3003.dat
+1 14 0 -24 0 1 0 0 0 1 0 0 0 1 3003.dat
+0 NOFILE

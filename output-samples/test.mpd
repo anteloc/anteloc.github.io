@@ -1,0 +1,9 @@
+0 FILE test.ldr
+0 Engine housing snap test
+0 Name: test.ldr
+0 Author: Aurora Lance research
+0 !LDRAW_ORG Model
+1 71 0 0 0 1 0 0 0 1 0 0 0 1 43121.dat
+1 72 0 34 -80 1 0 0 0 1 0 0 0 1 46667.dat
+1 15 0 34 100 1 0 0 0 1 0 0 0 1 4869.dat
+0 NOFILE

@@ -1,0 +1,8 @@
+0 FILE test.ldr
+0 Dish4 on turntable snap test
+0 Name: test.ldr
+0 Author: Aurora Lance research
+0 !LDRAW_ORG Model
+1 71 0 0 0 1 0 0 0 1 0 0 0 1 61485c01.dat
+1 15 0 -16 0 1 0 0 0 1 0 0 0 1 3960.dat
+0 NOFILE

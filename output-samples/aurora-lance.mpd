@@ -1,0 +1,1748 @@
+0 FILE aurora-lance-main.ldr
+0 Aurora Lance delta-wing survey frigate, assembled from structural modules
+0 Name: aurora-lance-main.ldr
+0 Author: Aurora Lance generator (Claude Code, Claude Sonnet 5) for anteloc
+0 !LDRAW_ORG Model
+0 // module-0: Lowest structural course; the display stand and hangar attach here
+1 16 0 0 0 1 0 0 0 1 0 0 0 1 alance-keel.ldr
+0 STEP
+0 // module-1: Bonds every module into one stud-connected plane
+1 16 0 0 0 1 0 0 0 1 0 0 0 1 alance-deck.ldr
+0 STEP
+0 // module-2: Layered wing: three terraced courses with cut-corner leading edges
+1 16 0 0 0 1 0 0 0 1 0 0 0 1 alance-wing-starboard.ldr
+0 STEP
+0 // module-3: Layered wing: three terraced courses with cut-corner leading edges
+1 16 0 0 0 1 0 0 0 1 0 0 0 1 alance-wing-port.ldr
+0 STEP
+0 // module-4: Slender lance nose; terraces give depth without thick edge stacks
+1 16 0 0 0 1 0 0 0 1 0 0 0 1 alance-prow.ldr
+0 STEP
+0 // module-5: Frames the bridge; the shoulders stay low so the canopy reads as the focal feature
+1 16 0 0 0 1 0 0 0 1 0 0 0 1 alance-forebody.ldr
+0 STEP
+0 // module-6: Primary focal feature: the long glass nose
+1 16 0 0 0 1 0 0 0 1 0 0 0 1 alance-bridge.ldr
+0 STEP
+0 // module-7: The dorsal mass that will carry the spine, radar and turrets
+1 16 0 0 0 1 0 0 0 1 0 0 0 1 alance-hull-upper.ldr
+0 STEP
+0 // module-8: Engine deck; studded pads under the nacelles, quiet dark skin elsewhere
+1 16 0 0 0 1 0 0 0 1 0 0 0 1 alance-aft.ldr
+0 STEP
+0 // module-9: Quiet, smooth armour surface around the tower; small colour accents lead the eye to the bridge
+1 16 0 0 0 1 0 0 0 1 0 0 0 1 alance-hull-skin.ldr
+0 STEP
+0 // module-10: Secondary focal feature: the busy tower gives the quiet hull scale
+1 16 0 0 0 1 0 0 0 1 0 0 0 1 alance-tower.ldr
+0 STEP
+0 // module-11: Twin vertical fins outboard of the nacelles complete the side and rear silhouettes
+1 16 0 0 0 1 0 0 0 1 0 0 0 1 alance-fin-starboard.ldr
+0 STEP
+0 // module-12: Twin vertical fins outboard of the nacelles complete the side and rear silhouettes
+1 16 0 0 0 1 0 0 0 1 0 0 0 1 alance-fin-port.ldr
+0 STEP
+0 // module-13: Adds scale and story: the frigate carries a small craft
+1 16 0 -80 380 1 0 0 0 1 0 0 0 1 alance-shuttle.ldr
+0 STEP
+0 // module-14: Primary engine mass
+1 16 0 0 0 1 0 0 0 1 0 0 0 1 alance-nacelle-starboard.ldr
+0 STEP
+0 // module-15: Primary engine mass
+1 16 0 0 0 1 0 0 0 1 0 0 0 1 alance-nacelle-port.ldr
+0 NOFILE
+0 FILE alance-keel.ldr
+0 Keel: dark keel plates and the load-bearing brick hull course (levels 0-7) under spear, hull and aft platform
+0 Name: alance-keel.ldr
+0 Author: Aurora Lance generator (Claude Code, Claude Sonnet 5) for anteloc
+0 !LDRAW_ORG Model
+0 // 3034-0: keel plate
+1 72 -20 -8 -280 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3034-1: keel plate
+1 72 20 -8 -280 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 60479-2: keel plate
+1 72 -50 -8 -120 0 0 1 0 1 0 -1 0 0 60479.dat
+0 // 60479-3: keel plate
+1 72 50 -8 -120 0 0 1 0 1 0 -1 0 0 60479.dat
+0 // 60479-4: keel plate
+1 72 -70 -8 -100 0 0 1 0 1 0 -1 0 0 60479.dat
+0 // 60479-5: keel plate
+1 72 70 -8 -100 0 0 1 0 1 0 -1 0 0 60479.dat
+0 // 3034-6: keel plate
+1 72 -100 -8 -120 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3031-7: keel plate
+1 72 0 -8 -160 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3795-8: keel plate
+1 72 100 -8 -140 0 0 1 0 1 0 -1 0 0 3795.dat
+0 // 3034-9: keel plate
+1 72 -20 -8 -40 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3034-10: keel plate
+1 72 20 -8 -40 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3034-11: keel plate
+1 72 100 -8 0 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3034-12: keel plate
+1 72 -100 -8 40 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3460-13: keel plate
+1 72 -50 -8 80 0 0 1 0 1 0 -1 0 0 3460.dat
+0 // 60479-14: keel plate
+1 72 50 -8 120 0 0 1 0 1 0 -1 0 0 60479.dat
+0 // 60479-15: keel plate
+1 72 -70 -8 140 0 0 1 0 1 0 -1 0 0 60479.dat
+0 // 60479-16: keel plate
+1 72 70 -8 140 0 0 1 0 1 0 -1 0 0 60479.dat
+0 // 3031-17: keel plate
+1 72 0 -8 80 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3034-18: keel plate
+1 72 100 -8 160 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3795-19: keel plate
+1 72 -100 -8 180 0 0 1 0 1 0 -1 0 0 3795.dat
+0 // 3034-20: keel plate
+1 72 -20 -8 200 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3034-21: keel plate
+1 72 20 -8 200 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 60479-22: keel plate
+1 72 -50 -8 280 0 0 1 0 1 0 -1 0 0 60479.dat
+0 // 3034-23: keel plate
+1 72 -100 -8 320 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3460-24: keel plate
+1 72 50 -8 320 0 0 1 0 1 0 -1 0 0 3460.dat
+0 // 3034-25: keel plate
+1 72 100 -8 320 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3460-26: keel plate
+1 72 -70 -8 340 0 0 1 0 1 0 -1 0 0 3460.dat
+0 // 60479-27: keel plate
+1 72 70 -8 380 0 0 1 0 1 0 -1 0 0 60479.dat
+0 // 3031-28: keel plate
+1 72 -200 -8 320 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3034-29: keel plate
+1 72 -140 -8 360 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3031-30: keel plate
+1 72 0 -8 320 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-31: keel plate
+1 72 160 -8 320 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3795-32: keel plate
+1 72 220 -8 340 0 0 1 0 1 0 -1 0 0 3795.dat
+0 // 3031-33: keel plate
+1 72 -200 -8 400 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-34: keel plate
+1 72 0 -8 400 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3034-35: keel plate
+1 72 140 -8 440 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3034-36: keel plate
+1 72 180 -8 440 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3795-37: keel plate
+1 72 -100 -8 460 0 0 1 0 1 0 -1 0 0 3795.dat
+0 // 3666-38: keel plate
+1 72 -50 -8 460 0 0 1 0 1 0 -1 0 0 3666.dat
+0 // 3710-39: keel plate
+1 72 50 -8 440 0 0 1 0 1 0 -1 0 0 3710.dat
+0 // 3795-40: keel plate
+1 72 100 -8 460 0 0 1 0 1 0 -1 0 0 3795.dat
+0 // 3795-41: keel plate
+1 72 220 -8 460 0 0 1 0 1 0 -1 0 0 3795.dat
+0 // 3623-42: keel plate
+1 72 -70 -8 450 0 0 1 0 1 0 -1 0 0 3623.dat
+0 // 3031-43: keel plate
+1 72 -200 -8 480 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3020-44: keel plate
+1 72 -140 -8 480 0 0 1 0 1 0 -1 0 0 3020.dat
+0 // 3031-45: keel plate
+1 72 0 -8 480 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3023b-46: keel plate
+1 72 -70 -8 500 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // 3023b-47: keel plate
+1 72 50 -8 500 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // 3024-48: keel plate
+1 72 70 -8 510 1 0 0 0 1 0 0 0 1 3024.dat
+0 STEP
+0 // 3008-49: outer hull wall
+1 15 -230 -32 360 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3010-50: outer hull wall
+1 15 -230 -32 480 0 0 1 0 1 0 -1 0 0 3010.dat
+0 // 3622-51: outer hull wall
+1 15 -190 -32 290 1 0 0 0 1 0 0 0 1 3622.dat
+0 // 3009-52: outer hull wall
+1 15 -160 -32 510 1 0 0 0 1 0 0 0 1 3009.dat
+0 // 3004-53: outer hull wall
+1 15 -140 -32 290 1 0 0 0 1 0 0 0 1 3004.dat
+0 // 3008-54: outer hull wall
+1 15 -110 -32 -120 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-55: outer hull wall
+1 15 -110 -32 40 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-56: outer hull wall
+1 15 -110 -32 200 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3005-57: outer hull wall
+1 15 -90 -32 -190 1 0 0 0 1 0 0 0 1 3005.dat
+0 // 3008-58: outer hull wall
+1 15 -20 -32 510 1 0 0 0 1 0 0 0 1 3008.dat
+0 // 3005-59: outer hull wall
+1 15 -70 -32 -210 1 0 0 0 1 0 0 0 1 3005.dat
+0 // 3005-60: outer hull wall
+1 15 -50 -32 -230 1 0 0 0 1 0 0 0 1 3005.dat
+0 // 3008-61: outer hull wall
+1 15 -30 -32 -360 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3004-62: outer hull wall
+1 15 -30 -32 -260 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // 3004-63: outer hull wall
+1 15 0 -32 -430 1 0 0 0 1 0 0 0 1 3004.dat
+0 // 3008-64: outer hull wall
+1 15 30 -32 -360 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3004-65: outer hull wall
+1 15 30 -32 -260 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // 3005-66: outer hull wall
+1 15 50 -32 -230 1 0 0 0 1 0 0 0 1 3005.dat
+0 // 3005-67: outer hull wall
+1 15 70 -32 -210 1 0 0 0 1 0 0 0 1 3005.dat
+0 // 3008-68: outer hull wall
+1 15 140 -32 510 1 0 0 0 1 0 0 0 1 3008.dat
+0 // 3004-69: outer hull wall
+1 15 100 -32 -190 1 0 0 0 1 0 0 0 1 3004.dat
+0 // 3008-70: outer hull wall
+1 15 110 -32 -100 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-71: outer hull wall
+1 15 110 -32 60 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3009-72: outer hull wall
+1 15 110 -32 200 0 0 1 0 1 0 -1 0 0 3009.dat
+0 // 3005-73: outer hull wall
+1 15 110 -32 270 1 0 0 0 1 0 0 0 1 3005.dat
+0 // 3009-74: outer hull wall
+1 15 180 -32 290 1 0 0 0 1 0 0 0 1 3009.dat
+0 // 3009-75: outer hull wall
+1 15 230 -32 360 0 0 1 0 1 0 -1 0 0 3009.dat
+0 // 3622-76: outer hull wall
+1 15 230 -32 450 0 0 1 0 1 0 -1 0 0 3622.dat
+0 // 3004-77: outer hull wall
+1 15 230 -32 500 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // 3001-78: solid hull core
+1 71 0 -32 -380 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3008-79: solid hull core
+1 71 -10 -32 -260 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-80: solid hull core
+1 71 10 -32 -260 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3009-81: solid hull core
+1 71 -30 -32 -180 0 0 1 0 1 0 -1 0 0 3009.dat
+0 // 3008-82: solid hull core
+1 71 30 -32 -160 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-83: solid hull core
+1 71 -50 -32 -140 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3009-84: solid hull core
+1 71 50 -32 -160 0 0 1 0 1 0 -1 0 0 3009.dat
+0 // 3008-85: solid hull core
+1 71 -70 -32 -120 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3009-86: solid hull core
+1 71 70 -32 -140 0 0 1 0 1 0 -1 0 0 3009.dat
+0 // 3008-87: solid hull core
+1 71 -90 -32 -100 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-88: solid hull core
+1 71 -10 -32 -100 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3009-89: solid hull core
+1 71 10 -32 -120 0 0 1 0 1 0 -1 0 0 3009.dat
+0 // 3008-90: solid hull core
+1 71 90 -32 -100 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-91: solid hull core
+1 71 -30 -32 -40 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3009-92: solid hull core
+1 71 50 -32 -40 0 0 1 0 1 0 -1 0 0 3009.dat
+0 // 3008-93: solid hull core
+1 71 30 -32 0 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-94: solid hull core
+1 71 70 -32 0 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-95: solid hull core
+1 71 -50 -32 20 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-96: solid hull core
+1 71 10 -32 20 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-97: solid hull core
+1 71 -70 -32 40 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-98: solid hull core
+1 71 -90 -32 60 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3009-99: solid hull core
+1 71 -10 -32 40 0 0 1 0 1 0 -1 0 0 3009.dat
+0 // 3008-100: solid hull core
+1 71 90 -32 60 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-101: solid hull core
+1 71 50 -32 100 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3009-102: solid hull core
+1 71 -30 -32 100 0 0 1 0 1 0 -1 0 0 3009.dat
+0 // 3009-103: solid hull core
+1 71 30 -32 140 0 0 1 0 1 0 -1 0 0 3009.dat
+0 // 3008-104: solid hull core
+1 71 70 -32 160 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-105: solid hull core
+1 71 -50 -32 180 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-106: solid hull core
+1 71 -10 -32 180 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-107: solid hull core
+1 71 10 -32 180 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-108: solid hull core
+1 71 -70 -32 200 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-109: solid hull core
+1 71 -90 -32 220 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-110: solid hull core
+1 71 90 -32 220 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3009-111: solid hull core
+1 71 -30 -32 220 0 0 1 0 1 0 -1 0 0 3009.dat
+0 // 3009-112: solid hull core
+1 71 50 -32 240 0 0 1 0 1 0 -1 0 0 3009.dat
+0 // 3009-113: solid hull core
+1 71 30 -32 260 0 0 1 0 1 0 -1 0 0 3009.dat
+0 // 3008-114: solid hull core
+1 71 70 -32 320 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-115: solid hull core
+1 71 -50 -32 340 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3001-116: solid hull core
+1 71 0 -32 300 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3008-117: solid hull core
+1 71 -110 -32 360 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-118: solid hull core
+1 71 -70 -32 360 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-119: solid hull core
+1 71 -30 -32 360 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-120: solid hull core
+1 71 110 -32 360 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3001-121: solid hull core
+1 71 -180 -32 320 1 0 0 0 1 0 0 0 1 3001.dat
+0 // 3008-122: solid hull core
+1 71 -130 -32 380 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-123: solid hull core
+1 71 -90 -32 380 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-124: solid hull core
+1 71 50 -32 380 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-125: solid hull core
+1 71 90 -32 380 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3001-126: solid hull core
+1 71 160 -32 320 1 0 0 0 1 0 0 0 1 3001.dat
+0 // 3008-127: solid hull core
+1 71 210 -32 380 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-128: solid hull core
+1 71 30 -32 400 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3001-129: solid hull core
+1 71 -200 -32 380 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-130: solid hull core
+1 71 -160 -32 380 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-131: solid hull core
+1 71 0 -32 380 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-132: solid hull core
+1 71 140 -32 380 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-133: solid hull core
+1 71 180 -32 380 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3622-134: solid hull core
+1 71 70 -32 430 0 0 1 0 1 0 -1 0 0 3622.dat
+0 // 3001-135: solid hull core
+1 71 -180 -32 440 1 0 0 0 1 0 0 0 1 3001.dat
+0 // 3010-136: solid hull core
+1 71 -50 -32 460 0 0 1 0 1 0 -1 0 0 3010.dat
+0 // 3001-137: solid hull core
+1 71 0 -32 460 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-138: solid hull core
+1 71 160 -32 440 1 0 0 0 1 0 0 0 1 3001.dat
+0 // 3622-139: solid hull core
+1 71 -110 -32 470 0 0 1 0 1 0 -1 0 0 3622.dat
+0 // 3622-140: solid hull core
+1 71 -70 -32 470 0 0 1 0 1 0 -1 0 0 3622.dat
+0 // 3622-141: solid hull core
+1 71 -30 -32 470 0 0 1 0 1 0 -1 0 0 3622.dat
+0 // 3622-142: solid hull core
+1 71 110 -32 470 0 0 1 0 1 0 -1 0 0 3622.dat
+0 // 3001-143: solid hull core
+1 71 -180 -32 480 1 0 0 0 1 0 0 0 1 3001.dat
+0 // 3004-144: solid hull core
+1 71 -130 -32 480 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // 3004-145: solid hull core
+1 71 -90 -32 480 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // 3002-146: solid hull core
+1 71 70 -32 480 1 0 0 0 1 0 0 0 1 3002.dat
+0 // 3001-147: solid hull core
+1 71 160 -32 480 1 0 0 0 1 0 0 0 1 3001.dat
+0 // 3005-148: solid hull core
+1 71 210 -32 470 1 0 0 0 1 0 0 0 1 3005.dat
+0 // 3005-149: solid hull core
+1 71 30 -32 490 1 0 0 0 1 0 0 0 1 3005.dat
+0 // 3005-150: solid hull core
+1 71 210 -32 490 1 0 0 0 1 0 0 0 1 3005.dat
+0 STEP
+0 // 3008-151: outer hull wall, second course
+1 15 -230 -56 360 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3010-152: outer hull wall, second course
+1 15 -230 -56 480 0 0 1 0 1 0 -1 0 0 3010.dat
+0 // 3010-153: outer hull wall, second course
+1 15 -180 -56 290 1 0 0 0 1 0 0 0 1 3010.dat
+0 // 3008-154: outer hull wall, second course
+1 15 -140 -56 510 1 0 0 0 1 0 0 0 1 3008.dat
+0 // 3005-155: outer hull wall, second course
+1 15 -130 -56 290 1 0 0 0 1 0 0 0 1 3005.dat
+0 // 3009-156: outer hull wall, second course
+1 15 -110 -56 -140 0 0 1 0 1 0 -1 0 0 3009.dat
+0 // 3008-157: outer hull wall, second course
+1 15 -110 -56 0 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-158: outer hull wall, second course
+1 15 -110 -56 160 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3004-159: outer hull wall, second course
+1 15 -110 -56 260 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // 3005-160: outer hull wall, second course
+1 15 -90 -56 -190 1 0 0 0 1 0 0 0 1 3005.dat
+0 // 3005-161: outer hull wall, second course
+1 15 -70 -56 -210 1 0 0 0 1 0 0 0 1 3005.dat
+0 // 3005-162: outer hull wall, second course
+1 15 -50 -56 -230 1 0 0 0 1 0 0 0 1 3005.dat
+0 // 3008-163: outer hull wall, second course
+1 15 20 -56 510 1 0 0 0 1 0 0 0 1 3008.dat
+0 // 3008-164: outer hull wall, second course
+1 15 -30 -56 -360 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3004-165: outer hull wall, second course
+1 15 -30 -56 -260 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // 3622-166: outer hull wall, second course
+1 15 10 -56 -430 1 0 0 0 1 0 0 0 1 3622.dat
+0 // 3008-167: outer hull wall, second course
+1 15 30 -56 -340 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3005-168: outer hull wall, second course
+1 15 30 -56 -250 1 0 0 0 1 0 0 0 1 3005.dat
+0 // 3005-169: outer hull wall, second course
+1 15 50 -56 -230 1 0 0 0 1 0 0 0 1 3005.dat
+0 // 3005-170: outer hull wall, second course
+1 15 70 -56 -210 1 0 0 0 1 0 0 0 1 3005.dat
+0 // 3004-171: outer hull wall, second course
+1 15 100 -56 -190 1 0 0 0 1 0 0 0 1 3004.dat
+0 // 3008-172: outer hull wall, second course
+1 15 110 -56 -100 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-173: outer hull wall, second course
+1 15 110 -56 60 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3010-174: outer hull wall, second course
+1 15 110 -56 180 0 0 1 0 1 0 -1 0 0 3010.dat
+0 // 3622-175: outer hull wall, second course
+1 15 110 -56 250 0 0 1 0 1 0 -1 0 0 3622.dat
+0 // 3009-176: outer hull wall, second course
+1 15 160 -56 510 1 0 0 0 1 0 0 0 1 3009.dat
+0 // 3009-177: outer hull wall, second course
+1 15 180 -56 290 1 0 0 0 1 0 0 0 1 3009.dat
+0 // 3008-178: outer hull wall, second course
+1 15 230 -56 380 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3622-179: outer hull wall, second course
+1 15 230 -56 490 0 0 1 0 1 0 -1 0 0 3622.dat
+0 // 3001-180: solid hull core, second course
+1 71 -200 -56 340 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-181: solid hull core, second course
+1 71 -200 -56 420 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-182: solid hull core, second course
+1 71 -180 -56 480 1 0 0 0 1 0 0 0 1 3001.dat
+0 // 3001-183: solid hull core, second course
+1 71 -160 -56 340 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-184: solid hull core, second course
+1 71 -160 -56 420 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-185: solid hull core, second course
+1 71 -120 -56 340 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-186: solid hull core, second course
+1 71 -120 -56 420 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-187: solid hull core, second course
+1 71 -100 -56 480 1 0 0 0 1 0 0 0 1 3001.dat
+0 // 3008-188: solid hull core, second course
+1 71 -40 -56 290 1 0 0 0 1 0 0 0 1 3008.dat
+0 // 3001-189: solid hull core, second course
+1 71 -80 -56 -140 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-190: solid hull core, second course
+1 71 -80 -56 -60 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-191: solid hull core, second course
+1 71 -80 -56 20 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-192: solid hull core, second course
+1 71 -80 -56 100 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-193: solid hull core, second course
+1 71 -80 -56 180 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-194: solid hull core, second course
+1 71 -60 -56 240 1 0 0 0 1 0 0 0 1 3001.dat
+0 // 3008-195: solid hull core, second course
+1 71 -20 -56 270 1 0 0 0 1 0 0 0 1 3008.dat
+0 // 3001-196: solid hull core, second course
+1 71 -80 -56 340 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-197: solid hull core, second course
+1 71 -80 -56 420 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3008-198: solid hull core, second course
+1 71 0 -56 -190 1 0 0 0 1 0 0 0 1 3008.dat
+0 // 3009-199: solid hull core, second course
+1 71 0 -56 -210 1 0 0 0 1 0 0 0 1 3009.dat
+0 // 3001-200: solid hull core, second course
+1 71 -40 -56 -140 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-201: solid hull core, second course
+1 71 -40 -56 -60 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-202: solid hull core, second course
+1 71 -40 -56 20 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-203: solid hull core, second course
+1 71 -40 -56 100 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-204: solid hull core, second course
+1 71 -40 -56 180 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3008-205: solid hull core, second course
+1 71 -50 -56 380 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3001-206: solid hull core, second course
+1 71 -20 -56 480 1 0 0 0 1 0 0 0 1 3001.dat
+0 // 3010-207: solid hull core, second course
+1 71 0 -56 -230 1 0 0 0 1 0 0 0 1 3010.dat
+0 // 3001-208: solid hull core, second course
+1 71 -20 -56 340 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-209: solid hull core, second course
+1 71 -20 -56 420 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-210: solid hull core, second course
+1 71 0 -56 -380 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-211: solid hull core, second course
+1 71 0 -56 -300 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3004-212: solid hull core, second course
+1 71 0 -56 -250 1 0 0 0 1 0 0 0 1 3004.dat
+0 // 3001-213: solid hull core, second course
+1 71 0 -56 -140 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-214: solid hull core, second course
+1 71 0 -56 -60 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3008-215: solid hull core, second course
+1 71 -10 -56 60 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3001-216: solid hull core, second course
+1 71 0 -56 180 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-217: solid hull core, second course
+1 71 20 -56 240 1 0 0 0 1 0 0 0 1 3001.dat
+0 // 3001-218: solid hull core, second course
+1 71 20 -56 20 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-219: solid hull core, second course
+1 71 20 -56 100 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3008-220: solid hull core, second course
+1 71 10 -56 380 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3001-221: solid hull core, second course
+1 71 40 -56 -140 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-222: solid hull core, second course
+1 71 40 -56 -60 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-223: solid hull core, second course
+1 71 40 -56 180 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-224: solid hull core, second course
+1 71 40 -56 340 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-225: solid hull core, second course
+1 71 40 -56 420 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3008-226: solid hull core, second course
+1 71 100 -56 470 1 0 0 0 1 0 0 0 1 3008.dat
+0 // 3008-227: solid hull core, second course
+1 71 100 -56 490 1 0 0 0 1 0 0 0 1 3008.dat
+0 // 3001-228: solid hull core, second course
+1 71 60 -56 20 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-229: solid hull core, second course
+1 71 60 -56 100 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3010-230: solid hull core, second course
+1 71 80 -56 290 1 0 0 0 1 0 0 0 1 3010.dat
+0 // 3001-231: solid hull core, second course
+1 71 80 -56 -140 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3002-232: solid hull core, second course
+1 71 80 -56 -70 0 0 1 0 1 0 -1 0 0 3002.dat
+0 // 3004-233: solid hull core, second course
+1 71 80 -56 -30 1 0 0 0 1 0 0 0 1 3004.dat
+0 // 3001-234: solid hull core, second course
+1 71 80 -56 180 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3002-235: solid hull core, second course
+1 71 80 -56 250 0 0 1 0 1 0 -1 0 0 3002.dat
+0 // 3008-236: solid hull core, second course
+1 71 70 -56 380 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3008-237: solid hull core, second course
+1 71 90 -56 60 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3001-238: solid hull core, second course
+1 71 100 -56 340 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-239: solid hull core, second course
+1 71 100 -56 420 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-240: solid hull core, second course
+1 71 140 -56 340 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-241: solid hull core, second course
+1 71 140 -56 420 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-242: solid hull core, second course
+1 71 180 -56 340 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-243: solid hull core, second course
+1 71 180 -56 420 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3003-244: solid hull core, second course
+1 71 200 -56 480 1 0 0 0 1 0 0 0 1 3003.dat
+0 // 3008-245: solid hull core, second course
+1 71 210 -56 380 0 0 1 0 1 0 -1 0 0 3008.dat
+0 NOFILE
+0 FILE alance-deck.ldr
+0 Structural deck: one continuous plate course (level 7-8) across spear, fuselage, wings and aft platform, with a single cut-corner leading-edge chain from spear tip to wing tip
+0 Name: alance-deck.ldr
+0 Author: Aurora Lance generator (Claude Code, Claude Sonnet 5) for anteloc
+0 !LDRAW_ORG Model
+0 // 30504-0: swept leading-edge armour
+1 72 120 -64 -180 1 0 0 0 1 0 0 0 1 30504.dat
+0 // 30504-1: swept leading-edge armour
+1 72 280 -64 -20 1 0 0 0 1 0 0 0 1 30504.dat
+0 // 30503-2: swept leading-edge armour
+1 72 400 -64 100 1 0 0 0 1 0 0 0 1 30503.dat
+0 // 30504-3: swept leading-edge armour
+1 72 -120 -64 -180 0 0 1 0 1 0 -1 0 0 30504.dat
+0 // 30504-4: swept leading-edge armour
+1 72 -280 -64 -20 0 0 1 0 1 0 -1 0 0 30504.dat
+0 // 30503-5: swept leading-edge armour
+1 72 -400 -64 100 0 0 1 0 1 0 -1 0 0 30503.dat
+0 // 3020-6: root bridge plate
+1 71 120 -64 -80 1 0 0 0 1 0 0 0 1 3020.dat
+0 // 3020-7: root bridge plate
+1 71 -120 -64 -80 1 0 0 0 1 0 0 0 1 3020.dat
+0 // 3020-8: root bridge plate
+1 71 120 -64 20 1 0 0 0 1 0 0 0 1 3020.dat
+0 // 3020-9: root bridge plate
+1 71 -120 -64 20 1 0 0 0 1 0 0 0 1 3020.dat
+0 // 3020-10: root bridge plate
+1 71 120 -64 120 1 0 0 0 1 0 0 0 1 3020.dat
+0 // 3020-11: root bridge plate
+1 71 -120 -64 120 1 0 0 0 1 0 0 0 1 3020.dat
+0 // 3020-12: root bridge plate
+1 71 120 -64 220 1 0 0 0 1 0 0 0 1 3020.dat
+0 // 3020-13: root bridge plate
+1 71 -120 -64 220 1 0 0 0 1 0 0 0 1 3020.dat
+0 // 3031-14: deck plate
+1 71 0 -64 -600 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-15: deck plate
+1 71 0 -64 -520 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-16: deck plate
+1 71 0 -64 -440 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3034-17: deck plate
+1 71 -20 -64 -320 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3034-18: deck plate
+1 71 20 -64 -320 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3031-19: deck plate
+1 71 0 -64 -200 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-20: deck plate
+1 71 0 -64 -120 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3795-21: deck plate
+1 71 -180 -64 -40 0 0 1 0 1 0 -1 0 0 3795.dat
+0 // 3795-22: deck plate
+1 71 -60 -64 -40 0 0 1 0 1 0 -1 0 0 3795.dat
+0 // 3034-23: deck plate
+1 71 60 -64 -20 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3034-24: deck plate
+1 71 180 -64 -20 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3031-25: deck plate
+1 71 0 -64 -40 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3021-26: deck plate
+1 71 -130 -64 -40 1 0 0 0 1 0 0 0 1 3021.dat
+0 // 3023b-27: deck plate
+1 71 -90 -64 -40 0 0 1 0 1 0 -1 0 0 3023b.dat
+0 // 3020-28: deck plate
+1 71 120 -64 -40 1 0 0 0 1 0 0 0 1 3020.dat
+0 // 3710-29: deck plate
+1 71 -120 -64 -10 1 0 0 0 1 0 0 0 1 3710.dat
+0 // 3710-30: deck plate
+1 71 120 -64 -10 1 0 0 0 1 0 0 0 1 3710.dat
+0 // 3031-31: deck plate
+1 71 0 -64 40 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3034-32: deck plate
+1 71 -180 -64 100 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3795-33: deck plate
+1 71 -60 -64 80 0 0 1 0 1 0 -1 0 0 3795.dat
+0 // 3020-34: deck plate
+1 71 -120 -64 60 1 0 0 0 1 0 0 0 1 3020.dat
+0 // 3020-35: deck plate
+1 71 120 -64 60 1 0 0 0 1 0 0 0 1 3020.dat
+0 // 3031-36: deck plate
+1 71 -320 -64 100 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-37: deck plate
+1 71 -240 -64 100 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3034-38: deck plate
+1 71 60 -64 140 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3031-39: deck plate
+1 71 200 -64 100 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-40: deck plate
+1 71 280 -64 100 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3034-41: deck plate
+1 71 340 -64 140 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3710-42: deck plate
+1 71 -120 -64 90 1 0 0 0 1 0 0 0 1 3710.dat
+0 // 3031-43: deck plate
+1 71 0 -64 120 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3710-44: deck plate
+1 71 120 -64 90 1 0 0 0 1 0 0 0 1 3710.dat
+0 // 3034-45: deck plate
+1 71 -360 -64 160 1 0 0 0 1 0 0 0 1 3034.dat
+0 // 3031-46: deck plate
+1 71 -240 -64 180 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3795-47: deck plate
+1 71 -100 -64 160 1 0 0 0 1 0 0 0 1 3795.dat
+0 // 3034-48: deck plate
+1 71 160 -64 160 1 0 0 0 1 0 0 0 1 3034.dat
+0 // 3031-49: deck plate
+1 71 280 -64 180 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-50: deck plate
+1 71 400 -64 180 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3034-51: deck plate
+1 71 -20 -64 240 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3795-52: deck plate
+1 71 20 -64 220 0 0 1 0 1 0 -1 0 0 3795.dat
+0 // 3031-53: deck plate
+1 71 -400 -64 220 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-54: deck plate
+1 71 -320 -64 220 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3795-55: deck plate
+1 71 -180 -64 240 0 0 1 0 1 0 -1 0 0 3795.dat
+0 // 3710-56: deck plate
+1 71 -120 -64 190 1 0 0 0 1 0 0 0 1 3710.dat
+0 // 3795-57: deck plate
+1 71 -60 -64 240 0 0 1 0 1 0 -1 0 0 3795.dat
+0 // 3666-58: deck plate
+1 71 140 -64 190 1 0 0 0 1 0 0 0 1 3666.dat
+0 // 3034-59: deck plate
+1 71 220 -64 260 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3034-60: deck plate
+1 71 180 -64 280 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3020-61: deck plate
+1 71 -240 -64 240 1 0 0 0 1 0 0 0 1 3020.dat
+0 // 3034-62: deck plate
+1 71 60 -64 300 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3034-63: deck plate
+1 71 320 -64 240 1 0 0 0 1 0 0 0 1 3034.dat
+0 // 3021-64: deck plate
+1 71 420 -64 250 0 0 1 0 1 0 -1 0 0 3021.dat
+0 // 3031-65: deck plate
+1 71 -120 -64 280 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-66: deck plate
+1 71 120 -64 280 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 60479-67: deck plate
+1 71 -320 -64 270 1 0 0 0 1 0 0 0 1 60479.dat
+0 // 3460-68: deck plate
+1 71 320 -64 270 1 0 0 0 1 0 0 0 1 3460.dat
+0 // 3795-69: deck plate
+1 71 -220 -64 340 0 0 1 0 1 0 -1 0 0 3795.dat
+0 // 3034-70: deck plate
+1 71 20 -64 360 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3034-71: deck plate
+1 71 -180 -64 380 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3034-72: deck plate
+1 71 -60 -64 380 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3031-73: deck plate
+1 71 -120 -64 360 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3034-74: deck plate
+1 71 -20 -64 400 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3031-75: deck plate
+1 71 120 -64 360 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3034-76: deck plate
+1 71 220 -64 420 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3034-77: deck plate
+1 71 180 -64 440 0 0 1 0 1 0 -1 0 0 3034.dat
+0 // 3020-78: deck plate
+1 71 60 -64 420 0 0 1 0 1 0 -1 0 0 3020.dat
+0 // 3795-79: deck plate
+1 71 -220 -64 460 0 0 1 0 1 0 -1 0 0 3795.dat
+0 // 3795-80: deck plate
+1 71 -140 -64 460 0 0 1 0 1 0 -1 0 0 3795.dat
+0 // 3795-81: deck plate
+1 71 -100 -64 460 0 0 1 0 1 0 -1 0 0 3795.dat
+0 // 3795-82: deck plate
+1 71 100 -64 460 0 0 1 0 1 0 -1 0 0 3795.dat
+0 // 3795-83: deck plate
+1 71 140 -64 460 0 0 1 0 1 0 -1 0 0 3795.dat
+0 // 3020-84: deck plate
+1 71 20 -64 480 0 0 1 0 1 0 -1 0 0 3020.dat
+0 // 3021-85: deck plate
+1 71 -180 -64 490 0 0 1 0 1 0 -1 0 0 3021.dat
+0 // 3021-86: deck plate
+1 71 -60 -64 490 0 0 1 0 1 0 -1 0 0 3021.dat
+0 // 3021-87: deck plate
+1 71 60 -64 490 0 0 1 0 1 0 -1 0 0 3021.dat
+0 // 3022-88: deck plate
+1 71 -20 -64 500 1 0 0 0 1 0 0 0 1 3022.dat
+0 // 3023b-89: deck plate
+1 71 220 -64 510 1 0 0 0 1 0 0 0 1 3023b.dat
+0 NOFILE
+0 FILE alance-wing-starboard.ldr
+0 Starboard delta wing: mid course, top course and tile skin above the shared deck
+0 Name: alance-wing-starboard.ldr
+0 Author: Aurora Lance generator (Claude Code, Claude Sonnet 5) for anteloc
+0 !LDRAW_ORG Model
+0 // 30504-0: swept leading-edge armour
+1 71 200 -72 -80 1 0 0 0 1 0 0 0 1 30504.dat
+0 // 30504-1: swept leading-edge armour
+1 71 360 -72 80 1 0 0 0 1 0 0 0 1 30504.dat
+0 // 3031-2: wing course plates
+1 71 160 -72 40 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-3: wing course plates
+1 71 160 -72 120 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-4: wing course plates
+1 71 160 -72 200 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3034-5: wing course plates
+1 71 200 -72 260 1 0 0 0 1 0 0 0 1 3034.dat
+0 // 3031-6: wing course plates
+1 71 240 -72 40 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-7: wing course plates
+1 71 240 -72 120 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-8: wing course plates
+1 71 240 -72 200 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-9: wing course plates
+1 71 320 -72 200 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3034-10: wing course plates
+1 71 360 -72 260 1 0 0 0 1 0 0 0 1 3034.dat
+0 // 3031-11: wing course plates
+1 71 400 -72 200 1 0 0 0 1 0 0 0 1 3031.dat
+0 STEP
+0 // 30504-12: swept leading-edge armour
+1 25 200 -80 -60 1 0 0 0 1 0 0 0 1 30504.dat
+0 // 30504-13: swept leading-edge armour
+1 25 360 -80 100 1 0 0 0 1 0 0 0 1 30504.dat
+0 // 3031-14: wing course plates
+1 15 160 -80 60 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-15: wing course plates
+1 15 160 -80 140 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-16: wing course plates
+1 15 160 -80 220 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 60479-17: wing course plates
+1 15 240 -80 270 1 0 0 0 1 0 0 0 1 60479.dat
+0 // 3031-18: wing course plates
+1 15 240 -80 60 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-19: wing course plates
+1 15 240 -80 140 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-20: wing course plates
+1 15 240 -80 220 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-21: wing course plates
+1 15 320 -80 220 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-22: wing course plates
+1 15 400 -80 220 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3710-23: wing course plates
+1 15 400 -80 270 1 0 0 0 1 0 0 0 1 3710.dat
+0 STEP
+0 // 6636-24: wing tile skin
+1 25 390 -88 200 0 0 1 0 1 0 -1 0 0 6636.dat
+0 // 3069b-25: wing tile skin
+1 25 400 -88 270 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // 2431-26: wing tile skin
+1 25 410 -88 200 0 0 1 0 1 0 -1 0 0 2431.dat
+0 // 3069b-27: wing tile skin
+1 25 420 -88 250 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // 63864-28: wing tile skin
+1 25 430 -88 210 0 0 1 0 1 0 -1 0 0 63864.dat
+0 // 4162-29: wing tile skin
+1 71 280 -88 270 1 0 0 0 1 0 0 0 1 4162.dat
+0 // 3070b-30: wing tile skin
+1 71 370 -88 270 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // 4162-31: wing tile skin
+1 71 260 -88 90 1 0 0 0 1 0 0 0 1 4162.dat
+0 // 4162-32: wing tile skin
+1 71 280 -88 190 1 0 0 0 1 0 0 0 1 4162.dat
+0 // 3070b-33: wing tile skin
+1 71 370 -88 190 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // 2412b-34: wing tile skin
+1 72 170 -88 20 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 2412b-35: wing tile skin
+1 72 180 -88 50 1 0 0 0 1 0 0 0 1 2412b.dat
+0 // 2412b-36: wing tile skin
+1 72 190 -88 20 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 2412b-37: wing tile skin
+1 72 210 -88 20 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 2412b-38: wing tile skin
+1 72 220 -88 50 1 0 0 0 1 0 0 0 1 2412b.dat
+0 // 2412b-39: wing tile skin
+1 72 230 -88 20 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 2412b-40: wing tile skin
+1 72 250 -88 20 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 2412b-41: wing tile skin
+1 72 260 -88 50 1 0 0 0 1 0 0 0 1 2412b.dat
+0 // 3070b-42: wing tile skin
+1 72 270 -88 30 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // 4162-43: wing tile skin
+1 15 130 -88 -40 0 0 1 0 1 0 -1 0 0 4162.dat
+0 // 87079-44: wing tile skin
+1 15 140 -88 80 0 0 1 0 1 0 -1 0 0 87079.dat
+0 // 4162-45: wing tile skin
+1 15 200 -88 130 1 0 0 0 1 0 0 0 1 4162.dat
+0 // 6636-46: wing tile skin
+1 15 150 -88 -40 0 0 1 0 1 0 -1 0 0 6636.dat
+0 // 3070b-47: wing tile skin
+1 15 150 -88 30 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // 2431-48: wing tile skin
+1 15 170 -88 -40 0 0 1 0 1 0 -1 0 0 2431.dat
+0 // 4162-49: wing tile skin
+1 15 240 -88 70 1 0 0 0 1 0 0 0 1 4162.dat
+0 // 3069b-50: wing tile skin
+1 15 170 -88 100 0 0 1 0 1 0 -1 0 0 3069b.dat
+0 // 63864-51: wing tile skin
+1 15 190 -88 -30 0 0 1 0 1 0 -1 0 0 63864.dat
+0 // 4162-52: wing tile skin
+1 15 260 -88 110 1 0 0 0 1 0 0 0 1 4162.dat
+0 // 3069b-53: wing tile skin
+1 15 210 -88 -20 0 0 1 0 1 0 -1 0 0 3069b.dat
+0 // 69729-54: wing tile skin
+1 15 260 -88 160 1 0 0 0 1 0 0 0 1 69729.dat
+0 // 69729-55: wing tile skin
+1 15 260 -88 220 1 0 0 0 1 0 0 0 1 69729.dat
+0 // 4162-56: wing tile skin
+1 15 280 -88 250 1 0 0 0 1 0 0 0 1 4162.dat
+0 // 3070b-57: wing tile skin
+1 15 230 -88 -10 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // 3070b-58: wing tile skin
+1 15 290 -88 50 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // 2431-59: wing tile skin
+1 15 320 -88 130 1 0 0 0 1 0 0 0 1 2431.dat
+0 // 3068b-60: wing tile skin
+1 15 340 -88 160 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // 3068b-61: wing tile skin
+1 15 340 -88 220 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // 3070b-62: wing tile skin
+1 15 350 -88 110 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // 63864-63: wing tile skin
+1 15 370 -88 150 0 0 1 0 1 0 -1 0 0 63864.dat
+0 // 63864-64: wing tile skin
+1 15 370 -88 230 0 0 1 0 1 0 -1 0 0 63864.dat
+0 // 6141-65: wing-tip navigation light (trans round plate)
+1 34 430 -88 270 1 0 0 0 1 0 0 0 1 6141.dat
+0 NOFILE
+0 FILE alance-wing-port.ldr
+0 Port delta wing: mid course, top course and tile skin above the shared deck
+0 Name: alance-wing-port.ldr
+0 Author: Aurora Lance generator (Claude Code, Claude Sonnet 5) for anteloc
+0 !LDRAW_ORG Model
+0 // 30504-0: swept leading-edge armour
+1 71 -200 -72 -80 0 0 1 0 1 0 -1 0 0 30504.dat
+0 // 30504-1: swept leading-edge armour
+1 71 -360 -72 80 0 0 1 0 1 0 -1 0 0 30504.dat
+0 // 3031-2: wing course plates
+1 71 -400 -72 200 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3034-3: wing course plates
+1 71 -360 -72 260 1 0 0 0 1 0 0 0 1 3034.dat
+0 // 3031-4: wing course plates
+1 71 -320 -72 200 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-5: wing course plates
+1 71 -240 -72 40 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-6: wing course plates
+1 71 -240 -72 120 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-7: wing course plates
+1 71 -240 -72 200 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3034-8: wing course plates
+1 71 -200 -72 260 1 0 0 0 1 0 0 0 1 3034.dat
+0 // 3031-9: wing course plates
+1 71 -160 -72 40 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-10: wing course plates
+1 71 -160 -72 120 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-11: wing course plates
+1 71 -160 -72 200 1 0 0 0 1 0 0 0 1 3031.dat
+0 STEP
+0 // 30504-12: swept leading-edge armour
+1 25 -200 -80 -60 0 0 1 0 1 0 -1 0 0 30504.dat
+0 // 30504-13: swept leading-edge armour
+1 25 -360 -80 100 0 0 1 0 1 0 -1 0 0 30504.dat
+0 // 3031-14: wing course plates
+1 15 -400 -80 220 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 60479-15: wing course plates
+1 15 -320 -80 270 1 0 0 0 1 0 0 0 1 60479.dat
+0 // 3031-16: wing course plates
+1 15 -320 -80 220 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-17: wing course plates
+1 15 -240 -80 60 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-18: wing course plates
+1 15 -240 -80 140 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-19: wing course plates
+1 15 -240 -80 220 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-20: wing course plates
+1 15 -160 -80 60 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-21: wing course plates
+1 15 -160 -80 140 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-22: wing course plates
+1 15 -160 -80 220 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3710-23: wing course plates
+1 15 -160 -80 270 1 0 0 0 1 0 0 0 1 3710.dat
+0 STEP
+0 // 87079-24: wing tile skin
+1 25 -420 -88 220 0 0 1 0 1 0 -1 0 0 87079.dat
+0 // 3069b-25: wing tile skin
+1 25 -400 -88 170 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // 3069b-26: wing tile skin
+1 25 -400 -88 270 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // 3070b-27: wing tile skin
+1 25 -390 -88 150 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // 2431-28: wing tile skin
+1 25 -390 -88 220 0 0 1 0 1 0 -1 0 0 2431.dat
+0 // 4162-29: wing tile skin
+1 71 -300 -88 270 1 0 0 0 1 0 0 0 1 4162.dat
+0 // 3070b-30: wing tile skin
+1 71 -210 -88 270 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // 4162-31: wing tile skin
+1 71 -300 -88 190 1 0 0 0 1 0 0 0 1 4162.dat
+0 // 4162-32: wing tile skin
+1 71 -260 -88 90 1 0 0 0 1 0 0 0 1 4162.dat
+0 // 3070b-33: wing tile skin
+1 71 -210 -88 190 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // 2412b-34: wing tile skin
+1 72 -270 -88 40 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 2412b-35: wing tile skin
+1 72 -250 -88 20 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 2412b-36: wing tile skin
+1 72 -240 -88 50 1 0 0 0 1 0 0 0 1 2412b.dat
+0 // 2412b-37: wing tile skin
+1 72 -230 -88 20 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 2412b-38: wing tile skin
+1 72 -210 -88 20 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 2412b-39: wing tile skin
+1 72 -200 -88 50 1 0 0 0 1 0 0 0 1 2412b.dat
+0 // 2412b-40: wing tile skin
+1 72 -190 -88 20 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 2412b-41: wing tile skin
+1 72 -170 -88 20 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 3070b-42: wing tile skin
+1 72 -170 -88 50 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // 69729-43: wing tile skin
+1 15 -320 -88 140 1 0 0 0 1 0 0 0 1 69729.dat
+0 // 4162-44: wing tile skin
+1 15 -300 -88 170 1 0 0 0 1 0 0 0 1 4162.dat
+0 // 69729-45: wing tile skin
+1 15 -320 -88 220 1 0 0 0 1 0 0 0 1 69729.dat
+0 // 4162-46: wing tile skin
+1 15 -300 -88 250 1 0 0 0 1 0 0 0 1 4162.dat
+0 // 4162-47: wing tile skin
+1 15 -280 -88 110 1 0 0 0 1 0 0 0 1 4162.dat
+0 // 4162-48: wing tile skin
+1 15 -240 -88 70 1 0 0 0 1 0 0 0 1 4162.dat
+0 // 3070b-49: wing tile skin
+1 15 -290 -88 50 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // 6636-50: wing tile skin
+1 15 -200 -88 130 1 0 0 0 1 0 0 0 1 6636.dat
+0 // 63864-51: wing tile skin
+1 15 -230 -88 150 1 0 0 0 1 0 0 0 1 63864.dat
+0 // 3068b-52: wing tile skin
+1 15 -240 -88 220 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // 6636-53: wing tile skin
+1 15 -180 -88 -10 1 0 0 0 1 0 0 0 1 6636.dat
+0 // 2431-54: wing tile skin
+1 15 -180 -88 -30 1 0 0 0 1 0 0 0 1 2431.dat
+0 // 3070b-55: wing tile skin
+1 15 -210 -88 170 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // 63864-56: wing tile skin
+1 15 -210 -88 230 0 0 1 0 1 0 -1 0 0 63864.dat
+0 // 2431-57: wing tile skin
+1 15 -160 -88 -50 1 0 0 0 1 0 0 0 1 2431.dat
+0 // 2431-58: wing tile skin
+1 15 -160 -88 110 1 0 0 0 1 0 0 0 1 2431.dat
+0 // 63864-59: wing tile skin
+1 15 -150 -88 -70 1 0 0 0 1 0 0 0 1 63864.dat
+0 // 63864-60: wing tile skin
+1 15 -150 -88 90 1 0 0 0 1 0 0 0 1 63864.dat
+0 // 3069b-61: wing tile skin
+1 15 -140 -88 -90 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // 87079-62: wing tile skin
+1 15 -140 -88 40 0 0 1 0 1 0 -1 0 0 87079.dat
+0 // 3070b-63: wing tile skin
+1 15 -130 -88 -110 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // 3070b-64: wing tile skin
+1 15 -130 -88 -30 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // 3070b-65: wing tile skin
+1 15 -130 -88 130 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // 6141-66: wing-tip navigation light (trans round plate)
+1 36 -430 -88 270 1 0 0 0 1 0 0 0 1 6141.dat
+0 NOFILE
+0 FILE alance-prow.ldr
+0 Prow: the 4-wide spear built as four terraces (levels 5-9) climbing toward the bridge, tiled in white with an orange centre stripe
+0 Name: alance-prow.ldr
+0 Author: Aurora Lance generator (Claude Code, Claude Sonnet 5) for anteloc
+0 !LDRAW_ORG Model
+0 // 3032-0: terrace support plates
+1 15 0 -72 -520 0 0 1 0 1 0 -1 0 0 3032.dat
+0 // 3032-1: terrace support plates
+1 15 0 -72 -400 0 0 1 0 1 0 -1 0 0 3032.dat
+0 // 3710-2: terrace support plates
+1 15 0 -72 -330 1 0 0 0 1 0 0 0 1 3710.dat
+0 // 3068b-3: terrace tile skin
+1 25 0 -72 -620 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // 3069b-4: terrace tile skin
+1 25 0 -72 -590 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // 63864-5: terrace tile skin
+1 15 -30 -72 -610 0 0 1 0 1 0 -1 0 0 63864.dat
+0 // 63864-6: terrace tile skin
+1 15 30 -72 -610 0 0 1 0 1 0 -1 0 0 63864.dat
+0 STEP
+0 // 3032-7: terrace support plates
+1 15 0 -80 -460 0 0 1 0 1 0 -1 0 0 3032.dat
+0 // 3031-8: terrace support plates
+1 15 0 -80 -360 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3068b-9: terrace tile skin
+1 25 0 -80 -560 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // 3069b-10: terrace tile skin
+1 25 0 -80 -530 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // 63864-11: terrace tile skin
+1 15 -30 -80 -550 0 0 1 0 1 0 -1 0 0 63864.dat
+0 // 63864-12: terrace tile skin
+1 15 30 -80 -550 0 0 1 0 1 0 -1 0 0 63864.dat
+0 STEP
+0 // 3032-13: terrace support plates
+1 15 0 -88 -400 0 0 1 0 1 0 -1 0 0 3032.dat
+0 // 3710-14: terrace support plates
+1 15 0 -88 -330 1 0 0 0 1 0 0 0 1 3710.dat
+0 // 3068b-15: terrace tile skin
+1 25 0 -88 -500 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // 3069b-16: terrace tile skin
+1 25 0 -88 -470 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // 63864-17: terrace tile skin
+1 15 -30 -88 -490 0 0 1 0 1 0 -1 0 0 63864.dat
+0 // 63864-18: terrace tile skin
+1 15 30 -88 -490 0 0 1 0 1 0 -1 0 0 63864.dat
+0 STEP
+0 // 69729-19: terrace tile skin
+1 25 0 -96 -400 0 0 1 0 1 0 -1 0 0 69729.dat
+0 // 3069b-20: terrace tile skin
+1 25 0 -96 -330 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // 6636-21: terrace tile skin
+1 15 -30 -96 -400 0 0 1 0 1 0 -1 0 0 6636.dat
+0 // 3070b-22: terrace tile skin
+1 15 -30 -96 -330 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // 6636-23: terrace tile skin
+1 15 30 -96 -400 0 0 1 0 1 0 -1 0 0 6636.dat
+0 // 3070b-24: terrace tile skin
+1 15 30 -96 -330 1 0 0 0 1 0 0 0 1 3070b.dat
+0 NOFILE
+0 FILE alance-forebody.ldr
+0 Forebody: shoulders flaring at 45 degrees from the spear to the 12-wide hull (levels 5-9), with the canopy floor
+0 Name: alance-forebody.ldr
+0 Author: Aurora Lance generator (Claude Code, Claude Sonnet 5) for anteloc
+0 !LDRAW_ORG Model
+0 // 30503-0: flare armour
+1 15 80 -72 -220 1 0 0 0 1 0 0 0 1 30503.dat
+0 // 3020-1: shoulder plates
+1 15 80 -72 -160 1 0 0 0 1 0 0 0 1 3020.dat
+0 // 3710-2: shoulder plates
+1 15 80 -72 -130 1 0 0 0 1 0 0 0 1 3710.dat
+0 // 30503-3: flare armour
+1 15 -80 -72 -220 0 0 1 0 1 0 -1 0 0 30503.dat
+0 // 3020-4: shoulder plates
+1 15 -80 -72 -160 1 0 0 0 1 0 0 0 1 3020.dat
+0 // 3710-5: shoulder plates
+1 15 -80 -72 -130 1 0 0 0 1 0 0 0 1 3710.dat
+0 STEP
+0 // 30503-6: flare armour
+1 71 80 -80 -220 1 0 0 0 1 0 0 0 1 30503.dat
+0 // 3020-7: shoulder plates
+1 71 80 -80 -160 1 0 0 0 1 0 0 0 1 3020.dat
+0 // 3710-8: shoulder plates
+1 71 80 -80 -130 1 0 0 0 1 0 0 0 1 3710.dat
+0 // 30503-9: flare armour
+1 71 -80 -80 -220 0 0 1 0 1 0 -1 0 0 30503.dat
+0 // 3020-10: shoulder plates
+1 71 -80 -80 -160 1 0 0 0 1 0 0 0 1 3020.dat
+0 // 3710-11: shoulder plates
+1 71 -80 -80 -130 1 0 0 0 1 0 0 0 1 3710.dat
+0 STEP
+0 // 30503-12: flare armour
+1 15 80 -88 -220 1 0 0 0 1 0 0 0 1 30503.dat
+0 // 3020-13: shoulder plates
+1 15 80 -88 -160 1 0 0 0 1 0 0 0 1 3020.dat
+0 // 3710-14: shoulder plates
+1 15 80 -88 -130 1 0 0 0 1 0 0 0 1 3710.dat
+0 // 30503-15: flare armour
+1 15 -80 -88 -220 0 0 1 0 1 0 -1 0 0 30503.dat
+0 // 3020-16: shoulder plates
+1 15 -80 -88 -160 1 0 0 0 1 0 0 0 1 3020.dat
+0 // 3710-17: shoulder plates
+1 15 -80 -88 -130 1 0 0 0 1 0 0 0 1 3710.dat
+0 STEP
+0 // 30503-18: flare armour
+1 15 80 -96 -220 1 0 0 0 1 0 0 0 1 30503.dat
+0 // 87079-19: shoulder tile cap
+1 15 80 -96 -160 1 0 0 0 1 0 0 0 1 87079.dat
+0 // 2431-20: shoulder tile cap
+1 15 80 -96 -130 1 0 0 0 1 0 0 0 1 2431.dat
+0 // 30503-21: flare armour
+1 15 -80 -96 -220 0 0 1 0 1 0 -1 0 0 30503.dat
+0 // 87079-22: shoulder tile cap
+1 15 -80 -96 -160 1 0 0 0 1 0 0 0 1 87079.dat
+0 // 2431-23: shoulder tile cap
+1 15 -80 -96 -130 1 0 0 0 1 0 0 0 1 2431.dat
+0 STEP
+0 // 3032-24: canopy floor plates (studs receive the canopy rim)
+1 72 0 -72 -260 0 0 1 0 1 0 -1 0 0 3032.dat
+0 // 3031-25: canopy floor plates (studs receive the canopy rim)
+1 72 0 -72 -160 1 0 0 0 1 0 0 0 1 3031.dat
+0 NOFILE
+0 FILE alance-bridge.ldr
+0 Bridge: 10x4 transparent windscreen over a small cockpit with two helmeted pilots, seats and a console
+0 Name: alance-bridge.ldr
+0 Author: Aurora Lance generator (Claude Code, Claude Sonnet 5) for anteloc
+0 !LDRAW_ORG Model
+0 // 3023b-0: instrument console base
+1 72 0 -80 -230 1 0 0 0 1 0 0 0 1 3023b.dat
+0 // 2412b-1: grille tile console top
+1 0 0 -88 -230 1 0 0 0 1 0 0 0 1 2412b.dat
+0 // 3024-2: seat base
+1 0 -10 -80 -170 1 0 0 0 1 0 0 0 1 3024.dat
+0 // 3005-3: seat back
+1 0 -10 -96 -150 1 0 0 0 1 0 0 0 1 3005.dat
+0 // 3024-4: pilot torso plate
+1 15 -10 -88 -170 1 0 0 0 1 0 0 0 1 3024.dat
+0 // 3062b-5: pilot helmet
+1 15 -10 -112 -170 1 0 0 0 1 0 0 0 1 3062b.dat
+0 // 3024-6: seat base
+1 0 10 -80 -170 1 0 0 0 1 0 0 0 1 3024.dat
+0 // 3005-7: seat back
+1 0 10 -96 -150 1 0 0 0 1 0 0 0 1 3005.dat
+0 // 3024-8: pilot torso plate
+1 15 10 -88 -170 1 0 0 0 1 0 0 0 1 3024.dat
+0 // 3062b-9: pilot helmet
+1 15 10 -112 -170 1 0 0 0 1 0 0 0 1 3062b.dat
+0 STEP
+0 // 2507-10: long transparent windscreen (rear edge at z=-120)
+1 43 0 -124 -124 1 0 0 0 1 0 0 0 1 2507.dat
+0 NOFILE
+0 FILE alance-hull-upper.ldr
+0 Upper hull: two white brick courses (levels 5-11) and a plate deck (level 11-12) over the mid fuselage
+0 Name: alance-hull-upper.ldr
+0 Author: Aurora Lance generator (Claude Code, Claude Sonnet 5) for anteloc
+0 !LDRAW_ORG Model
+0 // 3008-0: outer hull wall
+1 15 -110 -88 -40 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3010-1: outer hull wall
+1 15 -110 -88 80 0 0 1 0 1 0 -1 0 0 3010.dat
+0 // 3008-2: outer hull wall
+1 15 -20 -88 -110 1 0 0 0 1 0 0 0 1 3008.dat
+0 // 3008-3: outer hull wall
+1 15 -20 -88 110 1 0 0 0 1 0 0 0 1 3008.dat
+0 // 3622-4: outer hull wall
+1 15 90 -88 -110 1 0 0 0 1 0 0 0 1 3622.dat
+0 // 3004-5: outer hull wall
+1 15 80 -88 110 1 0 0 0 1 0 0 0 1 3004.dat
+0 // 3009-6: outer hull wall
+1 15 110 -88 -40 0 0 1 0 1 0 -1 0 0 3009.dat
+0 // 3010-7: outer hull wall
+1 15 110 -88 60 0 0 1 0 1 0 -1 0 0 3010.dat
+0 // 3005-8: outer hull wall
+1 15 110 -88 110 1 0 0 0 1 0 0 0 1 3005.dat
+0 // 3001-9: hull core
+1 71 -60 -88 -80 1 0 0 0 1 0 0 0 1 3001.dat
+0 // 3001-10: hull core
+1 71 20 -88 -80 1 0 0 0 1 0 0 0 1 3001.dat
+0 // 3001-11: hull core
+1 71 80 -88 -60 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-12: hull core
+1 71 -60 -88 -40 1 0 0 0 1 0 0 0 1 3001.dat
+0 // 3001-13: hull core
+1 71 20 -88 -40 1 0 0 0 1 0 0 0 1 3001.dat
+0 // 3001-14: hull core
+1 71 -60 -88 0 1 0 0 0 1 0 0 0 1 3001.dat
+0 // 3001-15: hull core
+1 71 20 -88 0 1 0 0 0 1 0 0 0 1 3001.dat
+0 // 3001-16: hull core
+1 71 80 -88 20 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-17: hull core
+1 71 -60 -88 40 1 0 0 0 1 0 0 0 1 3001.dat
+0 // 3001-18: hull core
+1 71 20 -88 40 1 0 0 0 1 0 0 0 1 3001.dat
+0 // 3001-19: hull core
+1 71 -60 -88 80 1 0 0 0 1 0 0 0 1 3001.dat
+0 // 3001-20: hull core
+1 71 20 -88 80 1 0 0 0 1 0 0 0 1 3001.dat
+0 // 3003-21: hull core
+1 71 80 -88 80 1 0 0 0 1 0 0 0 1 3003.dat
+0 STEP
+0 // 3008-22: outer hull wall
+1 15 -110 -112 -40 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3622-23: outer hull wall
+1 15 -110 -112 70 0 0 1 0 1 0 -1 0 0 3622.dat
+0 // 3008-24: outer hull wall
+1 15 -40 -112 110 1 0 0 0 1 0 0 0 1 3008.dat
+0 // 3009-25: outer hull wall
+1 15 -40 -112 -110 1 0 0 0 1 0 0 0 1 3009.dat
+0 // 3622-26: outer hull wall
+1 15 50 -112 -110 1 0 0 0 1 0 0 0 1 3622.dat
+0 // 3010-27: outer hull wall
+1 15 80 -112 110 1 0 0 0 1 0 0 0 1 3010.dat
+0 // 3004-28: outer hull wall
+1 15 100 -112 -110 1 0 0 0 1 0 0 0 1 3004.dat
+0 // 3008-29: outer hull wall
+1 15 110 -112 -20 0 0 1 0 1 0 -1 0 0 3008.dat
+0 // 3004-30: outer hull wall
+1 15 110 -112 80 0 0 1 0 1 0 -1 0 0 3004.dat
+0 // 3001-31: hull core
+1 71 -80 -112 -60 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-32: hull core
+1 71 -80 -112 20 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-33: hull core
+1 71 -60 -112 80 1 0 0 0 1 0 0 0 1 3001.dat
+0 // 3001-34: hull core
+1 71 -40 -112 -60 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-35: hull core
+1 71 -40 -112 20 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-36: hull core
+1 71 0 -112 -60 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-37: hull core
+1 71 0 -112 20 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-38: hull core
+1 71 20 -112 80 1 0 0 0 1 0 0 0 1 3001.dat
+0 // 3001-39: hull core
+1 71 40 -112 -60 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-40: hull core
+1 71 40 -112 20 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-41: hull core
+1 71 80 -112 -60 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3001-42: hull core
+1 71 80 -112 20 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3003-43: hull core
+1 71 80 -112 80 1 0 0 0 1 0 0 0 1 3003.dat
+0 STEP
+0 // 3031-44: top deck plates (studded for the spine)
+1 71 -80 -120 -80 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-45: top deck plates (studded for the spine)
+1 71 0 -120 -80 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-46: top deck plates (studded for the spine)
+1 71 80 -120 -80 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-47: top deck plates (studded for the spine)
+1 71 -80 -120 0 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-48: top deck plates (studded for the spine)
+1 71 0 -120 0 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-49: top deck plates (studded for the spine)
+1 71 80 -120 0 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-50: top deck plates (studded for the spine)
+1 71 -80 -120 80 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-51: top deck plates (studded for the spine)
+1 71 0 -120 80 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-52: top deck plates (studded for the spine)
+1 71 80 -120 80 1 0 0 0 1 0 0 0 1 3031.dat
+0 NOFILE
+0 FILE alance-aft.ldr
+0 Aft platform: two plate courses (levels 5-7) and a dark tile skin behind the hull, carrying both nacelles
+0 Name: alance-aft.ldr
+0 Author: Aurora Lance generator (Claude Code, Claude Sonnet 5) for anteloc
+0 !LDRAW_ORG Model
+0 // 3031-0: aft platform plates
+1 71 -80 -72 160 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-1: aft platform plates
+1 71 0 -72 160 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-2: aft platform plates
+1 71 80 -72 160 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-3: aft platform plates
+1 71 -80 -72 240 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-4: aft platform plates
+1 71 0 -72 240 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-5: aft platform plates
+1 71 80 -72 240 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-6: aft platform plates
+1 71 -200 -72 320 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-7: aft platform plates
+1 71 -120 -72 320 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-8: aft platform plates
+1 71 -40 -72 320 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-9: aft platform plates
+1 71 40 -72 320 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-10: aft platform plates
+1 71 120 -72 320 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-11: aft platform plates
+1 71 200 -72 320 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-12: aft platform plates
+1 71 -200 -72 400 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-13: aft platform plates
+1 71 -120 -72 400 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-14: aft platform plates
+1 71 -40 -72 400 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-15: aft platform plates
+1 71 40 -72 400 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-16: aft platform plates
+1 71 120 -72 400 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-17: aft platform plates
+1 71 200 -72 400 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-18: aft platform plates
+1 71 -200 -72 480 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-19: aft platform plates
+1 71 -120 -72 480 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-20: aft platform plates
+1 71 -40 -72 480 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-21: aft platform plates
+1 71 40 -72 480 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-22: aft platform plates
+1 71 120 -72 480 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-23: aft platform plates
+1 71 200 -72 480 1 0 0 0 1 0 0 0 1 3031.dat
+0 STEP
+0 // 3031-24: aft platform plates
+1 25 -200 -80 320 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-25: aft platform plates
+1 25 -200 -80 400 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-26: aft platform plates
+1 25 -200 -80 480 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-27: aft platform plates
+1 25 -120 -80 320 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-28: aft platform plates
+1 25 -120 -80 400 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-29: aft platform plates
+1 25 -120 -80 480 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-30: aft platform plates
+1 25 -80 -80 160 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-31: aft platform plates
+1 25 -80 -80 240 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-32: aft platform plates
+1 25 -40 -80 320 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-33: aft platform plates
+1 25 -40 -80 400 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-34: aft platform plates
+1 25 -40 -80 480 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-35: aft platform plates
+1 25 0 -80 160 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-36: aft platform plates
+1 25 0 -80 240 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-37: aft platform plates
+1 25 40 -80 320 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-38: aft platform plates
+1 25 40 -80 400 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-39: aft platform plates
+1 25 40 -80 480 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-40: aft platform plates
+1 25 80 -80 160 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-41: aft platform plates
+1 25 80 -80 240 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-42: aft platform plates
+1 25 120 -80 320 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-43: aft platform plates
+1 25 120 -80 400 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-44: aft platform plates
+1 25 120 -80 480 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-45: aft platform plates
+1 25 200 -80 320 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-46: aft platform plates
+1 25 200 -80 400 1 0 0 0 1 0 0 0 1 3031.dat
+0 // 3031-47: aft platform plates
+1 25 200 -80 480 1 0 0 0 1 0 0 0 1 3031.dat
+0 STEP
+0 // 4162-48: aft skin
+1 57 -20 -88 510 1 0 0 0 1 0 0 0 1 4162.dat
+0 // 3069b-49: aft skin
+1 57 80 -88 510 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // 3069b-50: aft skin
+1 25 -100 -88 290 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // 3070b-51: aft skin
+1 25 -110 -88 350 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // 3069b-52: aft skin
+1 25 100 -88 290 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // 3070b-53: aft skin
+1 25 110 -88 350 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // 87079-54: aft skin
+1 71 -80 -88 320 1 0 0 0 1 0 0 0 1 87079.dat
+0 // 63864-55: aft skin
+1 71 -70 -88 350 1 0 0 0 1 0 0 0 1 63864.dat
+0 // 4162-56: aft skin
+1 71 0 -88 290 1 0 0 0 1 0 0 0 1 4162.dat
+0 // 87079-57: aft skin
+1 71 80 -88 320 1 0 0 0 1 0 0 0 1 87079.dat
+0 // 63864-58: aft skin
+1 71 70 -88 350 1 0 0 0 1 0 0 0 1 63864.dat
+0 // 2412b-59: aft skin
+1 0 -90 -88 180 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 2412b-60: aft skin
+1 0 -90 -88 220 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 2412b-61: aft skin
+1 0 -80 -88 250 1 0 0 0 1 0 0 0 1 2412b.dat
+0 // 2412b-62: aft skin
+1 0 -70 -88 180 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 2412b-63: aft skin
+1 0 -70 -88 220 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 2412b-64: aft skin
+1 0 -50 -88 180 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 2412b-65: aft skin
+1 0 -50 -88 220 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 2412b-66: aft skin
+1 0 -40 -88 250 1 0 0 0 1 0 0 0 1 2412b.dat
+0 // 2412b-67: aft skin
+1 0 -30 -88 180 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 2412b-68: aft skin
+1 0 -30 -88 220 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 2412b-69: aft skin
+1 0 30 -88 180 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 2412b-70: aft skin
+1 0 30 -88 220 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 2412b-71: aft skin
+1 0 40 -88 250 1 0 0 0 1 0 0 0 1 2412b.dat
+0 // 2412b-72: aft skin
+1 0 50 -88 180 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 2412b-73: aft skin
+1 0 50 -88 220 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 2412b-74: aft skin
+1 0 70 -88 180 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 2412b-75: aft skin
+1 0 70 -88 220 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 2412b-76: aft skin
+1 0 80 -88 250 1 0 0 0 1 0 0 0 1 2412b.dat
+0 // 2412b-77: aft skin
+1 0 90 -88 180 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 2412b-78: aft skin
+1 0 90 -88 220 0 0 1 0 1 0 -1 0 0 2412b.dat
+0 // 3068b-79: aft skin
+1 72 -220 -88 300 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // 87079-80: aft skin
+1 72 -180 -88 460 0 0 1 0 1 0 -1 0 0 87079.dat
+0 // 2431-81: aft skin
+1 72 -160 -88 510 1 0 0 0 1 0 0 0 1 2431.dat
+0 // 87079-82: aft skin
+1 72 -140 -88 460 0 0 1 0 1 0 -1 0 0 87079.dat
+0 // 69729-83: aft skin
+1 72 -60 -88 140 1 0 0 0 1 0 0 0 1 69729.dat
+0 // 6636-84: aft skin
+1 72 -110 -88 220 0 0 1 0 1 0 -1 0 0 6636.dat
+0 // 4162-85: aft skin
+1 72 -110 -88 440 0 0 1 0 1 0 -1 0 0 4162.dat
+0 // 4162-86: aft skin
+1 72 -20 -88 270 1 0 0 0 1 0 0 0 1 4162.dat
+0 // 4162-87: aft skin
+1 72 -20 -88 490 1 0 0 0 1 0 0 0 1 4162.dat
+0 // 87079-88: aft skin
+1 72 0 -88 200 0 0 1 0 1 0 -1 0 0 87079.dat
+0 // 3069b-89: aft skin
+1 72 0 -88 250 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // 69729-90: aft skin
+1 72 60 -88 140 1 0 0 0 1 0 0 0 1 69729.dat
+0 // 63864-91: aft skin
+1 72 90 -88 270 1 0 0 0 1 0 0 0 1 63864.dat
+0 // 6636-92: aft skin
+1 72 120 -88 490 1 0 0 0 1 0 0 0 1 6636.dat
+0 // 2431-93: aft skin
+1 72 110 -88 200 0 0 1 0 1 0 -1 0 0 2431.dat
+0 // 3070b-94: aft skin
+1 72 110 -88 250 1 0 0 0 1 0 0 0 1 3070b.dat
+0 // 6636-95: aft skin
+1 72 110 -88 420 0 0 1 0 1 0 -1 0 0 6636.dat
+0 // 2431-96: aft skin
+1 72 140 -88 510 1 0 0 0 1 0 0 0 1 2431.dat
+0 // 87079-97: aft skin
+1 72 160 -88 440 1 0 0 0 1 0 0 0 1 87079.dat
+0 // 2431-98: aft skin
+1 72 160 -88 470 1 0 0 0 1 0 0 0 1 2431.dat
+0 // 3069b-99: aft skin
+1 72 190 -88 500 0 0 1 0 1 0 -1 0 0 3069b.dat
+0 // 3068b-100: aft skin
+1 72 220 -88 300 1 0 0 0 1 0 0 0 1 3068b.dat
+0 NOFILE
+0 FILE alance-hull-skin.ldr
+0 Hull skin: white tile deck at level 12-13 with orange spine stripes and light-grey edge strips
+0 Name: alance-hull-skin.ldr
+0 Author: Aurora Lance generator (Claude Code, Claude Sonnet 5) for anteloc
+0 !LDRAW_ORG Model
+0 // 3068b-0: orange spine stripe
+1 25 0 -128 -100 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // 3069b-1: orange spine stripe
+1 25 0 -128 -70 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // 3068b-2: orange spine stripe
+1 25 0 -128 80 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // 3069b-3: orange spine stripe
+1 25 0 -128 110 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // 4162-4: light-grey edge strip
+1 71 -110 -128 -40 0 0 1 0 1 0 -1 0 0 4162.dat
+0 // 2431-5: light-grey edge strip
+1 71 -110 -128 80 0 0 1 0 1 0 -1 0 0 2431.dat
+0 // 4162-6: light-grey edge strip
+1 71 110 -128 -40 0 0 1 0 1 0 -1 0 0 4162.dat
+0 // 2431-7: light-grey edge strip
+1 71 110 -128 80 0 0 1 0 1 0 -1 0 0 2431.dat
+0 // 69729-8: white armour tiles
+1 15 -80 -128 -60 0 0 1 0 1 0 -1 0 0 69729.dat
+0 // 69729-9: white armour tiles
+1 15 -80 -128 60 0 0 1 0 1 0 -1 0 0 69729.dat
+0 // 3068b-10: white armour tiles
+1 15 -40 -128 -100 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // 3069b-11: white armour tiles
+1 15 -40 -128 -70 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // 3068b-12: white armour tiles
+1 15 -40 -128 80 1 0 0 0 1 0 0 0 1 3068b.dat
+0 // 3069b-13: white armour tiles
+1 15 -40 -128 110 1 0 0 0 1 0 0 0 1 3069b.dat
+0 // 87079-14: white armour tiles
+1 15 60 -128 -100 1 0 0 0 1 0 0 0 1 87079.dat
+0 // 2431-15: white armour tiles
+1 15 60 -128 -70 1 0 0 0 1 0 0 0 1 2431.dat
+0 // 87079-16: white armour tiles
+1 15 60 -128 80 1 0 0 0 1 0 0 0 1 87079.dat
+0 // 2431-17: white armour tiles
+1 15 60 -128 110 1 0 0 0 1 0 0 0 1 2431.dat
+0 // 69729-18: white armour tiles
+1 15 80 -128 0 0 0 1 0 1 0 -1 0 0 69729.dat
+0 NOFILE
+0 FILE alance-tower.ldr
+0 Command tower: a 6x6 window band (levels 12-18), a plate deck and a turntable radar dish with antenna
+0 Name: alance-tower.ldr
+0 Author: Aurora Lance generator (Claude Code, Claude Sonnet 5) for anteloc
+0 !LDRAW_ORG Model
+0 // 3005-0: corner pillar course 1
+1 15 -50 -144 -50 1 0 0 0 1 0 0 0 1 3005.dat
+0 // 3005-1: corner pillar course 1
+1 15 50 -144 -50 1 0 0 0 1 0 0 0 1 3005.dat
+0 // 3005-2: corner pillar course 1
+1 15 -50 -144 50 1 0 0 0 1 0 0 0 1 3005.dat
+0 // 3005-3: corner pillar course 1
+1 15 50 -144 50 1 0 0 0 1 0 0 0 1 3005.dat
+0 // 60592c01-4: tower window (1x2x2 with glass)
+1 47 -20 -168 -50 1 0 0 0 1 0 0 0 1 60592c01.dat
+0 // 60592c01-5: tower window (1x2x2 with glass)
+1 47 20 -168 -50 1 0 0 0 1 0 0 0 1 60592c01.dat
+0 // 60592c01-6: tower window (1x2x2 with glass)
+1 47 -20 -168 50 1 0 0 0 1 0 0 0 1 60592c01.dat
+0 // 60592c01-7: tower window (1x2x2 with glass)
+1 47 20 -168 50 1 0 0 0 1 0 0 0 1 60592c01.dat
+0 // 60592c01-8: tower window (1x2x2 with glass)
+1 47 -50 -168 -20 0 0 1 0 1 0 -1 0 0 60592c01.dat
+0 // 60592c01-9: tower window (1x2x2 with glass)
+1 47 -50 -168 20 0 0 1 0 1 0 -1 0 0 60592c01.dat
+0 // 60592c01-10: tower window (1x2x2 with glass)
+1 47 50 -168 -20 0 0 1 0 1 0 -1 0 0 60592c01.dat
+0 // 60592c01-11: tower window (1x2x2 with glass)
+1 47 50 -168 20 0 0 1 0 1 0 -1 0 0 60592c01.dat
+0 STEP
+0 // 3005-12: corner pillar course 2
+1 15 -50 -168 -50 1 0 0 0 1 0 0 0 1 3005.dat
+0 // 3005-13: corner pillar course 2
+1 15 50 -168 -50 1 0 0 0 1 0 0 0 1 3005.dat
+0 // 3005-14: corner pillar course 2
+1 15 -50 -168 50 1 0 0 0 1 0 0 0 1 3005.dat
+0 // 3005-15: corner pillar course 2
+1 15 50 -168 50 1 0 0 0 1 0 0 0 1 3005.dat
+0 STEP
+0 // 3032-16: tower deck plates
+1 71 0 -176 -20 1 0 0 0 1 0 0 0 1 3032.dat
+0 // 3795-17: tower deck plates
+1 71 0 -176 40 1 0 0 0 1 0 0 0 1 3795.dat
+0 STEP
+0 // 61485c01-18: turntable for the radar dish
+1 72 0 -192 0 1 0 0 0 1 0 0 0 1 61485c01.dat
+0 // 3960-19: radar dish (4x4 inverted) seated on the turntable studs
+1 71 0 -208 0 1 0 0 0 1 0 0 0 1 3960.dat
+0 // 3957a-20: antenna 4H on the dish stud
+1 72 0 -216 0 1 0 0 0 1 0 0 0 1 3957a.dat
+0 NOFILE
+0 FILE alance-fin-starboard.ldr
+0 Starboard tail fin: a 2-wide vertical fin of six 3-plate courses with 45-degree slope fronts
+0 Name: alance-fin-starboard.ldr
+0 Author: Aurora Lance generator (Claude Code, Claude Sonnet 5) for anteloc
+0 !LDRAW_ORG Model
+0 // 3039-0: 45-degree leading-edge slope
+1 72 220 -104 350 1 0 0 0 1 0 0 0 1 3039.dat
+0 // 3007-1: fin course
+1 15 220 -104 440 0 0 1 0 1 0 -1 0 0 3007.dat
+0 STEP
+0 // 3039-2: 45-degree leading-edge slope
+1 72 220 -128 370 1 0 0 0 1 0 0 0 1 3039.dat
+0 // 3009-3: fin course
+1 15 210 -128 440 0 0 1 0 1 0 -1 0 0 3009.dat
+0 // 3004-4: fin course
+1 15 220 -128 510 1 0 0 0 1 0 0 0 1 3004.dat
+0 // 3009-5: fin course
+1 15 230 -128 440 0 0 1 0 1 0 -1 0 0 3009.dat
+0 STEP
+0 // 3039-6: 45-degree leading-edge slope
+1 72 220 -152 390 1 0 0 0 1 0 0 0 1 3039.dat
+0 // 3001-7: fin course
+1 15 220 -152 440 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3003-8: fin course
+1 15 220 -152 500 1 0 0 0 1 0 0 0 1 3003.dat
+0 STEP
+0 // 3039-9: 45-degree leading-edge slope
+1 72 220 -176 410 1 0 0 0 1 0 0 0 1 3039.dat
+0 // 3001-10: fin course
+1 15 220 -176 460 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3004-11: fin course
+1 15 220 -176 510 1 0 0 0 1 0 0 0 1 3004.dat
+0 STEP
+0 // 3039-12: 45-degree leading-edge slope
+1 72 220 -200 430 1 0 0 0 1 0 0 0 1 3039.dat
+0 // 3001-13: fin course
+1 15 220 -200 480 0 0 1 0 1 0 -1 0 0 3001.dat
+0 STEP
+0 // 3039-14: 45-degree leading-edge slope
+1 72 220 -224 450 1 0 0 0 1 0 0 0 1 3039.dat
+0 // 3002-15: fin course
+1 25 220 -224 490 0 0 1 0 1 0 -1 0 0 3002.dat
+0 STEP
+0 // 87079-16: fin cap tiles
+1 15 220 -232 480 0 0 1 0 1 0 -1 0 0 87079.dat
+0 NOFILE
+0 FILE alance-fin-port.ldr
+0 Port tail fin: a 2-wide vertical fin of six 3-plate courses with 45-degree slope fronts
+0 Name: alance-fin-port.ldr
+0 Author: Aurora Lance generator (Claude Code, Claude Sonnet 5) for anteloc
+0 !LDRAW_ORG Model
+0 // 3039-0: 45-degree leading-edge slope
+1 72 -220 -104 350 1 0 0 0 1 0 0 0 1 3039.dat
+0 // 3007-1: fin course
+1 15 -220 -104 440 0 0 1 0 1 0 -1 0 0 3007.dat
+0 STEP
+0 // 3039-2: 45-degree leading-edge slope
+1 72 -220 -128 370 1 0 0 0 1 0 0 0 1 3039.dat
+0 // 3009-3: fin course
+1 15 -230 -128 440 0 0 1 0 1 0 -1 0 0 3009.dat
+0 // 3004-4: fin course
+1 15 -220 -128 510 1 0 0 0 1 0 0 0 1 3004.dat
+0 // 3009-5: fin course
+1 15 -210 -128 440 0 0 1 0 1 0 -1 0 0 3009.dat
+0 STEP
+0 // 3039-6: 45-degree leading-edge slope
+1 72 -220 -152 390 1 0 0 0 1 0 0 0 1 3039.dat
+0 // 3001-7: fin course
+1 15 -220 -152 440 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3003-8: fin course
+1 15 -220 -152 500 1 0 0 0 1 0 0 0 1 3003.dat
+0 STEP
+0 // 3039-9: 45-degree leading-edge slope
+1 72 -220 -176 410 1 0 0 0 1 0 0 0 1 3039.dat
+0 // 3001-10: fin course
+1 15 -220 -176 460 0 0 1 0 1 0 -1 0 0 3001.dat
+0 // 3004-11: fin course
+1 15 -220 -176 510 1 0 0 0 1 0 0 0 1 3004.dat
+0 STEP
+0 // 3039-12: 45-degree leading-edge slope
+1 72 -220 -200 430 1 0 0 0 1 0 0 0 1 3039.dat
+0 // 3001-13: fin course
+1 15 -220 -200 480 0 0 1 0 1 0 -1 0 0 3001.dat
+0 STEP
+0 // 3039-14: 45-degree leading-edge slope
+1 72 -220 -224 450 1 0 0 0 1 0 0 0 1 3039.dat
+0 // 3002-15: fin course
+1 25 -220 -224 490 0 0 1 0 1 0 -1 0 0 3002.dat
+0 STEP
+0 // 87079-16: fin cap tiles
+1 15 -220 -232 480 0 0 1 0 1 0 -1 0 0 87079.dat
+0 NOFILE
+0 FILE alance-shuttle.ldr
+0 Docked survey shuttle: a compact 4-wide, 9-long craft with swept wings, a curved canopy and twin engines; authored on the stern landing pad (local origin: pad studs, centre line, row 19 boundary)
+0 Name: alance-shuttle.ldr
+0 Author: Aurora Lance generator (Claude Code, Claude Sonnet 5) for anteloc
+0 !LDRAW_ORG Model
+0 // 3032-0: shuttle hull plates
+1 15 0 -8 -20 0 0 1 0 1 0 -1 0 0 3032.dat
+0 // 3020-1: shuttle hull plates
+1 15 0 -8 60 1 0 0 0 1 0 0 0 1 3020.dat
+0 // 3710-2: shuttle hull plates
+1 15 0 -8 90 1 0 0 0 1 0 0 0 1 3710.dat
+0 // 54384-3: starboard wing (Wing 3x6 Left: straight edge inboard)
+1 71 70 -8 40 1 0 0 0 1 0 0 0 1 54384.dat
+0 // 54383-4: port wing (Wing 3x6 Right: straight edge inboard)
+1 71 -70 -8 40 1 0 0 0 1 0 0 0 1 54383.dat
+0 STEP
+0 // 3032-5: shuttle deck plates bridging hull and wing roots
+1 15 0 -16 -20 0 0 1 0 1 0 -1 0 0 3032.dat
+0 // 3666-6: shuttle deck plates bridging hull and wing roots
+1 15 -50 -16 40 0 0 1 0 1 0 -1 0 0 3666.dat
+0 // 3666-7: shuttle deck plates bridging hull and wing roots
+1 15 50 -16 40 0 0 1 0 1 0 -1 0 0 3666.dat
+0 // 3020-8: shuttle deck plates bridging hull and wing roots
+1 15 0 -16 60 1 0 0 0 1 0 0 0 1 3020.dat
+0 // 3710-9: shuttle deck plates bridging hull and wing roots
+1 15 0 -16 90 1 0 0 0 1 0 0 0 1 3710.dat
+0 STEP
+0 // 41883-10: curved canopy
+1 43 0 -16 -20 1 0 0 0 1 0 0 0 1 41883.dat
+0 // 30358-11: port engine on its pedestal (2x2 base)
+1 72 -20 -24 80 1 0 0 0 1 0 0 0 1 30358.dat
+0 // 30358-12: starboard engine on its pedestal (2x2 base)
+1 72 20 -24 80 1 0 0 0 1 0 0 0 1 30358.dat
+0 NOFILE
+0 FILE alance-nacelle-starboard.ldr
+0 Starboard nacelle: three chained 43121 turbofan housings on 2x4 pads with a front fan
+0 Name: alance-nacelle-starboard.ldr
+0 Author: Aurora Lance generator (Claude Code, Claude Sonnet 5) for anteloc
+0 !LDRAW_ORG Model
+0 // 43121-0: turbofan housing
+1 15 160 -152 180 1 0 0 0 1 0 0 0 1 43121.dat
+0 // 46667-1: intake fan
+1 72 160 -118 160 1 0 0 0 1 0 0 0 1 46667.dat
+0 // 43121-2: turbofan housing
+1 15 160 -152 260 1 0 0 0 1 0 0 0 1 43121.dat
+0 // 43121-3: turbofan housing
+1 71 160 -152 340 1 0 0 0 1 0 0 0 1 43121.dat
+0 // 46667-4: glowing exhaust fan seen through the rear neck
+1 57 160 -118 320 1 0 0 0 1 0 0 0 1 46667.dat
+0 NOFILE
+0 FILE alance-nacelle-port.ldr
+0 Port nacelle: three chained 43121 turbofan housings on 2x4 pads with a front fan
+0 Name: alance-nacelle-port.ldr
+0 Author: Aurora Lance generator (Claude Code, Claude Sonnet 5) for anteloc
+0 !LDRAW_ORG Model
+0 // 43121-0: turbofan housing
+1 15 -160 -152 180 1 0 0 0 1 0 0 0 1 43121.dat
+0 // 46667-1: intake fan
+1 72 -160 -118 160 1 0 0 0 1 0 0 0 1 46667.dat
+0 // 43121-2: turbofan housing
+1 15 -160 -152 260 1 0 0 0 1 0 0 0 1 43121.dat
+0 // 43121-3: turbofan housing
+1 71 -160 -152 340 1 0 0 0 1 0 0 0 1 43121.dat
+0 // 46667-4: glowing exhaust fan seen through the rear neck
+1 57 -160 -118 320 1 0 0 0 1 0 0 0 1 46667.dat
+0 NOFILE

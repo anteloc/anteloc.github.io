@@ -1,0 +1,11 @@
+0 FILE garage-part-test.ldr
+0 Isolated test of official Garage 4x8x3 (721) and its door leaf (722) to determine real orientation/origin before use
+0 Name: garage-part-test.ldr
+0 Author: carlos.antelo@gmail.com
+0 !LDRAW_ORG Model
+0 // shell: Test placement: floor assumed at world ground (h=72 -> local floor at Y=72 maps to world Y=0)
+1 15 0 72 0 1 0 0 0 1 0 0 0 1 721.dat
+0 STEP
+0 // door: Test coincident placement of door leaf with shell to see native alignment
+1 71 0 72 0 1 0 0 0 1 0 0 0 1 722.dat
+0 NOFILE
