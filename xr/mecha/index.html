@@ -1,0 +1,43 @@
+<!doctype html>
+<!--
+  LDraw mixed-reality viewer (WebXR, Meta Quest 3): /xr/?model=<url of an .ldr/.mpd>[&parts=N]
+  Built with Meta's Immersive Web SDK on three.js (see web/xr and README.md).
+  Options: &stats=1 (show performance), &fps=72|90, &scale=<framebuffer scale, 1.0>,
+           &occlusion=hard|soft|minmax|off (real things hiding the model; hard by default),
+           &emulate=quest3 (emulated headset, for desktop testing).
+  Read in the headset's browser too: large type, strong contrast, few words.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>LDraw MR</title>
+<style>:root{--bg:#f2f2f2;--bar:#fffffff2;--fg:#111113;--muted:#3f3f46;--line:#d4d4d8;--key:#e4e4e7;--accent:#111113;--accent-fg:#fff;--danger:#b42318}@media (prefers-color-scheme:dark){:root{--bar:#18181bf2;--fg:#fafafa;--muted:#d4d4d8;--line:#3f3f46;--key:#3f3f46;--accent:#fafafa;--accent-fg:#111113;--danger:#fda29b}}html,body{background:var(--bg);height:100%;color:var(--fg);margin:0;font:18px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}#scene-container{position:fixed;inset:0}.bar{background:var(--bar);backdrop-filter:blur(6px);z-index:2;align-items:center;gap:14px;padding:12px 18px;display:flex;position:fixed;left:0;right:0}#top{border-bottom:1px solid var(--line);top:0}#title{text-overflow:ellipsis;white-space:nowrap;min-width:0;margin-right:auto;overflow:hidden}#title strong{font-weight:700}#parts{color:var(--muted)}#bottom{border-top:1px solid var(--line);flex-wrap:wrap;bottom:0}#status{margin-right:auto;font-size:20px;font-weight:600}#status.error{color:var(--danger);font-size:18px;font-weight:500}#stats{color:var(--muted);font-variant-numeric:tabular-nums;width:100%;font-size:14px}#stats:empty{display:none}#xr-hint{width:100%;color:var(--danger);font-weight:600}#xr-hint a{color:inherit;text-underline-offset:3px;text-decoration:underline}#xr-hint .aside{color:var(--muted);font-size:16px;font-weight:400;display:block}#enter{font:inherit;cursor:pointer;border:2px solid var(--accent);background:var(--accent);min-height:56px;color:var(--accent-fg);border-radius:14px;padding:10px 34px;font-size:22px;font-weight:700}#enter:disabled{opacity:.4;cursor:default}#help{background:var(--bar);border:1px solid var(--line);z-index:2;border-radius:14px;width:360px;padding:16px 20px 18px;position:fixed;top:74px;right:18px;box-shadow:0 6px 24px #0000001f}#help h2{margin:0 0 8px;font-size:20px}#help ul{margin:0;padding:0;list-style:none}#help li{align-items:center;gap:12px;padding:5px 0;display:flex}#help .keys{color:var(--muted);flex:0 0 152px;align-items:center;gap:6px;display:flex}#help li>b{font-size:19px}kbd{font:inherit;color:var(--fg);background:var(--key);white-space:nowrap;border-radius:7px;padding:2px 9px;font-size:16px;font-weight:700}#help p{color:var(--muted);margin:12px 0 0;font-size:16px}@media (width<=760px){#help{display:none}}</style>
+  <script type="module" crossorigin src="./assets/index-DfUsoNlQ.js"></script>
+</head>
+<body>
+  <div id="scene-container"></div>
+  <div id="top" class="bar">
+    <span id="title"><strong id="file">LDraw MR</strong><span id="parts"></span></span>
+  </div>
+  <div id="help">
+    <h2>Controls</h2>
+    <ul>
+      <li><span class="keys"><kbd>Trigger</kbd></span><b>Place</b></li>
+      <li><span class="keys"><kbd>Hold trigger</kbd></span><b>Move</b></li>
+      <li><span class="keys"><kbd>Stick ↕</kbd></span><b>Resize</b></li>
+      <li><span class="keys"><kbd>Stick ↔</kbd></span><b>Rotate</b></li>
+      <li><span class="keys"><kbd>Y</kbd> or <kbd>B</kbd></span><b>Menu</b></li>
+      <li><span class="keys"><kbd>X</kbd> or <kbd>A</kbd></span><b>Recenter</b></li>
+    </ul>
+    <p>Aim at a table or the floor to place the model. Aim at it or put a controller inside it to move, resize or rotate it. Recenter restores Tabletop size in front of you.</p>
+  </div>
+  <div id="bottom" class="bar">
+    <span id="status">Loading…</span>
+    <button id="enter" disabled>Enter MR</button>
+    <div id="xr-hint" hidden></div>
+    <div id="stats"></div>
+  </div>
+</body>
+</html>
