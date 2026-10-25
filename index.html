@@ -1,33 +1,140 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0; url=modelscope-xr.html">
-    <title>Redirecting...</title>
-    <script>
-        window.location.replace("modelscope-xr.html");
-    </script>
-    <style>
-        body {
-            font-family: system-ui, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: #f5f5f5;
-        }
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LDraw Nova &amp; Mecha</title>
+<meta name="description" content="LDraw Nova builds LEGO® models with AI agents; LDraw Mecha brings them to life. Explore both showcases in 3D, step by step and in VR.">
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='10' width='28' height='18' rx='3' fill='%23ffb020'/%3E%3Crect x='7' y='4' width='7' height='7' rx='2' fill='%23ffb020'/%3E%3Crect x='18' y='4' width='7' height='7' rx='2' fill='%232ed3c6'/%3E%3C/svg%3E">
 </head>
-<body>
-    <p>Redirecting to <a href="modelscope-xr.html">modelscope-xr.html</a>...</p>
+<body data-project="nova">
+<a class="skip" href="#showcase">Skip to the showcases</a>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#top" aria-label="LDraw Nova and Mecha, top of the page">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i></span>
+      <span>LDraw <b class="nova-text">Nova</b> <span class="amp">&amp;</span> <b class="mecha-text">Mecha</b></span>
+    </a>
+    <nav class="switch" role="tablist" aria-label="Showcases">
+      <button role="tab" id="tab-nova" data-target="nova" aria-controls="nova" aria-selected="true">
+        <span class="dot" aria-hidden="true"></span>Nova <small>Build</small><span class="count" data-count="nova"></span>
+      </button>
+      <button role="tab" id="tab-mecha" data-target="mecha" aria-controls="mecha" aria-selected="false" tabindex="-1">
+        <span class="dot" aria-hidden="true"></span>Mecha <small>Animate</small><span class="count" data-count="mecha"></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <p class="kicker">Agentic LEGO® modelling, in LDraw</p>
+    <h1 id="hero-title">Build it with <span class="nova-text">Nova</span>.<br>Bring it to life with <span class="mecha-text">Mecha</span>.</h1>
+    <p class="lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus, posuere velit aliquet. Donec ullamcorper nulla non metus auctor fringilla.</p>
+
+    <div class="tiles">
+      <article class="tile" data-project="nova">
+        <button class="tile-art" data-open="nova" aria-label="Open the LDraw Nova showcase" data-collage="nova"></button>
+        <div class="tile-body">
+          <p class="tile-kicker"><span class="dot" aria-hidden="true"></span>LDraw Nova · Build</p>
+          <h2>Agents that design buildable models</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum.</p>
+          <div class="tile-actions">
+            <button class="primary" data-open="nova">Explore the Nova showcase</button>
+            <a class="button ghost" href="https://github.com/anteloc/ldraw-nova" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+      <article class="tile" data-project="mecha">
+        <button class="tile-art" data-open="mecha" aria-label="Open the LDraw Mecha showcase" data-collage="mecha"></button>
+        <div class="tile-body">
+          <p class="tile-kicker"><span class="dot" aria-hidden="true"></span>LDraw Mecha · Animate</p>
+          <h2>Agents that make models move</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+          <div class="tile-actions">
+            <button class="primary" data-open="mecha">Explore the Mecha showcase</button>
+            <a class="button ghost" href="https://github.com/anteloc/ldraw-mecha" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div id="showcase" class="showcase">
+    <section class="project wrap" id="nova" data-project="nova" role="tabpanel" aria-labelledby="tab-nova" tabindex="-1">
+      <header class="project-head">
+        <div>
+          <p class="kicker"><span class="dot" aria-hidden="true"></span>LDraw Nova · Build</p>
+          <h2>Lorem ipsum dolor sit amet</h2>
+          <p class="lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare vel eu leo. Etiam porta sem malesuada magna mollis euismod.</p>
+        </div>
+        <div class="project-links">
+          <a class="button" href="https://github.com/anteloc/ldraw-nova" target="_blank" rel="noopener">ldraw-nova</a>
+          <a class="button ghost" href="https://github.com/anteloc/ldraw-nova-docker" target="_blank" rel="noopener">Web app (Docker)</a>
+        </div>
+      </header>
+      <ul class="features">
+        <li><strong>Lorem ipsum</strong><span>Donec sed odio dui. Maecenas faucibus mollis interdum.</span></li>
+        <li><strong>Dolor sit amet</strong><span>Curabitur blandit tempus porttitor. Nulla vitae elit libero.</span></li>
+        <li><strong>Consectetur</strong><span>Fusce dapibus, tellus ac cursus commodo, tortor mauris.</span></li>
+      </ul>
+      <div class="gallery-head">
+        <h3>Showcase</h3>
+        <p class="muted">Pick a model to see its card, then explore it in 3D, watch it being built, follow its instructions or step into VR.</p>
+      </div>
+      <ul class="gallery" data-gallery="nova" aria-label="LDraw Nova models"><li class="gallery-loading muted"><span class="spinner" aria-hidden="true"></span> Loading models…</li></ul>
+      <button class="crossover" data-open="mecha">
+        <span class="crossover-text"><small>Next showcase</small><strong>LDraw Mecha: watch models move</strong></span>
+        <span class="crossover-thumbs" data-collage="mecha" data-collage-size="3" aria-hidden="true"></span>
+        <span class="crossover-arrow" aria-hidden="true">→</span>
+      </button>
+    </section>
+
+    <section class="project wrap" id="mecha" data-project="mecha" role="tabpanel" aria-labelledby="tab-mecha" tabindex="-1" hidden>
+      <header class="project-head">
+        <div>
+          <p class="kicker"><span class="dot" aria-hidden="true"></span>LDraw Mecha · Animate</p>
+          <h2>Lorem ipsum dolor sit amet</h2>
+          <p class="lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+        </div>
+        <div class="project-links">
+          <a class="button" href="https://github.com/anteloc/ldraw-mecha" target="_blank" rel="noopener">ldraw-mecha</a>
+          <a class="button ghost" href="https://github.com/anteloc/ldraw-mecha-docker" target="_blank" rel="noopener">Web app (Docker)</a>
+        </div>
+      </header>
+      <ul class="features">
+        <li><strong>Lorem ipsum</strong><span>Vivamus sagittis lacus vel augue laoreet rutrum faucibus.</span></li>
+        <li><strong>Dolor sit amet</strong><span>Praesent commodo cursus magna, vel scelerisque nisl.</span></li>
+        <li><strong>Consectetur</strong><span>Duis mollis, est non commodo luctus, nisi erat porttitor.</span></li>
+      </ul>
+      <div class="gallery-head">
+        <h3>Showcase</h3>
+        <p class="muted">Pick an animation to see its card, then play it in 3D or in VR, or download its Blender scene.</p>
+      </div>
+      <ul class="gallery" data-gallery="mecha" aria-label="LDraw Mecha animations"><li class="gallery-loading muted"><span class="spinner" aria-hidden="true"></span> Loading animations…</li></ul>
+      <button class="crossover" data-open="nova">
+        <span class="crossover-text"><small>Back to</small><strong>LDraw Nova: models built by agents</strong></span>
+        <span class="crossover-thumbs" data-collage="nova" data-collage-size="3" aria-hidden="true"></span>
+        <span class="crossover-arrow" aria-hidden="true">→</span>
+      </button>
+    </section>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <p>Built on the work of the <a href="https://www.ldraw.org/" target="_blank" rel="noopener">LDraw community</a>, <a href="https://tcobbs.github.io/ldview/" target="_blank" rel="noopener">LDView</a>, <a href="https://github.com/leozide/leocad" target="_blank" rel="noopener">LeoCAD</a>, <a href="https://github.com/LasseD/buildinginstructions.js" target="_blank" rel="noopener">buildinginstructions.js</a>, <a href="https://github.com/segfault87/ldraw.rs" target="_blank" rel="noopener">ldraw.rs</a> and <a href="https://www.blender.org/" target="_blank" rel="noopener">Blender</a>. More agent output: <a href="index-samples.html">Nova work-in-progress gallery</a>.</p>
+    <p class="muted">LEGO® is a trademark of the LEGO Group of companies, which does not sponsor, authorize or endorse this site.</p>
+  </div>
+</footer>
+
+<script src="assets/vendor/marked.min.js"></script>
+<script src="assets/site.js"></script>
 </body>
 </html>

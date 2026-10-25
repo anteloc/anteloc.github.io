@@ -1,0 +1,360 @@
+{
+  "gallery": "models-gallery-mecha",
+  "repository": "anteloc/anteloc.github.io",
+  "branch": "master",
+  "lfs_base_url": "https://media.githubusercontent.com/media/anteloc/anteloc.github.io/master/",
+  "lfs_patterns": [
+    "*.blend",
+    "*.glb"
+  ],
+  "models": [
+    {
+      "name": "42083-1-mechanisms-animated",
+      "file": "42083-1-mechanisms-animated.mpd",
+      "description": "Top-level assembly of the Bugatti Chiron, integrating chassis, drivetrain, gearbox, engine, and bodywork submodels into the complete model.",
+      "info_heading": "<Animation name>, by <agent> <effort>",
+      "parts": 3531,
+      "updated": 1792887273,
+      "files": {
+        "blend": {
+          "path": "models-gallery-mecha/42083-1-mechanisms-animated.blend",
+          "size": 9567171,
+          "lfs": true,
+          "url": "https://media.githubusercontent.com/media/anteloc/anteloc.github.io/master/models-gallery-mecha/42083-1-mechanisms-animated.blend",
+          "pages_url": "models-gallery-mecha/42083-1-mechanisms-animated.blend"
+        },
+        "csv": {
+          "path": "models-gallery-mecha/42083-1-mechanisms-animated.csv",
+          "size": 17812,
+          "lfs": false,
+          "url": "models-gallery-mecha/42083-1-mechanisms-animated.csv"
+        },
+        "glb": {
+          "path": "models-gallery-mecha/42083-1-mechanisms-animated.glb",
+          "size": 29518140,
+          "lfs": true,
+          "url": "https://media.githubusercontent.com/media/anteloc/anteloc.github.io/master/models-gallery-mecha/42083-1-mechanisms-animated.glb",
+          "pages_url": "models-gallery-mecha/42083-1-mechanisms-animated.glb"
+        },
+        "md": {
+          "path": "models-gallery-mecha/42083-1-mechanisms-animated.md",
+          "size": 119,
+          "lfs": false,
+          "url": "models-gallery-mecha/42083-1-mechanisms-animated.md"
+        },
+        "mpd": {
+          "path": "models-gallery-mecha/42083-1-mechanisms-animated.mpd",
+          "size": 7185935,
+          "lfs": false,
+          "url": "models-gallery-mecha/42083-1-mechanisms-animated.mpd"
+        },
+        "png": {
+          "path": "models-gallery-mecha/42083-1-mechanisms-animated.png",
+          "size": 187675,
+          "lfs": false,
+          "url": "models-gallery-mecha/42083-1-mechanisms-animated.png"
+        }
+      }
+    },
+    {
+      "name": "42096-1-animated-20261013-225452-7cab79",
+      "file": "42096-1-animated-20261013-225452-7cab79.mpd",
+      "description": "Complete Porsche 911 RSR Technic supercar model featuring chassis, suspension, steering, engine, bodywork, doors, and headlights.",
+      "info_heading": "<Animation name>, by <agent> <effort>",
+      "parts": 1686,
+      "updated": 1792887273,
+      "files": {
+        "blend": {
+          "path": "models-gallery-mecha/42096-1-animated-20261013-225452-7cab79.blend",
+          "size": 8208992,
+          "lfs": true,
+          "url": "https://media.githubusercontent.com/media/anteloc/anteloc.github.io/master/models-gallery-mecha/42096-1-animated-20261013-225452-7cab79.blend",
+          "pages_url": "models-gallery-mecha/42096-1-animated-20261013-225452-7cab79.blend"
+        },
+        "csv": {
+          "path": "models-gallery-mecha/42096-1-animated-20261013-225452-7cab79.csv",
+          "size": 10351,
+          "lfs": false,
+          "url": "models-gallery-mecha/42096-1-animated-20261013-225452-7cab79.csv"
+        },
+        "glb": {
+          "path": "models-gallery-mecha/42096-1-animated-20261013-225452-7cab79.glb",
+          "size": 22153936,
+          "lfs": true,
+          "url": "https://media.githubusercontent.com/media/anteloc/anteloc.github.io/master/models-gallery-mecha/42096-1-animated-20261013-225452-7cab79.glb",
+          "pages_url": "models-gallery-mecha/42096-1-animated-20261013-225452-7cab79.glb"
+        },
+        "md": {
+          "path": "models-gallery-mecha/42096-1-animated-20261013-225452-7cab79.md",
+          "size": 119,
+          "lfs": false,
+          "url": "models-gallery-mecha/42096-1-animated-20261013-225452-7cab79.md"
+        },
+        "mpd": {
+          "path": "models-gallery-mecha/42096-1-animated-20261013-225452-7cab79.mpd",
+          "size": 4798440,
+          "lfs": false,
+          "url": "models-gallery-mecha/42096-1-animated-20261013-225452-7cab79.mpd"
+        },
+        "png": {
+          "path": "models-gallery-mecha/42096-1-animated-20261013-225452-7cab79.png",
+          "size": 1240000,
+          "lfs": false,
+          "url": "models-gallery-mecha/42096-1-animated-20261013-225452-7cab79.png"
+        }
+      }
+    },
+    {
+      "name": "42110-1-no-bodywork-animated",
+      "file": "42110-1-no-bodywork-animated.mpd",
+      "description": "Complete Land Rover Defender model integrating all drivetrain, axle, gearbox, engine, and chassis submodels into the full vehicle.",
+      "info_heading": "<Animation name>, by <agent> <effort>",
+      "parts": 2529,
+      "updated": 1792887273,
+      "files": {
+        "blend": {
+          "path": "models-gallery-mecha/42110-1-no-bodywork-animated.blend",
+          "size": 11080285,
+          "lfs": true,
+          "url": "https://media.githubusercontent.com/media/anteloc/anteloc.github.io/master/models-gallery-mecha/42110-1-no-bodywork-animated.blend",
+          "pages_url": "models-gallery-mecha/42110-1-no-bodywork-animated.blend"
+        },
+        "csv": {
+          "path": "models-gallery-mecha/42110-1-no-bodywork-animated.csv",
+          "size": 14579,
+          "lfs": false,
+          "url": "models-gallery-mecha/42110-1-no-bodywork-animated.csv"
+        },
+        "glb": {
+          "path": "models-gallery-mecha/42110-1-no-bodywork-animated.glb",
+          "size": 19940580,
+          "lfs": true,
+          "url": "https://media.githubusercontent.com/media/anteloc/anteloc.github.io/master/models-gallery-mecha/42110-1-no-bodywork-animated.glb",
+          "pages_url": "models-gallery-mecha/42110-1-no-bodywork-animated.glb"
+        },
+        "md": {
+          "path": "models-gallery-mecha/42110-1-no-bodywork-animated.md",
+          "size": 119,
+          "lfs": false,
+          "url": "models-gallery-mecha/42110-1-no-bodywork-animated.md"
+        },
+        "mpd": {
+          "path": "models-gallery-mecha/42110-1-no-bodywork-animated.mpd",
+          "size": 731962,
+          "lfs": false,
+          "url": "models-gallery-mecha/42110-1-no-bodywork-animated.mpd"
+        },
+        "png": {
+          "path": "models-gallery-mecha/42110-1-no-bodywork-animated.png",
+          "size": 157553,
+          "lfs": false,
+          "url": "models-gallery-mecha/42110-1-no-bodywork-animated.png"
+        }
+      }
+    },
+    {
+      "name": "42110-1-suspension-standalone-animated",
+      "file": "42110-1-suspension-standalone-animated.mpd",
+      "description": "Complete Land Rover Defender model integrating all drivetrain, axle, gearbox, engine, and chassis submodels into the full vehicle.",
+      "info_heading": "<Animation name>, by <agent> <effort>",
+      "parts": 2529,
+      "updated": 1792887273,
+      "files": {
+        "blend": {
+          "path": "models-gallery-mecha/42110-1-suspension-standalone-animated.blend",
+          "size": 2362206,
+          "lfs": true,
+          "url": "https://media.githubusercontent.com/media/anteloc/anteloc.github.io/master/models-gallery-mecha/42110-1-suspension-standalone-animated.blend",
+          "pages_url": "models-gallery-mecha/42110-1-suspension-standalone-animated.blend"
+        },
+        "csv": {
+          "path": "models-gallery-mecha/42110-1-suspension-standalone-animated.csv",
+          "size": 14579,
+          "lfs": false,
+          "url": "models-gallery-mecha/42110-1-suspension-standalone-animated.csv"
+        },
+        "glb": {
+          "path": "models-gallery-mecha/42110-1-suspension-standalone-animated.glb",
+          "size": 7778288,
+          "lfs": true,
+          "url": "https://media.githubusercontent.com/media/anteloc/anteloc.github.io/master/models-gallery-mecha/42110-1-suspension-standalone-animated.glb",
+          "pages_url": "models-gallery-mecha/42110-1-suspension-standalone-animated.glb"
+        },
+        "md": {
+          "path": "models-gallery-mecha/42110-1-suspension-standalone-animated.md",
+          "size": 119,
+          "lfs": false,
+          "url": "models-gallery-mecha/42110-1-suspension-standalone-animated.md"
+        },
+        "mpd": {
+          "path": "models-gallery-mecha/42110-1-suspension-standalone-animated.mpd",
+          "size": 731962,
+          "lfs": false,
+          "url": "models-gallery-mecha/42110-1-suspension-standalone-animated.mpd"
+        },
+        "png": {
+          "path": "models-gallery-mecha/42110-1-suspension-standalone-animated.png",
+          "size": 157630,
+          "lfs": false,
+          "url": "models-gallery-mecha/42110-1-suspension-standalone-animated.png"
+        }
+      }
+    },
+    {
+      "name": "8074-1_Crane-animated",
+      "file": "8074-1_Crane-animated.mpd",
+      "description": "Complete Technic crane model with boom, turntable, gears, rope, and flex-system cables.",
+      "info_heading": "<Animation name>, by <agent> <effort>",
+      "parts": 230,
+      "updated": 1792887273,
+      "files": {
+        "blend": {
+          "path": "models-gallery-mecha/8074-1_Crane-animated.blend",
+          "size": 2959781,
+          "lfs": true,
+          "url": "https://media.githubusercontent.com/media/anteloc/anteloc.github.io/master/models-gallery-mecha/8074-1_Crane-animated.blend",
+          "pages_url": "models-gallery-mecha/8074-1_Crane-animated.blend"
+        },
+        "csv": {
+          "path": "models-gallery-mecha/8074-1_Crane-animated.csv",
+          "size": 2853,
+          "lfs": false,
+          "url": "models-gallery-mecha/8074-1_Crane-animated.csv"
+        },
+        "glb": {
+          "path": "models-gallery-mecha/8074-1_Crane-animated.glb",
+          "size": 10625552,
+          "lfs": true,
+          "url": "https://media.githubusercontent.com/media/anteloc/anteloc.github.io/master/models-gallery-mecha/8074-1_Crane-animated.glb",
+          "pages_url": "models-gallery-mecha/8074-1_Crane-animated.glb"
+        },
+        "md": {
+          "path": "models-gallery-mecha/8074-1_Crane-animated.md",
+          "size": 119,
+          "lfs": false,
+          "url": "models-gallery-mecha/8074-1_Crane-animated.md"
+        },
+        "mpd": {
+          "path": "models-gallery-mecha/8074-1_Crane-animated.mpd",
+          "size": 504371,
+          "lfs": false,
+          "url": "models-gallery-mecha/8074-1_Crane-animated.mpd"
+        },
+        "png": {
+          "path": "models-gallery-mecha/8074-1_Crane-animated.png",
+          "size": 543914,
+          "lfs": false,
+          "url": "models-gallery-mecha/8074-1_Crane-animated.png"
+        }
+      }
+    },
+    {
+      "name": "minifigs-animated",
+      "file": "minifigs-animated.glb",
+      "description": "minifigs animated",
+      "info_heading": "<Animation name>, by <agent> <effort>",
+      "parts": null,
+      "updated": 1792887273,
+      "files": {
+        "blend": {
+          "path": "models-gallery-mecha/minifigs-animated.blend",
+          "size": 1435319,
+          "lfs": true,
+          "url": "https://media.githubusercontent.com/media/anteloc/anteloc.github.io/master/models-gallery-mecha/minifigs-animated.blend",
+          "pages_url": "models-gallery-mecha/minifigs-animated.blend"
+        },
+        "glb": {
+          "path": "models-gallery-mecha/minifigs-animated.glb",
+          "size": 7069868,
+          "lfs": true,
+          "url": "https://media.githubusercontent.com/media/anteloc/anteloc.github.io/master/models-gallery-mecha/minifigs-animated.glb",
+          "pages_url": "models-gallery-mecha/minifigs-animated.glb"
+        },
+        "md": {
+          "path": "models-gallery-mecha/minifigs-animated.md",
+          "size": 119,
+          "lfs": false,
+          "url": "models-gallery-mecha/minifigs-animated.md"
+        },
+        "png": {
+          "path": "models-gallery-mecha/minifigs-animated.png",
+          "size": 638474,
+          "lfs": false,
+          "url": "models-gallery-mecha/minifigs-animated.png"
+        }
+      }
+    },
+    {
+      "name": "movables-animated",
+      "file": "movables-animated.glb",
+      "description": "movables animated",
+      "info_heading": "<Animation name>, by <agent> <effort>",
+      "parts": null,
+      "updated": 1792887273,
+      "files": {
+        "blend": {
+          "path": "models-gallery-mecha/movables-animated.blend",
+          "size": 3899781,
+          "lfs": true,
+          "url": "https://media.githubusercontent.com/media/anteloc/anteloc.github.io/master/models-gallery-mecha/movables-animated.blend",
+          "pages_url": "models-gallery-mecha/movables-animated.blend"
+        },
+        "glb": {
+          "path": "models-gallery-mecha/movables-animated.glb",
+          "size": 13806084,
+          "lfs": true,
+          "url": "https://media.githubusercontent.com/media/anteloc/anteloc.github.io/master/models-gallery-mecha/movables-animated.glb",
+          "pages_url": "models-gallery-mecha/movables-animated.glb"
+        },
+        "md": {
+          "path": "models-gallery-mecha/movables-animated.md",
+          "size": 119,
+          "lfs": false,
+          "url": "models-gallery-mecha/movables-animated.md"
+        },
+        "png": {
+          "path": "models-gallery-mecha/movables-animated.png",
+          "size": 676264,
+          "lfs": false,
+          "url": "models-gallery-mecha/movables-animated.png"
+        }
+      }
+    },
+    {
+      "name": "plants-animated",
+      "file": "plants-animated.glb",
+      "description": "plants animated",
+      "info_heading": "<Animation name>, by <agent> <effort>",
+      "parts": null,
+      "updated": 1792887273,
+      "files": {
+        "blend": {
+          "path": "models-gallery-mecha/plants-animated.blend",
+          "size": 6721677,
+          "lfs": true,
+          "url": "https://media.githubusercontent.com/media/anteloc/anteloc.github.io/master/models-gallery-mecha/plants-animated.blend",
+          "pages_url": "models-gallery-mecha/plants-animated.blend"
+        },
+        "glb": {
+          "path": "models-gallery-mecha/plants-animated.glb",
+          "size": 19228232,
+          "lfs": true,
+          "url": "https://media.githubusercontent.com/media/anteloc/anteloc.github.io/master/models-gallery-mecha/plants-animated.glb",
+          "pages_url": "models-gallery-mecha/plants-animated.glb"
+        },
+        "md": {
+          "path": "models-gallery-mecha/plants-animated.md",
+          "size": 119,
+          "lfs": false,
+          "url": "models-gallery-mecha/plants-animated.md"
+        },
+        "png": {
+          "path": "models-gallery-mecha/plants-animated.png",
+          "size": 690680,
+          "lfs": false,
+          "url": "models-gallery-mecha/plants-animated.png"
+        }
+      }
+    }
+  ]
+}

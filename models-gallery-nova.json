@@ -1,0 +1,258 @@
+{
+  "gallery": "models-gallery-nova",
+  "repository": "anteloc/anteloc.github.io",
+  "branch": "master",
+  "lfs_base_url": "https://media.githubusercontent.com/media/anteloc/anteloc.github.io/master/",
+  "lfs_patterns": [
+    "*.blend",
+    "*.glb"
+  ],
+  "models": [
+    {
+      "name": "atlas-crane",
+      "file": "atlas-crane.mpd",
+      "description": "Atlas AT-90 all-terrain crane (original design) - working pose",
+      "info_heading": "Atlas Crane, by Opus 5.5 Extra high",
+      "parts": 1079,
+      "updated": 1792891005,
+      "files": {
+        "csv": {
+          "path": "models-gallery-nova/atlas-crane.csv",
+          "size": 9096,
+          "lfs": false,
+          "url": "models-gallery-nova/atlas-crane.csv"
+        },
+        "glb": {
+          "path": "models-gallery-nova/atlas-crane.glb",
+          "size": 3836312,
+          "lfs": true,
+          "url": "https://media.githubusercontent.com/media/anteloc/anteloc.github.io/master/models-gallery-nova/atlas-crane.glb",
+          "pages_url": "models-gallery-nova/atlas-crane.glb"
+        },
+        "md": {
+          "path": "models-gallery-nova/atlas-crane.md",
+          "size": 317,
+          "lfs": false,
+          "url": "models-gallery-nova/atlas-crane.md"
+        },
+        "mpd": {
+          "path": "models-gallery-nova/atlas-crane.mpd",
+          "size": 126278,
+          "lfs": false,
+          "url": "models-gallery-nova/atlas-crane.mpd"
+        },
+        "png": {
+          "path": "models-gallery-nova/atlas-crane.png",
+          "size": 137306,
+          "lfs": false,
+          "url": "models-gallery-nova/atlas-crane.png"
+        }
+      }
+    },
+    {
+      "name": "cathedral",
+      "file": "cathedral.mpd",
+      "description": "Aurelia Cathedral: twin Gothic towers, rose window, nave and flying buttresses",
+      "info_heading": "Cathedral, by GPT-6 Astra, xhigh",
+      "parts": 5394,
+      "updated": 1792891005,
+      "files": {
+        "csv": {
+          "path": "models-gallery-nova/cathedral.csv",
+          "size": 3016,
+          "lfs": false,
+          "url": "models-gallery-nova/cathedral.csv"
+        },
+        "glb": {
+          "path": "models-gallery-nova/cathedral.glb",
+          "size": 2238444,
+          "lfs": true,
+          "url": "https://media.githubusercontent.com/media/anteloc/anteloc.github.io/master/models-gallery-nova/cathedral.glb",
+          "pages_url": "models-gallery-nova/cathedral.glb"
+        },
+        "md": {
+          "path": "models-gallery-nova/cathedral.md",
+          "size": 884,
+          "lfs": false,
+          "url": "models-gallery-nova/cathedral.md"
+        },
+        "mpd": {
+          "path": "models-gallery-nova/cathedral.mpd",
+          "size": 258823,
+          "lfs": false,
+          "url": "models-gallery-nova/cathedral.mpd"
+        },
+        "png": {
+          "path": "models-gallery-nova/cathedral.png",
+          "size": 97635,
+          "lfs": false,
+          "url": "models-gallery-nova/cathedral.png"
+        }
+      }
+    },
+    {
+      "name": "copper-bean",
+      "file": "copper-bean.mpd",
+      "description": "The Copper Bean: three storeys of apartments over a corner coffee shop, with a parasol terrace on the pavement",
+      "info_heading": "Copper Bean, by Opus 5 (not 5.5!) Extra high",
+      "parts": 1022,
+      "updated": 1792891005,
+      "files": {
+        "csv": {
+          "path": "models-gallery-nova/copper-bean.csv",
+          "size": 5289,
+          "lfs": false,
+          "url": "models-gallery-nova/copper-bean.csv"
+        },
+        "glb": {
+          "path": "models-gallery-nova/copper-bean.glb",
+          "size": 1698460,
+          "lfs": true,
+          "url": "https://media.githubusercontent.com/media/anteloc/anteloc.github.io/master/models-gallery-nova/copper-bean.glb",
+          "pages_url": "models-gallery-nova/copper-bean.glb"
+        },
+        "md": {
+          "path": "models-gallery-nova/copper-bean.md",
+          "size": 309,
+          "lfs": false,
+          "url": "models-gallery-nova/copper-bean.md"
+        },
+        "mpd": {
+          "path": "models-gallery-nova/copper-bean.mpd",
+          "size": 75803,
+          "lfs": false,
+          "url": "models-gallery-nova/copper-bean.mpd"
+        },
+        "png": {
+          "path": "models-gallery-nova/copper-bean.png",
+          "size": 115121,
+          "lfs": false,
+          "url": "models-gallery-nova/copper-bean.png"
+        }
+      }
+    },
+    {
+      "name": "sakura-garden",
+      "file": "sakura-garden.mpd",
+      "description": "Sakura Garden: five-storey pagoda, arched bridge over a koi pond, torii gate and flowering cherries on a 48x48 base",
+      "info_heading": "Sakura Garden by Opus 5.5 Extra high",
+      "parts": 2175,
+      "updated": 1792891005,
+      "files": {
+        "csv": {
+          "path": "models-gallery-nova/sakura-garden.csv",
+          "size": 13009,
+          "lfs": false,
+          "url": "models-gallery-nova/sakura-garden.csv"
+        },
+        "glb": {
+          "path": "models-gallery-nova/sakura-garden.glb",
+          "size": 7664456,
+          "lfs": true,
+          "url": "https://media.githubusercontent.com/media/anteloc/anteloc.github.io/master/models-gallery-nova/sakura-garden.glb",
+          "pages_url": "models-gallery-nova/sakura-garden.glb"
+        },
+        "md": {
+          "path": "models-gallery-nova/sakura-garden.md",
+          "size": 198,
+          "lfs": false,
+          "url": "models-gallery-nova/sakura-garden.md"
+        },
+        "mpd": {
+          "path": "models-gallery-nova/sakura-garden.mpd",
+          "size": 194874,
+          "lfs": false,
+          "url": "models-gallery-nova/sakura-garden.mpd"
+        },
+        "png": {
+          "path": "models-gallery-nova/sakura-garden.png",
+          "size": 116591,
+          "lfs": false,
+          "url": "models-gallery-nova/sakura-garden.png"
+        }
+      }
+    },
+    {
+      "name": "the-tidal-observatory-final-v1",
+      "file": "the-tidal-observatory-final-v1.mpd",
+      "description": "The Tidal Observatory - limestone marine institute, copper dome and weather lantern on a harbor quay",
+      "info_heading": "The Tidal Observatory, by GPT-6 Astra xhigh",
+      "parts": 2734,
+      "updated": 1792891005,
+      "files": {
+        "csv": {
+          "path": "models-gallery-nova/the-tidal-observatory-final-v1.csv",
+          "size": 5815,
+          "lfs": false,
+          "url": "models-gallery-nova/the-tidal-observatory-final-v1.csv"
+        },
+        "glb": {
+          "path": "models-gallery-nova/the-tidal-observatory-final-v1.glb",
+          "size": 2782512,
+          "lfs": true,
+          "url": "https://media.githubusercontent.com/media/anteloc/anteloc.github.io/master/models-gallery-nova/the-tidal-observatory-final-v1.glb",
+          "pages_url": "models-gallery-nova/the-tidal-observatory-final-v1.glb"
+        },
+        "md": {
+          "path": "models-gallery-nova/the-tidal-observatory-final-v1.md",
+          "size": 163,
+          "lfs": false,
+          "url": "models-gallery-nova/the-tidal-observatory-final-v1.md"
+        },
+        "mpd": {
+          "path": "models-gallery-nova/the-tidal-observatory-final-v1.mpd",
+          "size": 226207,
+          "lfs": false,
+          "url": "models-gallery-nova/the-tidal-observatory-final-v1.mpd"
+        },
+        "png": {
+          "path": "models-gallery-nova/the-tidal-observatory-final-v1.png",
+          "size": 207437,
+          "lfs": false,
+          "url": "models-gallery-nova/the-tidal-observatory-final-v1.png"
+        }
+      }
+    },
+    {
+      "name": "willowbank-cottage-v1",
+      "file": "willowbank-cottage-v1.mpd",
+      "description": "Willowbank Cottage: two-storey hall with dormer and chimney, kitchen wing, porch, and a fenced vegetable field at the back",
+      "info_heading": "Willowbank Cottage, by Qwen 3.8 27B  xHigh 1M",
+      "parts": 1163,
+      "updated": 1792891005,
+      "files": {
+        "csv": {
+          "path": "models-gallery-nova/willowbank-cottage-v1.csv",
+          "size": 3732,
+          "lfs": false,
+          "url": "models-gallery-nova/willowbank-cottage-v1.csv"
+        },
+        "glb": {
+          "path": "models-gallery-nova/willowbank-cottage-v1.glb",
+          "size": 2657208,
+          "lfs": true,
+          "url": "https://media.githubusercontent.com/media/anteloc/anteloc.github.io/master/models-gallery-nova/willowbank-cottage-v1.glb",
+          "pages_url": "models-gallery-nova/willowbank-cottage-v1.glb"
+        },
+        "md": {
+          "path": "models-gallery-nova/willowbank-cottage-v1.md",
+          "size": 784,
+          "lfs": false,
+          "url": "models-gallery-nova/willowbank-cottage-v1.md"
+        },
+        "mpd": {
+          "path": "models-gallery-nova/willowbank-cottage-v1.mpd",
+          "size": 82439,
+          "lfs": false,
+          "url": "models-gallery-nova/willowbank-cottage-v1.mpd"
+        },
+        "png": {
+          "path": "models-gallery-nova/willowbank-cottage-v1.png",
+          "size": 173409,
+          "lfs": false,
+          "url": "models-gallery-nova/willowbank-cottage-v1.png"
+        }
+      }
+    }
+  ]
+}
